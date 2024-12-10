@@ -2,12 +2,60 @@
 
 ## 🔮 Astro + Astro Svelte + Shadcn Svelte + Tailwind CSS
 
-> 🔹**Node js 22.0.0** Prerequisite Required!
+> 🔹**Node js 22.0.0**
+> 🔹[Astro](https://astro.build/)
+> 🔹[Astro Svelte](https://docs.astro.build/en/guides/integrations-guide/svelte/)
+> 🔹[Shadcn Svelte](https://www.shadcn-svelte.com/docs/installation/astro)
+> 🔹[Tailwind CSS](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
 
 
-## 🚀 Steps to Build a Website with above Tech Stack
+## 🚀 Steps to clone this website with above Tech Stack
 
-### Step1 : Create project with Astro
+### Git Repo clone
+
+
+```bash
+git clone git@github.com:Improwised/improwised-new-website.git
+cd webapp
+```
+
+### Environment
+
+* copy `.env.example` to `.env`. (skip if already done)
+
+
+```bash
+$ cp .env.example .env
+```
+
+### Developing
+Installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+```
+
+### Building
+
+To create a production version of your app:
+
+```sh
+npm run build
+```
+
+### Preview
+
+You can preview the production build with `npm run preview`.
+
+
+----------------------------------------------------------------
+
+
+
+
+## 🚀 Steps to Build a new website with above Tech Stack
+
+### Step 1 : Create project with Astro
 
 ```text
 
@@ -24,7 +72,7 @@
 
 ```
 
-### Step2 : Add svelte configuration
+### Step 2 : Add svelte configuration
 
 
 ```bash
@@ -34,7 +82,7 @@ npx astro add svelte
 For more info check this link : https://docs.astro.build/en/guides/integrations-guide/svelte/
 
 
-### Step3 : Add Tailwind css configuration
+### Step 3 : Add Tailwind css configuration
 
 
 ```bash
@@ -44,7 +92,7 @@ npx astro add tailwind
 For more info check this link : https://docs.astro.build/en/guides/integrations-guide/tailwind/
 
 
-### Step4 : Add shadcn-svelte configuration
+### Step 4 : Add shadcn-svelte configuration
 
 > 🔹[Shadcn-svelte configure steps](https://www.shadcn-svelte.com/docs/installation/astro) Follow the steps from step 5 from this link
 
@@ -83,6 +131,12 @@ npx  shadcn-svelte@latest init
 ♦️  Dependencies installed with npm
 │
 └  Success! Project initialization completed.
+```
+
+### Step 5 : Add shadcn-svelte components e.g Button
+> 🔹[Button Components](https://www.shadcn-svelte.com/docs/components/button) follow this link for more info and add other components
+```bash
+npx  shadcn-svelte@latest add button
 ```
 
 

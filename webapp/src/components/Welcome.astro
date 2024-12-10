@@ -1,6 +1,9 @@
 ---
+
+import { BASE_URL } from "$lib/consts";
 import astroLogo from '../assets/astro.svg';
 import background from '../assets/background.svg';
+import { Button } from "$lib/components/ui/button";
 ---
 
 <div id="container">
@@ -23,7 +26,26 @@ import background from '../assets/background.svg';
 						></path></svg
 					>
 				</a>
+
+
+
 			</section>
+			<section>
+				<h1 class="pb-2 text-bold">
+					Basic Compoenets with shadcn-svelte.
+				</h1>
+
+				<ul >
+				<li class="pb-5">
+				   <Button href=`${BASE_URL}/button`>Button Component</Button>
+				</li>
+				<li class="pb-5">
+				   <Button href=`${BASE_URL}/accordion`>Accordion Component</Button>
+				</li>
+				<li class="pb-5">
+				   <Button href=`${BASE_URL}/dropdown-menu`>Dropdown Menu Component </Button>
+				</li>
+				</ul></section>
 		</section>
 	</main>
 
