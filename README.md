@@ -46,7 +46,7 @@ For more info check this link : https://docs.astro.build/en/guides/integrations-
 
 ### Step4 : Add shadcn-svelte configuration
 
-> 🔹[Shadcn-svelte configure steps](https://www.shadcn-svelte.com/docs/installation/astro) Follow the steps from step 5  to step 7 from this link
+> 🔹[Shadcn-svelte configure steps](https://www.shadcn-svelte.com/docs/installation/astro) Follow the steps from step 5 from this link
 
 
 #### Run the shadcn-svelte init command to setup your project:
