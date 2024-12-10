@@ -23,3 +23,10 @@
 		    └──  ○ Yes  ● No
 
 ```
+
+## Configure Astro for GitHub Pages
+   For Deploying to a github.io URL please check this link
+   https://docs.astro.build/en/guides/deploy/github/
+
+
+
