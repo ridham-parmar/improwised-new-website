@@ -24,6 +24,15 @@
 
 ```
 
+### Step2 : Add svelte configuration
+
+
+```bash
+cd webapp
+npx astro add svelte
+```
+For more info check this link : https://docs.astro.build/en/guides/integrations-guide/svelte/
+
 ## Configure Astro for GitHub Pages
    For Deploying to a github.io URL please check this link
    https://docs.astro.build/en/guides/deploy/github/
