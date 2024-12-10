@@ -9,5 +9,7 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   site: 'https://improwised.github.io',
   base: 'improwised-new-website',
-  integrations: [svelte(), tailwind()]
+  integrations: [svelte(), tailwind({
+    applyBaseStyles: false,
+  })]
 });
