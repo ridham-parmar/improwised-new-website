@@ -1,6 +1,6 @@
 # improwised-new-website
 
-## 🔮 Astro + Astro Svelte + Svelte Shadcn + Tailwind CSS
+## 🔮 Astro + Astro Svelte + Shadcn Svelte + Tailwind CSS
 
 > 🔹**Node js 22.0.0** Prerequisite Required!
 
