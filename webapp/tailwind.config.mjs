@@ -24,6 +24,10 @@ const config = {
 					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
 					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
 				},
+				primary2: {
+					DEFAULT: "hsl(var(--primary2) / <alpha-value>)",
+					foreground: "hsl(var(--primary2-foreground) / <alpha-value>)"
+				},
 				secondary: {
 					DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
 					foreground: "hsl(var(--secondary-foreground) / <alpha-value>)"

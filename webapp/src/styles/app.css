@@ -18,14 +18,16 @@
     --muted-foreground: 240 3.8% 46.1%;
     --accent: 240 4.8% 95.9%;
     --accent-foreground: 240 5.9% 10%;
-    --darkgreen: 190 66.7% 15.3%;
-    --darkgreen-foreground: 240 10% 3.9%;
     --destructive: 0 72.22% 50.59%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 97 47.9% 47.5%;
     --radius: 0.5rem;
+    --darkgreen: 190 66.7% 15.3%;
+    --darkgreen-foreground: 240 10% 3.9%;
+    --primary2: 192 100% 43%;
+    --primary2-foreground: 240 10% 3.9%;
   }
   .dark {
     --background: 20 14.3% 4.1%;
@@ -77,3 +79,134 @@ html {
   background-size: 99.99%;
   color: #fff;
 }
+
+.logo[data-astro-cid-2jwrtjj6] {
+  height: 2.5rem;
+  width: auto;
+}
+.animate-marquee2 {
+  animation: marquee2 50s linear infinite;
+}
+@keyframes marquee2 {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(calc(-100% - 8rem));
+  }
+}
+
+@property --num-transactions {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-assets {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-users {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes counter {
+  from {
+    --num-transactions: 0;
+    --num-assets: 0;
+    --num-users: 0;
+  }
+  to {
+    --num-transactions: 150;
+    --num-assets: 88;
+    --num-users: 4600;
+  }
+}
+
+
+  /* Static Lines */
+  .line {
+    stroke-width: 1;
+    stroke-linecap: square;
+    stroke: #e5eeed;
+  }
+
+  /* Highlight Lines */
+  .highlight {
+    stroke-width: 1;
+
+    stroke-linecap: square;
+    stroke:hsl(98, 54%, 68%);
+    animation: highlight 10s infinite;
+  }
+
+  @keyframes highlight {
+    0% {
+      stroke-dasharray: 0, 100%;
+      stroke-dashoffset: 100%;
+    }
+    50% {
+      stroke-dasharray: 100%, 100%;
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dasharray: 0, 100%;
+      stroke-dashoffset: 0;
+    }
+  }
+
+  /* Animation Delays */
+  .delay-150 {
+    animation-delay: 0.15s;
+  }
+
+  .delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .delay-450 {
+    animation-delay: 0.45s;
+  }
+
+  .delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .delay-750 {
+    animation-delay: 0.75s;
+  }
+
+
+  .ring-primary{
+    --tw-ring-opacity: 1;
+    --tw-ring-color: #b1e597;
+}
+
+/* .bg-gray {
+  --tw-bg-opacity: 1;
+  background-color: rgb(246 248 241 / var(--tw-bg-opacity));
+} */
+
+.stop-color {
+  stop-color: #d9e0c5;
+}
+
+
+
+.leading-8
+{
+  font-size: 20px;
+  line-height: 2rem;
+  font-weight: 600;
+}
+
+.shadow-nav {
+
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0px 0px 30px rgba(0, 0, 0, .05);
+}
+

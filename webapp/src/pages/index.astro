@@ -1,8 +1,17 @@
 ---
-import Layout from '$lib/layouts/Layout.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import Layout from "$lib/layouts/Layout.astro";
+import HeroSection from "$lib/components/HeroSection.astro";
+import ServiceSection from "$lib/components/ServiceSection.astro";
+import CounterSection from "$lib/components/CounterSection.astro";
+import AboutUsSection from "$lib/components/AboutUsSection.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-
+	<main class="main-content">
+		<HeroSection />
+		<ServiceSection />
+		<CounterSection />
+		<AboutUsSection />
+	</main>
 </Layout>

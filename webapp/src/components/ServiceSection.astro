@@ -1,0 +1,117 @@
+---
+
+import { Image } from "astro:assets";
+import { Button } from "$lib/components/ui/button";
+import { Badge } from "$lib/components/ui/badge";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+
+import feature from "$lib/images/feature.png";
+
+import * as Card from "$lib/components/ui/card";
+
+import integrations from "$lib/images/integrations.svg";
+
+---
+<section class="bg-white dark:bg-dark-300 relative pb-20">
+			<div class="container">
+
+
+				<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 px-5">
+					<div class="lg:col-span-2 max-md:text-center">
+                        <Badge
+                        class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
+                        variant="outline">Services</Badge
+                    >
+						<SectionTitle text="What We Offer" />
+						<p class="mb-10 text-xl max-md:text-center" data-aos="fade-up">
+							Boost developer efficiency with platform engineering,
+							delivering scalable internal developer platforms across
+							cloud-native, hybrid, and multicloud architectures.
+						</p>
+						<div class="mt-6 flex max-md:justify-center items-center gap-4">
+							<Button href="#">Contact Us</Button>
+						</div>
+					</div>
+					<div class="lg:col-span-3">
+						<Card.Root class="border-0 shadow-nav text-center">
+							<Card.Header class="">
+								<Image alt="feature" class="ml-auto mr-auto  max-md:w-[250px] w-[400px]"  loading="lazy" decoding="async" src={integrations} />
+
+
+							</Card.Header>
+							<Card.Content>
+								<Card.Title class="text-[26px]">Platform Engineering</Card.Title>
+							</Card.Content>
+							<Card.Footer>
+								<p>
+									Empowering your business with tailored tech
+									solutions, transparent communication, and a
+									dedicated, startup- minded team focused on
+									growth.
+								</p>
+							</Card.Footer>
+						</Card.Root>
+					</div>
+				</div>
+				<div class="mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3">
+					<div class="">
+						<Card.Root class="border-0 shadow-nav text-center">
+							<Card.Header>
+								<Image alt="feature"  class="ml-auto mr-auto  max-md:w-[250px] w-[400px]" src={feature} />
+							</Card.Header>
+							<Card.Content>
+								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
+							</Card.Content>
+							<Card.Footer>
+								<p>
+									Empowering your business with tailored tech
+									solutions, transparent communication, and a
+									dedicated, startup- minded team focused on
+									growth.
+								</p>
+							</Card.Footer>
+						</Card.Root>
+					</div>
+					<div class="">
+						<Card.Root class="border-0 shadow-nav text-center">
+							<Card.Header>
+								<Image alt="feature" class="ml-auto mr-auto max-md:w-[250px] w-[400px]"  src={feature} />
+							</Card.Header>
+							<Card.Content>
+								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
+							</Card.Content>
+							<Card.Footer>
+								<p>
+									Empowering your business with tailored tech
+									solutions, transparent communication, and a
+									dedicated, startup- minded team focused on
+									growth.
+								</p>
+							</Card.Footer>
+						</Card.Root>
+					</div>
+					<div class="">
+						<Card.Root class="border-0 shadow-nav text-center">
+							<Card.Header>
+								<Image alt="feature" class="ml-auto mr-auto  max-md:w-[250px] w-[400px]" src={feature} />
+							</Card.Header>
+							<Card.Content>
+								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
+							</Card.Content>
+							<Card.Footer>
+								<p>
+									Empowering your business with tailored tech
+									solutions, transparent communication, and a
+									dedicated, startup- minded team focused on
+									growth.
+								</p>
+							</Card.Footer>
+						</Card.Root>
+					</div>
+
+
+				</div>
+
+
+			</div>
+		</section>
