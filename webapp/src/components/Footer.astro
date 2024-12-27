@@ -1,4 +1,5 @@
 ---
+import {  BASE_URL } from "../consts";
 import { Image } from "astro:assets";
 import Logo from "$lib/images/logo-white.png";
 import { Linkedin } from "lucide-svelte";
@@ -38,17 +39,17 @@ import { Facebook } from "lucide-svelte";
           <ul aria-labelledby="footerHeading0" class="flex flex-col gap-2">
             <li>
               <a
-                href="https://docs.astro.build/en/getting-started/"
-                class="whitespace-nowrap link"
+                href={BASE_URL}
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Contact Us
               </a>
             </li><li>
-              <a href="/integrations/" class="whitespace-nowrap link">
+              <a href=`${BASE_URL}` class="whitespace-nowrap link hover:text-primary">
                 Privacy Policy
               </a>
             </li><li>
-              <a href="https://astro.new/" class="whitespace-nowrap link">
+              <a href=`${BASE_URL}` class="whitespace-nowrap link hover:text-primary">
                 Terms Of Use
               </a>
             </li>
@@ -59,22 +60,22 @@ import { Facebook } from "lucide-svelte";
           <ul aria-labelledby="footerHeading1" class="flex flex-col gap-2">
             <li>
               <a
-                href="https://studio.astro.build/"
-                class="whitespace-nowrap link"
+                href={BASE_URL}
+                class="whitespace-nowrap link hover:text-primary"
               >
                 About us
               </a>
             </li><li>
               <a
                 href="https://community.astro.build"
-                class="whitespace-nowrap link"
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Careers
               </a>
             </li><li>
               <a
-                href="https://github.com/withastro/astro/blob/main/CONTRIBUTING.md"
-                class="whitespace-nowrap link"
+                href={BASE_URL}
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Blogs
               </a>
@@ -88,29 +89,29 @@ import { Facebook } from "lucide-svelte";
           <ul aria-labelledby="footerHeading1" class="flex flex-col gap-2">
             <li>
               <a
-                href="https://studio.astro.build/"
-                class="whitespace-nowrap link"
+                href=`${BASE_URL}`
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Platform Engineering
               </a>
             </li><li>
               <a
-                href="https://community.astro.build"
-                class="whitespace-nowrap link"
+                href=`${BASE_URL}`
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Cloud Infrastructure Services
               </a>
             </li><li>
               <a
-                href="https://github.com/withastro/astro/blob/main/CONTRIBUTING.md"
-                class="whitespace-nowrap link"
+                href={BASE_URL}
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Product Modernization
               </a>
             </li><li>
               <a
-                href="https://github.com/withastro/astro/blob/main/CONTRIBUTING.md"
-                class="whitespace-nowrap link"
+                href={BASE_URL}
+                class="whitespace-nowrap link hover:text-primary"
               >
                 Technology Consulting
               </a>
@@ -128,7 +129,7 @@ import { Facebook } from "lucide-svelte";
         <a
           target="_blank"
           class="link"
-          href="https://github.com/withastro/astro/blob/main/LICENSE"
+        href=`${BASE_URL}`
         >
           Building scalable web application since 2011.&nbsp;
         </a>

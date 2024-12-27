@@ -1,145 +1,120 @@
 ---
-
 import { Image } from "astro:assets";
 import { Button } from "$lib/components/ui/button";
 import { Badge } from "$lib/components/ui/badge";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
-import data1 from "$lib/images/data1.png";
-import data2 from "$lib/images/data2.png";
-import data3 from "$lib/images/data3.png";
 import * as Card from "$lib/components/ui/card";
+import { getCollection, getEntry } from "astro:content";
+
+const services = await getCollection("services", ({ data }) => {
+	return data.slug !== "platform-engineering";
+});
+
+const firstEntry = await getEntry("services", "platform-engineering");
 let gradientX = 45.5;
 let gradientY = -200;
-
 ---
+
 <section class="bg-white dark:bg-dark-300 relative pb-40">
-			<div class="container">
-				<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 px-5">
-					<div class="lg:col-span-2 max-md:text-center">
-                        <Badge
-                        class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
-                        variant="outline">Services</Badge
-                    >
-						<SectionTitle text="Innovate With Confidence" />
-						<p class="mb-10 text-xl max-md:text-center" data-aos="fade-up">
-							Embrace the future with confidence. With Imporwised, you're not just staying competitive you're setting the pace.
-						</p>
-						<div class="mt-6 flex max-md:justify-center items-center gap-4">
-							<Button href="#">Contact Us</Button>
-						</div>
-					</div>
-					<div class="lg:col-span-3">
-						<Card.Root class="card-custom shadow-nav text-center" onmousemove="updateGradient(event)"
-						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}>
-						<div class="card-custom-inner" style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}  onmousemove="updateGradient(event)">
-							<Card.Header class="">
-								<Image alt="feature" class="ml-auto mr-auto  max-md:w-[250px] w-[400px]"  loading="lazy" decoding="async" src={data1} />
-
-
-							</Card.Header>
-							<Card.Content >
-								<Card.Title class="text-[26px]">Platform Engineering</Card.Title>
-							</Card.Content>
-							<Card.Footer>
-								<p>
-									Empowering your business with tailored tech
-									solutions, transparent communication, and a
-									dedicated, startup- minded team focused on
-									growth.
-								</p>
-							</Card.Footer>
-						</div>
-						</Card.Root>
-					</div>
+	<div class="container">
+		<div class="grid gap-10 md:grid-cols-2 lg:grid-cols-5 px-5">
+			<div class="lg:col-span-2 max-md:text-center">
+				<Badge
+					class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
+					variant="outline">Services</Badge
+				>
+				<SectionTitle
+					text="Innovate With"
+					primaryColorText="Confidence"
+				/>
+				<p class="mb-10 text-xl max-md:text-center" data-aos="fade-up">
+					Embrace the future with confidence. With Imporwised, you're
+					not just staying competitive you're setting the pace.
+				</p>
+				<div class="mt-6 flex max-md:justify-center items-center gap-4">
+					<Button href="#">Contact Us</Button>
 				</div>
-				<div class="mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3">
-					<div class="">
-						<Card.Root class="card-custom shadow-nav text-center" onmousemove="updateGradient(event)"
-						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}>
-						<div class="card-custom-inner" style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}  onmousemove="updateGradient(event)">
-							<Card.Header>
-								<Image alt="feature"  class="ml-auto mr-auto  max-md:w-[250px] w-[400px]" src={data3} />
-							</Card.Header>
-							<Card.Content>
-								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
-							</Card.Content>
-							<Card.Footer>
-								<p>
-									Empowering your business with tailored tech
-									solutions, transparent communication, and a
-									dedicated, startup- minded team focused on
-									growth.
-								</p>
-							</Card.Footer>
+			</div>
+			<div class="lg:col-span-3">
+				<Card.Root
+					class="card-custom shadow-nav text-center"
+					onmousemove="updateGradient(event)"
+					style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+				>
+					<div
+						class="card-custom-inner"
+						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+						onmousemove="updateGradient(event)"
+					>
+						<Card.Header class="">
+							<Image
+								alt="feature"
+								class="ml-auto mr-auto max-md:w-[250px] w-[400px]"
+								src={firstEntry?.data?.image}
+							/>
+						</Card.Header>
+						<Card.Content>
+							<Card.Title class="text-[26px]"
+								>{firstEntry?.data?.title}</Card.Title
+							>
+						</Card.Content>
+						<Card.Footer>
+							<p>
+								{firstEntry?.data?.description}
+							</p>
+						</Card.Footer>
+					</div>
+				</Card.Root>
+			</div>
+		</div>
+		<div class="mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3">
+			{
+				services.map((service, index) => (
+					<>
+						<Card.Root
+							class="card-custom shadow-nav text-center"
+							onmousemove="updateGradient(event)"
+							style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+						>
+							<div
+								class="card-custom-inner"
+								style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+								onmousemove="updateGradient(event)"
+							>
+								<Card.Header>
+									<Image
+										alt="feature"
+										class="ml-auto mr-auto max-md:w-[250px] w-[400px]"
+										src={service.data.image}
+									/>
+								</Card.Header>
+								<Card.Content>
+									<Card.Title class="text-[26px]">
+										{service.data.title}
+									</Card.Title>
+								</Card.Content>
+								<Card.Footer>
+									<p>{service.data.description}</p>
+								</Card.Footer>
 							</div>
 						</Card.Root>
-					</div>
-					<div class="">
-						<Card.Root class="card-custom shadow-nav text-center" onmousemove="updateGradient(event)"
-						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}>
-						<div class="card-custom-inner" style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}  onmousemove="updateGradient(event)">
-							<Card.Header>
-								<Image alt="feature" class="ml-auto mr-auto max-md:w-[250px] w-[400px]"  src={data2} />
-							</Card.Header>
-							<Card.Content>
-								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
-							</Card.Content>
-							<Card.Footer>
-								<p>
-									Empowering your business with tailored tech
-									solutions, transparent communication, and a
-									dedicated, startup- minded team focused on
-									growth.
-								</p>
-							</Card.Footer>
-						</div>
-						</Card.Root>
-					</div>
-					<div class="">
-						<Card.Root class="card-custom shadow-nav text-center" onmousemove="updateGradient(event)"
-						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}>
-						<div class="card-custom-inner" style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}  onmousemove="updateGradient(event)">
-							<Card.Header>
-								<Image alt="feature" class="ml-auto mr-auto  max-md:w-[250px] w-[400px]" src={data3} />
-							</Card.Header>
-							<Card.Content>
-								<Card.Title class="text-[26px]">Cloud Infrastructure Services</Card.Title>
-							</Card.Content>
-							<Card.Footer>
-								<p>
-									Empowering your business with tailored tech
-									solutions, transparent communication, and a
-									dedicated, startup- minded team focused on
-									growth.
-								</p>
-							</Card.Footer>
-						</div>
-						</Card.Root>
-					</div>
-
-
-				</div>
-
-
-			</div>
-
-		</section>
-
+					</>
+				))
+			}
 		</div>
-</div>
+	</div>
+</section>
 
-		<script is:inline>
-			// Function to update gradient position
-		  function updateGradient(event) {
-			const rect = (event.currentTarget).getBoundingClientRect();
-			gradientX = event.clientX - rect.left;
-			gradientY = event.clientY - rect.top;
+<script is:inline>
+	// Function to update gradient position
+	function updateGradient(event) {
+		const rect = event.currentTarget.getBoundingClientRect();
+		gradientX = event.clientX - rect.left;
+		gradientY = event.clientY - rect.top;
 
-			// Update the style dynamically
-			const target = event.currentTarget;
-			target.style.setProperty('--gradient-x', `${gradientX}px`);
-			target.style.setProperty('--gradient-y', `${gradientY}px`);
-		  }
-		  </script>
-
-
+		// Update the style dynamically
+		const target = event.currentTarget;
+		target.style.setProperty("--gradient-x", `${gradientX}px`);
+		target.style.setProperty("--gradient-y", `${gradientY}px`);
+	}
+</script>

@@ -1,7 +1,7 @@
 <script lang="ts">
   import ChevronRight from "lucide-svelte/icons/chevron-right";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-</script>
+ </script>
 
 <DropdownMenu.Root>
   <DropdownMenu.Trigger class="flex items-center space-x-1">
