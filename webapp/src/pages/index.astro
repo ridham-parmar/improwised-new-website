@@ -8,8 +8,7 @@ import IndustriesSection from "$lib/components/IndustriesSection.astro";
 import BenefitsSection from "$lib/components/BenefitsSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
 import TestimonialsSection from "$lib/components/TestimonialsSection.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
-import TechSection from "$lib/components/TechSection.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -19,9 +18,7 @@ import TechSection from "$lib/components/TechSection.astro";
 		<CounterSection />
 		<AboutUsSection />
 		<BenefitsSection />
-
 		<IndustriesSection />
-
 		<TestimonialsSection />
 		<CTASection />
 	</main>

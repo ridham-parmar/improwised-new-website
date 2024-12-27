@@ -28,6 +28,7 @@
     --darkgreen-foreground: 240 10% 3.9%;
     --primary2: 192 100% 43%;
     --primary2-foreground: 240 10% 3.9%;
+    --primary-filter: invert(55%) sepia(58%) saturate(393%) hue-rotate(55deg) brightness(100%) contrast(95%);
   }
   .dark {
     --background: 20 14.3% 4.1%;
@@ -235,6 +236,7 @@ html {
 }
 
 .card-custom-inner {
+  height: 100%;
   background: radial-gradient(135px circle at var(--gradient-x, 15px) var(--gradient-y, 30px), rgba(108, 179, 63, .2) 0, transparent 100%);
 }
 
@@ -254,10 +256,10 @@ html {
 }
 
 .shape2 {
-  bottom: -6.5rem;
-  right: 6.1rem;
-  width: 80%;
-  height: 100%;
+  bottom: -3.0rem;
+  right: 11.0rem;
+  width: 70%;
+  height: 93%;
   transform: translate3d(0px, 0px, 0px);
 }
 
