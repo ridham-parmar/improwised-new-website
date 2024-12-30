@@ -1,6 +1,6 @@
 ---
     title: 'Fintech'
     icon: '$lib/images/industries/cpu.svg'
-    description: 'Every business is different, and technology is just means.'
+    description: 'Scalable, agile, and secure platform engineering for seamless transactions and tomorrow’s innovations.'
 ---
 
