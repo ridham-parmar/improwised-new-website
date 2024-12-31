@@ -1,0 +1,162 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import { Badge } from "$lib/components/ui/badge";
+import { Image } from "astro:assets";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import about1 from "$lib/images/about1.png";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<main class="main-content">
+		<section class="py-20 section">
+			<div class="container">
+				<div class="relative mb-12 text-center">
+					<div
+						class="absolute -top-16 left-0 w-48 h-48 rounded-lg overflow-hidden"
+					>
+						<Image
+							src={about1}
+							alt="Speaker 2"
+							class="w-full h-auto"
+						/>
+					</div>
+
+					<div
+						class="absolute -top-16 right-0 w-64 h-64 rounded-lg overflow-hidden"
+					>
+						<Image
+							src={about1}
+							alt="Speaker 2"
+							class="w-full h-auto"
+						/>
+					</div>
+					<Badge
+						class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
+						variant="outline">About Our Company</Badge
+					>
+					<SectionTitle
+						text="We are shaping the"
+						primaryColorText="future of software."
+					/>
+
+					<p
+						class="text-lg mb-10 max-w-2xl mx-auto max-md:text-center"
+						data-aos="fade-up"
+					>
+						Software powers the world. We help teams launch,
+						control, and measure their digital products more easily
+						than ever.
+					</p>
+				</div>
+				<div class="grid grid-cols-2 gap-8 px-12">
+					<div class="rounded-lg overflow-hidden w-60">
+						<Image
+							src={about1}
+							alt="Speaker 2"
+							class="w-full h-auto"
+						/>
+					</div>
+					<div class="rounded-lg overflow-hidden w-80">
+						<Image
+							src={about1}
+							alt="Speaker 2"
+							class="w-full h-auto"
+						/>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<div class="bg-image-custom overflow-x-clip px-5 py-10">
+			<div class="mx-auto max-w-screen-xl">
+				<div
+					class="sectionabout relative flex flex-col items-start px-8 py-12 lg:flex-row"
+				>
+					<!-- Left Side Content -->
+					<div class="flex w-full justify-end pr-8 lg:w-1/2">
+						<div
+							class="flex flex-col items-end space-y-12 text-right"
+						>
+							<div>
+								<div
+									class="mb-2 text-sm uppercase tracking-wide"
+								>
+									Est. In
+								</div>
+
+								<div
+									class="mb-4 text-2xl font-medium [text-wrap:balance]"
+								>
+									2011
+								</div>
+							</div>
+							<div>
+								<div
+									class="mb-2 text-sm uppercase tracking-wide"
+								>
+									Powered By
+								</div>
+								<div
+									class="mb-4 text-2xl font-medium [text-wrap:balance]"
+								>
+									50+ employees
+								</div>
+							</div>
+							<div>
+								<div
+									class="mb-2 text-sm uppercase tracking-wide"
+								>
+									Clients
+								</div>
+								<div
+									class="mb-4 text-2xl font-medium [text-wrap:balance]"
+								>
+									20+ Worldwide
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Center Vertical Dotted Line with Moving Dot -->
+					<div class="relative mx-8 flex flex-col items-center">
+						<div
+							id="scroll-dot"
+							class="bg-theme absolute h-4 w-4 -translate-x-1/2 rounded-full shadow-md"
+						>
+						</div>
+					</div>
+
+					<!-- Right Side Content -->
+					<div class="w-full pl-8 lg:w-1/2">
+						<span
+							class="border-theme bg-theme-100 text-theme rounded-full border px-3 py-1 text-xs font-medium"
+							>ABOUT US</span
+						>
+						<h1
+							class="mb-4 mt-4 text-4xl font-bold lg:text-5xl lg:tracking-tight"
+						>
+							Who We <span class="text-theme">Are?</span>
+						</h1>
+						<p
+							class="mt-4 max-w-lg text-center text-lg text-slate-600 [text-wrap:balance] lg:text-start"
+						>
+							Improwised Technologies is a leading IT company
+							founded with a desire to become a top software
+							development company in scalable, data-intensive, and
+							cloud-native applications in 2011.
+						</p>
+						<p
+							class="mt-4 max-w-lg text-center text-lg text-slate-600 [text-wrap:balance] lg:text-start"
+						>
+							Since then, we have worked tirelessly to achieve our
+							objective of giving our customers and their products
+							an edge with our expertise in cutting-edge
+							technologies.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
