@@ -1,5 +1,6 @@
 import { glob } from 'astro/loaders';
 import { defineCollection, z } from 'astro:content';
+import { array } from 'astro:schema';
 
 const clients = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -52,7 +53,32 @@ const services = defineCollection({
 		description: z.string()
 	}),
 });
+const blogs = defineCollection({
+
+	loader: glob({ base: './src/content/blogs', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		author: z.string(),
+		publishDate: z.coerce.date(),
+	}),
+});
+
+const casestudies = defineCollection({
+
+	loader: glob({ base: './src/content/casestudies', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		image: image(),
+		description: z.string()
+	}),
+});
 
 
-export const collections = { clients, testimonials, industries, benefits, services };
+export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies };
 
