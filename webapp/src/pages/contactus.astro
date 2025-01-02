@@ -2,18 +2,11 @@
 import Layout from "$lib/layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
 import { Badge } from "$lib/components/ui/badge";
-import { Image } from "astro:assets";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
-import Form from "$lib/components/common/Form.svelte";
-import { getCollection } from "astro:content";
-const casestudies = await getCollection("casestudies");
 import * as Card from "$lib/components/ui/card";
-import { Button } from "$lib/components/ui/button";
-import { MapPinHouse, MailCheck } from "lucide-svelte";
-import cardPattern1 from "$lib/images/card-pattern-1.png";
-import cardPattern2 from "$lib/images/card-pattern-2.png";
-let gradientX = 45.5;
-let gradientY = -200;
+import { MapPinHouse, MailCheck,CalendarClock } from "lucide-svelte";
+
+
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -61,15 +54,10 @@ let gradientY = -200;
                         class="grid grid-cols-3 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
                     >
                     <Card.Root
-                    class="card-custom shadow-nav text-center"
-                    onmousemove="updateGradient(event)"
-                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                    class="shadow-nav text-center"
+
                 >
-                    <div
-                        class="card-custom-inner"
-                        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-                        onmousemove="updateGradient(event)"
-                    >
+
                         <Card.Header
                             class="text-center justify-center items-center"
                         >
@@ -93,25 +81,20 @@ let gradientY = -200;
                                 Gujarat, India.
                             </p>
                         </Card.Content>
-                    </div>
+
                 </Card.Root>
                         <Card.Root
-                            class="card-custom shadow-nav text-center"
-                            onmousemove="updateGradient(event)"
-                            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                            class="shadow-nav text-center"
+
                         >
-                            <div
-                                class="card-custom-inner"
-                                style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-                                onmousemove="updateGradient(event)"
-                            >
+
                                 <Card.Header
                                     class="text-center justify-center items-center"
                                 >
                                     <div
                                         class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
                                     >
-                                        <MapPinHouse
+                                        <CalendarClock
                                             width="24"
                                             height="24"
                                             class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
@@ -131,25 +114,20 @@ let gradientY = -200;
 
                                     </p>
                                 </Card.Content>
-                            </div>
+
                         </Card.Root>
                         <Card.Root
-                        class="card-custom shadow-nav text-center"
-                        onmousemove="updateGradient(event)"
-                        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                        class="shadow-nav text-center"
+
                     >
-                        <div
-                            class="card-custom-inner"
-                            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-                            onmousemove="updateGradient(event)"
-                        >
+
                             <Card.Header
                                 class="text-center justify-center items-center"
                             >
                                 <div
                                     class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
                                 >
-                                    <MapPinHouse
+                                    <MailCheck
                                         width="24"
                                         height="24"
                                         class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
@@ -168,7 +146,7 @@ let gradientY = -200;
 
                                 </p>
                             </Card.Content>
-                        </div>
+
                     </Card.Root>
 
                     </div>
@@ -248,16 +226,4 @@ let gradientY = -200;
     </main>
 </Layout>
 
-<script is:inline>
-    // Function to update gradient position
-    function updateGradient(event) {
-        const rect = event.currentTarget.getBoundingClientRect();
-        gradientX = event.clientX - rect.left;
-        gradientY = event.clientY - rect.top;
 
-        // Update the style dynamically
-        const target = event.currentTarget;
-        target.style.setProperty("--gradient-x", `${gradientX}px`);
-        target.style.setProperty("--gradient-y", `${gradientY}px`);
-    }
-</script>
