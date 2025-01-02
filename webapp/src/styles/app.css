@@ -78,7 +78,7 @@ html {
 }
 
 .bg-gradient-radial-dark {
-  background-image: linear-gradient(to bottom, rgb(191 234 244),rgb(203 224 192));
+  background-image: linear-gradient(to bottom, rgb(230 241 224), rgb(179 214 161));
 }
 
 .btn-main {
@@ -314,9 +314,21 @@ html {
         transform: translate(calc(-100% - 2.5rem))
       }
     }
+    @keyframes marquee-reverse {
+      0% {
+        transform: translate(0)
+      }
+
+      to {
+        transform: translate(calc(-100% - 4.5rem))
+      }
+    }
 
     .md\:motion-safe\:animate-marquee {
       animation: marquee 50s linear infinite
+    }
+    .md\:motion-safe\:animate-marquee-reverse {
+      animation: marquee-reverse 60s linear infinite
     }
   }
 
@@ -326,6 +338,17 @@ html {
     }
   }
 }
+
+
+
+/* Pause animation on hover */
+.eventsection1:hover  .eventCard1 {
+  animation-play-state: paused;
+}
+.eventsection2:hover .eventCard2 {
+  animation-play-state: paused;
+}
+
 /*Hero Section*/
 .circle-dot {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
@@ -353,3 +376,34 @@ html {
   background-size: contain;
 } */
 
+
+/*About section */
+.circle-dot {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+#scroll-dot {
+  transition: top 0.3s ease;
+  background-color: #000;
+  box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.6);
+  transition: transform 0.1s ease-out;
+  /* transition: top 0.1s ease-in-out; */
+}
+
+.sectionabout:before {
+  background-image: url('../images/vertical-dotted-line.svg');
+  background-repeat: no-repeat;
+  content: "";
+  height: 118%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  top: 0;
+  width: 0.125rem;
+
+}
+
+/* .css-y24xob {
+
+  filter: grayscale(100%) contrast(1);
+  mix-blend-mode: multiply;
+} */

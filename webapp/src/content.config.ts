@@ -78,7 +78,18 @@ const casestudies = defineCollection({
 		description: z.string()
 	}),
 });
+const teams = defineCollection({
+
+	loader: glob({ base: './src/content/teams', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		name: z.string(),
+		image: image(),
+		designation: z.string().optional(),
+		linkedin: z.string().optional()
+	}),
+});
 
 
-export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies };
+export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams };
 
