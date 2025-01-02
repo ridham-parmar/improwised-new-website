@@ -303,7 +303,77 @@ html {
   z-index: 0;
 }
 
+/* technology section */
+.aspect-square {
+  width: 100%;
+  position: relative;
+}
+
+.inner-shadow {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes spin-cw {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-ccw {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes spin-border-fast {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-cw {
+  animation: spin-cw 70s linear infinite;
+}
+
+.animate-ccw {
+  animation: spin-ccw 70s linear infinite;
+}
+
+.animate-border-cw {
+  animation: spin-cw 3s linear infinite;
+}
+
+.animate-border-ccw {
+  animation: spin-ccw 3s linear infinite;
+}
+
+@media (max-width: 576px) {
+  #orbit-container {
+    height: 500px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .aspect-square {
+    max-width: 875px;
+  }
+}
+
 @media (min-width: 768px) {
+
+  .aspect-square {
+    max-width: 930px;
+  }
+
   @media (prefers-reduced-motion: no-preference) {
     @keyframes marquee {
       0% {
@@ -338,8 +408,6 @@ html {
     }
   }
 }
-
-
 
 /* Pause animation on hover */
 .eventsection1:hover  .eventCard1 {
