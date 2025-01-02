@@ -1,5 +1,6 @@
 ---
 import { Button } from "$lib/components/ui/button";
+import { BASE_URL } from "$lib/consts";
 ---
 
 <div
@@ -60,7 +61,7 @@ import { Button } from "$lib/components/ui/button";
 			<div class="lg:col-span-2">
 				<!-- <div class="div-ripple"></div> -->
 				<div class="mt-10 text-right ctn-btn">
-					<Button href="#" class="btn-down"> Book a call </Button>
+					<Button href=`${BASE_URL}/contactus` class="btn-down"> Book a call </Button>
 				</div>
 			</div>
 		</div>
