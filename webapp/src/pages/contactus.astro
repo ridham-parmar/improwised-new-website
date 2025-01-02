@@ -1,0 +1,263 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
+import { Badge } from "$lib/components/ui/badge";
+import { Image } from "astro:assets";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import Form from "$lib/components/common/Form.svelte";
+import { getCollection } from "astro:content";
+const casestudies = await getCollection("casestudies");
+import * as Card from "$lib/components/ui/card";
+import { Button } from "$lib/components/ui/button";
+import { MapPinHouse, MailCheck } from "lucide-svelte";
+import cardPattern1 from "$lib/images/card-pattern-1.png";
+import cardPattern2 from "$lib/images/card-pattern-2.png";
+let gradientX = 45.5;
+let gradientY = -200;
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <main class="main-content">
+        <section class="py-32 section">
+            <div class="container">
+                <div class="relative mb-16 text-center">
+                    <Badge
+                        class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
+                        variant="outline">Contact Us</Badge
+                    >
+                    <SectionTitle
+                        class=""
+                        text="We're here"
+                        primaryColorText="to help"
+                    />
+
+                    <p
+                        class="text-lg mb-10 max-w-2xl mx-auto max-md:text-center"
+                        data-aos="fade-up"
+                    >
+                        If you can't find what you're looking for or would
+                        rather talk with a real person, simply fill out the form
+                        and we'll be in touch shortly.
+                    </p>
+                </div>
+                <div class="relative z-10">
+                    <div
+                        class="absolute left-1/2 top-60 -translate-x-1/2 -translate-y-1/2 flex max-md:flex-col -z-10 max-md:hidden"
+                    >
+                        <div
+                            class="max-1xl:w-[335px] max-1xl:h-[335px] 1xl:w-[442px] 1xl:h-[442px] rounded-full bg-primary-200/20 blur-[145px]"
+                        >
+                        </div>
+                        <div
+                            class="max-1xl:w-[335px] max-1xl:h-[335px] 1xl:w-[442px] 1xl:h-[442px] rounded-full bg-primary-200/25 -ml-[170px] max-md:ml-0 blur-[145px]"
+                        >
+                        </div>
+                        <div
+                            class="max-1xl:w-[335px] max-1xl:h-[335px] 1xl:w-[442px] 1xl:h-[442px] rounded-full bg-primary-200/20 -ml-[170px] max-md:ml-0 blur-[145px]"
+                        >
+                        </div>
+                    </div>
+                    <div
+                        class="grid grid-cols-3 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
+                    >
+                    <Card.Root
+                    class="card-custom shadow-nav text-center"
+                    onmousemove="updateGradient(event)"
+                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                >
+                    <div
+                        class="card-custom-inner"
+                        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                        onmousemove="updateGradient(event)"
+                    >
+                        <Card.Header
+                            class="text-center justify-center items-center"
+                        >
+                            <div
+                                class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
+                            >
+                                <MapPinHouse
+                                    width="24"
+                                    height="24"
+                                    class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
+                                />
+                            </div>
+                        </Card.Header>
+                        <Card.Content class="text-center">
+                            <Card.Title class="text-[20px]"
+                                >Address</Card.Title
+                            >
+                            <p>
+                                304 - Pride Square, Pushkardham Main
+                                Road, Nr. J. K. Chowk, Rajkot - 360005,
+                                Gujarat, India.
+                            </p>
+                        </Card.Content>
+                    </div>
+                </Card.Root>
+                        <Card.Root
+                            class="card-custom shadow-nav text-center"
+                            onmousemove="updateGradient(event)"
+                            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                        >
+                            <div
+                                class="card-custom-inner"
+                                style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                                onmousemove="updateGradient(event)"
+                            >
+                                <Card.Header
+                                    class="text-center justify-center items-center"
+                                >
+                                    <div
+                                        class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
+                                    >
+                                        <MapPinHouse
+                                            width="24"
+                                            height="24"
+                                            class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
+                                        />
+                                    </div>
+                                </Card.Header>
+                                <Card.Content class="text-center">
+                                    <Card.Title class="text-[20px]"
+                                        >Business Hours</Card.Title
+                                    >
+                                    <p>
+                                        We try to respond to all enquiries within 1 business day.
+
+
+                                    </p>
+                                    <p>We are open from 10am — 7pm on weekdays.
+
+                                    </p>
+                                </Card.Content>
+                            </div>
+                        </Card.Root>
+                        <Card.Root
+                        class="card-custom shadow-nav text-center"
+                        onmousemove="updateGradient(event)"
+                        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                    >
+                        <div
+                            class="card-custom-inner"
+                            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                            onmousemove="updateGradient(event)"
+                        >
+                            <Card.Header
+                                class="text-center justify-center items-center"
+                            >
+                                <div
+                                    class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
+                                >
+                                    <MapPinHouse
+                                        width="24"
+                                        height="24"
+                                        class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
+                                    />
+                                </div>
+                            </Card.Header>
+                            <Card.Content class="text-center">
+                                <Card.Title class="text-[20px]"
+                                    >Contact Via</Card.Title
+                                >
+                                <p>
+                                    <a href="mailto:contact@improwised.com">contact@improwised.com</a>
+                                </p>
+                                <p>
+                                    <a href="tel:+91 000-000-0000">+91 000-000-0000</a>
+
+                                </p>
+                            </Card.Content>
+                        </div>
+                    </Card.Root>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section pb-40">
+            <div class="relative p-6 md:p-16">
+                <div class="relative z-10 lg:grid lg:grid-cols-12">
+                    <!-- Section's heading and tab navigation -->
+                    <div
+                        class="mb-10 lg:order-2 lg:col-span-6 lg:col-start-7 lg:mb-0 pl-20"
+                    >
+                        <div class="max-md:text-center">
+                            <Badge
+                                class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
+                                variant="outline">Reach Us</Badge
+                            >
+                            <SectionTitle text="Let's talk" primaryColorText="about your project" />
+                            <p
+                                class="mb-10 text-xl max-md:text-center"
+                                data-aos="fade-up"
+                            >
+                            Visit us or make contact via the form below to talk more about your project, ideas or any others technical queries.
+                            </p>
+                        </div>
+                        <div class="lg:col-span-2">
+                            <div class="grid gap-8 sm:grid-cols-2 md:gap-12">
+
+                              <!-- <Form client:load></Form> -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contents for each tab - the 'first' attribute should be used in the first tab for that tab to be initially visible, 'second' changes the styles -->
+                    <div class="lg:col-span-6">
+                        <div class="relative">
+                            <div>
+                                <div class="relative">
+                                    <div
+                                        class="shape bg-dot primary rellax !w-[7rem] !h-[9rem] absolute z-[1] opacity-50 !bg-[radial-gradient(#6cb33f_2px,transparent_2.5px)]"
+                                    >
+                                    </div>
+                                    <div
+                                        class="shape shape2 rounded max-md:hidden !bg-darkgreen rellax xl:block lg:block md:block absolute z-[1]"
+                                    >
+                                    </div>
+
+                                    <figure class="rounded-[0.4rem] relative z-[2]">
+                                        <div
+                                            class="w-[100%] xl:w-[75%] min-h-full false aos-init aos-animate"
+                                            data-aos="fade-right-sm"
+                                            data-aos-delay="200"
+                                        >
+                                            <div
+                                                class="rounded-2xl relative overflow-hidden undefined"
+                                            >
+
+                                                <div class="h-full bg-theme-light">
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6509218365454!2d70.78636435101201!3d22.29120934878471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca22a0751231%3A0x23edc234940c18b2!2sImprowised+Technologies+Private+Limited.!5e0!3m2!1sen!2sin!4v1495780225620" width="100%" height="530" frameborder="0" allowfullscreen style="border:0"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-0 grid h-full w-full grid-cols-12">
+                    <div
+                        class="col-span-full h-5/6 w-full rounded-xl bg-white dark:bg-white/[.075] sm:h-3/4 lg:col-span-8 lg:col-start-5 lg:h-full shadow-nav"
+                    >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>
+
+<script is:inline>
+    // Function to update gradient position
+    function updateGradient(event) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        gradientX = event.clientX - rect.left;
+        gradientY = event.clientY - rect.top;
+
+        // Update the style dynamically
+        const target = event.currentTarget;
+        target.style.setProperty("--gradient-x", `${gradientX}px`);
+        target.style.setProperty("--gradient-y", `${gradientY}px`);
+    }
+</script>

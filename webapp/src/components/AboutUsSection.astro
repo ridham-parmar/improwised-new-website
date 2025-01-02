@@ -11,6 +11,7 @@ import AboutBg1 from "$lib/components/svg/AboutBg1.astro";
 import AboutBg2 from "$lib/components/svg/AboutBg2.astro";
 import AboutBg3 from "$lib/components/svg/AboutBg3.astro";
 import AboutBg4 from "$lib/components/svg/AboutBg4.astro";
+import { BASE_URL } from "$lib/consts";
 ---
 
 <section
@@ -170,7 +171,7 @@ import AboutBg4 from "$lib/components/svg/AboutBg4.astro";
                         >
                     </li>
                 </ul>
-                <Button href="#" class="btn">
+                <Button href=`${BASE_URL}/contactus` class="btn">
                     Start Your Journey
                 </Button>
             </div>

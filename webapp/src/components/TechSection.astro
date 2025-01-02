@@ -13,20 +13,62 @@ const calculateOrbitPositions = (
   const radius = (radiusPercentage / 100) * containerSize;
   return Array.from({ length: count }).map((_, i) => {
     const angle = (i * (2 * Math.PI)) / count;
-    const x = radius * Math.cos(angle); 
-    const y = radius * Math.sin(angle); 
+    const x = radius * Math.cos(angle);
+    const y = radius * Math.sin(angle);
     return { x, y };
   });
 };
 
 const orbits = [
-  { radius: 19, count: 10, images: level1 }, 
-  { radius: 32, count: 13, images: level2 }, 
-  { radius: 45, count: 17, images: level3 }, 
+  { radius: 19, count: 10, images: level1 },
+  { radius: 32, count: 13, images: level2 },
+  { radius: 45, count: 17, images: level3 },
 ];
 ---
 
-<div class="section pb-20">
+<div class="section py-20 bg-white overflow-hidden relative">
+  <svg
+        viewBox="0 0 1440 181"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="absolute inset-x-0 top-0 w-full block"
+        data-v-baf90ddd=""
+        ><mask id="path-1-inside-1_1086_7239" fill="white"
+            ><path d="M0 0H1440V181H0V0Z"></path></mask
+        ><path
+            d="M0 0H1440V181H0V0Z"
+            fill="url(#paint0_linear_1086_7239)"
+            fill-opacity="0.22"></path><path
+            d="M0 2H1440V-2H0V2Z"
+            fill="url(#paint1_linear_1086_7239)"
+            mask="url(#path-1-inside-1_1086_7239)"></path><defs
+            ><linearGradient
+                id="paint0_linear_1086_7239"
+                x1="720"
+                y1="0"
+                x2="720"
+                y2="181"
+                gradientUnits="userSpaceOnUse"
+                ><stop stop-color="#72b14a"></stop><stop
+                    offset="1"
+                    stop-color="#72b14a"
+                    stop-opacity="0"></stop></linearGradient
+            ><linearGradient
+                id="paint1_linear_1086_7239"
+                x1="0"
+                y1="90.5"
+                x2="1440"
+                y2="90.5"
+                gradientUnits="userSpaceOnUse"
+                ><stop stop-color="#72b14a" stop-opacity="0"></stop><stop
+                    offset="0.395"
+                    stop-color="#72b14a"></stop><stop
+                    offset="1"
+                    stop-color="#72b14a"
+                    stop-opacity="0"></stop></linearGradient
+            ></defs
+        ></svg
+    >
   <div
     class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center px-5"
   >
@@ -40,7 +82,7 @@ const orbits = [
   </div>
 
   <div
-    class="relative bg-white overflow-hidden mx-auto aspect-square flex justify-center items-center"
+    class="relative  overflow-hidden mx-auto aspect-square flex justify-center items-center"
     id="orbit-container"
     data-aos="zoom-in"
   >
@@ -76,10 +118,10 @@ const orbits = [
                 >
                   <div
                     class={`z-30 bg-white flex flex-col items-center justify-center flex justify-center
-              ${index === 0 ? 
-              "w-4 xs:w-[1.9rem] sm:w-[2.7rem] md:w-[3.7rem]" : 
-              index == 1 ? "w-6 xs:w-10 sm:w-[3.2rem] md:w-16" : 
-              "w-7 xs:w-[3.2rem] sm:w-16 md:w-20"} 
+              ${index === 0 ?
+              "w-4 xs:w-[1.9rem] sm:w-[2.7rem] md:w-[3.7rem]" :
+              index == 1 ? "w-6 xs:w-10 sm:w-[3.2rem] md:w-16" :
+              "w-7 xs:w-[3.2rem] sm:w-16 md:w-20"}
               transition group-hover:scale-105 ${index % 2 === 0 ? "animate-ccw" : "animate-cw"}
              `}
                   >
@@ -105,8 +147,8 @@ const orbits = [
     }
     <div class="z-30">
         <Image
-            height={30}
-            width={30}
+            height={60}
+            width={60}
             src={`${BASE_URL}/favicon.ico`}
             alt="icon"
         />
@@ -158,8 +200,8 @@ const orbits = [
     const radius = (radiusPercentage / 100) * containerSize;
     return Array.from({ length: count }).map((_, i) => {
       const angle = (i * (2 * Math.PI)) / count;
-      const x = radius * Math.cos(angle); 
-      const y = radius * Math.sin(angle); 
+      const x = radius * Math.cos(angle);
+      const y = radius * Math.sin(angle);
       return { x, y };
     });
   };
