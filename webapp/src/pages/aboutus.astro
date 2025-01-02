@@ -7,10 +7,9 @@ import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import about1 from "$lib/images/about1.png";
 
 import eventImage from "$lib/images/events/event.png";
-import eventImage2 from "$lib/images/events/event2.png";
 
 import * as Card from "$lib/components/ui/card";
-import { Button } from "$lib/components/ui/button";
+
 import { getCollection } from "astro:content";
 const teams = await getCollection("teams");
 import { Linkedin } from "lucide-svelte";
