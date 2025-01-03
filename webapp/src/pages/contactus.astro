@@ -4,14 +4,102 @@ import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
 import { Badge } from "$lib/components/ui/badge";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import * as Card from "$lib/components/ui/card";
-import { MapPinHouse, MailCheck,CalendarClock } from "lucide-svelte";
-
-
+import { MapPinHouse, MailCheck, CalendarClock } from "lucide-svelte";
+let gradientX = 45.5;
+let gradientY = -200;
+import { Button } from "$lib/components/ui/button";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
     <main class="main-content">
-        <section class="py-32 section">
+        <section class="relative">
+            <!-- Background Image -->
+            <div
+                class="bg-cover bg-top h-80 flex items-center justify-center bg-contactus"
+            >
+                <SectionTitle class="text-white" text="Contact Us" />
+            </div>
+
+            <!-- Contact Form -->
+            <div class="relative">
+                <Card.Root
+                    class="card-custom shadow-nav w-full max-w-4xl mx-auto -mt-24"
+                    onmousemove="updateGradient(event)"
+                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                >
+                    <div
+                        class="card-custom-inner"
+                        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                        onmousemove="updateGradient(event)"
+                    >
+                        <Card.Header>
+                            <Card.Title class="text-[26px]">
+                                We're here to help
+                            </Card.Title>
+                            <p>
+                                If you can't find what you're looking for or
+                                would rather talk with a real person, simply
+                                fill out the form and we'll be in touch shortly.
+                            </p>
+                        </Card.Header>
+                        <Card.Content>
+                            <form class="space-y-4">
+                                <!-- Grid Layout -->
+                                <div class="grid grid-cols-2 gap-4">
+                                    <!-- Left Side (Inputs) -->
+                                    <div class="space-y-4">
+                                        <!-- First Name -->
+                                        <input
+                                            type="text"
+                                            placeholder="First Name"
+                                            class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm "
+                                        />
+                                        <!-- Email Address -->
+                                        <input
+                                            type="email"
+                                            placeholder="Your email address"
+                                            class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm "
+                                        />
+                                        <!-- Mobile No -->
+                                        <input
+                                            type="tel"
+                                            placeholder="Mobile no"
+                                            class="border-input bg-background ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm "
+                                        />
+                                    </div>
+
+                                    <!-- Right Side (Message Box) -->
+                                    <div>
+                                        <textarea
+                                            placeholder="Message"
+
+                                            class="border-input bg-background h-full ring-offset-background placeholder:text-muted-foreground focus-visible:ring-ring flex h-10 w-full rounded-md border px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm "
+                                        ></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Note -->
+                                <p class="italic text-gray-600">
+                                    We try to respond to all enquiries within 1
+                                    business day. We are open from 10am — 7pm on
+                                    weekdays.
+                                </p>
+
+                                <!-- Submit Button -->
+                                <div class="flex justify-end">
+                                    <Button type="submit">
+                                        Send message
+                                    </Button>
+                                </div>
+                            </form>
+                        </Card.Content>
+                        <Card.Footer />
+                    </div>
+                </Card.Root>
+            </div>
+        </section>
+
+        <section class="pb-20 pt-32 section">
             <div class="container">
                 <div class="relative mb-16 text-center">
                     <Badge
@@ -53,74 +141,57 @@ import { MapPinHouse, MailCheck,CalendarClock } from "lucide-svelte";
                     <div
                         class="grid grid-cols-3 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
                     >
-                    <Card.Root
-                    class="shadow-nav text-center"
-
-                >
-
-                        <Card.Header
-                            class="text-center justify-center items-center"
-                        >
-                            <div
-                                class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
+                        <Card.Root class="shadow-nav text-center">
+                            <Card.Header
+                                class="text-center justify-center items-center"
                             >
-                                <MapPinHouse
-                                    width="24"
-                                    height="24"
-                                    class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
-                                />
-                            </div>
-                        </Card.Header>
-                        <Card.Content class="text-center">
-                            <Card.Title class="text-[20px]"
-                                >Address</Card.Title
-                            >
-                            <p>
-                                304 - Pride Square, Pushkardham Main
-                                Road, Nr. J. K. Chowk, Rajkot - 360005,
-                                Gujarat, India.
-                            </p>
-                        </Card.Content>
-
-                </Card.Root>
-                        <Card.Root
-                            class="shadow-nav text-center"
-
-                        >
-
-                                <Card.Header
-                                    class="text-center justify-center items-center"
+                                <div
+                                    class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
                                 >
-                                    <div
-                                        class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
-                                    >
-                                        <CalendarClock
-                                            width="24"
-                                            height="24"
-                                            class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
-                                        />
-                                    </div>
-                                </Card.Header>
-                                <Card.Content class="text-center">
-                                    <Card.Title class="text-[20px]"
-                                        >Business Hours</Card.Title
-                                    >
-                                    <p>
-                                        We try to respond to all enquiries within 1 business day.
-
-
-                                    </p>
-                                    <p>We are open from 10am — 7pm on weekdays.
-
-                                    </p>
-                                </Card.Content>
-
+                                    <MapPinHouse
+                                        width="24"
+                                        height="24"
+                                        class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
+                                    />
+                                </div>
+                            </Card.Header>
+                            <Card.Content class="text-center">
+                                <Card.Title class="text-[20px]"
+                                    >Address</Card.Title
+                                >
+                                <p>
+                                    304 - Pride Square, Pushkardham Main Road,
+                                    Nr. J. K. Chowk, Rajkot - 360005, Gujarat,
+                                    India.
+                                </p>
+                            </Card.Content>
                         </Card.Root>
-                        <Card.Root
-                        class="shadow-nav text-center"
-
-                    >
-
+                        <Card.Root class="shadow-nav text-center">
+                            <Card.Header
+                                class="text-center justify-center items-center"
+                            >
+                                <div
+                                    class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-sm"
+                                >
+                                    <CalendarClock
+                                        width="24"
+                                        height="24"
+                                        class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
+                                    />
+                                </div>
+                            </Card.Header>
+                            <Card.Content class="text-center">
+                                <Card.Title class="text-[20px]"
+                                    >Business Hours</Card.Title
+                                >
+                                <p>
+                                    We try to respond to all enquiries within 1
+                                    business day.
+                                </p>
+                                <p>We are open from 10am — 7pm on weekdays.</p>
+                            </Card.Content>
+                        </Card.Root>
+                        <Card.Root class="shadow-nav text-center">
                             <Card.Header
                                 class="text-center justify-center items-center"
                             >
@@ -139,91 +210,125 @@ import { MapPinHouse, MailCheck,CalendarClock } from "lucide-svelte";
                                     >Contact Via</Card.Title
                                 >
                                 <p>
-                                    <a href="mailto:contact@improwised.com">contact@improwised.com</a>
+                                    <a href="mailto:contact@improwised.com"
+                                        >contact@improwised.com</a
+                                    >
                                 </p>
                                 <p>
-                                    <a href="tel:+91 000-000-0000">+91 000-000-0000</a>
-
+                                    <a href="tel:+91 000-000-0000"
+                                        >+91 000-000-0000</a
+                                    >
                                 </p>
                             </Card.Content>
-
-                    </Card.Root>
-
+                        </Card.Root>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="section pb-40">
+
+        <section class="section pb-20">
             <div class="relative p-6 md:p-16">
-                <div class="relative z-10 lg:grid lg:grid-cols-12">
-                    <!-- Section's heading and tab navigation -->
-                    <div
-                        class="mb-10 lg:order-2 lg:col-span-6 lg:col-start-7 lg:mb-0 pl-20"
-                    >
-                        <div class="max-md:text-center">
-                            <Badge
-                                class="border border-primary-300 ring-2 mb-4 ring-opacity-20 ring-primary-500 ring-primary"
-                                variant="outline">Reach Us</Badge
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6509218365454!2d70.78636435101201!3d22.29120934878471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca22a0751231%3A0x23edc234940c18b2!2sImprowised+Technologies+Private+Limited.!5e0!3m2!1sen!2sin!4v1495780225620"
+                    width="100%"
+                    height="530"
+                    frameborder="0"
+                    allowfullscreen
+                    style="border:0"
+                    class="shadow-nav"></iframe>
+            </div>
+        </section>
+
+        <div
+            class="bg-gradient-to-b from-gray-50 dark:from-gray-950/50 to-white dark:to-gray-900 relative px-5 py-10 md:px-20 md:py-20"
+        >
+            <svg
+                viewBox="0 0 1440 181"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="absolute inset-x-0 top-0 w-full block"
+                data-v-baf90ddd=""
+                ><mask id="path-1-inside-1_1086_7239" fill="white"
+                    ><path d="M0 0H1440V181H0V0Z"></path></mask
+                ><path
+                    d="M0 0H1440V181H0V0Z"
+                    fill="url(#paint0_linear_1086_7239)"
+                    fill-opacity="0.22"></path><path
+                    d="M0 2H1440V-2H0V2Z"
+                    fill="url(#paint1_linear_1086_7239)"
+                    mask="url(#path-1-inside-1_1086_7239)"></path><defs
+                    ><linearGradient
+                        id="paint0_linear_1086_7239"
+                        x1="720"
+                        y1="0"
+                        x2="720"
+                        y2="181"
+                        gradientUnits="userSpaceOnUse"
+                        ><stop stop-color="#72b14a"></stop><stop
+                            offset="1"
+                            stop-color="#72b14a"
+                            stop-opacity="0"></stop></linearGradient
+                    ><linearGradient
+                        id="paint1_linear_1086_7239"
+                        x1="0"
+                        y1="90.5"
+                        x2="1440"
+                        y2="90.5"
+                        gradientUnits="userSpaceOnUse"
+                        ><stop stop-color="#72b14a" stop-opacity="0"
+                        ></stop><stop offset="0.395" stop-color="#72b14a"
+                        ></stop><stop
+                            offset="1"
+                            stop-color="#72b14a"
+                            stop-opacity="0"></stop></linearGradient
+                    ></defs
+                ></svg
+            >
+            <div class="mx-auto max-w-screen-xl px-5 py-10">
+                <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
+                    <div class="lg:col-span-4">
+                        <h2
+                            class="text-4xl font-bold lg:text-5xl lg:tracking-tight"
+                        >
+                            Looking for a <span class="text-primary">
+                                Career?</span
                             >
-                            <SectionTitle text="Let's talk" primaryColorText="about your project" />
-                            <p
-                                class="mb-10 text-xl max-md:text-center"
-                                data-aos="fade-up"
-                            >
-                            Visit us or make contact via the form below to talk more about your project, ideas or any others technical queries.
-                            </p>
-                        </div>
-                        <div class="lg:col-span-2">
-                            <div class="grid gap-8 sm:grid-cols-2 md:gap-12">
-
-                              <!-- <Form client:load></Form> -->
-                            </div>
-                        </div>
+                        </h2>
+                        <p class="mt-4 text-lg text-black/70 md:text-xl">
+                            For job & internship inquiries, please visit our
+                            careers page
+                        </p>
                     </div>
-                    <!-- Contents for each tab - the 'first' attribute should be used in the first tab for that tab to be initially visible, 'second' changes the styles -->
-                    <div class="lg:col-span-6">
-                        <div class="relative">
-                            <div>
-                                <div class="relative">
-                                    <div
-                                        class="shape bg-dot primary rellax !w-[7rem] !h-[9rem] absolute z-[1] opacity-50 !bg-[radial-gradient(#6cb33f_2px,transparent_2.5px)]"
-                                    >
-                                    </div>
-                                    <div
-                                        class="shape shape2 rounded max-md:hidden !bg-darkgreen rellax xl:block lg:block md:block absolute z-[1]"
-                                    >
-                                    </div>
-
-                                    <figure class="rounded-[0.4rem] relative z-[2]">
-                                        <div
-                                            class="w-[100%] xl:w-[75%] min-h-full false aos-init aos-animate"
-                                            data-aos="fade-right-sm"
-                                            data-aos-delay="200"
-                                        >
-                                            <div
-                                                class="rounded-2xl relative overflow-hidden undefined"
-                                            >
-
-                                                <div class="h-full bg-theme-light">
-                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6509218365454!2d70.78636435101201!3d22.29120934878471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca22a0751231%3A0x23edc234940c18b2!2sImprowised+Technologies+Private+Limited.!5e0!3m2!1sen!2sin!4v1495780225620" width="100%" height="530" frameborder="0" allowfullscreen style="border:0"></iframe>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </figure>
-                                </div>
-                            </div>
+                    <div class="lg:col-span-2">
+                        <!-- <div class="div-ripple"></div> -->
+                        <div class="mt-10 text-right ctn-btn">
+                            <Button href=`${BASE_URL}/career` class="btn-down">
+                                Visit Careers
+                            </Button>
                         </div>
-                    </div>
-                </div>
-                <div class="absolute inset-0 grid h-full w-full grid-cols-12">
-                    <div
-                        class="col-span-full h-5/6 w-full rounded-xl bg-white dark:bg-white/[.075] sm:h-3/4 lg:col-span-8 lg:col-start-5 lg:h-full shadow-nav"
-                    >
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </main>
 </Layout>
 
+<style>
+    .bg-contactus {
+        background-image: url("../images/bg-31.jpg");
+    }
+</style>
 
+<script is:inline>
+    // Function to update gradient position
+    function updateGradient(event) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        gradientX = event.clientX - rect.left;
+        gradientY = event.clientY - rect.top;
+
+        // Update the style dynamically
+        const target = event.currentTarget;
+        target.style.setProperty("--gradient-x", `${gradientX}px`);
+        target.style.setProperty("--gradient-y", `${gradientY}px`);
+    }
+</script>
