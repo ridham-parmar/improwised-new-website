@@ -5,7 +5,7 @@ import { Badge } from "$lib/components/ui/badge";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import * as Card from "$lib/components/ui/card";
 import { getCollection, getEntry } from "astro:content";
-import {  BASE_URL } from "$lib/consts";
+import { BASE_URL } from "$lib/consts";
 
 const services = await getCollection("services", ({ data }) => {
 	return data.slug !== "platform-engineering";
@@ -55,9 +55,15 @@ let gradientY = -200;
 							/>
 						</Card.Header>
 						<Card.Content>
-							<Card.Title class="text-[26px]"
-								>{firstEntry?.data?.title}</Card.Title
-							>
+							<Card.Title class="text-[26px]">
+								<a
+									href={BASE_URL +
+										"/services/" +
+										firstEntry?.data.slug}
+								>
+									{firstEntry?.data?.title}
+								</a>
+							</Card.Title>
 						</Card.Content>
 						<Card.Footer>
 							<p>

@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -30,6 +31,7 @@
     --primary2-foreground: 240 10% 3.9%;
     --primary-filter: invert(55%) sepia(58%) saturate(393%) hue-rotate(55deg) brightness(100%) contrast(95%);
   }
+
   .dark {
     --background: 20 14.3% 4.1%;
     --foreground: 0 0% 95%;
@@ -317,6 +319,7 @@ html {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -326,6 +329,7 @@ html {
   from {
     transform: rotate(360deg);
   }
+
   to {
     transform: rotate(0deg);
   }
@@ -335,6 +339,7 @@ html {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -384,6 +389,7 @@ html {
         transform: translate(calc(-100% - 2.5rem))
       }
     }
+
     @keyframes marquee-reverse {
       0% {
         transform: translate(0)
@@ -397,6 +403,7 @@ html {
     .md\:motion-safe\:animate-marquee {
       animation: marquee 50s linear infinite
     }
+
     .md\:motion-safe\:animate-marquee-reverse {
       animation: marquee-reverse 60s linear infinite
     }
@@ -410,9 +417,10 @@ html {
 }
 
 /* Pause animation on hover */
-.eventsection1:hover  .eventCard1 {
+.eventsection1:hover .eventCard1 {
   animation-play-state: paused;
 }
+
 .eventsection2:hover .eventCard2 {
   animation-play-state: paused;
 }
@@ -421,6 +429,7 @@ html {
 .circle-dot {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
+
 .hero-artwork {
   max-width: 112.5rem;
   margin: -60px auto;
@@ -449,6 +458,7 @@ html {
 .circle-dot {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
 }
+
 #scroll-dot {
   transition: top 0.3s ease;
   background-color: #000;
@@ -470,8 +480,152 @@ html {
 
 }
 
-/* .css-y24xob {
 
-  filter: grayscale(100%) contrast(1);
-  mix-blend-mode: multiply;
+
+.image-container img {
+  max-height: 300px;
+  min-height: 300px;
+  max-width: 459px;
+  min-width: 459px;
+  object-fit: cover;
+  /* Maintain aspect ratio and cover the container */
+  object-position: center;
+  position: relative;
+  z-index: 1;
+  /* Ensure image appears above the blurred background */
+}
+
+@keyframes clippath-1 {
+
+  0%,
+  100% {
+    clip-path: inset(0 0 95% 0);
+    /* Only top visible */
+  }
+
+  50% {
+    clip-path: inset(0 0 0 100%);
+    /* Top and right visible */
+  }
+
+}
+
+@keyframes clippath-2 {
+
+  0%,
+  100% {
+    clip-path: inset(0 0 95% 0);
+    /* Only top visible */
+  }
+
+  50% {
+    clip-path: inset(0 100% 0 0);
+    /* Top and right visible */
+  }
+}
+
+.animated-border-1 {
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px dotted #6cb33f;
+    animation: clippath-1 3s infinite linear;
+  }
+}
+
+.animated-border-2 {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 1px dotted #6cb33f;
+    animation: clippath-2 3s infinite linear;
+  }
+}
+
+/* @keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.conic {
+  z-index: 0;
+  overflow: hidden;
+  &::before {
+    content: '';
+    position: absolute;
+    z-index: -2;
+    left: -50%;
+    top: -50%;
+    width: 200%;
+    height: 200%;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: conic-gradient(transparent, #c5f2ac, transparent 30%);
+    animation: rotate 10s linear infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 6px;
+    top: 6px;
+    width: calc(100% - 12px);
+    height: calc(100% - 12px);
+    border-radius: 5px;
+  }
+}
+.conic-demo::after {
+  animation: opacityChange 5s infinite linear;
+}
+
+@keyframes opacityChange {
+  50% {
+    opacity: .5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 } */
+
+@layer components {
+  .blog-details h1,.service-details h1 {
+    @apply my-5 text-4xl lg:text-4xl;
+  }
+
+  .blog-details h2,.service-details h2 {
+    @apply text-3xl lg:text-3xl;
+  }
+
+  .blog-details h3,.service-details h3 {
+    @apply text-2xl lg:text-2xl;
+  }
+  .blog-details p,.service-details p {
+    @apply text-lg text-gray-600
+  }
+
+}
+
+.blog-details ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 30px;
+  margin-bottom: 20px;
+}
+.blog-details ul li:before {
+  position: absolute;
+  left: 30px;
+  content:url(../images/checkmark.svg);
+}
