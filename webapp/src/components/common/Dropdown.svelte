@@ -1,7 +1,9 @@
 <script lang="ts">
   import ChevronRight from "lucide-svelte/icons/chevron-right";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
- </script>
+  import { BASE_URL } from "$lib/consts";
+  export let services: string | any[] = [];
+</script>
 
 <DropdownMenu.Root>
   <DropdownMenu.Trigger class="flex items-center space-x-1">
@@ -10,10 +12,15 @@
   </DropdownMenu.Trigger>
   <DropdownMenu.Content>
     <DropdownMenu.Group>
-      <DropdownMenu.Item>Platform Engineering</DropdownMenu.Item>
-      <DropdownMenu.Item>Cloud Infrastructure Services</DropdownMenu.Item>
-      <DropdownMenu.Item>Product Modernization</DropdownMenu.Item>
-      <DropdownMenu.Item>Technology Consulting</DropdownMenu.Item>
+      {#if services.length > 0}
+        {#each services as service}
+          <DropdownMenu.Item>
+            <a href="{BASE_URL}/services/{service?.data.slug}">
+              {service?.data?.title}
+            </a>
+          </DropdownMenu.Item>
+        {/each}
+      {/if}
     </DropdownMenu.Group>
   </DropdownMenu.Content>
 </DropdownMenu.Root>

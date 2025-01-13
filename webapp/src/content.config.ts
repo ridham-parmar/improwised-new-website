@@ -90,6 +90,18 @@ const teams = defineCollection({
 	}),
 });
 
+const jobs = defineCollection({
 
-export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams };
+	loader: glob({ base: './src/content/jobs', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		title: z.string(),
+		slug: z.string(),
+		experience: z.string(),
+		payRange: z.string(),
+		type: z.string(),
+		description:z.string()
+	}),
+});
+export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams, jobs };
 
