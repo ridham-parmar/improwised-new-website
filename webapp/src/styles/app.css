@@ -629,3 +629,38 @@ html {
   left: 30px;
   content:url(../images/checkmark.svg);
 }
+
+.jobDetail ul {
+  margin-bottom: 3rem;
+}
+
+.jobDetail ul li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.jobDetail ul li {
+  position: relative;
+  padding-left: 2.5rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .jobDetail ul li:before {
+      top: 50%;
+      --tw-translate-y: -50%;
+      transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  }
+}
+.jobDetail ul li:before {
+  position: absolute;
+  left: 0px;
+  height: 1.75rem;
+  width: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(24 24 27 / var(--tw-text-opacity));
+  --tw-content: url(../images/checkmark2.svg);
+  content: var(--tw-content);
+}
+.jobDetail ul ul ul li:before {
+  content: none; /* Ensures inner list items do not inherit the style */
+}
