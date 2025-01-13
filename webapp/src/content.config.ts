@@ -100,7 +100,12 @@ const jobs = defineCollection({
 		experience: z.string(),
 		payRange: z.string(),
 		type: z.string(),
-		description:z.string()
+		description:z.string(),
+		datePosted: z.coerce.date(),
+		expiryDate: z.coerce.date(),
+		qualification:z.string(),
+		jobSkills:z.array(z.string()),
+		location:z.string(),
 	}),
 });
 export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams, jobs };
