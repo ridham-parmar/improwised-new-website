@@ -108,5 +108,24 @@ const jobs = defineCollection({
 		location:z.string(),
 	}),
 });
-export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams, jobs };
+
+const policy = defineCollection({
+
+	loader: glob({ base: './src/content/policy', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		name: z.string(),
+		slug: z.string()
+	}),
+});
+const terms = defineCollection({
+
+	loader: glob({ base: './src/content/policy', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		name: z.string(),
+		slug: z.string()
+	}),
+});
+export const collections = { clients, testimonials, industries, benefits, services, blogs, casestudies, teams, jobs, policy,terms };
 

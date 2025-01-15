@@ -638,10 +638,11 @@ html {
   margin-bottom: 1.5rem;
 }
 
-.jobDetail ul li {
+.jobDetail ul li,.policy-details ul li {
   position: relative;
   padding-left: 2.5rem;
   font-weight: 500;
+  color:#4b5563;
 }
 
 @media (min-width: 768px) {
