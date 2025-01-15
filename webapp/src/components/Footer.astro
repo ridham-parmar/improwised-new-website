@@ -39,21 +39,21 @@ const services = await getCollection("services");
           <ul aria-labelledby="footerHeading0" class="flex flex-col gap-2">
             <li>
               <a
-                href={BASE_URL}
+                href=`${BASE_URL}/contactus`
                 class="whitespace-nowrap link hover:text-primary"
               >
                 Contact Us
               </a>
             </li><li>
               <a
-                href=`${BASE_URL}`
+                href=`${BASE_URL}/privacy-policy`
                 class="whitespace-nowrap link hover:text-primary"
               >
                 Privacy Policy
               </a>
             </li><li>
               <a
-                href=`${BASE_URL}`
+                href=`${BASE_URL}/terms-of-use`
                 class="whitespace-nowrap link hover:text-primary"
               >
                 Terms Of Use
@@ -73,7 +73,7 @@ const services = await getCollection("services");
               </a>
             </li><li>
               <a
-                href="https://community.astro.build"
+                href=`${BASE_URL}careers`
                 class="whitespace-nowrap link hover:text-primary"
               >
                 Careers
