@@ -35,7 +35,7 @@ jobs:
       - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v1
         with:
-          path: webapp/dist # Adjust the path to match your build output directory
+          path: ./webapp/dist # Adjust this path to match your build output directory
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
