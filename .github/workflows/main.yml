@@ -31,14 +31,7 @@ jobs:
           branch: gh-pages
           folder: webapp/dist
           message: "Deploy webapp-${{ github.run_number }}"
-
-  build-and-deploy-project2:
-    name: Build and Deploy newapp
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
+      
       - name: Install, build, and upload improwised-new-website1
         uses: withastro/action@v3
         with:
@@ -52,3 +45,24 @@ jobs:
           branch: gh-pages
           folder: newapp/dist
           message: "Deploy newapp-${{ github.run_number }}"
+
+  # build-and-deploy-project2:
+  #   name: Build and Deploy newapp
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout repository
+  #       uses: actions/checkout@v4
+
+  #     - name: Install, build, and upload improwised-new-website1
+  #       uses: withastro/action@v3
+  #       with:
+  #         path: ./newapp
+  #         node-version: 22.0.0
+
+  #     - name: Deploy improwised-new-website1 to GitHub Pages
+  #       id: deployment2
+  #       uses: actions/deploy-pages@v4
+  #       with:
+  #         branch: gh-pages
+  #         folder: newapp/dist
+  #         message: "Deploy newapp-${{ github.run_number }}"
