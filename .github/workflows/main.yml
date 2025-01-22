@@ -2,67 +2,40 @@ name: Main
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
+# Allow this job to clone the repo and create a page deployment
 permissions:
   contents: read
   pages: write
   id-token: write
 
 jobs:
-  build-and-deploy-project1:
-    name: Build and Deploy webapp
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout your repository using git
         uses: actions/checkout@v4
-      
-      - name: Install, build, and upload improwised-new-website
+      - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
           path: ./webapp
           node-version: 22.0.0
-
-      - name: Deploy improwised-new-website to GitHub Pages
-        id: deployment1
-        uses: actions/deploy-pages@v4
-        with:
-          branch: gh-pages
-          folder: webapp/dist
-          message: "Deploy webapp-${{ github.run_number }}"
-      
-      - name: Install, build, and upload improwised-new-website1
+          
+      - name: Install, build, and upload your site
         uses: withastro/action@v3
         with:
           path: ./newapp
           node-version: 22.0.0
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
 
-      - name: Deploy improwised-new-website1 to GitHub Pages
-        id: deployment2
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4
-        with:
-          branch: gh-pages
-          folder: newapp/dist
-          message: "Deploy newapp-${{ github.run_number }}"
-
-  # build-and-deploy-project2:
-  #   name: Build and Deploy newapp
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v4
-
-  #     - name: Install, build, and upload improwised-new-website1
-  #       uses: withastro/action@v3
-  #       with:
-  #         path: ./newapp
-  #         node-version: 22.0.0
-
-  #     - name: Deploy improwised-new-website1 to GitHub Pages
-  #       id: deployment2
-  #       uses: actions/deploy-pages@v4
-  #       with:
-  #         branch: gh-pages
-  #         folder: newapp/dist
-  #         message: "Deploy newapp-${{ github.run_number }}"
