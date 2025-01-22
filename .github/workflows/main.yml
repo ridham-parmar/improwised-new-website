@@ -1,9 +1,9 @@
-name: AppDir
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-    - main
+      - main
 
 permissions:
   contents: read
@@ -18,29 +18,24 @@ jobs:
         shell: bash
         working-directory: webapp
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: 22.13.1
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22.13.1
 
-    - name: Install dependencies
-      run: npm install
+      - name: Install dependencies
+        run: npm install
 
-    - name: Build project
-      run: npm run build
+      - name: Build project
+        run: npm run build
 
-    - name: Deploy improwised-new-website1 to GitHub Pages
-      uses: actions/deploy-pages@v4
-      with:
-          branch: gh-pages
-          folder: webapp/dist
-          message: "Deploy newapp-${{ github.run_number }}"
-    # - name: Deploy
-    #   uses: peaceiris/actions-gh-pages@v3
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     publish_dir: ./webapp/dist        
-  
+      - name: Upload artifact for GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: webapp/dist # Adjust the path to match your build output directory
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
