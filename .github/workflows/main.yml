@@ -41,20 +41,4 @@ jobs:
           publish_dir: webapp/dist
           destination_dir: webapp # Ensure webapp is deployed under /webapp
 
-      # Build and deploy 'newapp'
-      - name: Install dependencies for newapp
-        run: |
-          cd newapp
-          npm install
-
-      - name: Build newapp
-        run: |
-          cd newapp
-          npm run build
-
-      - name: Deploy newapp
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: newapp/dist
-          destination_dir: newapp # Ensure newapp is deployed under /newapp
+  
