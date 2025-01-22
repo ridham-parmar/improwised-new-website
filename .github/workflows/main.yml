@@ -32,10 +32,8 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Deploy improwised-new-website1 to GitHub Pages
-        id: deployment2
-        uses: actions/deploy-pages@v4
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          branch: gh-pages
-          folder: webapp/dist
-          message: "Deploy webapp-${{ github.run_number }}"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./webapp/dist
