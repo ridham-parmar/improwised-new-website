@@ -32,10 +32,10 @@ jobs:
       - name: Build project
         run: npm run build
 
-      - name: Upload artifact for GitHub Pages
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: ./webapp/dist # Adjust this path to match your build output directory
-
-      - name: Deploy to GitHub Pages
+      - name: Deploy improwised-new-website1 to GitHub Pages
+        id: deployment2
         uses: actions/deploy-pages@v4
+        with:
+          branch: gh-pages
+          folder: webapp/dist
+          message: "Deploy webapp-${{ github.run_number }}"
