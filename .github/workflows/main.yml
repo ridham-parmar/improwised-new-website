@@ -23,7 +23,7 @@ jobs:
           path: ./webapp
           node-version: 22.0.0
           
-      - name: Install, build, and upload your site
+      - name: Install, build, and upload your site1
         uses: withastro/action@v3
         with:
           path: ./newapp
