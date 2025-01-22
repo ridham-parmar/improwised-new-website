@@ -2,6 +2,15 @@
 
 ## 🔮 Astro + Astro Svelte + Shadcn Svelte + Tailwind CSS
 
+## Url :
+https://improwised.github.io/improwised-new-website/
+
+## Lighthouse Performance
+
+![image](https://github.com/user-attachments/assets/e62d61da-a58e-4eaf-b451-fbe8ee1011ac)
+
+## Development Prospective
+
 > 🔹**Node js 22.0.0**
 > 🔹[Astro](https://astro.build/)
 > 🔹[Astro Svelte](https://docs.astro.build/en/guides/integrations-guide/svelte/)
