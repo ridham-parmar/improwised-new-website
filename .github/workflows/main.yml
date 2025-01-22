@@ -5,14 +5,15 @@ on:
     branches:
       - main
 
-  
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        shell: bash
-        working-directory: webapp
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -22,14 +23,38 @@ jobs:
         with:
           node-version: 22.13.1
 
-      - name: Install dependencies
-        run: npm install
+      # Build and deploy 'webapp'
+      - name: Install dependencies for webapp
+        run: |
+          cd webapp
+          npm install
 
-      - name: Build project
-        run: npm run build
+      - name: Build webapp
+        run: |
+          cd webapp
+          npm run build
 
-      - name: Deploy
+      - name: Deploy webapp
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: webapp/dist
+          destination_dir: webapp # Ensure webapp is deployed under /webapp
+
+      # Build and deploy 'newapp'
+      - name: Install dependencies for newapp
+        run: |
+          cd newapp
+          npm install
+
+      - name: Build newapp
+        run: |
+          cd newapp
+          npm run build
+
+      - name: Deploy newapp
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: newapp/dist
+          destination_dir: newapp # Ensure newapp is deployed under /newapp
