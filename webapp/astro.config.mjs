@@ -10,7 +10,8 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://improwised.github.io',
-  base: 'improwised-new-website',
+  base: '/improwised-new-website/webapp', // Subdirectory path
+  outDir: 'dist', // Default output directory
   integrations: [svelte(), tailwind({
     applyBaseStyles: false,
   }), mdx()]
