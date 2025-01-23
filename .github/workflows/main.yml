@@ -23,37 +23,38 @@ jobs:
         with:
           node-version: 22.13.1
 
-      # Build and deploy 'webapp'
-      - name: Install dependencies for webapp
+      # Build both webapp and newapp
+      - name: Build webapp
         run: |
           cd webapp
           npm install
           npm run build
-      
-      - name: Install dependencies for newapp
+          mv dist ../webapp-dist
+
+      - name: Build newapp
         run: |
           cd newapp
           npm install
           npm run build
+          mv dist ../newapp-dist
 
-      - name: Upload Pages Artifact for webapp
-        id: webapp
+      # Combine both apps into a single deployment folder
+      - name: Combine build artifacts
+        run: |
+          mkdir combined-dist
+          mv webapp-dist/* combined-dist/
+          mkdir combined-dist/newapp
+          mv newapp-dist/* combined-dist/newapp/
+
+      - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "webapp/dist/"
-          name: webapp
-          
-      - name: Upload Pages Artifact for newapp
-        id: newapp
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: "newapp/dist/"
-          name: newapp
+          path: "combined-dist/"
 
-  deploy-webapp:
+  deploy:
     environment:
       name: github-pages
-      url: ${{ steps.webapp.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build-and-deploy
     steps:
@@ -62,18 +63,3 @@ jobs:
         uses: actions/deploy-pages@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: webapp
-  deploy-newapp:
-    environment:
-      name: github-pages
-      url: ${{ steps.newapp.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build-and-deploy
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          artifact_name: newapp
-        
