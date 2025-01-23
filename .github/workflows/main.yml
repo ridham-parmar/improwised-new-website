@@ -23,15 +23,47 @@ jobs:
         run: |
           cd webapp
           npm install
-
-      - name: Build webapp
+          npm run build
+      
+      - name: Install dependencies for webapp
         run: |
-          cd webapp
+          cd newapp
+          npm install
           npm run build
 
-      - name: Deploy webapp
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload Pages Artifact for webapp
+        id: webapp
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: webapp/dist
-          destination_dir: webapp # Ensure webapp is deployed under /webapp
+          path: "webapp/dist/"
+          name: webapp
+          
+      - name: Upload Pages Artifact for newapp
+        id: newapp
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "newapp/dist/"
+          name: newapp
+
+  deploy-webapp:
+    environment:
+      name: github-pages
+      url: ${{ steps.webapp.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build-and-deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # deploy-newapp:
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.newapp.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   needs: build-and-deploy
+  #   steps:
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v4
+        
