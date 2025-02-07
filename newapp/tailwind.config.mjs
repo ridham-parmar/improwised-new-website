@@ -67,6 +67,7 @@ const config = {
 			},
 			fontFamily: {
 				sans: ['Inter', ...fontFamily.sans],
+				manrope: ["Manrope", "sans-serif"],
 			}
 		}
 	},
