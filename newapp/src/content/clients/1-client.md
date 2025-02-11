@@ -1,4 +1,4 @@
 ---
 title: 'Cognyx'
-image: '$lib/images/clientsLogos/Cognyx.svg'
+image: '$lib/images/clientsLogos/cognyx.png'
 ---

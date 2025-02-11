@@ -1,4 +1,4 @@
 ---
 title: 'Avantel'
-image: '$lib/images/clientsLogos/Cognyx.svg'
+image: '$lib/images/clientsLogos/avantel.png'
 ---

@@ -1,4 +1,4 @@
 ---
 title: 'Capelon'
-image: '$lib/images/clientsLogos/CapelonLogo.svg'
+image: '$lib/images/clientsLogos/capelon.png'
 ---

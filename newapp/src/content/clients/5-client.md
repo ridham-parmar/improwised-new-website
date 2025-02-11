@@ -1,4 +1,4 @@
 ---
 title: 'Wishyoo'
-image: '$lib/images/clientsLogos/Cognyx.svg'
+image: '$lib/images/clientsLogos/wishyoo.png'
 ---
