@@ -1,0 +1,187 @@
+---
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { Image } from "astro:assets";
+import { Badge } from "$lib/components/ui/badge";
+import { Button } from "$lib/components/ui/button";
+
+import { BASE_URL } from "$lib/consts";
+import abt1 from "$lib/images/abt1.svg";
+import abt2 from "$lib/images/abt2.svg";
+import abt3 from "$lib/images/abt3.svg";
+
+import CircleUserRound from "lucide-svelte/icons/circle-user-round";
+---
+
+<section class="relative pt-40 pb-20">
+   <div class="container relative z-10">
+      <div
+         class="grid grid-cols-2 max-md:grid-cols-1 gap-16 items-start relative"
+      >
+         <div
+            class="relative max-md:order-1 aos-init aos-animate image-container"
+            data-aos="fade-up"
+            data-aos-offset="200"
+            data-aos-duration="1000"
+            data-aos-once="true"
+         >
+            <div class="flex gap-2">
+               <div>
+                  <Image
+                     src={abt1}
+                     alt="Platform Engineering"
+                     class="w-full transition-transform duration-300 hover:brightness-75"
+                  />
+                  <Image
+                     src={abt2}
+                     alt="Platform Engineering"
+                     class="w-full mt-2 transition-transform duration-300 hover:brightness-75"
+                  />
+               </div>
+               <div>
+                  <Image
+                     src={abt3}
+                     alt="Platform Engineering"
+                     class="w-full transition-transform duration-300 hover:brightness-75"
+                  />
+               </div>
+            </div>
+         </div>
+
+         <div class="relative max-md:order-2">
+            <Badge
+               class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+               variant="outline"
+               ><CircleUserRound
+                  width="16"
+                  height="16"
+                  class="mr-1 w-[16px]"
+               />About us</Badge
+            >
+            <SectionTitle
+               class=""
+               text="Empowering Growth With"
+               primaryColorText="Custom Tech"
+            />
+            <p
+               class="my-10 max-w-2xl mx-auto max-md:text-center text-para"
+               data-aos="fade-up"
+            >
+               At Improwised, we’re passionate about helping businesses grow and
+               succeed with the right tech. Whether it's modernizing outdated
+               systems, optimizing cloud infrastructure, or offering expert
+               guidance.
+            </p>
+            <Button href=`${BASE_URL}/aboutus` class="bg-black">
+               Learn More</Button
+            >
+         </div>
+      </div>
+
+      <div class="flex flex-wrap features-grid gap-4">
+         <div class="mt-10 grid gap-10 md:grid-cols-4 lg:grid-cols-4">
+            <div>
+               <h2
+                  class="font-manrope text-[56px] leading-[56px] font-bold text-[#141414]"
+               >
+                  <span
+                     class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-one)] before:content-[counter(num)]"
+                  >
+                     <span class="sr-only">14</span>+
+                  </span>
+               </h2>
+               <p
+                  class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
+                  data-aos="fade-up"
+               >
+                  Over a decade of delivering innovative, reliable, and
+                  impactful technology solutions.
+               </p>
+            </div>
+            <div>
+               <h2
+                  class="font-manrope text-[56px] leading-[56px] font-bold text-[#141414]"
+               >
+                  <span
+                     class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-two)] before:content-[counter(num)]"
+                  >
+                     <span class="sr-only">120</span>+
+                  </span>
+               </h2>
+               <p
+                  class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
+                  data-aos="fade-up"
+               >
+                  Trusted by businesses worldwide to drive transformation and
+                  growth.
+               </p>
+            </div>
+            <div>
+               <h2
+                  class="font-manrope text-[56px] leading-[56px] font-bold text-[#141414]"
+               >
+                  <span
+                     class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-three)] before:content-[counter(num)]"
+                  >
+                     <span class="sr-only">2</span>x
+                  </span>
+               </h2>
+               <p
+                  class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
+                  data-aos="fade-up"
+               >
+                  Our solutions double your performance, boosting efficiency and
+                  scalability.
+               </p>
+            </div>
+
+            <div>
+               <h2
+                  class="font-manrope text-[56px] leading-[56px] font-bold text-[#141414]"
+               >
+                  <span
+                     class="animate-[counter_3s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-four)] before:content-[counter(num)]"
+                  >
+                     <span class="sr-only">1500</span>+
+                  </span>
+               </h2>
+               <p
+                  class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
+                  data-aos="fade-up"
+               >
+                  Empowering businesses with solutions trusted by 1,500+
+                  professionals globally.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<style>
+   .image-container {
+      position: relative;
+      z-index: 1; /* Ensure content stays above */
+   }
+
+   .image-container::before {
+      content: "";
+      position: absolute;
+      top: -30%; /* Aligns at the top */
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("../images/bg-shadow.svg");
+      background-size: contain;
+      background-position: top center;
+      background-repeat: no-repeat;
+      z-index: -1; /* Places it behind the content */
+   }
+   /* .bg-image {
+    background-image: url("../images/bg-shadow.svg");
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+    min-height: 100vh;
+} */
+</style>

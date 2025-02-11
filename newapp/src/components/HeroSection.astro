@@ -1,76 +1,97 @@
 ---
 import { Image } from "astro:assets";
 import { Button } from "$lib/components/ui/button";
-import { Badge } from "$lib/components/ui/badge";
-import SectionTitle from "$lib/components/common/SectionTitle.svelte";
-import hero from "$lib/images/hero.png";
-import patternBg from "$lib/images/patternBg.svg";
-import patternBg2 from "$lib/images/patternBg.webp";
-
-import { getCollection } from "astro:content";
 import { BASE_URL } from "$lib/consts";
+import person1 from "$lib/images/people/1.svg";
+import person2 from "$lib/images/people/2.svg";
+import person3 from "$lib/images/people/3.svg";
+import { getCollection } from "astro:content";
 const clients = await getCollection("clients");
+const peopleImages = [person1, person2, person3];
 ---
-<section class="section1 text-center py-16 px-6 ">
-    <!-- Trusted Badge -->
-    <div class="inline-flex items-center bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-gray-700">
-      Trusted by <span class="font-bold mx-1">1,200+</span> professionals
-      <span class="flex ml-2 space-x-1">
-        <img src="https://randomuser.me/api/portraits/women/1.jpg" class="w-5 h-5 rounded-full border" />
-        <img src="https://randomuser.me/api/portraits/men/2.jpg" class="w-5 h-5 rounded-full border" />
-        <img src="https://randomuser.me/api/portraits/women/3.jpg" class="w-5 h-5 rounded-full border" />
-      </span>
-    </div>
 
-    <!-- Main Heading -->
-    <h1 class="font-manrope mt-4 mb-6 max-md:text-center text-[56px]  leading-[62px] font-bold lg:tracking-tight custom-line-height">
-      Empowering Businesses With<br>
-      <span class="text-primary2">Cloud-Native Excellence</span>
-    </h1>
+<section
+  class="section1 text-center py-16 px-6 bg-image h-screen relative pt-[30%] lg:pt-[12%]"
+>
+  <!-- Trusted Badge -->
+  <div
+    class="inline-flex items-center bg-white shadow-md px-5 py-2 rounded-full text-base font-medium text-gray-700"
+  >
+    Trusted by <span class="font-bold mx-1">1,200+</span> professionals
+    <span class="flex ml-3 group">
+      {
+        peopleImages.map((src, index) => (
+          <Image src={src} alt={`Person ${index + 1}`} class="profile-img" />
+        ))
+      }
+    </span>
+  </div>
 
-    <!-- Subtext -->
-    <p class="mt-4 text-[18px] leading-[28px] tracking-[2%] text-[#292929] max-w-2xl mx-auto">
-      We've been redefining possibilities for SaaS platforms, modernizing legacy systems,
-      and engineering solutions for businesses worldwide.
+  <!-- Main Heading -->
+  <h1
+    class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] leading-[62px] font-bold lg:tracking-tight"
+  >
+    Empowering Businesses With<br />
+    <span class="text-primary">Cloud-Native Excellence</span>
+  </h1>
+
+  <!-- Subtext -->
+  <p class="mt-4 text-para max-w-2xl mx-auto">
+    We've been redefining possibilities for SaaS platforms, modernizing legacy
+    systems, and engineering solutions for businesses worldwide.
+  </p>
+
+  <!-- CTA Buttons -->
+  <div class="mt-6 flex justify-center space-x-4">
+    <Button href=`${BASE_URL}/contactus` class="bg-black"> Get a Quote</Button>
+    <Button href=`${BASE_URL}/aboutus` variant="outline">
+      Explore Solutions
+    </Button>
+  </div>
+
+  <!-- Trusted Companies -->
+  <div class="mt-20">
+    <p
+      class="text-[18px] leading-[26px] font-semibold tracking-[2%] text-[#141414]"
+    >
+      Top Companies trusting us
     </p>
-
-    <!-- CTA Buttons -->
-    <div class="mt-6 flex justify-center space-x-4">
-
-      <Button href=`${BASE_URL}/contactus` class="bg-black"
-                                        > Get a Quote</Button
-                                    >
-                                    <Button
-                                        href=`${BASE_URL}/aboutus`
-                                        variant="outline"
-                                    >
-                                    Explore Solutions
-                                    </Button>
+    <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6">
+      {
+        clients.map((client, index) => (
+          <>
+            <div class="">
+              <Image
+                src={client.data.image}
+                alt={client.data.title}
+                loading="lazy"
+                decoding="async"
+                class="mx-auto mx-5"
+                height={40}
+              />
+            </div>
+          </>
+        ))
+      }
     </div>
+  </div>
+</section>
 
-    <!-- Trusted Companies -->
-    <div class="mt-20">
-      <p class="text-[18px] leading-[26px] font-semibold tracking-[2%] text-[#141414]">Top Companies trusting us</p>
-      <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6">
-        {
-            clients.map((client, index) => (
-                <>
-                    <div class="">
-                        <Image
-                            src={client.data.image}
-                            alt={client.data.title}
-                            loading="lazy"
-                            decoding="async"
-                            class="mx-auto mx-5"
+<style>
+  .bg-image {
+    background-image: url("../images/herodot.svg"),
+      url("../images/bg-gradient.svg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    position: relative;
+    height: 100%;
+  }
+  .profile-img {
+    @apply w-8 h-8 rounded-full border-2 border-white -ml-3 transition-all duration-300 ring-2 ring-white;
+  }
 
-                            height={40}
-
-                        />
-                    </div>
-                </>
-            ))
-        }
-
-      </div>
-    </div>
-  </section>
+  .profile-img:hover {
+    @apply scale-125 z-10 ring-gray-700;
+  }
+</style>

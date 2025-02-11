@@ -1,0 +1,45 @@
+---
+import { Button } from "$lib/components/ui/button";
+import { BASE_URL } from "$lib/consts";
+---
+
+<section class="section1 text-center py-20 px-6 bg-ctaimage h-screen relative">
+    <!-- Trusted Badge -->
+    <div
+        class="inline-flex items-center bg-white shadow-md px-5 py-2 rounded-full text-base font-medium text-gray-700"
+    >
+        <span class="font-bold mx-1">10+ Millions</span>Saved on Cloud for
+        Clients
+    </div>
+
+    <!-- Main Heading -->
+    <h1
+        class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] leading-[62px] font-bold lg:tracking-tight"
+    >
+        Struggling with Cloud's Expenses?
+    </h1>
+
+    <!-- Subtext -->
+    <p class="mt-4 text-para max-w-3xl mx-auto">
+        Let us help you cut costs and boost savings. Start today and see the
+        difference.
+    </p>
+
+    <!-- CTA Buttons -->
+    <div class="mt-6 flex justify-center space-x-4">
+        <Button href=`${BASE_URL}/contactus` class="bg-black">
+            Get a Quote</Button
+        >
+    </div>
+</section>
+<style>
+    .bg-ctaimage {
+        background-image: url("../images/ctadot.svg"),
+            url("../images/ctabg.svg");
+        background-size: cover, cover;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
+        position: relative;
+        height: 100%;
+    }
+</style>
