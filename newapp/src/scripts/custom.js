@@ -15,4 +15,16 @@ function toggleMobileNav() {
     el.classList.toggle('hidden');
   });
 }
+document.addEventListener("DOMContentLoaded", function () {
 
+  const header = document.querySelector(".impronav-sticky-header");
+
+  window.addEventListener("scroll", function () {
+
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled"); // Apply blur effect
+    } else {
+      header.classList.remove("scrolled"); // Keep transparent
+    }
+  });
+});

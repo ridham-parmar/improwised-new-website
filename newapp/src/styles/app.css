@@ -21,7 +21,7 @@
     --border: 220 13% 91%;
     --input: 220 13% 91%;
 
-    --primary: 97 47.9% 47.5%;
+    --primary: 192 100% 43%;
     --primary-foreground: 355.7 100% 97.3%;
 
     --secondary: 220 14.3% 95.9%;
@@ -36,7 +36,7 @@
     --darkgreen: 190 66.7% 15.3%;
     --darkgreen-foreground: 240 10% 3.9%;
 
-    --primary2: 192 100% 43%;
+    --primary2: 97 47.9% 47.5%;
     --primary2-foreground: 240 10% 3.9%;
 
     --primary-filter: invert(55%) sepia(58%) saturate(393%) hue-rotate(55deg) brightness(100%) contrast(95%);
@@ -44,6 +44,8 @@
     --ring: 224 71.4% 4.1%;
 
     --radius: 0.5rem;
+
+    --color-primary-text: #292929;
   }
 
   .dark {
@@ -82,17 +84,28 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  .text-para {
+    @apply text-[18px] leading-[28px] tracking-[0.02em] text-primaryText;
+  }
+
 }
+@layer utilities {
+  .text-para {
+    @apply text-[18px] leading-[28px] tracking-[0.02em] text-primaryText;
+  }
+}
+
+.text-primaryText {
+  color: var(--color-primary-text);
+}
+
 html {
   scroll-behavior: smooth;
-}
-.impronav-sticky-header {
-  transition: all .3s ease;
-  -webkit-transition: all .3s ease;
-  will-change: transform
 }
 
 .bg-gradient-radial {
@@ -109,7 +122,75 @@ html {
   color: #fff;
 }
 
-.logo {
-  height: 2.5rem;
-  width: auto;
+/*Cards*/
+.shadow-nav {
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 #0000, 0 0 #0000, 0px 0px 30px rgba(0, 0, 0, .05);
 }
+
+
+.card-custom {
+
+  border-radius: .75rem;
+  -o-border-image: radial-gradient(circle at var(--gradient-x, 15px) var(--gradient-y, 30px), #00afdb, rgba(255, 255, 255, .5)) 1;
+  border-image: radial-gradient(circle at var(--gradient-x, 15px) var(--gradient-y, 30px), #00afdb, rgba(255, 255, 255, .5)) 1;
+  border: 2px solid transparent;
+  border-radius: 0.75rem;
+  transition: border-image .3s ease;
+  transition: border-image .3s ease, -o-border-image .3s ease;
+  box-sizing: border-box;
+  /* background-image: linear-gradient(white, white), radial-gradient(circle at var(--gradient-x, 15px) var(--gradient-y, 30px), #6cb33f, rgba(255, 255, 255, .5)); */
+  background-image: linear-gradient(white, white),
+    radial-gradient(circle at var(--gradient-x, 15px) var(--gradient-y, 30px), #00afdb, rgba(255, 255, 255, .5));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.card-custom-inner {
+  height: 100%;
+  background: radial-gradient(135px circle at var(--gradient-x, 15px) var(--gradient-y, 30px), rgba(124, 236, 253, 0.3) 0, transparent 100%);
+}
+
+
+/*Counter auto numbers*/
+
+@property --num-one {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-two {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-three {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-four {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes counter {
+  from {
+    --num-one: 0;
+    --num-two: 0;
+    --num-three: 0;
+    --num-four: 0;
+  }
+
+  to {
+    --num-one: 14;
+    --num-two: 120;
+    --num-three: 2;
+    --num-four: 1500;
+  }
+}
+

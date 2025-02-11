@@ -7,10 +7,10 @@
     export { className as class };
     const computedClass = cn
         ? cn(
-              "mb-6 max-md:text-center text-5xl  leading-[3.5rem] font-bold lg:tracking-tight custom-line-height",
+              "mb-6 max-md:text-center  font-manrope text-[46px] leading-[52px]  font-bold   text-[#141414]",
               className,
           )
-        : `mb-6  max-md:text-center text-5xl  leading-[3.5rem] font-bold lg:tracking-tight custom-line-height ${className}`.trim();
+        : `mb-6  max-md:text-center font-manrope text-[46px] leading-[52px]  font-bold   text-[#141414]   ${className}`.trim();
 </script>
 
 <h1 class={computedClass} data-aos={dataAos}>

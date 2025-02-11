@@ -1,0 +1,36 @@
+---
+import { Image } from "astro:assets";
+import { Button } from "$lib/components/ui/button";
+import { Badge } from "$lib/components/ui/badge";
+import  CircleUserRound from 'lucide-svelte/icons/circle-user-round';
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import * as Card from "$lib/components/ui/card";
+import { getCollection } from "astro:content";
+import { BASE_URL } from "$lib/consts";
+
+const services = await getCollection("services", ({ data }) => {
+	return data.slug !== "platform-engineering";
+});
+
+let gradientX = 45.5;
+let gradientY = -200;
+---
+<section class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="relative flex items-end justify-center w-[600px] h-[300px]">
+        <!-- Outer Half Circle -->
+        <div class="absolute bottom-0 w-full h-full bg-green-100 rounded-t-full border border-green-300"></div>
+
+        <!-- Middle Half Circle -->
+        <div class="absolute bottom-0 w-[80%] h-[80%] bg-white rounded-t-full border border-gray-300"></div>
+
+        <!-- Inner Half Circle -->
+        <div class="absolute bottom-0 w-[60%] h-[60%] bg-blue-100 rounded-t-full border border-blue-300"></div>
+
+        <!-- Icons/Logos inside -->
+        <div class="absolute bottom-10 flex flex-wrap justify-center w-full">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" class="w-10 h-10 mx-4" alt="JS">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" class="w-10 h-10 mx-4" alt="React">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg" class="w-10 h-10 mx-4" alt="PHP">
+        </div>
+    </div>
+</section>
