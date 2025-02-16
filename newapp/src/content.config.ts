@@ -20,6 +20,7 @@ const testimonials = defineCollection({
 		description: z.string(),
 		authorDesignation: z.string(),
 		profileImage: image(),
+		siteImage: image(),
 	}),
 });
 const industries = defineCollection({
