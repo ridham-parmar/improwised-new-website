@@ -1,0 +1,36 @@
+---
+import { Badge } from "$lib/components/ui/badge";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { getCollection } from "astro:content";
+import CircleUserRound from "lucide-svelte/icons/circle-user-round";
+const testimonials = await getCollection("testimonials");
+import TestimonialCarousel from "$lib/components/common/TestimonialCarousel.svelte";
+
+---
+
+<section class="section py-20">
+	<div class="container">
+		<div
+			class="flex items-center justify-between px-5 mb-8"
+		>
+		<div>
+        <Badge
+        class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+        variant="outline"
+        ><CircleUserRound class="mr-1 w-[16px]" />Testimonials</Badge
+    >
+    <SectionTitle text="What Our" primaryColorText="Clients Say" />
+	</div>
+
+		</div>
+
+		<div class="relative overflow-x-clip">
+
+
+			<div class="flex justify-center">
+
+				<TestimonialCarousel client:load {testimonials} />
+			</div>
+		</div>
+	</div>
+</section>
