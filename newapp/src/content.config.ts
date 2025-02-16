@@ -69,16 +69,17 @@ const services = defineCollection({
 // 	}),
 // });
 
-// const casestudies = defineCollection({
+const casestudies = defineCollection({
 
-// 	loader: glob({ base: './src/content/casestudies', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: ({ image }) => z.object({
-// 		title: z.string(),
-// 		image: image(),
-// 		description: z.string()
-// 	}),
-// });
+	loader: glob({ base: './src/content/casestudies', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		category: z.string(),
+		title: z.string(),
+		saveCost:z.string(),
+		description: z.string()
+	}),
+});
 const teams = defineCollection({
 
 	loader: glob({ base: './src/content/teams', pattern: '**/*.{md,mdx}' }),
@@ -128,5 +129,5 @@ const teams = defineCollection({
 // 		slug: z.string()
 // 	}),
 // });
-export const collections = { clients, testimonials, industries, services, teams };
+export const collections = { clients, testimonials, casestudies, industries, services, teams };
 
