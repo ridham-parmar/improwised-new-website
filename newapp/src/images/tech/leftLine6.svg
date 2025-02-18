@@ -1,0 +1,8 @@
+<svg width="347" height="139" viewBox="0 0 347 139" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="animated-path" d="M0.5 135.997C48.9286 135.997 184 152.919 184 65.0007C184 -22.9181 265 9.13307 346.5 3.00076" stroke="#F0F0F0" stroke-width="2.6"/>
+ <circle r="5" fill="#F87171">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path" />
+        </animateMotion>
+    </circle>
+</svg>

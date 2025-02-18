@@ -1,7 +1,7 @@
 ---
-author: 'Dave Stevens'
-authorDesignation: 'CTO, chartlytics'
-description: 'Working with the Improwised team has been a pleasure. They helped us get our software and business off the ground. We could not have gotten to where we are today without their help!'
-profileImage: '../../images/testimonials/chartlytics.png'
+author: 'Ignacio Doncel'
+authorDesignation: 'CEO, wishyoo.com'
+description: 'Improwised Technologies team has planned and directed the WishYoo platform from its inception until becoming a real global platform. They have always taken care of quality to an extreme, repeatedly running checks on the code and architecture of external vendors to ensure the best and most efficient outcome.'
+profileImage: '../../images/testimonials/wishyoo.png'
 siteImage: ''
 ---

@@ -1,0 +1,9 @@
+<svg width="374" height="67" viewBox="0 0 374 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="animated-path" d="M0 7.29946C48.4286 7.29946 84.5006 -14.0001 149.001 27.9966C213.501 69.9934 310.261 73.1463 373.501 55.4983" stroke="#F0F0F0" stroke-width="2.6"/>
+  <!-- 🔴 Moving Red Dot (On Top) -->
+    <circle r="5" fill="#F87171">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path" />
+        </animateMotion>
+    </circle>
+</svg>

@@ -1,7 +1,7 @@
 ---
-author: 'Viral Jetani'
-authorDesignation: 'Employee'
-description: 'From Software development to DevOps and other IT services, I have been using their services and I would say they stand apart from their competitors in terms of quality and overall project delivery. A+ in my book any day when it comes to choosing an IT team.'
+author: 'Martin'
+authorDesignation: 'Director, Golden Rule Music GmbH'
+description: "Improwised Techhnologies provided flawless integration of requested features and work, meeting the client's expectations. The team promptly resolved any technical issues, proved to be easy to work with, and maintained quick and focused communication with the client through various virtual channels."
 profileImage: '../../images/testimonials/wishyoo.png'
 siteImage: ''
 ---
