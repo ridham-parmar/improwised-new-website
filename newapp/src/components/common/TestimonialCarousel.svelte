@@ -36,7 +36,11 @@
                   alt="siteImage"
                   class="w-full"
                 />
+
               </Card.Header>
+              <h2 class="font-semibold mt-5 text-[24px] leading-[34px] text-slate-800 px-5">
+                {testimonial.data.description}
+              </h2>
 
               <Card.Footer class="block">
                 <img src={line.src} alt="line" class="w-full mb-4 d-block" />

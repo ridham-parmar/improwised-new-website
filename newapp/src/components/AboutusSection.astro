@@ -1,15 +1,13 @@
 ---
-import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { BASE_URL } from "$lib/consts";
 import { Image } from "astro:assets";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { Button } from "$lib/components/ui/button";
-
-import { BASE_URL } from "$lib/consts";
+import CircleUserRound from "lucide-svelte/icons/circle-user-round";
 import abt1 from "$lib/images/abt1.svg";
 import abt2 from "$lib/images/abt2.svg";
 import abt3 from "$lib/images/abt3.svg";
-
-import CircleUserRound from "lucide-svelte/icons/circle-user-round";
 ---
 
 <section class="relative pt-40 pb-20">
@@ -175,13 +173,4 @@ import CircleUserRound from "lucide-svelte/icons/circle-user-round";
       background-repeat: no-repeat;
       z-index: -1; /* Places it behind the content */
    }
-   /* .bg-image {
-    background-image: url("../images/bg-shadow.svg");
-    background-size: contain;
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    position: relative;
-    min-height: 100vh;
-} */
 </style>
