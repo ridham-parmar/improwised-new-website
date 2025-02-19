@@ -60,6 +60,8 @@
                     <img
                       src={testimonial.data.profileImage.src}
                       alt={testimonial.data.author}
+                      loading="lazy"
+                      decoding="async"
                       class="w-[118px] h=[60px]"
                     />
                   </div>
@@ -84,6 +86,8 @@
                 <img
                   src={line.src}
                   alt="line"
+                  loading="lazy"
+                  decoding="async"
                   class="w-full mb-4 mt-4 d-block"
                 />
 
