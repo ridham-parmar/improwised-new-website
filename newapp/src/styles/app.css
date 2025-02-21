@@ -194,3 +194,49 @@ html {
   }
 }
 
+/* Tech Section */
+.border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  mask: linear-gradient(black, black) content-box, linear-gradient(black, black);;
+  -webkit-mask: linear-gradient(black, black) content-box, linear-gradient(black, black);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+}
+
+.inner-border-color::before {
+  background: linear-gradient(180deg, rgba(26, 182, 223, 0.4) 0%, rgba(26, 182, 223, 0) 100%);
+}
+
+.outer-border-color::before {
+  background: linear-gradient(180deg, rgba(167, 224, 117, 0.4) 0%, rgba(167, 224, 117, 0) 100%);
+}
+
+  .aspect-square {
+  width: 100%;
+  position: relative;
+  max-height: 500px;
+}
+
+@media (max-width: 576px) {
+  #orbit-container {
+    aspect-ratio: 1.2;
+    
+  }
+}
+
+@media (min-width: 1536px) {
+  .aspect-square {
+    max-width: 875px;
+  }
+}
+
+@media (min-width: 768px) {
+  .aspect-square {
+    max-width: 930px;
+    max-height: 650px;
+  }
+}

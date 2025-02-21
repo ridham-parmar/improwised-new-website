@@ -2,6 +2,7 @@
     import { cn } from "$lib/utils.js";
     export let text: string;
     export let primaryColorText: string;
+    export let isPrimaryTextInitial: boolean;
     let className: string | undefined | null = undefined;
     export let dataAos: string = "fade-up";
     export { className as class };
@@ -14,8 +15,11 @@
 </script>
 
 <h1 class={computedClass} data-aos={dataAos}>
+    {#if isPrimaryTextInitial && primaryColorText}
+        <span class="text-primary">{primaryColorText}</span>
+    {/if}
     {text}
-    {#if primaryColorText}
+    {#if !isPrimaryTextInitial && primaryColorText}
         <span class="text-primary">{primaryColorText}</span>
     {/if}
 </h1>
