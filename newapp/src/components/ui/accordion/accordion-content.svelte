@@ -10,12 +10,11 @@
 	export let transitionConfig: $$Props["transitionConfig"] = {
 		duration: 200,
 	};
-
 	export { className as class };
 </script>
 
 <AccordionPrimitive.Content
-	class={cn("overflow-hidden text-sm", className)}
+	class={cn("overflow-hidden text-sm transition-all", className)}
 	{transition}
 	{transitionConfig}
 	{...$$restProps}

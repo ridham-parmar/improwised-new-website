@@ -1,0 +1,111 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { PhoneCall, Mail, AlarmClock, MapPinned } from "lucide-svelte";
+import { Badge } from "$lib/components/ui/badge";
+import { CalendarFold } from 'lucide-svelte';
+import ContactFAQ from "$lib/components/common/ContactFAQ.svelte";
+import CTASection from "$lib/components/CTASection.astro";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content">
+    <section class="section py-10 md:py-40">
+        <div class="container flex flex-col gap-20">
+            <div class="lg:px-20">
+                <div class="flex flex-col">
+                    <SectionTitle
+                    class="text-left"
+                    text="To Start Your Project ?"
+                    primaryColorText="Ready"
+                    isPrimaryTextInitial={true}
+                    />
+
+                    <div class="pt-10 flex flex-col gap-6">
+                        <div class="flex gap-5">
+                            <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
+                                <PhoneCall class="text-primary" width="24" height="24" />
+                            </div>
+                            <div>
+                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Call</p>
+                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">+91 1234567890</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
+                                <Mail class="text-primary" width="24" height="24" />
+                            </div>
+                            <div>
+                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Mail</p>
+                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">info@improwised.com</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
+                                <AlarmClock class="text-primary" width="24" height="24" />
+                            </div>
+                            <div>
+                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Timing</p>
+                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">10 AM to 7 PM</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-5">
+                            <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
+                                <MapPinned class="text-primary" width="24" height="24" />
+                            </div>
+                            <div>
+                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Address</p>
+                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">304 - Pride Square, </br> Pushkardham Road, Nr. J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+                <!-- form -->
+                <div></div>
+            </div>
+
+            <!-- map iframe -->
+            <div class="lg:px-20">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6509218365454!2d70.78636435101201!3d22.29120934878471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959ca22a0751231%3A0x23edc234940c18b2!2sImprowised+Technologies+Private+Limited.!5e0!3m2!1sen!2sin!4v1495780225620"
+                    width="100%"
+                    height="530"
+                    frameborder="0"
+                    allowfullscreen
+                    style="border:0"
+                    class="shadow-nav rounded-[20px]">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section2 py-10 md:py-40 darker-bg">
+        <div class="container">
+            <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
+                <div class="flex items-center md:items-start flex-col">
+                    <Badge
+                        class="border border-[#d6d6d6] px-3 py-[6px] md:px-4 rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+                        variant="outline"
+                        ><CalendarFold width="20" height="20" class="mr-2 w-5"/>
+                        <span class="text-[12px] leading-[20px] md:text-base tracking-widest font-manrope font-bold text-[#737373]">FAQS</span>
+                    </Badge>
+                    <SectionTitle
+                        class="max-md:text-left md:w-3/5"
+                        text="Asked Question"
+                        primaryColorText="Frequently"
+                        isPrimaryTextInitial={true}
+                    />
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Officiis, nam.</p>
+                </div>
+
+                <div class="md:w-1/2">
+                    <ContactFAQ client:load />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <CTASection />
+  </main>
+</Layout>
