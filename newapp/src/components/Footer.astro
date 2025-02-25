@@ -10,26 +10,24 @@ import { getCollection, getEntry } from "astro:content";
 const services = await getCollection("services");
 ---
 
-<footer class="bg-black text-white w-full relative">
-  <Image
+<footer class="bg-[#1A1A1A] text-white w-full relative">
+  <!-- <Image
     src={Rect}
     alt="Background"
     class="absolute h-full w-96 object-cover max-md:hidden"
-  />
+  /> -->
 
-  <div
-    class="px-6 py-20 lg:px-20 grid grid-cols-5 max-md:grid-cols-1 gap-50 z-10 relative z-10"
-  >
+  <div class="container flex flex-col md:flex-row justify-between gap-8">
     <!-- Left Section -->
-    <div class="links-start justify-between text-wrap mb-2">
+    <div class="text-wrap pt-10 md:pt-[120px] md:pb-[104px]">
       <Image alt="improwised" src={Logo} class="mb-10 w-48" />
-      <p class="text-gray-400">Call</p>
+      <p class="text-base font-inter font-normal text-[#A3A3A3]">Call</p>
       <p class="mb-4"><a href="tel:+91 1234 567890">+91 1234 567890</a></p>
-      <p class="text-gray-400">Mail</p>
+      <p class="text-base font-inter font-normal text-[#A3A3A3]">Mail</p>
       <p class="mb-4">
         <a href="mailto:info@improwised.com">info@improwised.com</a>
       </p>
-      <p class="text-gray-400">Address</p>
+      <p class="text-base font-inter font-normal text-[#A3A3A3]">Address</p>
       <p class="mb-4 text-wrap">
         304 - Pride Square, <br /> Pushkardham Road, <br />N. J. K. Chowk, <br
         />Rajkot-360005, Gujarat, India
@@ -37,126 +35,141 @@ const services = await getCollection("services");
     </div>
 
     <!-- Right Sections -->
-    <div class="links-start justify-between text-wrap mb-2">
-      <h3 id="footerHeading0" class="text-lg font-semibold mb-6 mt-1">
-        Solutions
-      </h3>
-      <ul class="space-y-2 text-gray-400">
-        <li class="leading-[28px]"><a href="#">Engineering</a></li>
-        <li class="leading-[28px]"><a href="#">Product Modernization</a></li>
-        <li class="leading-[28px]"><a href="#">Technology Consulting</a></li>
-        <li class="leading-[28px]">
-          <a href="#">Cloud Infrastructure Service</a>
-        </li>
-        <li class="leading-[28px]"><a href="#">Pricing</a></li>
-      </ul>
-    </div>
+    <div
+      class="grid grid-cols-2 lg:grid-cols-4 md:pt-[168px] md:pb-[104px] gap-12 max-md:border-b max-md:pb-8 border-[#292929]"
+    >
+      <div class="text-wrap mb-2">
+        <h3 id="footerHeading0" class="text-lg font-semibold mb-6 mt-1">
+          Solutions
+        </h3>
+        <ul
+          class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
+        >
+          <li class="hover:text-[#fff]">
+            <a href="#">Product Modernization</a>
+          </li>
+          <li class="hover:text-[#fff]"><a href="#">Engineering</a></li>
+          <li class="hover:text-[#fff]">
+            <a href="#">Technology Consulting</a>
+          </li>
+          <li class="hover:text-[#fff]">
+            <a href="#">Cloud Infrastructure Service</a>
+          </li>
+          <li class="hover:text-[#fff]"><a href="#">Pricing</a></li>
+        </ul>
+      </div>
 
-    <div>
-      <h3 class="text-lg font-semibold mb-6 mt-1">Use cases</h3>
-      <ul class="space-y-2 text-gray-400">
-        <li class="leading-[28px]"><a href="#">Enterprise</a></li>
-        <li class="leading-[28px]"><a href="#">SaaS</a></li>
-        <li class="leading-[28px]"><a href="#">Developers</a></li>
-        <li class="leading-[28px]"><a href="#">Small business</a></li>
-        <li class="leading-[28px]">
-          <a href="#">Non-profit organization</a>
-        </li>
-        <li class="leading-[28px]">
-          <a href="#">Single high-resource site</a>
-        </li>
-        <li class="leading-[28px]"><a href="#">Case studies</a></li>
-      </ul>
-    </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-6 mt-1">Use cases</h3>
+        <ul
+          class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
+        >
+          <li class="hover:text-[#fff]"><a href="#">Enterprise</a></li>
+          <li class="hover:text-[#fff]"><a href="#">SaaS</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Developers</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Small business</a></li>
+          <li class="hover:text-[#fff]">
+            <a href="#">Non-profit organization</a>
+          </li>
+          <li class="hover:text-[#fff]">
+            <a href="#">Single high-resource site</a>
+          </li>
+          <li class="hover:text-[#fff]"><a href="#">Case studies</a></li>
+        </ul>
+      </div>
 
-    <div class="links-start justify-between text-wrap mb-2">
-      <h3 class="text-lg font-semibold mb-6 mt-1">Resources</h3>
-      <ul class="space-y-2 text-gray-400">
-        <li class="leading-[28px]"><a href="#">Documentation</a></li>
-        <li class="leading-[28px]"><a href="#">Changelog</a></li>
-        <li class="leading-[28px]"><a href="#">Blog</a></li>
-        <li class="leading-[28px]"><a href="#">Newsletter</a></li>
-        <li class="leading-[28px]"><a href="#">Knowledge Base</a></li>
-        <li class="leading-[28px]"><a href="#">Development tools</a></li>
-        <li class="leading-[28px]"><a href="#">All resources</a></li>
-      </ul>
-    </div>
+      <div class="text-wrap mb-2">
+        <h3 class="text-lg font-semibold mb-6 mt-1">Resources</h3>
+        <ul
+          class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
+        >
+          <li class="hover:text-[#fff]"><a href="#">Documentation</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Changelog</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Blog</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Newsletter</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Knowledge Base</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Development tools</a></li>
+          <li class="hover:text-[#fff]"><a href="#">All resources</a></li>
+        </ul>
+      </div>
 
-    <div class="links-start justify-between text-wrap mb-2">
-      <h3 class="text-lg font-semibold mb-4">Company</h3>
-      <ul class="space-y-2 text-gray-400">
-        <li>
-          <a href="#">About us</a>
-        </li>
+      <div class="text-wrap mb-2">
+        <h3 class="text-lg font-semibold mb-4">Company</h3>
+        <ul
+          class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
+        >
+          <li class="hover:text-[#fff]">
+            <a href="#">About us</a>
+          </li>
 
-        <li><a href="#">Why choose Improwised</a></li>
-        <li class="flex items-center gap-2">
-          <a href="#">Careers <Badge class="bg-primary2">Hiring</Badge></a>
-        </li>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">Research program</a></li>
-        <li><a href="#">Press</a></li>
-        <li><a href="#">Security and trust</a></li>
-        <li><a href="#">Contact Us</a></li>
-      </ul>
+          <li class="hover:text-[#fff]"><a href="#">Why choose Improwised</a></li>
+          <li class="hover:text-[#fff] flex items-center gap-2">
+            <a href="#">Careers <Badge class="bg-primary2">Hiring</Badge></a>
+          </li>
+          <li class="hover:text-[#fff]"><a href="#">Partners</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Research program</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Press</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Security and trust</a></li>
+          <li class="hover:text-[#fff]"><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div
-    class="border-t bg-black border-[#292929] mt-10 py-10 text-gray-400 relative z-10"
+    class="container md:border-t md:border-[#292929] pt-8 pb-6 md:pt-10 md:pb-14 flex flex-col-reverse md:flex-row max-md:text-center items-center md:justify-between gap-4"
   >
-    <div class="container flex justify-between items-center">
-      <!-- Left Side: Copyright -->
-      <p>
-        &copy; 2024 Improwised Technologies Pvt. Ltd. All rights reserved.
-        Improwised&reg; are registered trademarks.
-        <a href="#" class="underline font-medium">Legal Information</a>.
-      </p>
+  <div>
+    <p>
+      &copy; 2024 Improwised Technologies Pvt. Ltd. All rights reserved.
+      Improwised&reg; are registered trademarks.
+      <a href="#" class="underline font-medium">Legal Information</a>.
+    </p>
+  </div>
 
-      <!-- Right Side: Social Media Icons -->
-      <div class="flex items-center gap-4">
-        <!-- LinkedIn Icon with External Link -->
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-2 text-white"
-          href="https://www.linkedin.com/company/improwised-technologies/"
-        >
-          <span class="sr-only">Go to Improwised's LinkedIn</span>
-          <Linkedin width="24" height="24" astro-icon="social/linkedin" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-2 text-white"
-          href="https://www.facebook.com/improwised"
-        >
-          <span class="sr-only">Go to Improwised's Facebook</span>
-          <Facebook width="24" height="24" astro-icon="social/facebook" />
-        </a>
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          class="flex items-center gap-2 text-white"
-          href="https://x.com/improwised"
-        >
-          <span class="sr-only"
-            >Follow Improwised on x.com (formerly Twitter)</span
-          >
+  <!-- Right Side: Social Media Icons -->
+  <div class="flex items-center gap-4">
+    <!-- LinkedIn Icon with External Link -->
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2 text-white hover:text-[#A3A3A3]"
+      href="https://www.linkedin.com/company/improwised-technologies/"
+    >
+      <span class="sr-only">Go to Improwised's LinkedIn</span>
+      <Linkedin width="24" height="24" astro-icon="social/linkedin" />
+    </a>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2 text-white hover:text-[#A3A3A3]"
+      href="https://www.facebook.com/improwised"
+    >
+      <span class="sr-only">Go to Improwised's Facebook</span>
+      <Facebook width="24" height="24" astro-icon="social/facebook" />
+    </a>
+    <a
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-2 text-white hover:text-[#A3A3A3]"
+      href="https://x.com/improwised"
+    >
+      <span class="sr-only"
+        >Follow Improwised on x.com (formerly Twitter)</span
+      >
 
-          <svg
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-            width="24"
-            height="24"
-            astro-icon="social/twitter"
-            ><path
-              fill="currentColor"
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            ></path></svg
-          >
-        </a>
-      </div>
-    </div>
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        width="24"
+        height="24"
+        astro-icon="social/twitter"
+        ><path
+          fill="currentColor"
+          d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+        ></path></svg
+      >
+    </a>
+  </div>
   </div>
 </footer>

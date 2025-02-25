@@ -12,18 +12,13 @@
     align: "start",
     loop: true,
   }}
-  plugins={[
-    Autoplay({
-      delay: 2000,
-    }),
-  ]}
-  class="w-11/12"
+  class="w-full flex flex-col justify-center gap-6"
 >
   <Carousel.Content class="">
     {#each testimonials as testimonial, i (i)}
       {#if testimonial.data.siteImage && testimonial.data.siteImage.src}
         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
-          <div class="p-1 h-full">
+          <div class="flex justify-center p-1 h-full">
             <Card.Root
               class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
             >
@@ -72,7 +67,7 @@
         </Carousel.Item>
       {:else}
         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
-          <div class="p-1 h-full">
+          <div class="flex justify-center p-1 h-full">
             <Card.Root
               class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
             >
@@ -117,6 +112,8 @@
       {/if}
     {/each}
   </Carousel.Content>
-  <Carousel.Previous class="absolute top-[-80px] left-[98%]" />
-  <Carousel.Next class="absolute top-[-80px]" />
+  <div class="md:absolute md:top-[-95px] right-0 flex gap-3 justify-center">
+    <Carousel.Previous/>
+    <Carousel.Next />
+  </div>
 </Carousel.Root>

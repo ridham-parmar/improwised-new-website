@@ -24,10 +24,7 @@
 	{variant}
 	{size}
 	class={cn(
-		"absolute h-8 w-8 touch-manipulation rounded-full",
-		$orientation === "horizontal"
-			? "-left-12 top-1/2 -translate-y-1/2"
-			: "-top-12 left-1/2 -translate-x-1/2 rotate-90",
+		"h-[52px] w-[52px] rounded-xl border border-[#E5E5E5] hover:bg-[#141414] hover:text-[#fff] hover:border-slate-600",
 		className
 	)}
 	disabled={!$canScrollPrev}
@@ -35,6 +32,6 @@
 	on:keydown={handleKeyDown}
 	{...$$restProps}
 >
-	<ArrowLeft class="h-4 w-4" />
+	<ArrowLeft class="h-6 w-6" />
 	<span class="sr-only">Previous slide</span>
 </Button>
