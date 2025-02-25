@@ -234,7 +234,7 @@ html {
 
 @media (max-width: 576px) {
   #orbit-container {
-    aspect-ratio: 1.2;
+    aspect-ratio: 1.5;
     
   }
 }
@@ -250,6 +250,14 @@ html {
     max-width: 930px;
     max-height: 650px;
   }
+}
+
+.bg-tech-image {
+  background-image: url("../images/tech-section-dot.svg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
 }
 
 /* Service's Platform Engineering */
