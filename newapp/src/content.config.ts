@@ -88,7 +88,8 @@ const teams = defineCollection({
 		name: z.string(),
 		image: image(),
 		designation: z.string().optional(),
-		linkedin: z.string().optional()
+		linkedin: z.string().optional(),
+		desc: z.string(),
 	}),
 });
 
