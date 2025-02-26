@@ -1,0 +1,27 @@
+<svg width="99" height="99" viewBox="0 0 99 99" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_d_527_16297)">
+<rect x="14.3037" y="27.0723" width="52" height="52" rx="4" transform="rotate(-28.4456 14.3037 27.0723)" fill="white"/>
+<rect x="14.9815" y="27.2737" width="51" height="51" rx="3.5" transform="rotate(-28.4456 14.9815 27.2737)" stroke="#F7F7F7"/>
+<g clip-path="url(#clip0_527_16297)">
+<path d="M46.3153 29.5787L45.4361 30.055C41.4984 32.1881 39.5296 33.2547 38.969 35.1407C38.4084 37.0266 39.4749 38.9955 41.6081 42.9331C43.7412 46.8708 44.8078 48.8396 46.6938 49.4002C48.5797 49.9608 50.5486 48.8943 54.4862 46.7611C58.4239 44.628 60.3927 43.5614 60.9533 41.6755C61.5139 39.7895 60.4474 37.8207 58.3142 33.883L57.8379 33.0037" stroke="#066086" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M55.8591 27.2529C56.7799 28.9526 56.1484 31.0768 54.4488 31.9975C52.7492 32.9183 50.625 32.2868 49.7042 30.5872C48.7835 28.8876 49.4149 26.7634 51.1146 25.8426C52.8142 24.9219 54.9384 25.5533 55.8591 27.2529Z" stroke="#066086" stroke-width="1.5"/>
+<path d="M45.29 39.2324L48.8071 37.3271" stroke="#066086" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M47.6709 43.6289L54.7051 39.8183" stroke="#066086" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d_527_16297" x="-0.696289" y="-0.697266" width="100.491" height="100.492" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="9" operator="erode" in="SourceAlpha" result="effect1_dropShadow_527_16297"/>
+<feOffset dy="12"/>
+<feGaussianBlur stdDeviation="12"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.45098 0 0 0 0 0.45098 0 0 0 0 0.45098 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_527_16297"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_527_16297" result="shape"/>
+</filter>
+<clipPath id="clip0_527_16297">
+<rect width="24" height="24" fill="white" transform="translate(33.8955 32.8945) rotate(-28.4456)"/>
+</clipPath>
+</defs>
+</svg>
