@@ -1,0 +1,24 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import { render } from "astro:content";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({
+    params: { slug: service.id },
+    props: service,
+  }));
+}
+type Props = CollectionEntry<"services">;
+
+const service = Astro.props;
+const { Content } = await render(service);
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content z-10">
+    <Content />
+  </main>
+</Layout>

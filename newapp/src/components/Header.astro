@@ -12,7 +12,7 @@ import Moon from "lucide-svelte/icons/moon";
 
 <header
   id="up"
-  class="impronav-sticky-header sticky top-0 border-b border-transparent transition-all sticky z-50"
+  class="impronav-sticky-header fixed top-0 left-0 right-0 border-b border-transparent transition-all z-50"
 >
   <!-- <header
   class="impronav-sticky-header sticky top-0 border-b border-transparent transition-all  sticky bg-white/30 backdrop-blur-md z-50"
@@ -95,17 +95,8 @@ import Moon from "lucide-svelte/icons/moon";
 </header>
 <style>
   .impronav-sticky-header {
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    will-change: transform;
-  }
-
-  .impronav-sticky-header {
-    background: transparent; /* Remove white background */
-    position: absolute; /* Make it overlay the hero section */
-    width: 100%; /* Ensure it spans the full width */
-    top: 0;
-    left: 0;
+    background: transparent; 
+    width: 100%;
     z-index: 50;
     transition:
       background 0.3s ease-in-out,
@@ -113,9 +104,8 @@ import Moon from "lucide-svelte/icons/moon";
       box-shadow 0.3s ease-in-out;
   }
   .impronav-sticky-header.scrolled {
-    position: sticky;
-    background: rgba(255, 255, 255, 0.3); /* Light translucent background */
-    backdrop-filter: blur(12px); /* Apply blur effect */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(12px); 
     box-shadow:
       0 4px 6px -1px rgb(0 0 0 / 0.1),
       0 2px 4px -2px rgb(0 0 0 / 0.1);

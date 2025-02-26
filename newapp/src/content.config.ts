@@ -129,5 +129,30 @@ const teams = defineCollection({
 // 		slug: z.string()
 // 	}),
 // });
-export const collections = { clients, testimonials, casestudies, industries, services, teams };
+
+const corefeatures = defineCollection({
+	loader: glob({ base: './src/content/corefeatures', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string()
+	}),
+});
+
+const approaches = defineCollection({
+	loader: glob({ base: './src/content/approaches', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		approaches: z.array(
+		  z.object({
+			title: z.string(),
+			description: z.string(),
+			image: image()
+		  })
+		),
+	}),
+});
+export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams };
 

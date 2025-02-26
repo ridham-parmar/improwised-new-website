@@ -7,26 +7,23 @@ const casestudies = await getCollection("casestudies");
 import CaseStudyCarousel from "$lib/components/common/CaseStudyCarousel.svelte";
 ---
 
-<section class="section py-20">
-	<div class="container">
-		<div class="flex items-center justify-between px-5 mb-8">
-			<div>
-				<Badge
-					class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
-					variant="outline"
-					><CircleUserRound class="mr-1 w-[16px]" />Case Studies</Badge
-				>
-				<SectionTitle
-					text="See How We've "
-					primaryColorText="Made a Difference"
-				/>
-			</div>
-		</div>
+<section class="section py-10 md:py-40 lighter-bg">
+  <div class="container">
+    <div class="text-center flex max-w-3xl flex-col items-center md:items-start justify-center">
+      <Badge
+        class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+        variant="outline"
+        ><CircleUserRound class="mr-1 w-[16px]" />Case Studies</Badge
+      >
+      <SectionTitle
+        class="w-4/5 lg:w-full text-left"
+        text="See How We've "
+        primaryColorText="Made a Difference"
+      />
+    </div>
 
-		<div class="relative overflow-x-clip">
-			<div class="flex justify-center">
-				<CaseStudyCarousel client:load {casestudies} />
-			</div>
-		</div>
-	</div>
+    <div class="relative overflow-x-clip">
+    	<CaseStudyCarousel client:load {casestudies} />
+    </div>
+  </div>
 </section>

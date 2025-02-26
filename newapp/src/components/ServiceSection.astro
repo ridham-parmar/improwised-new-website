@@ -7,6 +7,7 @@ import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import * as Card from "$lib/components/ui/card";
 import { getCollection } from "astro:content";
 import { BASE_URL } from "$lib/consts";
+import CustomCard from "./CustomCard.astro";
 
 const services = await getCollection("services", ({ data }) => {
     return data.slug !== "platform-engineering";
@@ -16,7 +17,7 @@ let gradientX = 45.5;
 let gradientY = -200;
 ---
 
-<section class="section bg-white overflow-hidden relative pt-40 pb-20">
+<section class="section bg-white overflow-hidden relative py-10 md:py-40 lighter-bg">
     <svg
         viewBox="0 0 1440 181"
         fill="none"
@@ -61,73 +62,16 @@ let gradientY = -200;
     >
     <div class="container">
         <div
-            class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
+            class="md:mb-12 text-center flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center"
         >
             <Badge
                 class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
                 variant="outline"
                 ><CircleUserRound class="mr-1 w-[16px]" />Services</Badge
             >
-            <SectionTitle text="Technologies" primaryColorText="we work with" />
+            <SectionTitle text="Technologies" primaryColorText="we work with" class="max-md:text-left" />
         </div>
-        <div
-            class="flex flex-wrap features-grid text-center justify-center gap-4 p-4"
-        >
-            <div class="mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3">
-                {
-                    services.map((service, index) => (
-                        <>
-                            <Card.Root
-                                class="card-custom shadow-nav text-center"
-                                onmousemove="updateGradient(event)"
-                                style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-                            >
-                                <div
-                                    class="card-custom-inner"
-                                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-                                    onmousemove="updateGradient(event)"
-                                >
-                                    <Card.Header class="">
-                                        <Image
-                                            alt="feature"
-                                            class="ml-auto mr-auto max-md:w-[208px] w-[208px] "
-                                            src={service.data.image}
-                                        />
-                                    </Card.Header>
-                                    <Card.Content>
-                                        <Card.Title class="text-[26px]">
-                                            <a
-                                                href={
-                                                    BASE_URL +
-                                                    "/services/" +
-                                                    service?.data.slug
-                                                }
-                                            >
-                                                {service.data.title}
-                                            </a>
-                                        </Card.Title>
-                                    </Card.Content>
-                                    <Card.Footer class="block">
-                                        <p>{service.data.description}</p>
-                                        <Button
-                                            href={
-                                                BASE_URL +
-                                                "/services/" +
-                                                service?.data.slug
-                                            }
-                                            class="bg-black mt-10"
-                                        >
-                                            {" "}
-                                            Learn More
-                                        </Button>
-                                    </Card.Footer>
-                                </div>
-                            </Card.Root>
-                        </>
-                    ))
-                }
-            </div>
-        </div>
+        <CustomCard collectionName="services"/>
     </div>
 </section>
 
