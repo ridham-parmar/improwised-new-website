@@ -1,35 +1,37 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEY } from "$lib/consts";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { PhoneCall, Mail, AlarmClock, MapPinned } from "lucide-svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { CalendarFold } from 'lucide-svelte';
 import ContactFAQ from "$lib/components/common/ContactFAQ.svelte";
 import CTASection from "$lib/components/CTASection.astro";
+import Form from "$lib/components/common/Form.svelte"
+import { CONTACT_US_URL } from "$lib/consts"
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="main-content">
-    <section class="section py-10 md:py-40">
+    <section class="section pt-32 pb-10 md:py-40">
         <div class="container flex flex-col gap-20">
-            <div class="lg:px-20">
-                <div class="flex flex-col">
+            <div class="flex flex-col items-center md:flex-row lg:px-20 gap-10 md:gap-6 justify-between">
+                <div class="flex flex-col items-start gap-2 w-full md:w-1/2">
                     <SectionTitle
-                    class="text-left"
+                    class="text-left w-full lg:w-2/3"
                     text="To Start Your Project ?"
                     primaryColorText="Ready"
                     isPrimaryTextInitial={true}
                     />
 
-                    <div class="pt-10 flex flex-col gap-6">
+                    <div class="md:pt-10 flex flex-col gap-6">
                         <div class="flex gap-5">
                             <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
                                 <PhoneCall class="text-primary" width="24" height="24" />
                             </div>
                             <div>
-                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Call</p>
-                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">+91 1234567890</p>
+                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Call</p>
+                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-[#292929]">+91 1234567890</p>
                             </div>
                         </div>
                         <div class="flex gap-5">
@@ -37,8 +39,8 @@ import CTASection from "$lib/components/CTASection.astro";
                                 <Mail class="text-primary" width="24" height="24" />
                             </div>
                             <div>
-                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Mail</p>
-                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">info@improwised.com</p>
+                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Mail</p>
+                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-[#292929]">info@improwised.com</p>
                             </div>
                         </div>
                         <div class="flex gap-5">
@@ -46,8 +48,8 @@ import CTASection from "$lib/components/CTASection.astro";
                                 <AlarmClock class="text-primary" width="24" height="24" />
                             </div>
                             <div>
-                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Timing</p>
-                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">10 AM to 7 PM</p>
+                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Timing</p>
+                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-[#292929]">10 AM to 7 PM</p>
                             </div>
                         </div>
                         <div class="flex items-start gap-5">
@@ -55,14 +57,14 @@ import CTASection from "$lib/components/CTASection.astro";
                                 <MapPinned class="text-primary" width="24" height="24" />
                             </div>
                             <div>
-                                <p class="font-manrope font-semibold text-base leading-[26px] text-[#737373]">Address</p>
-                                <p class="font-manrope font-normal text-base leading-[26px] text-[#292929]">304 - Pride Square, </br> Pushkardham Road, Nr. J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
+                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Address</p>
+                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-[#292929]">304 - Pride Square, </br> Pushkardham Road, Nr. J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
                             </div> 
                         </div>
                     </div>
                 </div>
                 <!-- form -->
-                <div></div>
+                <Form client:load siteKey={SITE_KEY} contactUsURL={CONTACT_US_URL}/>
             </div>
 
             <!-- map iframe -->
