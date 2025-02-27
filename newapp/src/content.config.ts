@@ -54,30 +54,32 @@ const services = defineCollection({
 		description: z.string()
 	}),
 });
-// const blogs = defineCollection({
+const blogs = defineCollection({
 
-// 	loader: glob({ base: './src/content/blogs', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: ({ image }) => z.object({
-// 		title: z.string(),
-// 		slug: z.string(),
-// 		image: image(),
-// 		description: z.string(),
-// 		tags: z.array(z.string()),
-// 		author: z.string(),
-// 		publishDate: z.coerce.date(),
-// 	}),
-// });
+	loader: glob({ base: './src/content/blogs', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string(),
+		tags: z.array(z.string()),
+		author: z.string(),
+		publishDate: z.coerce.date(),
+	}),
+});
 
 const casestudies = defineCollection({
 
 	loader: glob({ base: './src/content/casestudies', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
-	schema: () => z.object({
+	schema: ({ image }) => z.object({
 		category: z.string(),
 		title: z.string(),
+		image: image(),
 		saveCost:z.string(),
-		description: z.string()
+		description: z.string(),
+		tags: z.array(z.string()),
 	}),
 });
 const teams = defineCollection({
@@ -155,5 +157,5 @@ const approaches = defineCollection({
 		),
 	}),
 });
-export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams };
+export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs };
 

@@ -82,17 +82,7 @@ const { Content } = await render(blog);
         <section class="pb-10">
             <div class="container border-t border-b border-dashed">
                 <div class="relative py-10 flex justify-between items-center">
-                    <div>
-                        {
-                            blog.data.tags.map((tag, index) => (
-                                <>
-                                    <Badge variant="secondary" class="mr-2 p-2">
-                                        {tag}
-                                    </Badge>
-                                </>
-                            ))
-                        }
-                    </div>
+                     
                     <div>
                         <ShareDropdown client:load />
                     </div>
