@@ -22,30 +22,30 @@ let gradientY = -200;
 ---
 
 <div
-  class="md:mt-10 grid gap-5 md:gap-10 md:grid-cols-2 lg:grid-cols-3 place-items-stretch"
+  class="md:mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3"
 >
   {
     collectionDetails.map((details, index) => (
       <>
         <Card.Root
-          class="card-custom shadow-nav"
+          class="card-custom shadow-nav text-center"
           onmousemove="updateGradient(event)"
           style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
         >
           <div
-            class="card-custom-inner"
+            class="card-custom-inner flex flex-col justify-between"
             style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
             onmousemove="updateGradient(event)"
           >
             <Card.Header>
               <Image
                 alt="feature"
-                class="max-md:w-[208px] w-[208px] "
+                class="ml-auto mr-auto max-md:w-[208px] w-[208px]"
                 src={details.data.image}
               />
             </Card.Header>
-            <Card.Content class="text-left">
-              <Card.Title>
+            <Card.Content class="flex flex-col gap-2 md:gap-6 text-[#141414] tracking-tight">
+              <Card.Title class="font-manrope font-bold text-[24px] leading-[28px] md:text-[28px] md:leading-[32px]">
                 <a href={BASE_URL + "/services/" + details.data.slug}>
                   {details.data.title}
                 </a>
@@ -58,7 +58,7 @@ let gradientY = -200;
               <Card.Footer class="block">
                 <Button
                   href={BASE_URL + "/services/" + details.data.slug}
-                  class="bg-black"
+                  class="bg-black md:mt-6"
                 >
                   {" "}
                   Learn More

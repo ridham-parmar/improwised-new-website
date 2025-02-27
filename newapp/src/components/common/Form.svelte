@@ -3,6 +3,7 @@
   import { writable } from "svelte/store";
   export let siteKey: string;
   export let contactUsURL: string;
+  import Button from "../ui/button/button.svelte";
 
   let name = "";
   let email = "";
@@ -131,11 +132,7 @@
   <div id="g-recaptcha"></div>
   {#if $errors.captcha}<p class="text-red-500 text-sm mt-1">{$errors.captcha}</p>{/if}
 
-  <button 
-    id="btn-submit"
-    type="submit" 
-    class="w-full bg-black text-white py-3 rounded-lg shadow-lg font-medium transition hover:opacity-80"
-  >
-    Submit
-  </button>
+  <Button class="bg-black" type="submit">
+    Contact Us
+  </Button>
 </form>
