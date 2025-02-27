@@ -1,0 +1,33 @@
+<svg width="400" height="230" viewBox="0 0 400 230" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Path 1 (Extended) -->
+    <path id="animated-path1" d="M0 98H85C112 98 134 76 134.5 50C135 24 157 2 183 1H400" stroke="#F0F0F0" stroke-width="2.6"/>
+    <circle r="5" fill="#22C55E">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path1" />
+        </animateMotion>
+    </circle>
+
+    <!-- Path 2 (Extended) -->
+    <path id="animated-path2" d="M0 98H180C190 98 200 90 200 80C200 70 210 62 220 62H390" stroke="#F0F0F0" stroke-width="2.6"/>
+    <circle r="5" fill="#22C55E">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path2" />
+        </animateMotion>
+    </circle>
+
+    <!-- Path 3 (Extended) -->
+    <path id="animated-path3" d="M0 98H170C180 98 190 105 192 115C195 125 205 135 220 135H400" stroke="#F0F0F0" stroke-width="2.6"/>
+    <circle r="5" fill="#22C55E">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path3" />
+        </animateMotion>
+    </circle>
+
+    <!-- Path 4 (Extended) -->
+    <path id="animated-path4" d="M0 98H80C110 98 134 120 135 150C136 180 160 200 190 200H400" stroke="#F0F0F0" stroke-width="2.6"/>
+    <circle r="5" fill="#22C55E">
+        <animateMotion repeatCount="indefinite" dur="3s">
+            <mpath href="#animated-path4" />
+        </animateMotion>
+    </circle>
+</svg>

@@ -1,0 +1,76 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import CTASection from "$lib/components/CTASection.astro";
+
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { getCollection } from "astro:content";
+import backImage from "$lib/images/casestudies/back.svg";
+const casestudies = await getCollection("casestudies");
+import CaseStudyCarouselImage from "$lib/components/common/CaseStudyCarouselImage.svelte";
+const categories = [...new Set(casestudies.map((cs) => cs.data.category))];
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content">
+    <section
+      class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-40 lg:pt-[12%]"
+      style={`background-image: url(${backImage.src})`}
+    >
+      <!-- Main Heading -->
+      <h1
+        class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] max-md:text-[30px] leading-[62px] max-md:leading-[42px] font-bold lg:tracking-tight"
+      >
+        Explore How We Turn<br />
+        <span class="text-primary">Vision into Reality</span>
+      </h1>
+
+      <!-- Subtext -->
+      <p class="mt-4 text-para max-w-2xl mx-auto">
+        Our case studies showcase successful client projects, highlighting
+        solutions, challenges, and outcomes achieved through collaboration.
+      </p>
+
+
+    </section>
+
+    {
+      categories.map((category) => {
+        // Filter case studies by category
+        const filteredStudies = casestudies.filter(
+          (cs) => cs.data.category === category,
+        );
+
+        return (
+          <section class="section py-10" key={category}>
+            <div class="container">
+              <div class="flex items-center justify-between mb-8">
+                <div>
+                  <SectionTitle text={category} />
+                </div>
+              </div>
+              <div class="relative overflow-x-clip">
+                <div class="flex justify-center">
+                  <CaseStudyCarouselImage
+                    client:load
+                    casestudies={filteredStudies}
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+        );
+      })
+    }
+
+    <CTASection />
+  </main>
+</Layout>
+
+<style>
+  .bg-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+</style>
