@@ -14,6 +14,14 @@ type FlyAndScaleParams = {
 	duration?: number;
 };
 
+declare global {
+    interface Window {
+      grecaptcha?: {
+        render: (id: string, options: { sitekey: string; callback: (response: string) => void }) => void;
+      };
+    }
+}
+
 export const flyAndScale = (
 	node: Element,
 	params: FlyAndScaleParams = { y: -8, x: 0, start: 0.95, duration: 150 }
