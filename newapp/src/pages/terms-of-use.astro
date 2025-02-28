@@ -1,14 +1,8 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
-import { render, getCollection, getEntry } from "astro:content";
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
-const terms = await getEntry("terms", "terms-of-use");
-let Content = null;
-if (terms) {
-    ({ Content } = await render(terms));
-}
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
