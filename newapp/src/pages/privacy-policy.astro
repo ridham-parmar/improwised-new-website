@@ -1,0 +1,275 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import backImage from "$lib/images/blogs/back.svg";
+import bg2Image from "$lib/images/blogs/bg2.svg";
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+    <div class="main-content">
+        <section
+            class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
+            style={`background-image: url(${backImage.src}), url(${bg2Image.src})`}
+        >
+            <!-- Main Heading -->
+            <div class="container">
+                <h1
+                    class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] max-md:text-[30px] leading-[62px] max-md:leading-[42px] font-bold lg:tracking-tight"
+                >
+                   Privacy  <span class="text-primary">Policy</span>
+                </h1>
+                <!-- Subtext -->
+                <p class="mt-4 text-para max-w-2xl mx-auto">
+                    Understand your rights, responsibilities, and usage policies for our services.
+                </p>
+            </div>
+        </section>
+        <section class="py-20 md:py-20 section">
+
+
+        <div class="container mx-auto flex gap-5 max-md:gap-2">
+            <!-- Sidebar Navigation -->
+            <aside
+                class="w-1/3 h-fit sticky top-48 max-md:top-32"
+            >
+
+                <ul class="space-y-5 max-md:space-y-3">
+                    <li  class="nav-item active">
+                        <a
+                            href="#Introduction"
+                            class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Introduction</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="#Definitions"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Definitions</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="#InformationCollectionUse"
+                            class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Information Collection & Use</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="#DataRetentionTransfer"
+                            class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Data Retention & Transfer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="#DisclosureSecurityofData"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Disclosure & Security of Data</a>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <a
+                            href="#DataProtectionRights"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Data Protection Rights</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#DataClassificationMatrix"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Data Classification Matrix</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#ServiceProvidersAnalyticsTools"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Service Providers, Analytics, & Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#LinkstoThirdPartySites"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Links to Third-Party Sites</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#ChildrensPrivacy"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Children's Privacy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#PolicyChanges"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Policy Changes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                           href="#ContactUs"
+                           class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
+                            >Contact Us</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <main
+                id="main"
+                class="w-3/4 border-l-4 pr-4 pl-20 max-md:pl-10 border-[#D6D6D6] overflow-y-auto scroll-smooth"
+            >
+                <section id="Introduction" class="mb-8 border-b-2 pb-8 border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Introduction
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        Improwised Technologies Pvt. Ltd. (“us”, “we,” or “our”) operates https://www.improwised.com. This Privacy Policy explains how we collect, use, and protect your personal data when you visit our website or use our services. By using our services, you agree to the collection and use of data in accordance with this policy.
+                    </p>
+
+                </section>
+
+                <section id="Definitions" class="mb-8 border-b-2 pb-8  border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Definitions
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        "Service" refers to the website operated by Improwised Technologies Pvt. Ltd. "Personal Data" is information that can identify a living individual, such as name, email, and address. "Usage Data" is information that is collected automatically during the use of the Service, such as your IP address, browser type, and pages visited. "Cookies" are small files stored on your device that track usage data. The "Data Controller" refers to Improwised Technologies Pvt. Ltd., the entity responsible for determining the purposes and methods of processing personal data. "Data Processor" refers to third parties who process data on our behalf. "Data Subject" is any living individual whose personal data is processed, and "The User" is the individual using the Service.
+                    </p>
+                </section>
+
+                <section id="InformationCollectionUse" class="mb-8 border-b-2 pb-8  border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Information Collection & Use
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        We collect different types of information to provide and improve our Service. This includes personal data such as your name, email address, phone number, and location. We may also collect usage data, such as your device's IP address, browser type, and the pages you visit. Additionally, we use tracking cookies to enhance your experience and improve our Service. We may use this data to send newsletters, provide customer support, notify you about changes, and improve your overall experience with the Service.
+                    </p>
+                </section>
+
+                <section id="DataRetentionTransfer" class="mb-8 border-b-2 pb-8  border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Data Retention & Transfer
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        Your personal data will be retained as long as necessary for the purpose it was collected. We may transfer your data to countries outside your jurisdiction, but we will ensure that adequate protection measures are in place to safeguard your data.
+                    </p>
+                </section>
+
+                <section id="DisclosureSecurityofData" class="mb-8 border-b-2 pb-8  border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Disclosure & Security of Data
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        The data we collect, including personal data, may be transferred to computers located outside your region, such as in India. By using our service, you consent to the transfer and processing of your data in locations with varying data protection laws. We take all reasonable steps to ensure your data is treated securely and in line with this privacy policy, with appropriate safeguards in place to protect your information.
+                    </p>
+                </section>
+                <section id="DataProtectionRights" class="mb-8 border-b-2 pb-8  border-[#D6D6D6]">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Data Protection Rights
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        If you are a resident of the EU or EEA, under the General Data Protection Regulation (GDPR), you have certain rights regarding your personal data. These rights include the right to access, correct, or delete your data. You also have the right to withdraw your consent for data processing. If you wish to exercise these rights, you can contact us for assistance.
+                    </p>
+                </section>
+                <section id="DataClassificationMatrix" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Data Classification Matrix
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        We classify data into various categories, such as Personal Identifiable Information (PII), Sensitive Data, Client Data, and Operational Data. Each category is managed based on its sensitivity. For example, PII and sensitive data are subject to strict access controls and encryption, while operational data may have less restrictive access. We retain personal data for the duration of the service and sensitive data for an extended period to comply with legal obligations.
+                    </p>
+                </section>
+                <section id="ServiceProvidersAnalyticsTools" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Service Providers, Analytics, & Tools
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        We use third-party companies to facilitate the Service, perform analytics, and improve the user experience. These service providers may have access to your personal data, but they are contractually obligated not to disclose or use it for any other purpose beyond fulfilling their services.
+                    </p>
+                </section>
+                <section id="LinkstoThirdPartySites" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Links to Third-Party Sites
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        Our website may contain links to other websites that are not operated by us. We are not responsible for the privacy practices or the content of these external websites. We strongly encourage you to review the privacy policy of any third-party site you visit.
+                    </p>
+                </section>
+
+                <section id="ChildrensPrivacy" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Children's Privacy
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        Our services are not intended for children under the age of 18. We do not knowingly collect personal data from children. If we discover that a child under 18 has provided us with personal information, we will take immediate steps to delete it from our records.
+                    </p>
+                </section>
+                <section id="PolicyChanges" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Policy Changes
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated effective date. We encourage you to periodically review the policy to stay informed about how we protect your personal data.
+                    </p>
+                </section>
+                <section id="ContactUs" class="mb-8  pb-8">
+                    <h2 class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]">
+                        Contact Us
+                    </h2>
+                    <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2">
+                        If you have any questions or concerns regarding this Privacy Policy, please contact us by email at <a href="mailto:contact@improwised.com">contact@improwised.com</a>
+                    </p>
+                </section>
+            </main>
+        </div>
+    </div>
+    </div>
+</Layout>
+
+<style>
+    .bg-image {
+        background-size: cover, contain;
+        background-position: center, center;
+        background-repeat: no-repeat, no-repeat;
+    }
+    .nav-item {
+    position: relative;
+    padding-left: 15px;
+    transition: all 0.3s ease-in-out;
+    border-left: 2px solid transparent; /* Blue border */
+}
+
+.nav-item.active {
+    border-left: 2px solid #141414; /* Blue border */
+    padding-left: 20px;
+}
+
+</style>
+<script is:inline>
+document.addEventListener("DOMContentLoaded", function () {
+    const links = document.querySelectorAll(".scroll-link");
+    const mainContainer = document.getElementById("main");
+
+    links.forEach((link) => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            // Remove active class from all links
+            links.forEach(l => l.parentElement.classList.remove("active"));
+
+            // Add active class to the clicked link's parent <li>
+            this.parentElement.classList.add("active");
+
+            const targetId = this.getAttribute("href").substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                const offset = 200; // Adjust based on header height
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({
+                    top: elementPosition - offset,
+                    behavior: "smooth",
+                });
+            }
+        });
+    });
+});
+</script>
