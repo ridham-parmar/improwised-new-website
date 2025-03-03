@@ -98,7 +98,7 @@
       id="name" 
       name="name"
       bind:value={name} 
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-none py-2 text-gray-700 placeholder-gray-400"
+      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Your Name"
     />
     {#if $errors.name}<p class="text-red-500 text-sm mt-1">{$errors.name}</p>{/if}
@@ -111,7 +111,7 @@
       id="email" 
       name="email"
       bind:value={email} 
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-none py-2 text-gray-700 placeholder-gray-400"
+      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Your Email"
     />
     {#if $errors.email}<p class="text-red-500 text-sm mt-1">{$errors.email}</p>{/if}
@@ -123,7 +123,7 @@
       id="message" 
       name="message"
       bind:value={message} 
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-none py-2 text-gray-700 placeholder-gray-400"
+      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Add Your Message Here"
     ></textarea>
     {#if $errors.message}<p class="text-red-500 text-sm mt-1">{$errors.message}</p>{/if}

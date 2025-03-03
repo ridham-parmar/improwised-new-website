@@ -3,7 +3,7 @@ import { defineConfig } from 'astro/config';
 
 import svelte from '@astrojs/svelte';
 
-import tailwind from '@astrojs/tailwind';
+import tailwindcss from '@tailwindcss/vite';
 
 import mdx from '@astrojs/mdx';
 
@@ -16,8 +16,8 @@ export default defineConfig({
 
   // Default output directory
   outDir: 'dist',
-
-  integrations: [svelte(), tailwind({
-    applyBaseStyles: false,
-  }), mdx()]
+  vite: {
+    plugins: [tailwindcss()],
+  },
+  integrations: [svelte(), mdx()]
 });

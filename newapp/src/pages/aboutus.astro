@@ -180,7 +180,7 @@ const faqs = [
 			<div class="container mx-auto">
 				<div class="flex flex-col items-center space-y-12">
 					<Card.Root
-						class="card-custom-primary2 shadow-nav text-left !rounded-none"
+						class="card-custom-primary2 shadow-nav text-left rounded-none!"
 						onmousemove="updateGradient(event)"
 						style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
 					>
@@ -290,7 +290,7 @@ const faqs = [
 					>
 						<div class="flex flex-col items-end space-y-12">
 							<Card.Root
-								class="card-custom-primary2 shadow-nav text-left !rounded-none"
+								class="card-custom-primary2 shadow-nav text-left rounded-none!"
 								onmousemove="updateGradient(event)"
 								style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
 							>
@@ -303,7 +303,7 @@ const faqs = [
 										class="flex flex-row space-x-4 pb-6"
 									>
 										<div
-											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-sm"
+											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
 										>
 											<CloudSun
 												width="24"
@@ -447,7 +447,7 @@ const faqs = [
 					<div class="relative flex flex-col items-start py-20 pl-10">
 						<div class="flex flex-col items-end space-y-12">
 							<Card.Root
-								class="card-custom-primary2 shadow-nav text-left !rounded-none"
+								class="card-custom-primary2 shadow-nav text-left rounded-none!"
 								onmousemove="updateGradient(event)"
 								style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
 							>
@@ -460,7 +460,7 @@ const faqs = [
 										class="flex flex-row space-x-4 pb-6"
 									>
 										<div
-											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-sm"
+											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
 										>
 											<Milestone
 												width="24"
@@ -979,6 +979,7 @@ const faqs = [
 
 </Layout>
 <style>
+	@reference "tailwindcss";
 	.bg-image {
 		background-image: url("../images/aboutusPage/bg-aboutus.svg"),
 			url("../images/aboutusPage/pattern-aboutus.svg");
