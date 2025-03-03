@@ -4,217 +4,130 @@ slug: 'technology-consulting'
 image: '$lib/images/services/data2.svg'
 description: 'We are passionate about empowering your business with tailored growth, providing the right tools and software architecture.'
 ---
-
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { Button } from "$lib/components/ui/button";
-
 import { Image } from "astro:assets";
 import { BASE_URL } from "$lib/consts";
-import { ArrowBigRightDash,CloudCog } from 'lucide-svelte';
-import serviceImage from '$lib/images/services/data3.png';
+import { ArrowBigRightDash, CloudCog } from "lucide-svelte";
+import serviceImage from "$lib/images/services/data3.png";
 import * as Card from "$lib/components/ui/card";
+import { CircleUserRound, CalendarDays } from "lucide-svelte";
+import buildingBlock from "$lib/images/services/building-block.svg";
+import { getCollection } from "astro:content";
+import CustomCard from "$lib/components/CustomCard.astro"
+import ServiceApproach from "$lib/components/ServiceApproach.astro";
+import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
+import CTASection from "$lib/components/CTASection.astro";
+import solutions from "$lib/images/services/solutions.svg"
 
-<div class="service-details">
-   <section class="relative">
-      <div class="container relative z-10">
-         <div
-            class="grid grid-cols-2 max-md:grid-cols-1 gap-16 mb-16 items-start relative "
-            >
-            <div class="relative max-md:order-2">
-               <SectionTitle
-                  class=""
-                  text="Understanding Multi-Cloud"
-                  primaryColorText="Strategies"
-                  />
-               <p
-                  class="text-lg mb-5 max-w-2xl mx-auto max-md:text-center"
-                  data-aos="fade-up"
-                  >
-                  Boost your business by using the abundant power of cloud platforms. The cloud has revolutionized the IT industry. It has changed the way we access information, use business applications, and design IT infrastructure.
-               </p>
-               <p
-                  class="text-lg mb-5 max-w-2xl mx-auto max-md:text-center"
-                  data-aos="fade-up"
-                  >
-                  Experts have better knowledge of many features of the cloud platform, which is why you want to hire the best cloud infrastructure provider company.
-               </p>
-               <p>Whether you have a legacy system or cloud-based infrastructure, our expertise and knowledge will impress you.</p>
-               <p>In order to help our clients reap maximum benefits from these nascent cloud platforms, we follow a strategic working model that helps them identify the right cloud platform, optimize their business applications and processes, and integrate other cloud infrastructure services.</p>
+export const title = frontmatter.title
+export const slug = frontmatter.slug
+export const image = "$lib/images/services/data1.png"
+export const description = "At Improwised, we design scalable, secure platform solutions that empower businesses to innovate and accelerate digital transformation."
+
+<section>
+    <section class="section1 pt-[30%] lg:pt-52 pb-10 bg-platform">
+        <div class="container flex flex-col justify-center items-center">
+            <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
+                <h1 class="main-heading-small md:main-heading">{title}</h1>
+                <p class="my-4 small-text font-roboto md:text-para">{description}</p>
             </div>
-            <div
-               class="relative max-md:order-1 aos-init aos-animate"
-               data-aos="fade-up"
-               data-aos-offset="200"
-               data-aos-duration="1000"
-               data-aos-once="true"
-               >
-               <Image
-                  src={serviceImage}
-                  alt="A descriptive alt text"
-                  class="inline-block dark:hidden w-full rounded-medium shadow-nav"
-                  />
+            <Button class="bg-black">Explore Solutions</Button>
+        </div>
+        <div class="w-full flex justify-center">
+          <Image class="hidden md:block" alt="building block" src={solutions}/>
+        </div>
+    </section>
+
+    <section class="section2 overflow-x-hidden py-10 md:py-40">
+        <div class="container flex flex-col-reverse md:flex-row justify-between gap-10 md:gap-16">
+            <div>
+                <Badge  variant="outline"><CircleUserRound width="16" height="16" class="mr-1 w-[16px]"/>Service</Badge>
+                <SectionTitle class="max-md:text-left w-5/6 md:w-4/6" text="Innovation and" primaryColorText="Growth Together"/>
+                <div>
+                    <p class="font-bold text-[18px text-[#141414]] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Automated workflow (CI/CD)</p>
+                    <p class="pt-2 pb-6 small-text font-inter md:text-para">We create a tailored Internal Developer Platform that meets your
+                    specific needs and provides a comprehensive set</p>
+                </div>
+                <div>
+                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Containerizatrion</p>
+                </div>
+                <div>
+                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Kubernetes Integration</p>
+                </div>
+                <div>
+                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Monitoring and Alerting</p>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
-   <section class="py-10 section">
-      <div class="container">
-         <div class="relative text-left">
-            <SectionTitle class="" text="Our Key Cloud infrastructure services are listed below:" />
+            <div class="md:min-w-[50%] flex justify-center items-center">
+                <Image alt="building block" src={buildingBlock} data-aos="fade-left"/>
             </div>
-             <div class="relative text-left">
-            <p class="my-4 text-lg text-gray-500">
-               Over the years we have catered to diversified clients with out-of-the-box requirements. Through our experience, we can provide you and your customers with the best cloud-related solutions.
-            </p>
-            <ul class="list-decimal list-inside text-lg">
-               <li>Cloud Consultancy</li>
-               <ul class="list-disc list-inside ml-4 ">
-                  <li>Cloud strategy and roadmap building</li>
-                  <li>Readiness assessment (Risk analysis and Compliance analysis)</li>
-               </ul>
-               <li>Cloud Implementation</li>
-               <ul class="list-disc list-inside pl-4">
-                  <li>Migration</li>
-                  <li>Cloud application development and deployment</li>
-                  <li>Proof of concept development and deployment</li>
-                  <li>Failover implementation</li>
-               </ul>
-               <li>Cloud Optimization</li>
-               <ul class="list-disc list-inside pl-4">
-                  <li>Cloud Billing Optimization </li>
-               </ul>
-            </ul>
-         </div>
-      </div>
-   </section>
-   <section class="relative content-section">
-      <div class="container text-center">
-      <div class="relative z-10 mb-10 max-w-[948px] mx-auto text-center aos-init aos-animate">
-         <SectionTitle class="" text="Why Choose" primaryColorText="Us?" />
-          <p class="my-4 text-lg text-gray-500">
-               Over the years we have catered to diversified clients with out-of-the-box requirements. Through our experience, we can provide you and your customers with the best cloud-related solutions.
-            </p>
-      </div>
-        <div class="relative z-10">
-         <ul>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Experts of leading cloud platforms
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Exceptional quality of service
-            </li>
-            <li class="bg-white flex items-center shadow-navr border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Prompt support
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Effortless transformation of business, solutions, and operations
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Hassle-free deployment
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Help you use the complete potential of the cloud
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Help you accelerate your time to market
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Help you enjoy the flexibility of cloud
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2 hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Transparent working model
-            </li>
-            <li class="bg-white flex items-center shadow-nav border-b border-dashed border-gray-200 py-5 px-2  hover:shadow-xs">
-               <ArrowBigRightDash class="pr-1 h-6 w-6 text-primary"/>
-               Competitive price
-            </li>
-         </ul>
+        </div>
+    </section>
+
+    <section class="section3 relative lighter-bg">
+        <svg
+            viewBox="0 0 1440 181"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="absolute"
+            data-v-baf90ddd=""
+            ><mask id="path-1-inside-1_1086_7239" fill="white"
+                ><path d="M0 0H1440V181H0V0Z"></path></mask
+            ><path
+                d="M0 0H1440V181H0V0Z"
+                fill="url(#paint0_linear_1086_7239)"
+                fill-opacity="0.22"></path><path
+                d="M0 2H1440V-2H0V2Z"
+                fill="url(#paint1_linear_1086_7239)"
+                mask="url(#path-1-inside-1_1086_7239)"></path><defs
+                ><linearGradient
+                    id="paint0_linear_1086_7239"
+                    x1="720"
+                    y1="0"
+                    x2="720"
+                    y2="181"
+                    gradientUnits="userSpaceOnUse"
+                    ><stop stop-color="#00afdb"></stop><stop
+                        offset="1"
+                        stop-color="#00afdb"
+                        stop-opacity="0"></stop></linearGradient
+                ><linearGradient
+                    id="paint1_linear_1086_7239"
+                    x1="0"
+                    y1="90.5"
+                    x2="1440"
+                    y2="90.5"
+                    gradientUnits="userSpaceOnUse"
+                    ><stop stop-color="#00afdb" stop-opacity="0"></stop><stop
+                        offset="0.395"
+                        stop-color="#00afdb"></stop><stop
+                        offset="1"
+                        stop-color="#00afdb"
+                        stop-opacity="0"></stop></linearGradient
+                ></defs
+            ></svg
+        >
+        <div class="container py-10 md:py-40">
+          <div class="flex mx-auto max-w-2xl flex-col items-center justify-center">
+            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />Services</Badge>
+            <SectionTitle primaryColorText="Core Features" text="Of Our Platform Engineering" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
           </div>
-      </div>
-   </section>
-   <section class="py-20 relative content-section">
-      <div class="container text-center">
+          <CustomCard collectionName="corefeatures"/>
+        </div>
+    </section>
 
-       <div class="relative z-10 mb-10 max-w-[948px] mx-auto text-center aos-init aos-animate">
-        <SectionTitle class="" text="Our Technical Expertise lies"  primaryColorText="in following cloud platforms"/>
-          <p class="my-4 text-lg text-gray-500">
-               Over the years we have catered to diversified clients with out-of-the-box requirements. Through our experience, we can provide you and your customers with the best cloud-related solutions.
-            </p>
-      </div>
+    <section class="section4 py-10 md:py-40 overflow-x-hidden lighter-bg">
+        <div class="container">
+          <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
+            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
+            <SectionTitle text="Our Approach to        " primaryColorText="     Building Robust Platform" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
+          </div>
+          <ServiceApproach />
+        </div>
+    </section>
 
-         <div class="relative z-10">
-            <div
-               class="grid grid-cols-3 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
-               >
-               <Card.Root class="shadow-nav text-center">
-                  <Card.Header
-                     class="text-center justify-center items-center"
-                     >
-                     <div
-                        class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-xs"
-                        >
-                        <CloudCog
-                           width="24"
-                           height="24"
-                           class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
-                           />
-                     </div>
-                  </Card.Header>
-                  <Card.Content class="text-center">
-                     <Card.Title class="text-[20px]"
-                        >Google Cloud</Card.Title>
-                  </Card.Content>
-               </Card.Root>
-               <Card.Root class="shadow-nav text-center">
-                  <Card.Header
-                     class="text-center justify-center items-center"
-                     >
-                     <div
-                        class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-xs"
-                        >
-                        <CloudCog
-                           width="24"
-                           height="24"
-                           class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
-                           />
-                     </div>
-                  </Card.Header>
-                  <Card.Content class="text-center">
-                     <Card.Title class="text-[20px]"
-                        >Amazon Web Server (AWS)</Card.Title>
-                  </Card.Content>
-               </Card.Root>
-               <Card.Root class="shadow-nav text-center">
-                  <Card.Header
-                     class="text-center justify-center items-center"
-                     >
-                     <div
-                        class="icon-container flex h-16 w-16 items-center text-center justify-center rounded-full bg-white shadow-lg hover:shadow-xs"
-                        >
-                        <CloudCog
-                           width="24"
-                           height="24"
-                           class="h-6 w-6 shrink-0 transition-transform duration-200 text-primary"
-                           />
-                     </div>
-                  </Card.Header>
-                  <Card.Content class="text-center">
-                     <Card.Title class="text-[20px]"
-                        >Digital Ocean</Card.Title>
-                  </Card.Content>
-               </Card.Root>
-            </div>
-         </div>
-      </div>
-   </section>
-</div>
+    <CaseStudiesSection/>
+    <CTASection />
+</section>

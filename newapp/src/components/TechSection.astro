@@ -38,7 +38,7 @@ const orbits = [
       class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
     >
       <Badge
-        class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+
         variant="outline"
         ><CircleUserRound class="mr-1 w-[16px]" />Tech Stack</Badge
       >
@@ -59,7 +59,7 @@ const orbits = [
       orbits.map(({ radius, count, images }, index) => {
         return (
           <div
-            class={`absolute bg-white rounded-t-full 
+            class={`absolute bg-white rounded-t-full
             ${index == 7 ? "-z-50" : index == 6 ? "-z-40" : index == 5 ? "-z-30" : index == 4 ? "-z-20" : ""}
             ${index < 3 ? `z-${30 - index * 10}` : `-z-${index * 10 - 20}`}
             ${index % 2 !== 0 && index !== 1 && index !== 7 ? "border-gradient inner-border-color shadow-[0px_-14px_23px_rgba(26,182,223,0.10)]" : index === 7 ? "border-gradient outer-border-color shadow-[0px_-14px_23px_rgba(167,224,117,0.10)]" : ""}
