@@ -25,7 +25,7 @@ layer(base);
 }
 
 @utility text-para {
-  @apply text-[18px] leading-[28px] tracking-[0.02em] font-normal text-colorprimarytext;
+  @apply text-[16px] leading-[20px] md:text-[18px] md:leading-[28px] tracking-[0.02em] font-normal text-colorprimarytext;
 }
 @utility small-text {
   @apply text-[16px] leading-[24px] tracking-[0.02em] font-normal text-colorprimarytext;
