@@ -24,12 +24,18 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"careers">;
 
 const career = Astro.props;
-const { Content } = await render(career);
+
+const formatDate = (date: Date) => {
+  return new Date(date).toLocaleDateString("en-US", {
+    month: "short",
+    day: "2-digit",
+    year: "numeric",
+  });
+};
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="main-content z-10">
-    <!-- <Content /> -->
     <div>
       <section class="section1 bg-career py-10 md:py-40 pt-[30%] lg:pt-52">
         <div
@@ -212,7 +218,7 @@ const { Content } = await render(career);
                       <Mail class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
-                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">career@improwised.com</p>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">careers@improwised.com</p>
                       <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Contact Email</p>
                   </div>
               </a>
@@ -239,7 +245,7 @@ const { Content } = await render(career);
                       <Calendar class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
-                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{career.data.postedDate}</p>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{formatDate(career.data.postedDate)}</p>
                       <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Featured</p>
                   </div> 
               </div>

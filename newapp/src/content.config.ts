@@ -160,7 +160,7 @@ const careers = defineCollection({
 		place: z.string(),
 		jobType: z.string(),
 		jobCategory: z.string(),
-		postedDate: z.string(),
+		postedDate: z.coerce.date(),
 		applyLink: z.string()
 	}),
 });
