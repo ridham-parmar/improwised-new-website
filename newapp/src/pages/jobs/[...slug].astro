@@ -1,0 +1,280 @@
+---
+import { type CollectionEntry, getCollection } from "astro:content";
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import { render } from "astro:content";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { Badge } from "$lib/components/ui/badge";
+import Button from "$lib/components/ui/button/button.svelte";
+import person1 from "$lib/images/people/1.svg";
+import person2 from "$lib/images/people/2.svg";
+import person3 from "$lib/images/people/3.svg";
+const peopleImages = [person1, person2, person3];
+import { Image } from "astro:assets";
+import { Star, Facebook, Linkedin, MapPinned, Mail, AlarmClock, User, Calendar } from "lucide-svelte";
+import line from "$lib/images/line.svg";
+
+export async function getStaticPaths() {
+  const careers = await getCollection("careers");
+  return careers.map((career) => ({
+    params: { slug: career.id },
+    props: career,
+  }));
+}
+type Props = CollectionEntry<"careers">;
+
+const career = Astro.props;
+const { Content } = await render(career);
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content z-10">
+    <!-- <Content /> -->
+    <div>
+      <section class="section1 bg-career py-10 md:py-40 pt-[30%] lg:pt-52">
+        <div
+          class="container flex flex-col gap-8 items-center lg:flex-row justify-between"
+        >
+          <div class="flex flex-col gap-6 items-center lg:items-start">
+            <div class="flex flex-col items-center lg:items-start">
+              <SectionTitle
+                class="text-center lg:text-left main-heading-small md:main-heading"
+                text={career.data.title}
+              />
+              <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3">
+                  {
+                    (career.data.tags).map((tag) => (
+                      <div class="flex items-center gap-3">
+                        <p class="small-text md:text-para">{tag}</p>
+                        <div class="rounded-full h-[6px] w-[6px] bg-[#292929]"></div>
+                      </div>
+                    ))
+                  }
+                </div>
+                <p class="small-text md:text-para">{career.data.place}</p>
+              </div>
+            </div>
+            
+            <div class="flex items-center gap-4">
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-[#292929]"
+                href="https://www.linkedin.com/company/improwised-technologies/"
+              >
+                <span class="sr-only">Go to Improwised's LinkedIn</span>
+                <Linkedin width="21" height="21" astro-icon="social/linkedin" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-[#292929]"
+                href="https://www.facebook.com/improwised"
+              >
+                <span class="sr-only">Go to Improwised's Facebook</span>
+                <Facebook width="21" height="21" astro-icon="social/facebook" />
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-[#292929]"
+                href="https://x.com/improwised"
+              >
+                <span class="sr-only"
+                  >Follow Improwised on x.com (formerly Twitter)</span
+                >
+          
+                <svg
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                  width="21"
+                  height="21"
+                  astro-icon="social/twitter"
+                  ><path
+                    fill="currentColor"
+                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  ></path></svg
+                >
+              </a>
+            </div>
+          </div>
+  
+          <div class="my-auto">
+            <div
+              class="inline-flex items-center small-text md:text-para font-medium text-gray-700"
+            >
+              <p>Trusted and top rated tech team</p>
+              <div class="flex ml-3 group">
+                {
+                  peopleImages.map((src, index) => (
+                    <Image
+                      src={src}
+                      alt={`Person ${index + 1}`}
+                      class={`${index > 0 ? "-ml-[6px]" : ""} h-8 w-8`}
+                    />
+                  ))
+                }
+              </div>
+            </div>
+            <div class="pt-3 flex justify-between items-center">
+              <h3
+                class="text-[21px] leading-[30px] text-[#2b3935] font-manrope font-extrabold tracking-wide uppercase"
+              >
+                glassdoor
+              </h3>
+  
+              <div class="flex flex-col gap-2">
+                <div class="flex gap-[6px]">
+                  {
+                    Array.from({ length: 5 }, (_, i) => (
+                      <Star fill="#FFCC00" color="#FFCC00" class="h-5 w-5" />
+                    ))
+                  }
+                </div>
+                <p class="small-text md:text-para">120+ Reviews</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section2 relative md:-mt-[100px] z-20 pb-10 darker-bg">
+        <div class="container flex flex-col md:flex-row gap-6">
+          <div class="flex flex-col gap-10 md:w-[70%]">
+            <!-- overview -->
+            <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
+              <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Overview</p>
+              <p class="small-text md:text-para pt-4 md:pt-6 lg:w-4/5">{career.data.overview}</p>
+            </div>
+
+            <!-- objectives -->
+            <div>
+              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Objective</p>
+                
+                <div class="flex flex-col gap-4 pt-4 md:pt-6">
+                  {career.data.objectives.map((objective) => (
+                    <div class="flex gap-6 items-start justify-start">
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
+                      <p class="small-text md:text-para">{objective}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- responsibility -->
+            <div> 
+              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Responsibility</p>
+                
+                <div class="flex flex-col gap-4 pt-4 md:pt-6">
+                  {career.data.responsibilities.map((responsibility) => (
+                    <div class="flex gap-6 items-start justify-start">
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
+                      <p class="small-text md:text-para">{responsibility}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <!-- quallification -->
+            <div> 
+              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Skill & Qualification</p>
+                
+                <div class="flex flex-col gap-4 pt-4 md:pt-6">
+                  {career.data.qualifications.map((quallification) => (
+                    <div class="flex gap-6 items-start justify-start">
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
+                      <p class="small-text md:text-para">{quallification}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- apply for job -->
+          <div class="p-8 border-1 border-[#E5E5E5] rounded-[16px] h-max bg-[#fff] flex flex-col gap-4 md:gap-5">
+            <div class="flex flex-col gap-4">
+              <div class="flex gap-4">
+                <MapPinned class="text-primary" trokeWidth={0.5} width="26" height="26" />
+                <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{career.data.place}</p>
+              </div>
+              <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373] md:w-4/5">Please send us your detailed CV to apply for this job</p>
+            </div>
+            <div class="flex flex-col gap-6">
+              <a class="flex gap-5 hover:cursor-pointer" href={"mailto:careers@improwised.com?subject=Dropped Resume to get job"}>
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                      <Mail class="text-primary" trokeWidth={0.5} width="24" height="24" />
+                  </div>
+                  <div>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">career@improwised.com</p>
+                      <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Contact Email</p>
+                  </div>
+              </a>
+              <div class="flex gap-5">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                      <AlarmClock class="text-primary" trokeWidth={0.5} width="24" height="24" />
+                  </div>
+                  <div>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{career.data.jobType}</p>
+                      <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Job Type</p>
+                  </div>
+              </div>
+              <div class="flex gap-5">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                      <User class="text-primary" trokeWidth={0.5} width="24" height="24" />
+                  </div>
+                  <div>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{career.data.jobCategory}</p>
+                      <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Job Category</p>
+                  </div>
+              </div>
+              <div class="flex items-start gap-5">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                      <Calendar class="text-primary" trokeWidth={0.5} width="24" height="24" />
+                  </div>
+                  <div>
+                      <p class="font-semibold text-[16px] leading-[24px] tracking-[0.02em] font-manrope">{career.data.postedDate}</p>
+                      <p class="font-inter text-[16px] leading-[24px] font-normal text-[#737373]">Featured</p>
+                  </div> 
+              </div>
+            </div>
+            <div class="flex flex-col justify-between gap-10 items-stretch">
+              <Image src={line} alt="line" class="w-full d-block" />
+              <Button class="bg-black" href={career.data.applyLink}>
+                Apply For Job
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  @reference "tailwindcss";
+
+  .bg-career {
+    background-image: url("../../images/careers/dot.svg"),
+      url("../../images/careers/gradient-2.svg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    position: relative;
+  }
+
+  .bg-color {
+    background: rgb(245, 245, 245);
+    background: linear-gradient(
+      0deg,
+      rgba(245, 245, 245, 0.6) 0%,
+      rgba(245, 245, 245, 0.1) 100%
+    );
+  }
+</style>

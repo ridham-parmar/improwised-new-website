@@ -1,6 +1,6 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { CalendarFold } from "lucide-svelte";
@@ -102,7 +102,7 @@ let gradientY = -200;
       </div>
     </section>
 
-    <section class="section2 relative md:-mt-[100px] z-20 darker-bg pb-10">
+    <section class="section2 relative md:-mt-[100px] z-20 pb-10">
       <div
         class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
       >
@@ -178,7 +178,7 @@ let gradientY = -200;
                   <p class="md:w-4/5 small-text md:text-para font-inter">
                     {data.overview}
                   </p>
-                  <Button class="bg-black"> Apply Now </Button>
+                  <Button href=`${BASE_URL}/jobs/${data.slug}` class="bg-black"> Apply Now </Button>
                 </div>
               </div>
             ))
