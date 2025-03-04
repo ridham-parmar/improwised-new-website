@@ -6,7 +6,7 @@
     import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
    </script>
 
-  <DropdownMenu.Root>
+  <DropdownMenu.Root preventScroll={false}>
     <DropdownMenu.Trigger class="flex items-center space-x-1">
       <span><ExternalLink class="text-black w-8 h-8"/></span>
 

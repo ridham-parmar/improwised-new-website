@@ -29,7 +29,7 @@ const careers = await getCollection("careers", (data) => {
 });
 
 const lifeImages = await getCollection("lifeimages", ({data}) => {
- return data  
+ return data
 })
 
 
@@ -252,7 +252,7 @@ let gradientY = -200;
             class="text-center"
           />
         </div>
-        
+
         <div>
           {lifeImages.map(({data : {images}}) => (
             <ImageCarousel client:load {images}>
@@ -277,7 +277,7 @@ let gradientY = -200;
             class="text-center md:w-3/4"
           />
         </div>
-        
+
       </div>
       <div class="max-md:container">
         {reviews.map(({data: {reviews}}) => (
