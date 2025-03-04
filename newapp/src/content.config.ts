@@ -33,16 +33,7 @@ const industries = defineCollection({
 		description: z.string()
 	}),
 });
-// const benefits = defineCollection({
 
-// 	loader: glob({ base: './src/content/benefits', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: ({ image }) => z.object({
-// 		title: z.string(),
-// 		icon: image(),
-// 		description: z.string()
-// 	}),
-// });
 const services = defineCollection({
 
 	loader: glob({ base: './src/content/services', pattern: '**/*.{md,mdx}' }),
@@ -52,6 +43,22 @@ const services = defineCollection({
 		slug: z.string(),
 		image: image(),
 		description: z.string()
+	}),
+});
+
+
+const events = defineCollection({
+	loader: glob({ base: './src/content/events', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		events: z.array(
+		  z.object({
+			title: z.string(),
+			image: image(),
+			date: z.coerce.date(),
+			quote: z.string(),
+		  })
+		),
 	}),
 });
 const blogs = defineCollection({
@@ -82,57 +89,22 @@ const casestudies = defineCollection({
 		tags: z.array(z.string()),
 	}),
 });
-const teams = defineCollection({
 
+const teams = defineCollection({
 	loader: glob({ base: './src/content/teams', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) => z.object({
-		name: z.string(),
-		image: image(),
-		designation: z.string().optional(),
-		linkedin: z.string().optional(),
-		desc: z.string(),
+		teams: z.array(
+		  z.object({
+			name: z.string(),
+			image: image(),
+			designation: z.string().optional(),
+			linkedin: z.string().optional(),
+			desc: z.string(),
+		  })
+		),
 	}),
 });
-
-// const jobs = defineCollection({
-
-// 	loader: glob({ base: './src/content/jobs', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: () => z.object({
-// 		title: z.string(),
-// 		slug: z.string(),
-// 		experience: z.string(),
-// 		payRange: z.string(),
-// 		type: z.string(),
-// 		description:z.string(),
-// 		datePosted: z.coerce.date(),
-// 		expiryDate: z.coerce.date(),
-// 		qualification:z.string(),
-// 		jobSkills:z.array(z.string()),
-// 		location:z.string(),
-// 	}),
-// });
-
-// const policy = defineCollection({
-
-// 	loader: glob({ base: './src/content/policy', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: () => z.object({
-// 		name: z.string(),
-// 		slug: z.string()
-// 	}),
-// });
-// const terms = defineCollection({
-
-// 	loader: glob({ base: './src/content/policy', pattern: '**/*.{md,mdx}' }),
-// 	// Type-check frontmatter using a schema
-// 	schema: () => z.object({
-// 		name: z.string(),
-// 		slug: z.string()
-// 	}),
-// });
-
 const corefeatures = defineCollection({
 	loader: glob({ base: './src/content/corefeatures', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
@@ -157,5 +129,5 @@ const approaches = defineCollection({
 		),
 	}),
 });
-export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs };
+export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs,events };
 
