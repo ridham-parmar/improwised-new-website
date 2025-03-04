@@ -329,10 +329,10 @@ layer(base);
     }
 
     to {
-      --num-one: 14;
-      --num-two: 120;
-      --num-three: 2;
-      --num-four: 1500;
+      --num-one: 13;
+      --num-two: 100;
+      --num-three: 3;
+      --num-four: 2000;
     }
   }
 

@@ -7,10 +7,15 @@ const clients = defineCollection({
 	loader: glob({ base: './src/content/clients', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) => z.object({
-		title: z.string(),
-		image: image()
+		clients: z.array(
+		  z.object({
+			title: z.string(),
+			image: image()
+		  })
+		),
 	}),
 });
+
 const testimonials = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
 	loader: glob({ base: './src/content/testimonials', pattern: '**/*.{md,mdx}' }),

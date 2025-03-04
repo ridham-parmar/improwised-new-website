@@ -5,12 +5,12 @@
   export let services: string | any[] = [];
 </script>
 
-<DropdownMenu.Root>
+<DropdownMenu.Root preventScroll={false}>
   <DropdownMenu.Trigger class="flex items-center space-x-1">
     <span>Service</span>
     <ChevronRight class="w-4 h-4" />
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content>
+  <DropdownMenu.Content class="drop-shadow-lg">
     <DropdownMenu.Group>
       {#if services.length > 0}
         {#each services as service}

@@ -6,7 +6,9 @@ import person1 from "$lib/images/people/1.svg";
 import person2 from "$lib/images/people/2.svg";
 import person3 from "$lib/images/people/3.svg";
 import { getCollection } from "astro:content";
-const clients = await getCollection("clients");
+const clientsCollection = await getCollection('clients');
+const clients = clientsCollection.flatMap(client => client.data.clients);
+
 const peopleImages = [person1, person2, person3];
 ---
 
@@ -16,9 +18,8 @@ const peopleImages = [person1, person2, person3];
   <!-- Trusted Badge -->
   <div
     class="inline-flex items-center bg-white shadow-md px-5 py-2 rounded-full text-base font-medium text-gray-700"
-
   >
-    Trusted by <span class="font-bold mx-1">1,200+</span> professionals
+    Trusted by <span class="font-bold mx-1">200+</span> professionals
     <span class="flex ml-3 group">
       {
         peopleImages.map((src, index) => (
@@ -29,24 +30,20 @@ const peopleImages = [person1, person2, person3];
   </div>
 
   <!-- Main Heading -->
-  <h1
-    class="mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
-
-  >
-    Empowering Businesses With<br />
-    <span class="text-primary">Cloud-Native Excellence</span>
+  <h1 class="mt-4 mb-6 max-md:text-center main-heading-small md:main-heading">
+    Engineering the Platforms<br />
+    <span class="text-primary">That Build the Future</span>
   </h1>
 
   <!-- Subtext -->
   <p class="mt-4 text-para max-w-2xl mx-auto">
-    We've been redefining possibilities for SaaS platforms, modernizing legacy
-    systems, and engineering solutions for businesses worldwide.
+    We design self-service, high-performing platforms that accelerate development, optimize operations, and drive seamless scalability.
   </p>
 
   <!-- CTA Buttons -->
   <div class="mt-6 flex justify-center space-x-4">
-    <Button href=`${BASE_URL}/contactus` class="bg-black"> Get a Quote</Button>
-    <Button href=`${BASE_URL}/aboutus` variant="outline">
+    <Button href=`${BASE_URL}/contactus` class="bg-black">Get in Touch</Button>
+    <Button href=`${BASE_URL}/services/platform-engineering` variant="outline">
       Explore Solutions
     </Button>
   </div>
@@ -56,7 +53,7 @@ const peopleImages = [person1, person2, person3];
     <p
       class="text-[18px] leading-[26px] font-semibold tracking-[2%] text-[#141414]"
     >
-      Top Companies trusting us
+    Trusted by Leading Companies Worldwide
     </p>
     <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6">
       {
@@ -64,8 +61,8 @@ const peopleImages = [person1, person2, person3];
           <>
             <div class="">
               <Image
-                src={client.data.image}
-                alt={client.data.title}
+                src={client.image}
+                alt={client.title}
                 loading="lazy"
                 decoding="async"
                 class="mx-auto mx-5"
@@ -76,14 +73,13 @@ const peopleImages = [person1, person2, person3];
         ))
       }
     </div>
-
   </div>
   <div
     id="v-0-3"
-    class="hidden lg:block absolute inset-x-0  bottom-0  w-full pointer-events-none"
->
+    class="hidden lg:block absolute inset-x-0 bottom-0 w-full pointer-events-none"
+  >
     <div data-generated="true" id="tsparticlesCanvasHero"></div>
-</div>
+  </div>
 </section>
 
 <style>
@@ -108,61 +104,61 @@ const peopleImages = [person1, person2, person3];
 <script src="../scripts/particles.js"></script>
 <script>
   window.addEventListener("DOMContentLoaded", () => {
-      tsParticles.load({
-          id: "tsparticlesCanvasHero",
-          options: {
-              fullScreen: {
-                  enable: false,
-              },
-              fpsLimit: 60,
-              particles: {
-                  number: {
-                      value: 50,
-                  },
-                  shape: { type: "circle" },
-                  move: {
-                      enable: true,
-                      speed: 0.5,
-                      outModes: {
-                          default: "bounce",
-                      },
-                  },
-                  color: { value: "#00afdb" }, // Particle color
-                  size: {
-                      value: 1,
-                  },
-                  links: {
-                      enable: true, // Enable links
-                      distance: 100, // Maximum distance for linking
-                      color: "#00afdb", // Link color
-                      opacity: 0.3, // Transparency of links
-                      width: 1, // Line thickness
-                  },
-              },
-              interactivity: {
-                  events: {
-                      onHover: {
-                          enable: true, // Enable mouse interaction
-                          mode: "grab", // Effect on hover
-                      },
-                      onClick: {
-                          enable: true,
-                          mode: "push", // Adds new particles on click
-                      },
-                  },
-                  modes: {
-                      grab: {
-                          distance: 150, // Distance for grab effect
-                          links: {
-                              opacity: 0.3, // Opacity of grabbed links
-                          },
-                      },
-                      push: {
-                          quantity: 3, // Adds 3 particles on click
-                      },
-                  },
-              },
+    tsParticles.load({
+      id: "tsparticlesCanvasHero",
+      options: {
+        fullScreen: {
+          enable: false,
+        },
+        fpsLimit: 60,
+        particles: {
+          number: {
+            value: 50,
           },
-      });
+          shape: { type: "circle" },
+          move: {
+            enable: true,
+            speed: 0.5,
+            outModes: {
+              default: "bounce",
+            },
+          },
+          color: { value: "#00afdb" }, // Particle color
+          size: {
+            value: 1,
+          },
+          links: {
+            enable: true, // Enable links
+            distance: 100, // Maximum distance for linking
+            color: "#00afdb", // Link color
+            opacity: 0.3, // Transparency of links
+            width: 1, // Line thickness
+          },
+        },
+        interactivity: {
+          events: {
+            onHover: {
+              enable: true, // Enable mouse interaction
+              mode: "grab", // Effect on hover
+            },
+            onClick: {
+              enable: true,
+              mode: "push", // Adds new particles on click
+            },
+          },
+          modes: {
+            grab: {
+              distance: 150, // Distance for grab effect
+              links: {
+                opacity: 0.3, // Opacity of grabbed links
+              },
+            },
+            push: {
+              quantity: 3, // Adds 3 particles on click
+            },
+          },
+        },
+      },
+    });
   });
 </script>

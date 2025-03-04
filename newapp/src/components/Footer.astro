@@ -45,17 +45,17 @@ const services = await getCollection("services");
         <ul
           class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
         >
+        {
+          services.map((service, index) => (
+            <>
           <li class="hover:text-[#fff]">
-            <a href="#">Product Modernization</a>
+            <a href={`${BASE_URL}/services/${service.data.slug}`}>{service.data.title}</a>
           </li>
-          <li class="hover:text-[#fff]"><a href="#">Engineering</a></li>
-          <li class="hover:text-[#fff]">
-            <a href="#">Technology Consulting</a>
-          </li>
-          <li class="hover:text-[#fff]">
-            <a href="#">Cloud Infrastructure Service</a>
-          </li>
-          <li class="hover:text-[#fff]"><a href="#">Pricing</a></li>
+
+          </>
+            ))
+          }
+
         </ul>
       </div>
 
@@ -74,7 +74,7 @@ const services = await getCollection("services");
           <li class="hover:text-[#fff]">
             <a href="#">Single high-resource site</a>
           </li>
-          <li class="hover:text-[#fff]"><a href="#">Case studies</a></li>
+          <li class="hover:text-[#fff]"><a href={`${BASE_URL}/casestudies`}>Case Studies</a></li>
         </ul>
       </div>
 
@@ -85,7 +85,7 @@ const services = await getCollection("services");
         >
           <li class="hover:text-[#fff]"><a href="#">Documentation</a></li>
           <li class="hover:text-[#fff]"><a href="#">Changelog</a></li>
-          <li class="hover:text-[#fff]"><a href="#">Blog</a></li>
+          <li class="hover:text-[#fff]"><a href={`${BASE_URL}/blogs`}>Blog</a></li>
           <li class="hover:text-[#fff]"><a href="#">Newsletter</a></li>
           <li class="hover:text-[#fff]"><a href="#">Knowledge Base</a></li>
           <li class="hover:text-[#fff]"><a href="#">Development tools</a></li>
@@ -99,18 +99,18 @@ const services = await getCollection("services");
           class="space-y-3 md:space-y-4 text-sm leading-[16px] md:text-base md:leading-[28px] font-inter font-normal text-[#A3A3A3]"
         >
           <li class="hover:text-[#fff]">
-            <a href="#">About us</a>
+            <a href={`${BASE_URL}/aboutus`}>About us</a>
           </li>
 
-          <li class="hover:text-[#fff]"><a href="#">Why choose Improwised</a></li>
+          <li class="hover:text-[#fff]"><a href={`${BASE_URL}/aboutus`}>Why choose Improwised</a></li>
           <li class="hover:text-[#fff] flex items-center gap-2">
-            <a href="#">Careers <Badge class="bg-primary2">Hiring</Badge></a>
+            <a href={`${BASE_URL}/careers`}>Careers <Badge class="bg-primary text-white mb-0">Hiring</Badge></a>
           </li>
-          <li class="hover:text-[#fff]"><a href="#">Partners</a></li>
+          <li class="hover:text-[#fff]"><a href={`${BASE_URL}/contact-us`}>Partners</a></li>
           <li class="hover:text-[#fff]"><a href="#">Research program</a></li>
           <li class="hover:text-[#fff]"><a href=`${BASE_URL}/privacy-policy`>Privacy Policy</a></li>
           <li class="hover:text-[#fff]"><a href=`${BASE_URL}/terms-of-use`>Terms of Use</a></li>
-          <li class="hover:text-[#fff]"><a href="#">Contact Us</a></li>
+          <li class="hover:text-[#fff]"><a href={`${BASE_URL}/contact-us`}>Contact Us</a></li>
         </ul>
       </div>
     </div>
@@ -123,7 +123,7 @@ const services = await getCollection("services");
     <p>
       &copy; 2024 Improwised Technologies Pvt. Ltd. All rights reserved.
       Improwised&reg; are registered trademarks.
-      <a href="#" class="underline font-medium">Legal Information</a>.
+      <a  href=`${BASE_URL}/privacy-policy` class="underline font-medium">Legal Information</a>.
     </p>
   </div>
 

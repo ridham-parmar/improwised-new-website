@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import FullTechMobile from "$lib/images/tech/FullTechMobile.svg";
 import FullTech from "$lib/images/tech/FullTech.svg";
+import FullTech2 from "$lib/images/tech/FullTech2.svg";
 ---
 
 <section class="section bg-white overflow-hidden relative pt-28 pb-10 md:py-40 darker-bg">
@@ -12,8 +13,8 @@ import FullTech from "$lib/images/tech/FullTech.svg";
         >
             <SectionTitle text="Tech That" primaryColorText="Drives Results" />
             <p class="text-para">
-                We harness the power of modern technologies to create scalable,
-                secure solutions. Our tech stack ensures high performance.
+                We leverage modern, open-source technologies to build scalable, secure, and high-performance solutions. Our tech stack is designed to ensure efficiency, flexibility, and long-term reliability for your business growth.
+
             </p>
         </div>
         <div class="flex lg:hidden justify-center items-center relative" data-aos="zoom-in">
@@ -22,6 +23,7 @@ import FullTech from "$lib/images/tech/FullTech.svg";
         <div class="lg:flex hidden justify-center items-center relative" data-aos="zoom-in">
             <Image src={FullTech} alt="Tech Stack" class="" />
         </div>
+
     </div>
     <svg
         class="absolute top-0 inset-x-0 pointer-events-none"
