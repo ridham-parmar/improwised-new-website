@@ -47,7 +47,8 @@ const services = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		image: image(),
-		description: z.string()
+		description: z.string(),
+		order: z.number() // Add order field
 	}),
 });
 

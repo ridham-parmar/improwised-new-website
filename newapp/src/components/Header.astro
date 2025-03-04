@@ -5,7 +5,8 @@ import Logo from "$lib/images/logo.svg";
 import { Button } from "$lib/components/ui/button";
 import Dropdown from "$lib/components/common/Dropdown.svelte";
 import { getCollection } from "astro:content";
-const services = await getCollection("services");
+
+const services = Object.values(await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
 import Menu from "lucide-svelte/icons/menu";
 import Moon from "lucide-svelte/icons/moon";
 ---
@@ -43,12 +44,13 @@ import Moon from "lucide-svelte/icons/moon";
     >
       <ul class="flex flex-col lg:flex-row lg:gap-3">
         <a
-          href={BASE_URL}
+          href={`${BASE_URL}`}
           class="hover:text-primary active py-2 transition lg:px-3 text-base text-black leading-6"
           >Home</a
         >
         <a
-          href=`${BASE_URL}/aboutus`
+          href={`${BASE_URL}/aboutus`}
+          aria-label="Learn more about our company on the About Us page"
           class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
           >About Us</a
         >
@@ -56,17 +58,20 @@ import Moon from "lucide-svelte/icons/moon";
           <Dropdown client:load services={services} />
         </a>
         <a
-          href=`${BASE_URL}/casestudies`
+          href={`${BASE_URL}/casestudies`}
+          aria-label="Learn more about our Case Studies"
           class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
           >Case Studies</a
         >
         <a
-          href=`${BASE_URL}/careers`
+          href={`${BASE_URL}/careers`}
+          aria-label="Our Career Page"
           class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
           >Careers</a
         >
         <a
-          href=`${BASE_URL}/blogs`
+          href={`${BASE_URL}/blogs`}
+           aria-label="Our Blog Page"
           class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
           >Blog</a
         >
@@ -75,7 +80,7 @@ import Moon from "lucide-svelte/icons/moon";
         <!-- <Button variant="outline">
           <Moon class="h-6 w-6" />
         </Button> -->
-        <Button href=`${BASE_URL}/contact-us` class="bg-black">
+        <Button href={`${BASE_URL}/contact-us`} class="bg-black">
           Contact Us
         </Button>
       </div>
@@ -86,7 +91,7 @@ import Moon from "lucide-svelte/icons/moon";
         <!-- <Button variant="outline">
           <Moon class="h-6 w-6" />
         </Button> -->
-        <Button href=`${BASE_URL}/contact-us` class="bg-black">
+        <Button href={`${BASE_URL}/contact-us`} class="bg-black">
           Contact Us
         </Button>
       </div>

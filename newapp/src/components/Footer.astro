@@ -7,7 +7,8 @@ import Rect from "$lib/images/rect.svg";
 import Linkedin from "lucide-svelte/icons/linkedin";
 import Facebook from "lucide-svelte/icons/facebook";
 import { getCollection, getEntry } from "astro:content";
-const services = await getCollection("services");
+const services = Object.values(await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+const currentYear = new Date().getFullYear();
 ---
 
 <footer class="bg-[#1A1A1A] text-white w-full relative">
@@ -121,7 +122,7 @@ const services = await getCollection("services");
   >
   <div>
     <p>
-      &copy; 2024 Improwised Technologies Pvt. Ltd. All rights reserved.
+      &copy; {currentYear} Improwised Technologies Pvt. Ltd. All rights reserved.
       Improwised&reg; are registered trademarks.
       <a  href=`${BASE_URL}/privacy-policy` class="underline font-medium">Legal Information</a>.
     </p>
