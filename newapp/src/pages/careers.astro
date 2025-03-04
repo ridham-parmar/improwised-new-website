@@ -1,0 +1,351 @@
+---
+import Layout from "$lib/layouts/Layout.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import { Badge } from "$lib/components/ui/badge";
+import { CalendarFold } from "lucide-svelte";
+import ContactFAQ from "$lib/components/common/ContactFAQ.svelte";
+import CTASection from "$lib/components/CTASection.astro";
+import Button from "$lib/components/ui/button/button.svelte";
+import person1 from "$lib/images/people/1.svg";
+import person2 from "$lib/images/people/2.svg";
+import person3 from "$lib/images/people/3.svg";
+const peopleImages = [person1, person2, person3];
+import { Image } from "astro:assets";
+import { Star } from "lucide-svelte";
+import * as Card from "$lib/components/ui/card";
+import { getCollection } from "astro:content";
+import Icon from "$lib/components/common/Icon.svelte";
+import { KeyRound } from "lucide-svelte";
+import ImageCarousel from "$lib/components/common/ImageCarousel.svelte";
+import ReviewCarousel from "$lib/components/common/ReviewCarousel.svelte"
+
+const orgBenefits = await getCollection("benefits", ({ data }) => {
+  return data;
+});
+
+const careers = await getCollection("careers", (data) => {
+  return data;
+});
+
+const lifeImages = await getCollection("lifeimages", ({data}) => {
+ return data  
+})
+
+
+const reviews = await getCollection("reviews", ({data: {reviews}}) => {
+  return reviews
+})
+
+let gradientX = 45.5;
+let gradientY = -200;
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <main class="main-content">
+    <section class="section1 bg-career py-10 md:py-40 pt-[30%] lg:pt-52">
+      <div
+        class="container flex flex-col gap-8 items-center lg:flex-row justify-between"
+      >
+        <div class="flex flex-col gap-6 lg:gap-10 items-center lg:items-start">
+          <div class="flex flex-col items-center lg:items-start">
+            <SectionTitle
+              class="text-center lg:text-left sm:w-3/5 main-heading-small md:main-heading"
+              text="Be Part Of Our"
+              primaryColorText="IT Innovation Team"
+            />
+            <p
+              class="text-center lg:text-left small-text font-roboto md:text-para"
+            >
+              Be part of a dynamic team shaping the future of IT solutions.
+            </p>
+          </div>
+          <Button class="bg-black"> Join Our Team </Button>
+        </div>
+
+        <div class="my-auto">
+          <div
+            class="inline-flex items-center small-text md:text-para font-medium text-gray-700"
+          >
+            <p>Trusted and top rated tech team</p>
+            <div class="flex ml-3 group">
+              {
+                peopleImages.map((src, index) => (
+                  <Image
+                    src={src}
+                    alt={`Person ${index + 1}`}
+                    class={`${index > 0 ? "-ml-[6px]" : ""} h-8 w-8`}
+                  />
+                ))
+              }
+            </div>
+          </div>
+          <div class="pt-3 flex justify-between items-center">
+            <h3
+              class="text-[21px] leading-[30px] text-[#2b3935] font-manrope font-extrabold tracking-wide uppercase"
+            >
+              glassdoor
+            </h3>
+
+            <div class="flex flex-col gap-2">
+              <div class="flex gap-[6px]">
+                {
+                  Array.from({ length: 5 }, (_, i) => (
+                    <Star fill="#FFCC00" color="#FFCC00" class="h-5 w-5" />
+                  ))
+                }
+              </div>
+              <p class="small-text md:text-para">120+ Reviews</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section2 relative md:-mt-[100px] z-20 darker-bg pb-10">
+      <div
+        class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+      >
+        {
+          orgBenefits.map(({ data: { benefits } }) =>
+            benefits.map(
+              (benefits, index) =>
+                index < 3 && (
+                  <Card.Root
+                    class="overflow-hidden border-4 border-[#fff] rounded-[20px] shadow-nav text-center"
+                    onmousemove="updateGradient(event)"
+                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                  >
+                    <div
+                      class="card-custom-inner p-8"
+                      style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                      onmousemove="updateGradient(event)"
+                    >
+                      <Card.Header class="p-0">
+                        <Icon iconName={benefits.iconName} />
+                      </Card.Header>
+                      <Card.Content class="p-0 text-left flex flex-col text-[#141414] tracking-tight">
+                        <Card.Title class="pt-5 text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
+                          {benefits.title}
+                        </Card.Title>
+                        <p class="pt-5 small-text md:text-para font-inter">
+                          {benefits.description}
+                        </p>
+                      </Card.Content>
+                    </div>
+                  </Card.Root>
+                )
+            )
+          )
+        }
+      </div>
+    </section>
+
+    <section class="section3 py-10 md:py-40 bg-color">
+      <div class="container">
+        <div
+          class="flex mx-auto max-w-2xl flex-col items-center justify-center"
+        >
+          <Badge
+            class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase"
+            variant="outline"
+            ><KeyRound class="mr-1 w-[16px]" />Opportunity</Badge
+          >
+          <SectionTitle
+            primaryColorText="Find Your Perfect Role And"
+            text="Be Part Of Our Growing Team"
+            class="text-center md:w-[96%]"
+          />
+        </div>
+
+        <div class="md:pt-10 flex flex-col gap-6">
+          {
+            careers.map(({ data }) => (
+              <div class="bg-[#fff] p-3 md:p-10 flex flex-col gap-4 rounded-[20px]">
+                <div class="flex flex-col gap-6 md:flex-row md:gap-10">
+                  <p class="text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-[#141414]">
+                    {data.title}
+                  </p>
+                  <div class="flex gap-4">
+                    {data.tags.map((tag) => (
+                      <p class="px-4 py-2 small-text md:font-medium md:font-inter md:text-[18px] md:leading-[26px] text-[#292929] bg-[#f5f5f5] rounded-[6px]">
+                        {tag}
+                      </p>
+                    ))}
+                  </div>
+                </div>
+                <div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-end">
+                  <p class="md:w-4/5 small-text md:text-para font-inter">
+                    {data.overview}
+                  </p>
+                  <Button class="bg-black"> Apply Now </Button>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section4 py-10 md:py-40">
+      <div class="container">
+        <div
+          class="flex mx-auto max-w-2xl flex-col items-center justify-center"
+        >
+          <Badge
+            class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase"
+            variant="outline"><KeyRound class="mr-1 w-[16px]" />Benefits</Badge
+          >
+          <SectionTitle
+            primaryColorText="Your Growth And Well-Being"
+            text="Our Commitment To"
+            class="text-center md:w-[96%]"
+          />
+        </div>
+        <div class="md:pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {
+            orgBenefits.map(({ data: { benefits } }) =>
+              benefits.map((benefits) => (
+                <Card.Root
+                  class="overflow-hidden border-4 border-[#fff] rounded-[20px] shadow-nav text-center"
+                  onmousemove="updateGradient(event)"
+                  style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                >
+                  <div
+                    class="card-custom-inner p-8"
+                    style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+                    onmousemove="updateGradient(event)"
+                  >
+                    <Card.Header class="p-0">
+                      <Icon iconName={benefits.iconName} />
+                    </Card.Header>
+                    <Card.Content class="p-0 text-left flex flex-col text-[#141414] tracking-tight">
+                      <Card.Title class="pt-5 text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
+                        {benefits.title}
+                      </Card.Title>
+                      <p class="pt-5 small-text md:text-para font-inter">
+                        {benefits.description}
+                      </p>
+                    </Card.Content>
+                  </div>
+                </Card.Root>
+              ))
+            )
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="section5 py-10 md:py-40 darker-bg">
+      <div class="container">
+        <div
+          class="flex mx-auto max-w-2xl flex-col items-center justify-center"
+        >
+          <SectionTitle
+            primaryColorText="Where Startups and Founders Thrive"
+            text="We Envision a Future"
+            class="text-center"
+          />
+        </div>
+        
+        <div>
+          {lifeImages.map(({data : {images}}) => (
+            <ImageCarousel client:load {images}>
+            </ImageCarousel>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section6 py-10 md:py-40 darker-bg">
+      <div class="container">
+        <div
+          class="flex mx-auto max-w-2xl flex-col items-center justify-center"
+        >
+          <Badge
+            class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase"
+            variant="outline"><KeyRound class="mr-1 w-[16px]" />Testimonials</Badge
+          >
+          <SectionTitle
+            primaryColorText="Through Their Eyes"
+            text="Life At Improwised,"
+            class="text-center md:w-3/4"
+          />
+        </div>
+        
+      </div>
+      <div class="max-md:container">
+        {reviews.map(({data: {reviews}}) => (
+          <ReviewCarousel {reviews} client:load/>
+        ))}
+      </div>
+    </section>
+
+    <section class="py-10 md:py-40 darker-bg">
+      <div class="container">
+        <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
+          <div class="flex items-center md:items-start flex-col">
+            <Badge
+              class="border border-[#d6d6d6] px-3 py-[6px] md:px-4 rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
+              variant="outline"
+              ><CalendarFold width="20" height="20" class="mr-2 w-5" />
+              <span
+                class="text-[12px] leading-[20px] md:text-base tracking-widest font-manrope font-bold text-[#737373]"
+                >FAQS</span
+              >
+            </Badge>
+            <SectionTitle
+              class="md:w-3/5"
+              text="Asked Question"
+              primaryColorText="Frequently"
+              isPrimaryTextInitial={true}
+            />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Officiis, nam.
+            </p>
+          </div>
+
+          <div class="md:w-1/2">
+            <ContactFAQ client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <CTASection />
+  </main>
+</Layout>
+
+<script is:inline>
+  function updateGradient(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    gradientX = event.clientX - rect.left;
+    gradientY = event.clientY - rect.top;
+
+    // Update the style dynamically
+    const target = event.currentTarget;
+    target.style.setProperty("--gradient-x", `${gradientX}px`);
+    target.style.setProperty("--gradient-y", `${gradientY}px`);
+  }
+</script>
+
+<style>
+  .bg-career {
+    background-image: url("../images/careers/dot.svg"),
+      url("../images/careers/gradient-2.svg");
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    position: relative;
+  }
+
+  .bg-color {
+    background: rgb(245, 245, 245);
+    background: linear-gradient(
+      0deg,
+      rgba(245, 245, 245, 0.6) 0%,
+      rgba(245, 245, 245, 0.1) 100%
+    );
+  }
+</style>

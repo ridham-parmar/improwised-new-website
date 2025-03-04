@@ -129,5 +129,57 @@ const approaches = defineCollection({
 		),
 	}),
 });
-export const collections = { approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs,events };
 
+const benefits = defineCollection({
+	loader: glob({ base: './src/content/benefits', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		benefits: z.array(
+		  z.object({
+			title: z.string(),
+			iconName: z.string(),
+			description: z.string(),
+		  })
+		),
+	}),
+});
+
+const careers = defineCollection({
+	loader: glob({ base: './src/content/careers', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		title: z.string(),
+		tags: z.array(z.string()),
+		overview: z.string(),
+		objectives: z.array(z.string()),
+		responsibilities: z.array(z.string()),
+		qualifications: z.array(z.string()),
+		payRange: z.string(),
+		experience: z.string()
+	}),
+});
+
+const lifeimages = defineCollection({
+	loader: glob({ base: './src/content/lifeimages', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		images: z.array(image())
+	}),
+});
+
+const reviews = defineCollection({
+	loader: glob({ base: './src/content/reviews', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		reviews: z.array(
+			z.object({
+				name: z.string(),
+				position: z.string(),
+				review: z.string(),
+				image: image()
+			})
+		)
+	}),
+});
+
+export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events };

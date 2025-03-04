@@ -1,0 +1,11 @@
+---
+images: 
+    - "$lib/images/careers/life/1.jpeg"
+    - "$lib/images/careers/life/2.jpeg"
+    - "$lib/images/careers/life/3.jpeg"
+    - "$lib/images/careers/life/4.jpeg"
+    - "$lib/images/careers/life/5.jpeg"
+    - "$lib/images/careers/life/6.jpeg"
+    - "$lib/images/careers/life/7.jpeg"
+    - "$lib/images/careers/life/8.jpeg"
+---
