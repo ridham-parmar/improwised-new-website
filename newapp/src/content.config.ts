@@ -149,13 +149,19 @@ const careers = defineCollection({
 	// Type-check frontmatter using a schema
 	schema: () => z.object({
 		title: z.string(),
+		slug: z.string(),
 		tags: z.array(z.string()),
 		overview: z.string(),
 		objectives: z.array(z.string()),
 		responsibilities: z.array(z.string()),
 		qualifications: z.array(z.string()),
 		payRange: z.string(),
-		experience: z.string()
+		experience: z.string(),
+		place: z.string(),
+		jobType: z.string(),
+		jobCategory: z.string(),
+		postedDate: z.coerce.date(),
+		applyLink: z.string()
 	}),
 });
 
