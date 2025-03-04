@@ -2,12 +2,16 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import * as Card from "$lib/components/ui/card";
+// const eventData = await getCollection('events');
+
 
 const eventData = await getCollection("events", ({ data }) => {
   return data;
 });
 
+
 const { marqueeClass} = Astro.props
+
 ---
 {
   eventData.map(({ data: { events } }) =>

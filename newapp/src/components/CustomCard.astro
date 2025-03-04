@@ -14,16 +14,14 @@ const collectionDetails = (await getCollection(
   collectionName as ValidCollections,
   (details: CollectionEntry<ValidCollections>) => {
     return details.data.slug !== "platform-engineering";
-  }
+  },
 )) as CollectionEntry<ValidCollections>[];
 
 let gradientX = 45.5;
 let gradientY = -200;
 ---
 
-<div
-  class="md:mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3"
->
+<div class="md:mt-10 grid gap-10 md:grid-cols-3 lg:grid-cols-3">
   {
     collectionDetails.map((details, index) => (
       <>

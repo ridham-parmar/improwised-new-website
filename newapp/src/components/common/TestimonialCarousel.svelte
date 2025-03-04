@@ -33,7 +33,7 @@
                 />
 
               </Card.Header>
-              <h2 class="font-semibold mt-5 text-[24px] leading-[34px] text-slate-800 px-5">
+              <h2 class="font-semibold mt-5  mb-2 text-[20px] leading-[34px] text-slate-800 px-5">
                 {testimonial.data.description}
               </h2>
 
@@ -72,7 +72,7 @@
               class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
             >
               <Card.Header>
-                <blockquote class="text-lg [text-wrap:balance] md:text-xl">
+                <blockquote class="text-lg [text-wrap:balance] md:text-xl mb-2">
                   {testimonial.data.description}
                 </blockquote>
               </Card.Header>

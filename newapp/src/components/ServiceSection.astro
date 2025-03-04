@@ -1,23 +1,13 @@
 ---
-import { Image } from "astro:assets";
-import { Button } from "$lib/components/ui/button";
 import { Badge } from "$lib/components/ui/badge";
 import CircleUserRound from "lucide-svelte/icons/circle-user-round";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
-import * as Card from "$lib/components/ui/card";
-import { getCollection } from "astro:content";
-import { BASE_URL } from "$lib/consts";
 import CustomCard from "./CustomCard.astro";
-
-const services = await getCollection("services", ({ data }) => {
-    return data.slug !== "platform-engineering";
-});
-
-let gradientX = 45.5;
-let gradientY = -200;
 ---
 
-<section class="section bg-white overflow-hidden relative py-10 md:py-40 lighter-bg">
+<section
+    class="section bg-white overflow-hidden relative py-10 md:py-40 lighter-bg"
+>
     <svg
         viewBox="0 0 1440 181"
         fill="none"
@@ -69,7 +59,7 @@ let gradientY = -200;
             >
             <SectionTitle text="Technologies" primaryColorText="we work with" />
         </div>
-        <CustomCard collectionName="services"/>
+        <CustomCard collectionName="services" />
     </div>
 </section>
 

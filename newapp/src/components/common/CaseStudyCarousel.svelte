@@ -54,9 +54,9 @@
       </Carousel.Item>
     {/each}
   </Carousel.Content>
-  
+
   <div class="md:absolute md:top-[-95px] right-0 flex gap-3 justify-center">
-    <Carousel.Previous />
-    <Carousel.Next />    
+    <Carousel.Previous/>
+    <Carousel.Next/>
   </div>
 </Carousel.Root>
