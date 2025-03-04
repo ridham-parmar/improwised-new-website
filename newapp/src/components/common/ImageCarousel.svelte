@@ -41,7 +41,7 @@ plugins={[
     {/each}
   </Carousel.Content>
 
-  <div class="flex gap-3 justify-center">
+  <div class="flex gap-3 justify-center md:mt-10">
     <Carousel.Previous />
     <Carousel.Next />    
   </div>
