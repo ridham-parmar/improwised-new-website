@@ -26,9 +26,17 @@ import bgicon3 from "$lib/images/aboutusPage/bgicon3.svg";
 import bgicon4 from "$lib/images/aboutusPage/bgicon4.svg";
 import bgicon5 from "$lib/images/aboutusPage/bgicon5.svg";
 import bgicon6 from "$lib/images/aboutusPage/bgicon6.svg";
+import EventSlider from "$lib/components/EventSlider.astro";
+
+// Define the class dynamically
+const marqueeClass = "animate-marquee"; // or "animate-marquee"
+const marqueeClassReverse = "animate-marquee-reverse"; // or "animate-marquee"
 
 const peopleImages = [person1, person2];
-const teams = await getCollection("teams");
+
+const teamsData = await getCollection("teams", ({ data }) => {
+	return data;
+});
 let gradientX = 45.5;
 let gradientY = -200;
 const faqs = [
@@ -54,11 +62,11 @@ const faqs = [
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<main class="main-content">
 		<section
-			class="section1 text-center bg-image h-screen relative flex flex-col items-center justify-center"
+			class="section1 flex flex-col items-center justify-center text-center py-16 px-6 bg-image sm:h-screen relative max-md:pt-[30%] md:pb-40 lg:pt-[12%]"
 		>
 			<!-- Main Heading -->
 			<h1
-				class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] max-md:text-[30px] leading-[62px] max-md:leading-[42px] font-bold lg:tracking-tight"
+				class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
 			>
 				Building Cool Stuff, Powered <br />By Even <span
 					class="text-primary">Cooler People!</span
@@ -150,9 +158,7 @@ const faqs = [
 					class="grid grid-cols-2 max-md:grid-cols-1 gap-16 mb-16 items-start relative"
 				>
 					<div class="relative max-md:order-2 max-md:text-center">
-						<Badge
-							class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
-							variant="outline"
+						<Badge variant="outline"
 							><CircleUserRound
 								width="16"
 								height="16"
@@ -170,15 +176,16 @@ const faqs = [
 						</div>
 					</div>
 
-					<div class="relative max-md:order-1 aos-init aos-animate">
+					<div class="relative max-md:order-2 aos-init aos-animate">
 						<Image src={aboutus} alt="aboutUs" class="shadow-nav" />
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<section class="section aboutSection bg-image2 py-20">
 			<div class="container mx-auto">
-				<div class="flex flex-col items-center space-y-12">
+				<div class="flex justify-center">
 					<Card.Root
 						class="card-custom-primary2 shadow-nav text-left rounded-none!"
 						onmousemove="updateGradient(event)"
@@ -189,7 +196,9 @@ const faqs = [
 							style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
 							onmousemove="updateGradient(event)"
 						>
-							<Card.Header class="flex flex-row space-x-4 pb-6">
+							<Card.Header
+								class="flex flex-row items-center space-x-4 pb-6"
+							>
 								<span class="flex ml-3 group">
 									{
 										peopleImages.map((src, index) => (
@@ -201,9 +210,8 @@ const faqs = [
 										))
 									}
 								</span>
-
 								<Card.Title
-									class="text-[24px] font-bold font-manrope leading-[30px]"
+									class="font-bold font-manrope text-[18px] leading-[20px] md:text-[24px] md:leading-[30px]"
 								>
 									Rakshit and Shailesh<br />founding the
 									company
@@ -212,276 +220,230 @@ const faqs = [
 						</div>
 					</Card.Root>
 				</div>
-				<div
-					class="relative flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-16 pt-16"
+				<section
+					class="section4 py-10 md:py-40 overflow-x-hidden relative"
 				>
-					<svg
-						width="8"
-						id="line"
-						height="2213"
-						viewBox="0 0 8 2213"
-						fill="none"
-						class="absolute max-md:hidden left-1/2 w-0.5 w-full h-[90%] transform -translate-x-1/2"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<rect width="8" height="2213" rx="4" fill="#F1F1F1"
-						></rect>
-					</svg>
-
-					<div
-						id="scrollling-dot0"
-						class="left-1/2 max-md:hidden border-4 border-white bg-primary2 absolute h-4 w-4 top-0 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-
-					<div
-						id="scroll-dot1"
-						class="left-1/2 max-md:hidden border-4 border-white bg-primary2 absolute h-4 w-4 top-[8%] -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-
-					<div
-						id="scroll-dot2"
-						class="left-1/2 max-md:hidden border-4 top-[20%] border-white bg-primary2 absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-					<div
-						id="scroll-dot3"
-						class="left-1/2 max-md:hidden border-4 top-[40%] border-white bg-primary2 absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-					<div
-						id="scroll-dot4"
-						class="left-1/2 max-md:hidden border-4 top-2/3 border-white bg-primary2 absolute h-4 w-4 -translate-x-1/2 -translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-
-					<div
-						id="scroll-dot5"
-						class="left-1/2 max-md:hidden border-4 border-white bg-primary2 absolute h-4 w-4 bottom-[10%] -translate-x-1/2 translate-y-1/2 rounded-full shadow-md"
-					>
-					</div>
-
-					<!-- <div
-						id="scroll-dot-year"
-						class="left-[50%] absolute h-4 w-4 top-[8%] -translate-x-1/2 rounded-full shadow-md"
-					>
-					</div> -->
-					<div
-						id="scroll-dot-year"
-						class="left-[52%] max-md:hidden w-20 flex flex-col items-center justify-center text-center rounded-full absolute top-[8%] bg-white -translate-x-1/2 -translate-y-1/2 shadow-md p-2"
-					>
-						<div class="flex items-center justify-center gap-2">
-							<div
-								class="border-4 border-white bg-primary2 h-4 w-4 rounded-full"
+					<div class="container">
+						<div
+							class="md:pt-12 md:ml-0 ml-18 flex flex-col gap-12"
+						>
+							<svg
+								width="8"
+								id="line"
+								height="2213"
+								viewBox="0 0 8 2213"
+								fill="none"
+								class="absolute left-3 md:left-1/2 w-full h-full md:h-[90%] top-0 transform -translate-x-1/2"
+								xmlns="http://www.w3.org/2000/svg"
 							>
+								<rect
+									width="8"
+									height="2213"
+									rx="4"
+									fill="#F1F1F1"></rect>
+							</svg>
+							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+								<div
+									class="order-1 flex flex-col justify-center"
+								>
+									<h1
+										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+									>
+										Who We Are?
+									</h1>
+
+									<p
+										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
+									>
+										Since 2011, Improwised Technologies has
+										been at the forefront of IT innovation.
+										We specialize in scalable, cloud-native
+										development, driven by our mission to
+										become a leading software firm.
+										<br />
+										<br />
+										Since then, we have worked tirelessly to
+										achieve our objective of giving our customers
+										and their products an edge with our expertise
+										in cutting-edge technologies.
+									</p>
+								</div>
+								<div
+									class="max-md:flex md:min-w-[50%] relative"
+								>
+									<Card.Root
+										class="card-custom-primary2 shadow-nav text-left rounded-none!"
+										onmousemove="updateGradient(event)"
+										style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+									>
+										<div
+											class="card-custom-inner-primary2"
+											style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+											onmousemove="updateGradient(event)"
+										>
+											<Card.Header
+												class="flex flex-row space-x-4 pb-6"
+											>
+												<div
+													class="icon-container flex lg:h-16 lg:w-16 md:h-10 md:w-14 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
+												>
+													<CloudSun
+														width="24"
+														height="24"
+														class="lg:h-6 lg:w-6 md:h-4 md:w-4 shrink-0 transition-transform duration-200 text-white"
+													/>
+												</div>
+
+												<Card.Title
+													class="font-bold font-manrope text-[18px] md:text-[16px] leading-[20px] lg:text-[24px] md:leading-[30px]"
+												>
+													From Bugs to<br /> Brilliance,
+													We Deliver.
+												</Card.Title>
+											</Card.Header>
+										</div>
+									</Card.Root>
+								</div>
 							</div>
-							<span class="text-primary2 font-semibold">2011</span
-							>
-						</div>
-					</div>
-
-					<!-- Timeline Marker -->
-
-					<div
-						class="relative flex flex-col items-end py-20 pt-96 pr-10 timeline-section1"
-						id="section-1"
-						data-dot="scroll-dot2"
-					>
-						<div class="flex flex-col items-end space-y-12">
-							<Card.Root
-								class="card-custom-primary2 shadow-nav text-left rounded-none!"
-								onmousemove="updateGradient(event)"
-								style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-							>
+							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+								<div class="flex flex-col justify-center">
+									<h1
+										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+									>
+										From Humble Beginnings to Boundless
+										Innovation
+									</h1>
+									<p
+										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
+									>
+										Since 2011, Improwised Technologies has
+										been at the forefront of IT innovation.
+										We specialize in scalable, cloud-native
+										development, driven by our mission to
+										become a leading software firm.
+										<br />
+										<br />
+										Since then, we have worked tirelessly to
+										achieve our objective of giving our customers
+										and their products an edge with our expertise
+										in cutting-edge technologies.
+									</p>
+								</div>
 								<div
-									class="card-custom-inner-primary2"
-									style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-									onmousemove="updateGradient(event)"
+									class="max-md:flex max-md:justify-center md:min-w-[50%]"
 								>
-									<Card.Header
-										class="flex flex-row space-x-4 pb-6"
+									<Image
+										src={aboutus2}
+										alt="aboutus2"
+										class=""
+									/>
+								</div>
+							</div>
+
+							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+								<div
+									class="md:order-1 flex flex-col justify-center"
+								>
+									<h1
+										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+									>
+										The Road Ahead: Endless Possibilities!
+									</h1>
+									<p
+										class="md:my-5 max-w-2xl mx-auto text-para"
+									>
+										Since 2011, Improwised Technologies has
+										been at the forefront of IT innovation.
+										We specialize in scalable, cloud-native
+										development, driven by our mission to
+										become a leading software firm.
+										<br />
+										<br />
+										Since then, we have worked tirelessly to
+										achieve our objective of giving our customers
+										and their products an edge with our expertise
+										in cutting-edge technologies.
+									</p>
+								</div>
+
+								<div
+									class="max-md:flex max-md:justify-center md:min-w-[50%]"
+								>
+									<Image
+										src={aboutus3}
+										alt="aboutus3"
+										class=""
+									/>
+								</div>
+							</div>
+
+							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+								<div class="flex flex-col justify-center">
+									<h1
+										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+									>
+										Major Milestones
+									</h1>
+									<p
+										class="md:my-5 max-w-2xl mx-auto text-para"
+									>
+										Since 2011, Improwised Technologies has
+										been at the forefront of IT innovation.
+										We specialize in scalable, cloud-native
+										development, driven by our mission to
+										become a leading software firm.
+										<br />
+										<br />
+										Since then, we have worked tirelessly to
+										achieve our objective of giving our customers
+										and their products an edge with our expertise
+										in cutting-edge technologies.
+									</p>
+								</div>
+
+								<div
+									class="max-md:flex md:min-w-[50%] relative"
+								>
+									<Card.Root
+										class="card-custom-primary2 shadow-nav text-left rounded-none!"
+										onmousemove="updateGradient(event)"
+										style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
 									>
 										<div
-											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
+											class="card-custom-inner-primary2"
+											style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+											onmousemove="updateGradient(event)"
 										>
-											<CloudSun
-												width="24"
-												height="24"
-												class="h-6 w-6 shrink-0 transition-transform duration-200 text-white"
-											/>
+											<Card.Header
+												class="flex flex-row pb-1 space-x-4 pb-6"
+											>
+												<div
+													class="icon-container flex lg:h-16 lg:w-16 md:h-14 md:w-14 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
+												>
+													<Milestone
+														width="24"
+														height="24"
+														class="md:h-6 md:w-6 h-4 w-4 shrink-0 transition-transform duration-200 text-white"
+													/>
+												</div>
+
+												<Card.Title
+													class="font-bold font-manrope text-[18px] md:text-[16px] leading-[20px] lg:text-[24px] md:leading-[30px]"
+												>
+													Milestones That <br />Made
+													Us Shine!
+												</Card.Title>
+											</Card.Header>
 										</div>
-
-										<Card.Title
-											class="text-[24px] font-bold font-manrope leading-[30px]"
-										>
-											From Bugs to<br /> Brilliance, We Deliver.
-										</Card.Title>
-									</Card.Header>
+									</Card.Root>
 								</div>
-							</Card.Root>
+							</div>
 						</div>
 					</div>
-
-					<div
-						class="relative flex flex-col items-start py-20 pl-10 pt-96 timeline-section"
-					>
-						<div class="">
-							<SectionTitle class="" text="Who We Are?" />
-							<p
-								class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-							>
-								Since 2011, Improwised Technologies has been at
-								the forefront of IT innovation. We specialize in
-								scalable, cloud-native development, driven by
-								our mission to become a leading software firm.
-							</p>
-							<p
-								class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-							>
-								Since then, we have worked tirelessly to achieve
-								our objective of giving our customers and their
-								products an edge with our expertise in
-								cutting-edge technologies.
-							</p>
-						</div>
-					</div>
-
-					<div
-						class="relative flex flex-col items-end py-20 pr-10 timeline-section2"
-						id="section-2"
-						data-dot="scroll-dot3"
-					>
-						<SectionTitle
-							class=""
-							text="From Humble Beginnings to Boundless Innovation"
-						/>
-						<p
-							class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-						>
-							Since 2011, Improwised Technologies has been at the
-							forefront of IT innovation. We specialize in
-							scalable, cloud-native development, driven by our
-							mission to become a leading software firm.
-						</p>
-						<p
-							class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-						>
-							Since then, we have worked tirelessly to achieve our
-							objective of giving our customers and their products
-							an edge with our expertise in cutting-edge
-							technologies.
-						</p>
-					</div>
-
-					<div
-						class="relative flex flex-col items-start py-20 pl-10 timeline-section"
-					>
-						<div class="">
-							<Image src={aboutus2} alt="aboutus2" class="" />
-						</div>
-					</div>
-
-
-
-
-					<div
-						class="relative flex flex-col items-end py-20 pr-10 timeline-section3"
-						id="section-3"
-						data-dot="scroll-dot4"
-					>
-					<div class="">
-						<Image src={aboutus3} alt="aboutus3" class="" />
-					</div>
-
-					</div>
-
-					<div
-						class="relative flex flex-col items-start py-20 pl-10 timeline-section"
-					>
-					<SectionTitle
-					class=""
-					text="The Road Ahead: Endless Possibilities!"
-				/>
-				<p
-					class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-				>
-				Since 2011, Improwised Technologies has been at the forefront of IT innovation. We specialize in scalable, cloud-native development, driven by our mission to become a leading software firm.
-				</p>
-				<p
-					class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-				>
-				Since then, we have worked tirelessly to achieve our objective of giving our customers and their products an edge with our expertise in cutting-edge technologies.
-				</p>
-					</div>
-
-					<div
-						class="relative flex flex-col items-end py-20 pr-10 timeline-section4"
-						id="section-4"
-						data-dot="scroll-dot4"
-					>
-						<div>
-							<SectionTitle class="" text="Major Milestones" />
-							<p
-								class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-							>
-								Since 2011, Improwised Technologies has been at
-								the forefront of IT innovation. We specialize in
-								scalable, cloud-native development, driven by
-								our mission to become a leading software firm.
-							</p>
-							<p
-								class="my-5 max-w-2xl mx-auto max-md:text-center text-para"
-							>
-								Since then, we have worked tirelessly to achieve
-								our objective of giving our customers and their
-								products an edge with our expertise in
-								cutting-edge technologies.
-							</p>
-						</div>
-					</div>
-
-
-
-
-					<div class="relative flex flex-col items-start py-20 pl-10">
-						<div class="flex flex-col items-end space-y-12">
-							<Card.Root
-								class="card-custom-primary2 shadow-nav text-left rounded-none!"
-								onmousemove="updateGradient(event)"
-								style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-							>
-								<div
-									class="card-custom-inner-primary2"
-									style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
-									onmousemove="updateGradient(event)"
-								>
-									<Card.Header
-										class="flex flex-row space-x-4 pb-6"
-									>
-										<div
-											class="icon-container flex h-16 w-16 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
-										>
-											<Milestone
-												width="24"
-												height="24"
-												class="h-6 w-6 shrink-0 transition-transform duration-200 text-white"
-											/>
-										</div>
-
-										<Card.Title
-											class="text-[24px] font-bold font-manrope leading-[30px]"
-										>
-											Milestones That <br />Made Us Shine!
-										</Card.Title>
-									</Card.Header>
-								</div>
-							</Card.Root>
-						</div>
-					</div>
-				</div>
+				</section>
 			</div>
 		</section>
+
 		<section class="section bg-white overflow-hidden relative pt-20 pb-20">
 			<svg
 				viewBox="0 0 1440 181"
@@ -529,9 +491,7 @@ const faqs = [
 				<div
 					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
-					<Badge
-						class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
-						variant="outline"
+					<Badge variant="outline"
 						><CircleUserRound
 							width="16"
 							height="16"
@@ -549,170 +509,7 @@ const faqs = [
 						<div
 							class="eventsection1 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
-							<Card.Root
-								class="eventCard1 relative bg-white md:motion-safe:animate-marquee-reverse flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard1 bg-white md:motion-safe:animate-marquee-reverse relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard1 bg-white md:motion-safe:animate-marquee-reverse relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard1 bg-white md:motion-safe:animate-marquee-reverse relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
+							<EventSlider marqueeClass={marqueeClassReverse} />
 						</div>
 					</div>
 					<div
@@ -721,253 +518,88 @@ const faqs = [
 						<div
 							class="eventsection2 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
-							<Card.Root
-								class="eventCard2 bg-white md:motion-safe:animate-marquee relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard2 bg-white md:motion-safe:animate-marquee relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard2 bg-white md:motion-safe:animate-marquee relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
-							<Card.Root
-								class="eventCard2 bg-white md:motion-safe:animate-marquee relative flex max-w-2xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg"
-							>
-								<div
-									class="flex gap-6 p-6 rounded-lg shadow-md"
-								>
-									<!-- Image Section -->
-									<div class="shrink-0">
-										<Image
-											src={eventImage}
-											class="h-60 w-60 object-cover"
-											alt="cubecon 2024"
-											loading="lazy"
-											decoding="async"
-										/>
-									</div>
-									<!-- Right Side Content -->
-									<div class="flex flex-col justify-between">
-										<!-- Testimonial Content -->
-										<blockquote
-											class="text-lg text-gray-800 md:text-xl"
-										>
-											“My coworkers continually surprise
-											me with their creativity,
-											dedication, and raw talent. Working
-											here means working with the best.”
-										</blockquote>
-										<!-- User Info -->
-										<div class="mt-6">
-											<h2
-												class="font-semibold text-gray-900"
-											>
-												Cubecon 2024
-											</h2>
-											<p class="text-sm text-gray-600">
-												23 December 2024
-											</p>
-										</div>
-									</div>
-								</div>
-							</Card.Root>
+							<EventSlider marqueeClass={marqueeClass} />
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section class="pt-20 pb-40 section">
-			<div class="px-20">
+		<section class="md:pt-20 md:pb-40 p-10 section">
+			<div class="md:px-20 px-5">
 				<div
 					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
-					<Badge
-						class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase"
-						variant="outline"
+					<Badge variant="outline"
 						><CircleUserRound class="mr-1 w-[16px]" />Our Team</Badge
 					>
 					<SectionTitle text="Meet" primaryColorText=" Our Team" />
 				</div>
 				<div class="relative z-10">
 					<div
-						class="grid grid-cols-4 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
+						class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-6 2xl:gap-8"
 					>
 						{
-							teams.map((team, index) => (
-								<>
-									<Card.Root class="shadow-nav transition-all duration-500 group hover:[scale:1.1]">
-										<div
-											class:list={{
-												"transition-all duration-500 [transform-style:preserve-3d]": true,
-												"group-hover:[transform:rotateY(180deg)]":
-													team.data.desc,
-											}}
-										>
-											<div class="[backface-visibility:hidden]">
-												<Card.Header class="p-0">
-													<Image
-														alt="feature"
-														class="w-full rounded-lg grayscale hover:grayscale-0 transition duration-300"
-														src={team.data.image}
-													/>
-												</Card.Header>
-											</div>
-
-											{team.data.desc !== "" && (
-												<div class="absolute inset-0  py-6 px-2 text-left  [transform:rotateY(180deg)] [backface-visibility:hidden]">
-													<Card.Header>
-														<p class="text-para max-md:text-[12px]">
-															{team.data.desc}
-														</p>
+							teamsData.map(({ data: { teams } }) =>
+								teams.map((team, index) => (
+									<>
+										<Card.Root class="shadow-nav transition-all duration-500 group hover:[scale:1.1]">
+											<div
+												class:list={{
+													"transition-all duration-500 [transform-style:preserve-3d]": true,
+													"group-hover:[transform:rotateY(180deg)]":
+														team.desc,
+												}}
+											>
+												<div class="[backface-visibility:hidden]">
+													<Card.Header class="p-0">
+														<Image
+															alt="feature"
+															class="w-full rounded-lg grayscale hover:grayscale-0 transition duration-300"
+															src={team.image}
+														/>
 													</Card.Header>
 												</div>
-											)}
-										</div>
-										<Card.Content>
-											<div class="flex justify-between">
-												<Card.Title class="text-[20px]">
-													{team.data.name}
 
-													<p class="text-sm  font-normal">
-														{team.data.designation}
-													</p>
-												</Card.Title>
-
-												{team.data.linkedin && (
-													<a
-														href={
-															team.data.linkedin
-														}
-														target="_blank"
-														rel="noopener noreferrer"
-														class="text-gray-600 hover:text-primary"
-													>
-														<Linkedin
-															width="16"
-															height="16"
-															astro-icon="social/linkedin"
-														/>
-													</a>
+												{team.desc !== "" && (
+													<div class="absolute inset-0  p-1 max-md:py-4 max-md:px-1  text-left  [transform:rotateY(180deg)] [backface-visibility:hidden]">
+														<Card.Header>
+															<p class="text-[12px] leading-[14px] tracking-[0.02em] font-normal text-colorprimarytext">
+																{team.desc}
+															</p>
+														</Card.Header>
+													</div>
 												)}
 											</div>
-										</Card.Content>
-									</Card.Root>
-								</>
-							))
+											<Card.Content class="md:p-4">
+												<div class="flex justify-between ">
+													<Card.Title class="md:text-[16px] text-[14px]">
+														{team.name}
+
+														<p class="md:text-xs text-xs  font-normal">
+															{team.designation}
+														</p>
+													</Card.Title>
+
+													{team.linkedin && (
+														<a
+															href={team.linkedin}
+															target="_blank"
+															rel="noopener noreferrer"
+															class="text-gray-600 hover:text-primary"
+														>
+															<Linkedin
+																width="16"
+																height="16"
+																astro-icon="social/linkedin"
+															/>
+														</a>
+													)}
+												</div>
+											</Card.Content>
+										</Card.Root>
+									</>
+								)),
+							)
 						}
 					</div>
 				</div>
@@ -975,8 +607,6 @@ const faqs = [
 		</section>
 		<CTASection />
 	</main>
-
-
 </Layout>
 <style>
 	@reference "tailwindcss";
@@ -995,7 +625,7 @@ const faqs = [
 		background-repeat: no-repeat, no-repeat;
 	}
 	.profile-img {
-		@apply w-16 h-16 rounded-full -ml-3 transition-all duration-300 ring-2 ring-white;
+		@apply md:w-16 md:h-16 w-8 h-8 rounded-full -ml-3 transition-all duration-300 ring-2 ring-white;
 	}
 
 	.profile-img:hover {
@@ -1020,32 +650,16 @@ const faqs = [
 		target.style.setProperty("--gradient-y", `${gradientY}px`);
 	}
 
-	// document.addEventListener("DOMContentLoaded", function () {
-	// 	const yearMarker = document.getElementById("scroll-dot-year");
-	// 	const scrollDots = document.querySelectorAll("[id^=scroll-dot]"); // Select all dots
 
-	// 	const observer = new IntersectionObserver(
-	// 		(entries) => {
-	// 			entries.forEach((entry) => {
-	// 				if (entry.isIntersecting) {
-	// 					const targetTop = entry.target.offsetTop;
-	// 					yearMarker.style.top = `${targetTop}px`; // Move the year marker
-	// 				}
-	// 			});
-	// 		},
-	// 		{
-	// 			root: null, // Uses viewport
-	// 			threshold: 0.5, // 50% of element must be visible
-	// 		},
-	// 	);
-
-	// 	scrollDots.forEach((dot) => observer.observe(dot));
-	// });
 	document.addEventListener("DOMContentLoaded", function () {
-		const yearMarker = document.getElementById("scroll-dot-year");
-		const scrollDots = document.querySelectorAll("[id^=scroll-dot]"); // Select all dots
-		const timelineLine = document.getElementById("line"); // Timeline line
-		const totalHeight = timelineLine.getBoundingClientRect().height; // Get total height of line
+		const timelineLine = document.getElementById("line"); // The timeline line
+		const totalHeight = timelineLine.getBoundingClientRect().height; // Get total height of the line
+		const timelineTop =
+			timelineLine.getBoundingClientRect().top + window.scrollY; // Get absolute position
+
+		let lastScrollY = window.scrollY; // Store last scroll position
+		let minProgress = 10; // Ensure a small start when scrolling up
+		let fillFactor = 0.95; // Controls how fast the progress fills
 
 		// Create a green progress rect
 		const progressRect = document.createElementNS(
@@ -1056,31 +670,72 @@ const faqs = [
 		progressRect.setAttribute("rx", "4");
 		progressRect.setAttribute("fill", "#6eb24a"); // Green color
 		progressRect.setAttribute("height", "0"); // Start with no fill
+		progressRect.setAttribute("x", "0"); // Align with line
+		progressRect.setAttribute("y", "0"); // Start at the top
 		timelineLine.appendChild(progressRect);
 
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry, index) => {
-					if (entry.isIntersecting) {
-						const targetTop = entry.target.offsetTop;
-						yearMarker.style.top = `${targetTop}px`; // Move the year marker
-
-						// Calculate fill percentage basedteams on scroll
-						let scrollPercent = (targetTop / totalHeight) * 100;
-						progressRect.setAttribute(
-							"height",
-							`${scrollPercent}%`,
-						); // Fill the line
-					}
-				});
-			},
-			{
-				root: null, // Uses viewport
-				threshold: 0.5, // 50% of element must be visible
-			},
+		// Create a moving circle at the end of the green progress line
+		const progressCircle = document.createElementNS(
+			"http://www.w3.org/2000/svg",
+			"circle",
 		);
+		progressCircle.setAttribute("r", "6"); // Circle radius
+		progressCircle.setAttribute("fill", "#fff"); // Match the progress line color
+		progressCircle.setAttribute("cx", "4"); // Center horizontally with the line
+		progressCircle.setAttribute("cy", "0"); // Start at the top
+		progressCircle.setAttribute("stroke", "#6eb24a"); // White border
+		progressCircle.setAttribute("stroke-width", "4"); // Border thickness
 
-		scrollDots.forEach((dot) => observer.observe(dot));
+		timelineLine.appendChild(progressCircle);
+
+		// Create a text element for the year
+		const yearText = document.createElementNS(
+			"http://www.w3.org/2000/svg",
+			"text",
+		);
+		yearText.setAttribute("x", "40"); // Position right of the circle (adjusted for padding)
+		yearText.setAttribute("y", "30"); // Adjust vertical alignment
+		yearText.setAttribute("fill", "#333"); // Dark text color
+		yearText.setAttribute("font-size", "16px"); // Adjust size
+		yearText.setAttribute("font-weight", "bold"); // Bold text
+		yearText.setAttribute("text-anchor", "middle"); // Center text horizontally
+		yearText.setAttribute("dominant-baseline", "middle"); // Align text properly
+		yearText.textContent = "2011"; // Initial year
+
+		timelineLine.appendChild(yearText);
+
+		// Update the progress bar, circle, and year on scroll
+		function updateProgress() {
+			const currentScrollY = window.scrollY;
+			const scrollPosition = currentScrollY + window.innerHeight - 200; // Current scroll position
+			let scrolled = Math.max(
+				minProgress,
+				(scrollPosition - timelineTop) * fillFactor,
+			); // Slower fill rate
+
+			if (currentScrollY < lastScrollY) {
+				scrolled = Math.max(minProgress, scrolled - 5); // Keep small offset when scrolling up
+			}
+
+			const progressHeight = Math.min(scrolled, totalHeight); // Keep within bounds
+
+			progressRect.setAttribute("height", progressHeight); // Fill gradually
+			progressCircle.setAttribute("cy", progressHeight); // Move the circle with progress
+			yearText.setAttribute("y", progressHeight + 5); // Move text with circle
+
+			// Dynamically increase the year based on progress
+			const startYear = 2011;
+			const endYear = 2025;
+			const yearRange = endYear - startYear;
+			const yearStep = totalHeight / yearRange; // Make year increment smoother
+			const currentYear =
+				startYear + Math.floor(progressHeight / yearStep);
+			yearText.textContent = currentYear;
+
+			lastScrollY = currentScrollY; // Update last scroll position
+		}
+
+		window.addEventListener("scroll", updateProgress);
+		updateProgress(); // Initial update in case user is already scrolled
 	});
-
 </script>

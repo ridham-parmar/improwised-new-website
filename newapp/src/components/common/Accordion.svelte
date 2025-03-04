@@ -6,9 +6,9 @@
 <Accordion.Root >
   {#each faqs as faq (faq.question)}
     <Accordion.Item value={faq.question}>
-      <Accordion.Trigger class="no-underline hover:no-underline md:text-[24px] text-[18px] md:leading-[28px] leading-[20px] text-[#141414] font-manrope">{faq.question}
+      <Accordion.Trigger class="no-underline text-left hover:no-underline md:text-[24px] text-[18px] md:leading-[28px] leading-[20px] text-[#141414] font-manrope">{faq.question}
       </Accordion.Trigger>
-      <Accordion.Content class="text-para text-left">{faq.answer}</Accordion.Content>
+      <Accordion.Content class="text-left"><p class="text-para text-left">{faq.answer}</p></Accordion.Content>
     </Accordion.Item>
   {/each}
 </Accordion.Root>

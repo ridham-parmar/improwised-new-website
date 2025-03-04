@@ -17,16 +17,17 @@
         <div class="flex justify-center h-full">
           <Card.Root>
             <div class="">
-              <Card.Header class="md:p-0">
+              <Card.Header class="p-0 ">
                 <img
                   alt="feature"
-                  class="w-full rounded-t-[12px]"
+
+                    class="w-full h-[200px] object-cover rounded-t-[12px] sm:h-[250px] md:h-[300px]"
                   src={casestudy.data.image.src}
                 />
               </Card.Header>
               <Card.Content class="md:pb-2">
                 <span
-                  class="font-bold font-manrope text-[16px] leading-[24px] tracking-[16%] text-[#737373] uppercase"
+                  class="font-bold font-manrope text-[14px] leading-[22px] md:text-[16px] md:leading-[24px] tracking-[16%] text-[#737373] uppercase"
                 >
                   {casestudy.data.category}</span
                 >
@@ -36,7 +37,7 @@
                   {casestudy.data.title}
                 </Card.Title>
                 <p
-                  class=" text-[16px] leading-[26px] tracking-[0.02em] text-[#292929]"
+                  class="text-[14px] leading-[22px]  md:text-[16px] md:leading-[26px] tracking-[0.02em] text-[#292929]"
                 >
                   {casestudy.data.description}
                 </p>
@@ -45,7 +46,7 @@
                 <div class="flex flex-wrap gap-2">
                   {#each casestudy.data.tags as tag}
                     <span
-                      class="text-[16px] leading-[26px] tracking-[0.01em] text-[#525252] bg-[#F5F5F5] px-4 py-2 rounded-full"
+                      class="text-[12px] leading-[20px] md:text-[16px] md:leading-[26px] tracking-[0.01em] text-[#525252] bg-[#F5F5F5] px-4 py-2 rounded-full"
                     >
                       {tag}
                     </span>

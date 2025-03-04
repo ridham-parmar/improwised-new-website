@@ -19,7 +19,7 @@ const categories = [...new Set(casestudies.map((cs) => cs.data.category))];
     >
       <!-- Main Heading -->
       <h1
-        class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] max-md:text-[30px] leading-[62px] max-md:leading-[42px] font-bold lg:tracking-tight"
+        class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
       >
         Explore How We Turn<br />
         <span class="text-primary">Vision into Reality</span>
@@ -42,7 +42,7 @@ const categories = [...new Set(casestudies.map((cs) => cs.data.category))];
         );
 
         return (
-          <section class="section py-10" key={category}>
+          <section class="section py-20" key={category}>
             <div class="container">
               <div class="flex items-center justify-between mb-8">
                 <div>
