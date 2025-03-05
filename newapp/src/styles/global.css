@@ -1,4 +1,5 @@
-@import url('../styles/font.css');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap')
+layer(base);
 
 @import 'tailwindcss';
 
@@ -38,6 +39,11 @@
 @utility all-unset {
   all: unset;
   display: block;
+}
+@utility impronav-shadow {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 @utility blog-details {
