@@ -89,6 +89,7 @@ const casestudies = defineCollection({
 	schema: ({ image }) => z.object({
 		category: z.string(),
 		title: z.string(),
+		attachments: z.string(),
 		image: image(),
 		saveCost:z.string(),
 		description: z.string(),
@@ -105,8 +106,7 @@ const teams = defineCollection({
 			name: z.string(),
 			image: image(),
 			designation: z.string().optional(),
-			linkedin: z.string().optional(),
-			desc: z.string(),
+			linkedin: z.string().optional()
 		  })
 		),
 	}),

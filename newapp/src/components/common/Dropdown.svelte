@@ -15,7 +15,7 @@
       {#if services.length > 0}
         {#each services as service}
           <DropdownMenu.Item class="p-3">
-            <a  href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label="Learn more about our services on the service page">
+            <a href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label="Learn more about ${service?.data?.title}">
               {service?.data?.title}
             </a>
           </DropdownMenu.Item>
