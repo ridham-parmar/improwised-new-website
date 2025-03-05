@@ -36,18 +36,19 @@ import puppet from "$lib/images/technologies/puppet.svg"
 import progresschef from "$lib/images/technologies/Progress-Chef.svg"
 
 export const level1 = [
-    { name: "Azure", url: azure, alt: "Azure Cloud Services Logo", link: "https://azure.microsoft.com/en-in/free/cloud-services/" },
-    { name: "Redis", url: redis, alt: "Redis Database Logo", link: "https://redis.io/" },
-    { name: "Linux", url: linux, alt: "Linux Operating System Logo", link: "https://www.linux.org/" },
+    { name: "Vue", url: vue, alt: "Vue", link: "https://vuejs.org/" },
+    { name: "Bootstrap", url: bootstrap, alt: "Bootstrap", link: "https://getbootstrap.com/" },
+    { name: "Javascript", url: js, alt: "Javascript", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" }
 ]
 
 export const level2 = [
-    { name: "Kubernetes", url: kubernetes, alt: "Kubernetes Container Orchestration Logo", link: "https://kubernetes.io/" },
-    { name: "Circle CI", url: circlci, alt: "Circle CI Automation Logo", link: "https://circleci.com/" },
-    { name: "Terraform", url: terraform, alt: "Terraform Infrastructure as Code Logo", link: "https://www.terraform.io/" },
-    { name: "Postgres", url: postgres, alt: "PostgreSQL Database Logo", link: "https://www.postgresql.org/" },
-    { name: "Github", url: github, alt: "GitHub Repository Hosting Logo", link: "https://github.com/" },
-    { name: "Python", url: python, alt: "Python Programming Language Logo", link: "https://www.python.org/" },
+    { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
+    { name: "Flux CD", url: fluxcd, alt: "Flux CD", link: "https://fluxcd.io/" },
+    { name: "Postgres", url: postgres, alt: "Postgres", link: "https://www.postgresql.org/" },
+    { name: "Python", url: python, alt: "Python", link: "https://www.python.org/" },
+    { name: "Redis", url: redis, alt: "Redis", link: "https://redis.io/" },
+    { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" }
 ]
 
 export const level3 = [
