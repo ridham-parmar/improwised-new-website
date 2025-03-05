@@ -9,10 +9,10 @@
 
 	const computedClass = cn
         ? cn(
-              "border border-[#494848] rounded-full text-[#494848] mb-4 ring-gray-100 uppercase",
+              "border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase",
               className,
           )
-        : `border border-[#494848] rounded-full text-[#494848] mb-4 ring-gray-100 uppercase  ${className}`.trim();
+        : `border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase  ${className}`.trim();
 </script>
 
 <svelte:element

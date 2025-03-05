@@ -10,11 +10,11 @@
     <span>Service</span>
     <ChevronRight class="w-4 h-4" />
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content class="drop-shadow-lg">
+  <DropdownMenu.Content align="start" class="rounded-[6px]  border-0 inset-shadow-sm inset-shadow-sky-100/50 ring-2 ring-sky-100/50 p-[15px]">
     <DropdownMenu.Group>
       {#if services.length > 0}
         {#each services as service}
-          <DropdownMenu.Item>
+          <DropdownMenu.Item class="p-3">
             <a  href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label="Learn more about our services on the service page">
               {service?.data?.title}
             </a>

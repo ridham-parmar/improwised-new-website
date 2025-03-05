@@ -24,7 +24,7 @@ plugins={[
             <div class={`max-md:flex max-md:justify-center relative rounded-[8px] overflow-hidden ${i % 2 == 0 ? "h-2/5" : "h-3/5"}`}>
               <img
                 alt="life-images"
-                class={`max-w-[452px] rounded-[8px] min-w-[452px] object-cover object-center max-h-full ${i % 2 == 0 ? "min-h-[235px]" : "min-h-[413px]"}`} 
+                class={`max-w-[452px] rounded-[8px] min-w-[452px] object-cover object-center max-h-full ${i % 2 == 0 ? "min-h-[235px]" : "min-h-[413px]"}`}
                 src={images[i].src}
               />
             </div>
@@ -43,6 +43,6 @@ plugins={[
 
   <div class="flex gap-3 justify-center md:mt-10">
     <Carousel.Previous />
-    <Carousel.Next />    
+    <Carousel.Next />
   </div>
 </Carousel.Root>
