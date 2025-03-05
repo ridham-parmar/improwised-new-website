@@ -44,7 +44,7 @@ let gradientY = -200;
             </Card.Header>
             <Card.Content class="flex flex-col gap-2 md:gap-6 text-[#141414] tracking-tight">
               <Card.Title class="font-manrope font-bold text-[24px] leading-[28px] md:text-[28px] md:leading-[32px]">
-                <a href={BASE_URL + "/services/" + details.data.slug}>
+                <a href={BASE_URL + "/services/" + details.data.slug} aria-label="Learn more about our services on the service page">
                   {details.data.title}
                 </a>
               </Card.Title>
@@ -57,6 +57,7 @@ let gradientY = -200;
                 <Button
                   href={BASE_URL + "/services/" + details.data.slug}
                   class="bg-black md:mt-6"
+                  aria-label="Learn more about our services on the service page"
                 >
                   {" "}
                   Learn More

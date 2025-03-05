@@ -1,6 +1,6 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
-  import Autoplay from "embla-carousel-autoplay";
+  
   import * as Carousel from "$lib/components/ui/carousel/index.js";
   import line from "$lib/images/line.svg";
   import bg from "$lib/images/testimonials/bg.svg";
