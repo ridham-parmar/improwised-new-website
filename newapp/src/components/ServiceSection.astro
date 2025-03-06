@@ -1,12 +1,12 @@
 ---
 import { Badge } from "$lib/components/ui/badge";
-import CircleUserRound from "lucide-svelte/icons/circle-user-round";
+import { CircleUserRound } from "lucide-svelte";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import CustomCard from "./CustomCard.astro";
 ---
 
 <section
-    class="section bg-white overflow-hidden relative py-10 md:py-40 lighter-bg"
+    class="section bg-white overflow-hidden relative py-10 md:py-40 darker-bg"
 >
     <svg
         viewBox="0 0 1440 181"
@@ -54,9 +54,10 @@ import CustomCard from "./CustomCard.astro";
         <div
             class="md:mb-12 text-center flex mx-auto max-w-2xl flex-col items-center justify-center"
         >
-            <Badge variant="outline"
-                ><CircleUserRound class="mr-1 w-[16px]" />Services</Badge
-            >
+            <Badge variant="outline" class="py-1">
+                <CircleUserRound class="mr-1" size={18} />
+                <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+            </Badge>
             <SectionTitle text="Technologies" primaryColorText="we work with" />
         </div>
         <CustomCard collectionName="services" />

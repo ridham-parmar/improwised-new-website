@@ -12,11 +12,11 @@ const peopleImages = [person1, person2, person3];
 ---
 
 <section
-  class="section1 flex flex-col items-center justify-center text-center py-16 px-6 bg-image sm:h-screen relative max-md:pt-[30%] md:pb-40 lg:pt-[12%]"
+  class="section1 flex flex-col items-center justify-center text-center pt-30 pb-20 md:pt-56 md:pb-48 px-6 bg-image relative"
 >
   <!-- Trusted Badge -->
   <div
-    class="inline-flex items-center bg-white shadow-md px-5 py-2 rounded-full text-base font-medium text-gray-700"
+    class="inline-flex items-center bg-white shadow-md px-5 py-2 rounded-full text-sm sm:small-text"
   >
     Trusted by <span class="font-bold mx-1">200+</span> professionals
     <span class="flex ml-4 group">
@@ -29,43 +29,43 @@ const peopleImages = [person1, person2, person3];
   </div>
 
   <!-- Main Heading -->
-  <h1 class="mt-4 mb-6 max-md:text-center main-heading-small md:main-heading">
+  <h1 class="mt-6 mb-4 max-md:text-center main-heading-small md:main-heading">
     Engineering the Platforms<br />
     <span class="text-primary">That Build the Future</span>
   </h1>
 
   <!-- Subtext -->
-  <p class="mt-4 text-para max-w-2xl mx-auto">
+  <p class="md:mt-4 text-para max-w-2xl mx-auto">
     We design self-service, high-performing platforms that accelerate development, optimize operations, and drive seamless scalability.
   </p>
 
   <!-- CTA Buttons -->
-  <div class="mt-6 flex justify-center space-x-4">
-    <Button href=`${BASE_URL}/contactus` class="bg-black" aria-label="Contact us">Get in Touch</Button>
-    <Button href=`${BASE_URL}/services/platform-engineering` aria-label="Learn more about our services on the service page" variant="outline">
+  <div class="mt-6 md:mt-10 flex justify-center space-x-4">
+    <Button href=`${BASE_URL}/contact-us` class="bg-black md:text-[16px] font-manrope" aria-label="Contact us">Get in Touch</Button>
+    <Button href=`${BASE_URL}/services/platform-engineering` class="md:text-[16px] font-manrope" aria-label="Learn more about our services on the service page" variant="outline">
       Explore Solutions
     </Button>
   </div>
 
   <!-- Trusted Companies -->
-  <div class="mt-20">
+  <div class="mt-16 md:mt-20">
     <p
-      class="text-[18px] leading-[26px] font-semibold tracking-[2%] text-[#141414]"
+      class="text-[16px] leading-[20px] md:text-[18px] md:leading-[26px] font-semibold tracking-[2%] font-inter text-[#141414]"
     >
     Trusted by Leading Companies Worldwide
     </p>
-    <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6">
+    <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6 md:gap-8">
       {
-        clients.map((client, index) => (
+        clients.map((client) => (
           <>
-            <div class="">
+            <div>
               <Image
                 src={client.image}
                 alt={client.title}
                 loading="lazy"
                 decoding="async"
-                class="mx-auto mx-5"
-                height={40}
+                class="mx-auto"
+                height={38}
               />
             </div>
           </>
@@ -104,8 +104,6 @@ const peopleImages = [person1, person2, person3];
 <script src="../scripts/particles.js"></script>
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
-
-
     tsParticles.load({
       id: "tsparticlesCanvasHero",
       options: {

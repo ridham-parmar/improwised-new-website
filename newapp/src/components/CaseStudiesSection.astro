@@ -10,11 +10,15 @@ import CaseStudyCarousel from "$lib/components/common/CaseStudyCarousel.svelte";
 <section class="section py-10 md:py-40 lighter-bg">
   <div class="container">
     <div class="text-center flex max-w-3xl flex-col items-center md:items-start justify-center">
-      <Badge
+      <!-- <Badge
 
         variant="outline"
         ><CircleUserRound class="mr-1 w-[16px]" />Case Studies</Badge
-      >
+      > -->
+      <Badge variant="outline" class="py-1">
+        <CircleUserRound class="mr-1" size={18} />
+        <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Case Studies</span>
+      </Badge>
       <SectionTitle
         class="w-4/5 lg:w-full text-left"
         text="See the Impact"

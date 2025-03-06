@@ -33,31 +33,31 @@
                 />
 
               </Card.Header>
-              <h2 class="font-semibold mt-5  mb-2 text-[20px] leading-[34px] text-slate-800 px-5">
+              <h2 class="font-inter font-semibold mt-5 mb-2 text-[20px] leading-[34px] text-[#141414] px-5">
                 {testimonial.data.description}
               </h2>
 
               <Card.Footer class="block">
-                <img src={line.src} alt="line" class="w-full mb-4 d-block" />
+                <img src={line.src} alt="line" class="w-full md:mb-4 d-block" />
 
                 <div
                   class="mt-10 flex items-center justify-between gap-3 w-full"
                 >
                   <div class="flex-1">
-                    <h2 class="font-medium text-slate-800">
+                    <p class="font-inter font-bold text-[14px] md:text-[16px] text-[#141414]">
                       {testimonial.data.author}
-                    </h2>
-                    <p class="text-sm text-slate-600">
+                    </p>
+                    <p class="text-sm font-inter font-regular text-[#292929]">
                       {testimonial.data.authorDesignation}
                     </p>
                   </div>
-                  <div class="shrink-0">
+                  <div class="shrink-0 h-14 w-[120px] flex items-center justify-end">
                     <img
                       src={testimonial.data.profileImage.src}
                       alt={testimonial.data.author}
                       loading="lazy"
                       decoding="async"
-                      class="w-[118px] h=[60px]"
+                      class=""
                     />
                   </div>
                 </div>
@@ -72,7 +72,7 @@
               class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
             >
               <Card.Header>
-                <blockquote class="text-lg [text-wrap:balance] md:text-xl mb-2">
+                <blockquote class="small-text md:text-para [text-wrap:balance] mb-2">
                   {testimonial.data.description}
                 </blockquote>
               </Card.Header>
@@ -90,18 +90,18 @@
                   class="mt-10 flex items-center justify-between gap-3 w-full"
                 >
                   <div class="flex-1">
-                    <h2 class="font-medium text-slate-800">
+                    <p class="font-inter font-bold text-[14px] md:text-[16px] text-[#141414]">
                       {testimonial.data.author}
-                    </h2>
-                    <p class="text-sm text-slate-600">
+                    </p>
+                    <p class="text-sm font-inter font-regular text-[#292929]">
                       {testimonial.data.authorDesignation}
                     </p>
                   </div>
-                  <div class="shrink-0">
+                  <div class="shrink-0 h-14 w-[120px] flex items-center justify-end">
                     <img
                       src={testimonial.data.profileImage.src}
                       alt={testimonial.data.author}
-                      class="w-[118px] h=[60px]"
+                      class=""
                     />
                   </div>
                 </div>

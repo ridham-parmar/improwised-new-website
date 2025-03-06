@@ -1,7 +1,7 @@
 ---
 import { Badge } from "$lib/components/ui/badge";
 import { Image } from "astro:assets";
-import CircleUserRound from "lucide-svelte/icons/circle-user-round";
+import { CircleUserRound } from "lucide-svelte/icons";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { level1, level2, level3, level4 } from "src/tech-images";
 
@@ -31,17 +31,18 @@ const orbits = [
 ];
 ---
 
-<div class="section bg-white bg-tech-image relative py-10 md:py-40">
+<div class="section bg-white bg-tech-image relative py-10 md:pt-40 pb-24">
   <div class="container">
     <!-- Section Title -->
     <div
       class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
     >
-      <Badge
-
-        variant="outline"
-        ><CircleUserRound class="mr-1 w-[16px]" />Tech Stack</Badge
-      >
+      <Badge variant="outline" class="py-1">
+        <CircleUserRound class="mr-1" size={18} />
+        <span class="text-xs font-bold md:text-sm tracking-wider font-manrope"
+          >Tech Stack</span
+        >
+      </Badge>
       <SectionTitle
         class="text-center"
         text="we work with"
@@ -66,6 +67,7 @@ const orbits = [
           `}
             data-radius-sm={radius}
             data-count={count}
+            data-index={index}
           >
             {count > 0 &&
               calculateOrbitPositions(count, radius, 0).map(
@@ -80,25 +82,64 @@ const orbits = [
                     class={`group bg-white outline-hidden absolute flex justify-center items-center cursor-pointer
               `}
                   >
-                    <div>
-                      <a
-                        href={images[iconIndex].link}
-                        class={`z-30 bg-white flex flex-col items-center justify-center flex justify-center
-                      w-4 xs:w-[1.9rem] sm:w-[2.7rem] md:w-[3.7rem]
-                      transition group-hover:scale-105
-             `}
-                      >
-                        <Image
-                          height={40}
-                          layout="responsive"
-                          src={images[iconIndex].url}
-                          alt={images[iconIndex].alt}
-                          class={`transition group-hover:scale-110`}
-                        />
-                        <p class="text-slate-700 md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
-                          {images[iconIndex].name}
+                    <div class="relative max-sm:h-6">
+                      {index == 0 && (iconIndex == 0) && (
+                        <p id="open-source"
+                          class="w-max z-50 absolute md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          style={{
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(190% + ${y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          Open Source
                         </p>
-                      </a>
+                      )}
+                      {index == 4 && (iconIndex == 0 || iconIndex == count-1) && (
+                        <p
+                          class="w-max absolute z-50 md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          style={{
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(190% + ${y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          Level - 2
+                        </p>
+                      )}
+                       {index == 6 && (iconIndex == 0 || iconIndex == count-1) && (
+                        <p
+                          class="w-max absolute z-50 md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          style={{
+                            left: `calc(50% + ${x}px)`,
+                            top: `calc(190% + ${y}px)`,
+                            transform: "translate(-50%, -50%)",
+                          }}
+                        >
+                          Level - 3
+                        </p>
+                      )}
+
+                      <div>
+                        <a
+                          href={images?.[iconIndex]?.link}
+                          class={`z-30 bg-white flex-col items-center justify-center flex
+                        w-4 xs:w-[1.9rem] sm:w-[2.7rem] md:w-[3.7rem]
+                        transition group-hover:scale-105
+              `}
+                        >
+                          <Image
+                            height={40}
+                            layout="responsive"
+                            src={images?.[iconIndex].url ?? "#"}
+                            alt={images?.[iconIndex].alt ?? "icon"}
+                            class={`transition group-hover:scale-110`}
+                          />
+                          <p class="text-slate-700 md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
+                            {images?.[iconIndex].name}
+                          </p>
+                        </a>
+                      </div>
                     </div>
                   </div>
                 )
@@ -124,6 +165,8 @@ const orbits = [
         (div as HTMLElement).getAttribute("data-count")!,
         10
       );
+      const index = parseInt((div as HTMLElement).getAttribute("data-index")!)
+
       const actualRadius = (radius / 100) * containerSize;
 
       (div as HTMLElement).style.width = `${2 * actualRadius}px`;
@@ -131,12 +174,18 @@ const orbits = [
       (div as HTMLElement).style.top = `calc(80% - ${actualRadius}px)`;
 
       const icons = (div as HTMLElement).querySelectorAll("#tool");
+      
       icons.forEach((icon, iconIndex) => {
         const { x, y } = calculateOrbitPositions(count, radius, containerSize)[
           iconIndex
         ];
         (icon as HTMLElement).style.left = `calc(50% + ${x}px)`;
         (icon as HTMLElement).style.top = `calc(100% + ${y}px)`;
+        if (index == 0 && iconIndex == 0) {
+          let s = 0.5 * containerSize
+          const openSource = document.querySelector("#open-source") as Element;
+          (openSource as HTMLElement).style.left = `${actualRadius*1.4}px`;
+        }
       });
     });
   };
