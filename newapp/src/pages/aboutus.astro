@@ -8,11 +8,8 @@ import { Badge } from "$lib/components/ui/badge";
 import CTASection from "$lib/components/CTASection.astro";
 import * as Card from "$lib/components/ui/card";
 
-import CircleUserRound from "lucide-svelte/icons/circle-user-round";
-import Linkedin from "lucide-svelte/icons/linkedin";
-import Milestone from "lucide-svelte/icons/milestone";
+import { CircleUserRound, Linkedin, Milestone, CloudSun } from "lucide-svelte/icons";
 import Accordion from "$lib/components/common/Accordion.svelte";
-import CloudSun from "lucide-svelte/icons/cloud-sun";
 
 import eventImage from "$lib/images/events/event.png";
 import aboutus from "$lib/images/aboutusPage/main.webp";
@@ -62,7 +59,7 @@ const faqs = [
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<main class="main-content">
 		<section
-			class="section1 flex flex-col items-center justify-center text-center py-16 px-6 bg-image sm:h-screen relative max-md:pt-[30%] md:pb-40 lg:pt-[12%]"
+			class="section1 flex flex-col items-center justify-center text-center px-6 bg-image relative pt-30 pb-20 md:pt-80 md:pb-[240px]"
 		>
 			<!-- Main Heading -->
 			<h1
@@ -92,7 +89,7 @@ const faqs = [
 				/>
 			</div>
 			<div
-				class="absolute top-[5.5%] right-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
+				class="absolute top-[5.5%] right-[4.5%] lg:right-[8.5%] xl:right-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
 				<Image
 					src={bgicon2}
@@ -104,7 +101,7 @@ const faqs = [
 				/>
 			</div>
 			<div
-				class="absolute top-[30.5%] right-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
+				class="absolute top-[40.5%] right-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
 				<Image
 					src={bgicon3}
@@ -128,7 +125,7 @@ const faqs = [
 				/>
 			</div>
 			<div
-				class="absolute top-[5.5%] left-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
+				class="absolute top-[5.5%] left-[4.5%] lg:left-[8.5%] xl:left-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
 				<Image
 					src={bgicon5}
@@ -140,7 +137,7 @@ const faqs = [
 				/>
 			</div>
 			<div
-				class="absolute top-[30.5%] left-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
+				class="absolute top-[40.5%] left-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
 				<Image
 					src={bgicon6}
@@ -152,32 +149,29 @@ const faqs = [
 				/>
 			</div>
 		</section>
-		<section class="relative max-md:pt-20 pt-40 pb-20">
+		<section class="relative overflow-x-hidden py-10 md:py-40">
 			<div class="container relative z-10">
 				<div
-					class="grid grid-cols-2 max-md:grid-cols-1 gap-16 mb-16 items-start relative"
+					class="flex flex-col md:flex-row justify-between gap-10 md:gap-16"
 				>
-					<div class="relative max-md:order-2 max-md:text-center">
-						<Badge variant="outline"
-							><CircleUserRound
-								width="16"
-								height="16"
-								class="mr-1 w-[16px]"
-							/>About Us</Badge
-						>
+					<div class="relative">
+						<Badge variant="outline" class="py-1">
+							<CircleUserRound class="mr-1" size={18} />
+							<span class="text-xs font-bold md:text-sm tracking-wider font-manrope">About Us</span>
+						</Badge>
 						<SectionTitle
-							class=""
+							class="max-md:text-left max-md:mb-4"
 							text="Innovation and "
 							primaryColorText="Growth Together"
 						/>
 
-						<div class="mt-10">
+						<div class="">
 							<Accordion client:load {faqs} />
 						</div>
 					</div>
 
-					<div class="relative max-md:order-2 aos-init aos-animate">
-						<Image src={aboutus} alt="aboutUs" class="shadow-nav border-8 rounded-lg border-white" />
+					<div class="md:min-w-[50%] max-h-max flex justify-center items-center">
+						<Image src={aboutus} alt="aboutUs" class="shadow-nav rounded-lg" data-aos="fade-left" />
 					</div>
 				</div>
 			</div>
@@ -185,7 +179,7 @@ const faqs = [
 
 		<section class="section aboutSection bg-image2 py-20">
 			<div class="container mx-auto">
-				<div class="flex justify-center">
+				<div class="flex md:justify-center">
 					<Card.Root
 						class="card-custom-primary2 shadow-nav text-left rounded-none!"
 						onmousemove="updateGradient(event)"
@@ -199,7 +193,7 @@ const faqs = [
 							<Card.Header
 								class="flex flex-row items-center space-x-4 pb-6"
 							>
-								<span class="flex ml-3 group">
+								<div class="flex max-md:gap-1.5 ml-3 group">
 									{
 										peopleImages.map((src, index) => (
 											<Image
@@ -209,9 +203,9 @@ const faqs = [
 											/>
 										))
 									}
-								</span>
+								</div>
 								<Card.Title
-									class="font-bold font-manrope text-[18px] leading-[20px] md:text-[24px] md:leading-[30px]"
+									class="font-bold text-[#141414] font-manrope text-[16px] leading-[22px] md:text-[24px] md:leading-[30px] md:tracking-[0.02em]"
 								>
 									Rakshit and Shailesh<br />founding the
 									company
@@ -223,7 +217,7 @@ const faqs = [
 				<section
 					class="section4 py-10 md:py-40 overflow-x-hidden relative"
 				>
-					<div class="container">
+					<div>
 						<div
 							class="md:pt-12 md:ml-0 ml-18 flex flex-col gap-12"
 						>
@@ -242,34 +236,27 @@ const faqs = [
 									rx="4"
 									fill="#F1F1F1"></rect>
 							</svg>
-							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+							<div class="grid md:grid-cols-2 items-center md:gap-48 gap-10">
 								<div
 									class="order-1 flex flex-col justify-center"
 								>
 									<h1
-										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
 									>
-										Who We Are?
+										From Humble Beginnings to Industry Leaders
 									</h1>
 
 									<p
 										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
 									>
-										Since 2011, Improwised Technologies has
-										been at the forefront of IT innovation.
-										We specialize in scalable, cloud-native
-										development, driven by our mission to
-										become a leading software firm.
+										Rakshit and Shailesh founded Improwised Technologies with a vision to build innovative, scalable, and future-ready solutions.
 										<br />
 										<br />
-										Since then, we have worked tirelessly to
-										achieve our objective of giving our customers
-										and their products an edge with our expertise
-										in cutting-edge technologies.
+										What started as a passion for problem-solving has evolved into a powerhouse of <strong>cloud-native development, platform engineering, and cutting-edge automation.</strong>
 									</p>
 								</div>
 								<div
-									class="max-md:flex md:min-w-[50%] relative ml-auto"
+									class="max-md:flex md:min-w-[50%] relative md:ml-auto"
 								>
 									<Card.Root
 										class="card-custom-primary2 shadow-nav max-w-sm text-left rounded-none!"
@@ -282,10 +269,10 @@ const faqs = [
 											onmousemove="updateGradient(event)"
 										>
 											<Card.Header
-												class="flex flex-row space-x-4 pb-6"
+												class="flex max-sm:p-2 flex-row gap-2 md:gap-4 pb-6 items-center"
 											>
 												<div
-													class="icon-container p-6 flex items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
+													class="icon-container p-2 md:p-6 flex items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
 												>
 													<CloudSun
 														width="24"
@@ -295,29 +282,27 @@ const faqs = [
 												</div>
 
 												<Card.Title
-													class="font-bold font-manrope text-[18px] md:text-[16px] leading-[20px] lg:text-[24px] md:leading-[30px]"
+													class="font-bold font-manrope text-[12px] sm:text-[18px] sm:leading-[24px] lg:text-[24px] md:leading-[30px]"
 												>
-												From Bugs to <br/>Brilliance, We Deliver.
+												2011 – Where It All Began
 												</Card.Title>
 											</Card.Header>
 										</div>
 									</Card.Root>
 								</div>
 							</div>
-							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+							<div class="grid md:grid-cols-2 md:gap-48 gap-8">
 								<div class="flex flex-col justify-center">
 									<h1
-										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
 									>
-									  From Humble Beginnings to Industry Leaders
+										Delivering Excellence, Driving Innovation
 
 									</h1>
 									<p
 										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
 									>
-									Rakshit and Shailesh founded Improwised Technologies with a vision to build innovative, scalable, and future-ready solutions.
-									<br/><br/>
-									What started as a passion for problem-solving has evolved into a powerhouse of <strong></b>cloud-native development, platform engineering, and cutting-edge automation.</strong>
+									Over the years, we have empowered businesses with <strong>scalable, secure, and high-performance solutions</strong>, helping them stay ahead in a rapidly evolving digital landscape.
 									</p>
 								</div>
 								<div
@@ -331,20 +316,20 @@ const faqs = [
 								</div>
 							</div>
 
-							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+							<div class="grid md:grid-cols-2 md:gap-48 gap-8">
 								<div
 									class="md:order-1 flex flex-col justify-center"
 								>
 									<h1
-										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
 									>
-									The Road Ahead: Innovation Without Limits
+									Milestones That Matter
 
 									</h1>
 									<p
 										class="md:my-5 max-w-2xl mx-auto text-para"
 									>
-									With a strong foundation and a future-focused mindset, we continue to push boundaries, helping businesses scale, innovate, and thrive in a cloud-driven world.
+									From launching Platform Engineering services to optimizing cloud infrastructure for startups and enterprises, every milestone has been a step toward making technology more scalable, efficient, and developer-friendly.
 									</p>
 								</div>
 
@@ -359,19 +344,18 @@ const faqs = [
 								</div>
 							</div>
 
-							<div class="grid md:grid-cols-2 md:gap-48 gap-10">
+							<div class="grid md:grid-cols-2 items-center md:gap-48 gap-10">
 								<div class="flex flex-col justify-center">
 									<h1
-										class="mb-6 font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
 									>
-									Milestones That Matter
+									The Road Ahead: Innovation Without Limits
 
 									</h1>
 									<p
 										class="md:my-5 max-w-2xl mx-auto text-para"
 									>
-									From launching Platform Engineering services to optimizing cloud infrastructure for startups and enterprises, every milestone has been a step toward making technology more scalable, efficient, and developer-friendly.
-
+									With a strong foundation and a future-focused mindset, we continue to push boundaries, helping businesses scale, innovate, and thrive in a cloud-driven world.
 									</p>
 								</div>
 
@@ -389,10 +373,10 @@ const faqs = [
 											onmousemove="updateGradient(event)"
 										>
 											<Card.Header
-												class="flex flex-row pb-1 space-x-4 pb-6"
+												class="flex max-sm:p-2 flex-row gap-2 md:gap-4 pb-6 items-center"
 											>
 												<div
-													class="icon-container flex p-6 items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
+													class="icon-container p-2 md:p-6 flex items-center justify-center rounded-full bg-primary2 shadow-lg hover:shadow-xs"
 												>
 													<Milestone
 														width="24"
@@ -402,7 +386,7 @@ const faqs = [
 												</div>
 
 												<Card.Title
-													class="font-bold font-manrope text-[18px] md:text-[16px] leading-[20px] lg:text-[24px] md:leading-[30px]"
+													class="font-bold font-manrope text-[12px] sm:text-[18px] sm:leading-[24px] lg:text-[24px] md:leading-[30px]"
 												>
 													Milestones That <br />Made
 													Us Shine!
@@ -465,13 +449,10 @@ const faqs = [
 				<div
 					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
-					<Badge variant="outline"
-						><CircleUserRound
-							width="16"
-							height="16"
-							class="mr-1 w-[16px]"
-						/>About Us</Badge
-					>
+					<Badge variant="outline" class="py-1">
+						<CircleUserRound class="mr-1" size={18} />
+						<span class="text-xs font-bold md:text-sm tracking-wider font-manrope">About Us</span>
+					</Badge>
 					<SectionTitle
 						text="Insights & "
 						primaryColorText="Inspiration"
@@ -498,20 +479,20 @@ const faqs = [
 				</div>
 			</div>
 		</section>
-		<section class="md:pt-20 md:pb-40 p-10 section">
-			<div class="">
+		<section class="md:pt-20 md:pb-40 p-10 section darker-bg">
+			<div class="md:px-20 px-5">
 				<div
-					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
+					class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
-					<Badge variant="outline"
-						><CircleUserRound class="mr-1 w-[16px]" />Our Team</Badge
-					>
-					<SectionTitle text="Meet" primaryColorText=" Our Team" />
+					<Badge variant="outline" class="py-1">
+						<CircleUserRound class="mr-1" size={18} />
+						<span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Our Team</span>
+					</Badge>
+					<SectionTitle text="Meet" primaryColorText="Our Team" />
 				</div>
-				<div class="relative z-10">
-					<!-- grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-6 2xl:gap-8 -->
+				<div class="relative z-10 md:mt-10">
 					<div
-						class="flex flex-wrap justify-center gap-2"
+						class="flex flex-wrap justify-evenly gap-5"
 					>
 						{
 							teamsData.map(({ data: { teams } }) =>
@@ -660,7 +641,7 @@ const faqs = [
 		yearText.setAttribute("x", "40"); // Position right of the circle (adjusted for padding)
 		yearText.setAttribute("y", "30"); // Adjust vertical alignment
 		yearText.setAttribute("fill", "#333"); // Dark text color
-		yearText.setAttribute("font-size", "16px"); // Adjust size
+		yearText.setAttribute("font-size", "14px"); // Adjust size
 		yearText.setAttribute("font-weight", "bold"); // Bold text
 		yearText.setAttribute("text-anchor", "middle"); // Center text horizontally
 		yearText.setAttribute("dominant-baseline", "middle"); // Align text properly
