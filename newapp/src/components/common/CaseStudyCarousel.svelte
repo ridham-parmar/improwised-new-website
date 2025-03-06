@@ -1,7 +1,7 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
-    import { BASE_URL } from "$lib/consts";
+  import { BASE_URL } from "$lib/consts";
   import line from "$lib/images/line.svg";
   export let casestudies: any[] = [];
 </script>
@@ -26,12 +26,16 @@
               >
                 {casestudy.data.category}</span
               >
-              <a target="_blank"   href={`${BASE_URL}/casestudies/${casestudy.data.attachments}`}  aria-label="Learn more about ${casestudy.data.title}"><h2
-                class="mb-2 font-bold font-manrope text-[28px] leading-[34px] tracking-[0.02em] text-[#141414]"
+              <a
+                target="_blank"
+                href={`${BASE_URL}/casestudies/${casestudy.data.attachments}`}
+                aria-label="Learn more about ${casestudy.data.title}"
+                ><h2
+                  class="mb-2 font-bold font-manrope text-[28px] leading-[34px] tracking-[0.02em] text-[#141414]"
+                >
+                  {casestudy.data.title}
+                </h2></a
               >
-                {casestudy.data.title}
-              </h2></a>
-
 
               <blockquote class="text-para">
                 {casestudy.data.description}
@@ -57,7 +61,7 @@
   </Carousel.Content>
 
   <div class="md:absolute md:top-[-95px] right-0 flex gap-3 justify-center">
-    <Carousel.Previous/>
-    <Carousel.Next/>
+    <Carousel.Previous />
+    <Carousel.Next />
   </div>
 </Carousel.Root>

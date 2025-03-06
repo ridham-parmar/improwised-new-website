@@ -15,7 +15,7 @@ import Accordion from "$lib/components/common/Accordion.svelte";
 import CloudSun from "lucide-svelte/icons/cloud-sun";
 
 import eventImage from "$lib/images/events/event.png";
-import aboutus from "$lib/images/aboutusPage/main.png";
+import aboutus from "$lib/images/aboutusPage/main.webp";
 import aboutus2 from "$lib/images/aboutusPage/main2.png";
 import aboutus3 from "$lib/images/aboutusPage/main3.png";
 import person1 from "$lib/images/aboutusPage/person1.png";
@@ -177,7 +177,7 @@ const faqs = [
 					</div>
 
 					<div class="relative max-md:order-2 aos-init aos-animate">
-						<Image src={aboutus} alt="aboutUs" class="shadow-nav" />
+						<Image src={aboutus} alt="aboutUs" class="shadow-nav border-8 rounded-lg border-white" />
 					</div>
 				</div>
 			</div>
@@ -499,7 +499,7 @@ const faqs = [
 			</div>
 		</section>
 		<section class="md:pt-20 md:pb-40 p-10 section">
-			<div class="md:px-20 px-5">
+			<div class="">
 				<div
 					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
@@ -511,7 +511,7 @@ const faqs = [
 				<div class="relative z-10">
 					<!-- grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-6 gap-6 2xl:gap-8 -->
 					<div
-						class="flex flex-wrap justify-center gap-5"
+						class="flex flex-wrap justify-center gap-2"
 					>
 						{
 							teamsData.map(({ data: { teams } }) =>
@@ -524,7 +524,7 @@ const faqs = [
 														<Image
 															alt="feature"
 
-															class="w-[250px] h-[250px] object-cover object-top rounded-t-lg grayscale transition duration-300"
+															class="w-[250px] h-[280px] object-cover object-top rounded-t-lg grayscale transition duration-300"
 															src={team.image}
 														/>
 													</Card.Header>
