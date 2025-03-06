@@ -5,9 +5,9 @@ import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { Button } from "$lib/components/ui/button";
 import { CircleUserRound } from "lucide-svelte/icons";
-import abt1 from "$lib/images/abt1.svg";
-import abt2 from "$lib/images/abt2.svg";
-import abt3 from "$lib/images/abt3.svg";
+import abt1 from "$lib/images/abt1.webp";
+import abt2 from "$lib/images/abt2.webp";
+import abt3 from "$lib/images/abt3.webp";
 ---
 
 <section class="relative py-10 md:py-40 darker-bg">
@@ -19,21 +19,27 @@ import abt3 from "$lib/images/abt3.svg";
             <div class="flex gap-2">
                <div class="md:min-w-[50%]">
                   <Image
-                     src={abt1}
+                     src={abt3}
                      alt="Platform Engineering"
-                     class="w-full transition-transform duration-300 hover:brightness-75"
+                     width={308}
+                     height={342}
+                     class="w-full transition-transform duration-300 hover:brightness-75 border-8 border-white rounded-lg shadow"
                   />
                   <Image
                      src={abt2}
+                     width={308}
+                     height={193}
                      alt="Platform Engineering"
-                     class="w-full mt-2 transition-transform duration-300 hover:brightness-75"
+                     class="w-full mt-2 transition-transform duration-300 hover:brightness-75  border-8 border-white rounded-lg shadow"
                   />
                </div>
                <div>
                   <Image
-                     src={abt3}
+                     src={abt1}
+                     width={300}
+                     height={377}
                      alt="Platform Engineering"
-                     class="w-full transition-transform duration-300 hover:brightness-75"
+                     class="w-full transition-transform duration-300 hover:brightness-75 mt-28  border-8 border-white rounded-lg shadow"
                   />
                </div>
             </div>
