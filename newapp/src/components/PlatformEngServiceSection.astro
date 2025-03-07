@@ -5,12 +5,13 @@ import { Badge } from "$lib/components/ui/badge";
 import { Button } from "$lib/components/ui/button";
 
 import { BASE_URL } from "$lib/consts";
-import platformEngImage from "$lib/images/services/plarformEng1.svg";
+import platformEngImage from "$lib/images/services/plarformEng.svg";
+import platformEngImage2 from "$lib/images/services/platformImage-2.svg";
 import { CircleUserRound, CloudUpload } from "lucide-svelte";
 import hrLine from "$lib/images/hrline.svg";
 ---
 
-<section class="relative py-10 md:py-40 overflow-x-hidden darker-bg">
+<section class="relative py-10 md:py-40 overflow-x-hidden">
   <div class="container relative z-10">
     <div class="grid grid-cols-1 md:gap-16 md:mb-16 relative">
       <div class="relative flex flex-col md:flex-row items-center md:gap-16">
@@ -50,7 +51,7 @@ import hrLine from "$lib/images/hrline.svg";
           class="max-md:py-6 flex md:justify-end md:min-w-[50%] max-md:max-h-[520px]"
         >
           <Image
-            src={platformEngImage}
+            src={platformEngImage2}
             alt="Platform Engineering"
             data-aos="fade-left"
             class="rounded-medium"

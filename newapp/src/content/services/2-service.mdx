@@ -2,9 +2,25 @@
 title: 'Cloud Infrastructure Services'
 slug: 'cloud-infrastructure-services'
 image: '$lib/images/services/data3.svg'
-description: 'Ready to see what your cloud can really do? We build smart, secure cloud setups that let you grow and innovate.
-'
+description: 'Ready to see what your cloud can really do? We build smart, secure cloud setups that let you grow and innovate.'
 order: 2
+blocks: 
+    - title: "Cloud Strategy & Planning"
+      description: "Define a cloud roadmap with risk assessments and compliance readiness"
+    - title: "Cloud Migration & Deployment"
+      description: "Seamless transition from on-premise or legacy systems to multi-cloud and hybrid cloud environments"
+    - title: "Performance & Cost Optimization"
+      description: "Smart resource allocation, automated scaling, and billing optimization to reduce cloud expenses"
+    - title: "Security & Compliance"
+      description: "Enforce security best practices, role-based access, and automated governance policies"
+    - title: "Monitoring & Observability"
+      description: "Real-time cloud performance tracking with alerts and reporting for proactive issue resolution"
+    - title: "Disaster Recovery & Business Continuity"
+      description: "Backup strategies, failover mechanisms, and resilience planning to minimize downtime"
+
+text: "Building Blocks of Scalable"
+primaryText: "Cloud Infrastructure"
+blockImage: "$lib/images/services/pe-1.svg"
 ---
 
 
@@ -24,6 +40,7 @@ import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
 import solutions from "$lib/images/services/solutions.svg"
+import PESection from "$lib/components/PESection.astro"
 
 export const title = frontmatter.title
 export const slug = frontmatter.slug
@@ -31,43 +48,21 @@ export const image = "$lib/images/services/data1.png"
 export const description = "Ready to see what your cloud can really do? We build smart, secure cloud setups that let you grow and innovate."
 
 <section>
-    <section class="section1 pt-[30%] lg:pt-52 pb-10 bg-platform">
+    <section class="section1 pt-30 pb-20 md:pt-80 md:pb-[240px] bg-platform">
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
                 <h1 class="main-heading-small md:main-heading">{title}</h1>
                 <p class="my-4 small-text font-roboto md:text-para">{description}</p>
             </div>
-            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact-us`} class="bg-black">Explore Solutions</Button>
+            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact-us`} class="bg-black">Get In Touch</Button>
         </div>
-        <div class="w-full flex justify-center">
+        {/* <div class="w-full flex justify-center">
           <Image class="hidden md:block" alt="building block" src={solutions}/>
-        </div>
+        </div> */}
     </section>
 
     <section class="section2 overflow-x-hidden py-10 md:py-40">
-        <div class="container flex flex-col-reverse md:flex-row justify-between gap-10 md:gap-16">
-            <div>
-                <Badge  variant="outline"><CircleUserRound width="16" height="16" class="mr-1 w-[16px]"/>Service</Badge>
-                <SectionTitle class="max-md:text-left w-5/6 md:w-4/6" text="Innovation and" primaryColorText="Growth Together"/>
-                <div>
-                    <p class="font-bold text-[18px text-[#141414]] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Automated workflow (CI/CD)</p>
-                    <p class="pt-2 pb-6 small-text font-inter md:text-para">We create a tailored Internal Developer Platform that meets your
-                    specific needs and provides a comprehensive set</p>
-                </div>
-                <div>
-                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Containerizatrion</p>
-                </div>
-                <div>
-                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Kubernetes Integration</p>
-                </div>
-                <div>
-                    <p class="py-4 md:py-6 text-[#141414] border-1 border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Monitoring and Alerting</p>
-                </div>
-            </div>
-            <div class="md:min-w-[50%] flex justify-center items-center">
-                <Image alt="building block" src={buildingBlock} data-aos="fade-left"/>
-            </div>
-        </div>
+        <PESection block="cloud-infrastructure-services" />
     </section>
 
     <section class="section3 relative lighter-bg">
@@ -122,7 +117,7 @@ export const description = "Ready to see what your cloud can really do? We build
         </div>
     </section>
 
-    <section class="section4 py-10 md:py-40 overflow-x-hidden lighter-bg">
+    <section class="section4 py-10 md:py-40 overflow-x-hidden">
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
             <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>

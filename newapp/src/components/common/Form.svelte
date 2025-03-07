@@ -22,9 +22,8 @@
   let errors = writable<FormErrors>({});
 
   function recaptchaCallback(response: string) {
-    console.log("reCAPTCHA response:", response);
     captchaValid = !!response;
-    errors.update(e => ({ ...e, captcha: "" })); // Clear captcha error on successful validation
+    errors.update(e => ({ ...e, captcha: "" }));
   }
 
   async function validateForm(event: SubmitEvent) {

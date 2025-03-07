@@ -48,7 +48,14 @@ const services = defineCollection({
 		slug: z.string(),
 		image: image(),
 		description: z.string(),
-		order: z.number() // Add order field
+		order: z.number(), // Add order field
+		text: z.string(),
+		primaryText: z.string(),
+		blocks: z.array(z.object({
+			title: z.string(),
+			description: z.string()
+		})),
+		blockImage: image()
 	}),
 });
 
@@ -145,6 +152,28 @@ const corefeaturesCloudInfrastructureManagement = defineCollection({
 	}),
 });
 
+const corefeaturesProductModernization = defineCollection({
+	loader: glob({ base: './src/content/corefeatures-product-modernization', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string()
+	}),
+});
+
+const corefeaturesTechnologyConsulting = defineCollection({
+	loader: glob({ base: './src/content/corefeatures-technology-consulting', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string()
+	}),
+});
+
 const approaches = defineCollection({
 	loader: glob({ base: './src/content/approaches', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
@@ -161,6 +190,34 @@ const approaches = defineCollection({
 
 const approaches2 = defineCollection({
 	loader: glob({ base: './src/content/approaches2', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		approaches: z.array(
+		  z.object({
+			title: z.string(),
+			description: z.string(),
+			image: image()
+		  })
+		),
+	}),
+});
+
+const approaches3 = defineCollection({
+	loader: glob({ base: './src/content/approaches3', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		approaches: z.array(
+		  z.object({
+			title: z.string(),
+			description: z.string(),
+			image: image()
+		  })
+		),
+	}),
+});
+
+const approaches4 = defineCollection({
+	loader: glob({ base: './src/content/approaches4', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) => z.object({
 		approaches: z.array(
@@ -231,4 +288,4 @@ const reviews = defineCollection({
 	}),
 });
 
-export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2,aboutusPoints };
+export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2, approaches3, approaches4, corefeaturesProductModernization, corefeaturesTechnologyConsulting };
