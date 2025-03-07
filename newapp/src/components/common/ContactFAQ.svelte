@@ -28,12 +28,12 @@
   <Accordion.Item value="item-3" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >Is Improwised as the other branch to work?</Accordion.Trigger
+      >Does Improwised have the other branch to work?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
     >
-    No, Improwised as only have one branch at Rajkot
+    No, Improwised has only  one branch at Rajkot
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-4" class="py-6 md:py-10">
