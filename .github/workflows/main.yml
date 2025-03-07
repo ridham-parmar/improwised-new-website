@@ -24,32 +24,39 @@ jobs:
           node-version: 22.13.1
 
       # Build both webapp and newapp
-      - name: Build webapp
-        run: |
-          cd webapp
-          npm install
-          npm run build
-          mv dist ../webapp-dist
+      # - name: Build webapp
+      #   run: |
+      #     cd webapp
+      #     npm install
+      #     npm run build
+      #     mv dist ../webapp-dist
 
       - name: Build newapp
         run: |
           cd newapp
           npm install
           npm run build
-          mv dist ../newapp-dist
-
-      # Combine both apps into a single deployment folder
-      - name: Combine build artifacts
-        run: |
-          mkdir combined-dist
-          mv webapp-dist/* combined-dist/
-          mkdir combined-dist/newapp
-          mv newapp-dist/* combined-dist/newapp/
-
+      
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "combined-dist/"
+          path: "newapp/dist/"
+          name: newapp
+
+      - name: update CNAME
+        run: echo "www.improwised.com" > newapp/dist/CNAME
+      # Combine both apps into a single deployment folder
+      # - name: Combine build artifacts
+      #   run: |
+      #     mkdir combined-dist
+      #     mv webapp-dist/* combined-dist/
+      #     mkdir combined-dist/newapp
+      #     mv newapp-dist/* combined-dist/newapp/
+
+      # - name: Upload Pages Artifact
+      #   uses: actions/upload-pages-artifact@v3
+      #   with:
+      #     path: "combined-dist/"
 
   deploy:
     environment:
