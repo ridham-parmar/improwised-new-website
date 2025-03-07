@@ -6,15 +6,15 @@
 </script>
 
 <DropdownMenu.Root preventScroll={false}>
-  <DropdownMenu.Trigger class="flex items-center space-x-1">
+  <DropdownMenu.Trigger class="flex items-center space-x-1 hover:cursor-pointer">
     <span>Service</span>
     <ChevronRight class="w-4 h-4" />
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content align="start" class="rounded-[6px]  border-0 inset-shadow-sm inset-shadow-sky-100/50 ring-2 ring-sky-100/50 p-[15px]">
+  <DropdownMenu.Content align="start" class="rounded-[6px] backdrop-blur-[12px] bg-[#ffffff4d] border-0 p-[15px]">
     <DropdownMenu.Group>
       {#if services.length > 0}
         {#each services as service}
-          <DropdownMenu.Item class="p-3">
+          <DropdownMenu.Item class="p-3 text-[#141414] hover:text-primary">
             <a href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label="Learn more about ${service?.data?.title}">
               {service?.data?.title}
             </a>
