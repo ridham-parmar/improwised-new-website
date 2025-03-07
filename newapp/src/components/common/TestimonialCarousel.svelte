@@ -16,7 +16,7 @@
 >
   <Carousel.Content class="">
     {#each testimonials as testimonial, i (i)}
-      {#if testimonial.data.siteImage && testimonial.data.siteImage.src}
+      <!-- {#if testimonial.data.siteImage && testimonial.data.siteImage.src}
         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
           <div class="flex justify-center p-1 h-full">
             <Card.Root
@@ -65,7 +65,7 @@
             </Card.Root>
           </div>
         </Carousel.Item>
-      {:else}
+      {:else} -->
         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
           <div class="flex justify-center p-1 h-full">
             <Card.Root
@@ -109,7 +109,7 @@
             </Card.Root>
           </div>
         </Carousel.Item>
-      {/if}
+      <!-- {/if} -->
     {/each}
   </Carousel.Content>
   <div class="md:absolute md:top-[-95px] right-0 flex gap-3 justify-center">
