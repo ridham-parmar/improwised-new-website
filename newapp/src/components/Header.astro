@@ -13,13 +13,13 @@ import Moon from "lucide-svelte/icons/moon";
 
 <header
   id="up"
-  class="fixed impronav-sticky-header top-0 left-0 right-0 border-b border-transparent transition-all z-50" style="z-index:50;"
+  class="fixed top-0 left-0 right-0 border-b border-transparent transition-all z-20"
 >
-  <div class="relative z-50">
-    <div
-    class="relative impronav-sticky-header container flex flex-col items-center justify-between lg:flex-row px-4 py-3"
+  <div class="relative">
+    <div id="desktop-header"
+    class="relative container flex flex-col items-center justify-between lg:flex-row px-4 py-3"
   >
-    <div class="z-50 flex w-full items-center justify-between lg:w-auto">
+    <div id="impro-logo" class=" z-50 flex w-full items-center justify-between lg:w-auto">
       <a href={BASE_URL} class="flex items-center transition">
         <Image
           src={Logo}
@@ -34,9 +34,9 @@ import Moon from "lucide-svelte/icons/moon";
         <button id="impronav-menu" aria-label="Toggle Menu" class="hover:cursor-pointer">
           <Menu class="h-6 w-6" id="menuIconMenu" />
         </button>
-        <button id="impronav-close-menu" class="hidden hover:cursor-pointer" aria-label="Toggle Menu">
+        <!-- <button id="impronav-close-menu" class="hidden hover:cursor-pointer" aria-label="Toggle Menu">
           <X class="h-6 w-6" id="menuIconMenu" />
-        </button>
+        </button> -->
       </div>
     </div>
 
@@ -112,37 +112,65 @@ import Moon from "lucide-svelte/icons/moon";
     </div>
 
   <nav id="mobile-nav"
-      class="bg-effect -z-40 pt-3 flex lg:hidden impronav-toggle absolute top-[66px] px-4 pb-4 -translate-y-[392px] transition-all duration-500 flex-col w-full bg-white"
+      class="bg-effect -z-40 pt-3 flex impronav-shadow lg:hidden impronav-toggle absolute top-0 px-4 pb-4 -translate-y-[392px] transition-all duration-500 flex-col w-full bg-white"
     >
+      <div class="z-50 flex w-full items-center justify-between lg:w-auto">
+        <a href={BASE_URL} class="flex items-center transition">
+          <Image
+            src={Logo}
+            class="w-[150px] lg:w-[200px]"
+            alt={SITE_TITLE}
+            loading="lazy"
+            decoding="async"
+          /></a
+        >
+
+        <div class="block lg:hidden h-6 w-6">
+          <button id="impronav-close-menu" class="hidden hover:cursor-pointer" aria-label="Toggle Menu">
+            <X class="h-6 w-6" id="menuIconMenu" />
+          </button>
+        </div>
+      </div>
       <ul class="flex flex-col lg:gap-3">
-        <a
-          href={BASE_URL}
-          class="hover:text-primary py-2 transition lg:px-3 nav-text"
-          >Home</a
-        >
-        <a
-          href=`${BASE_URL}/aboutus`
-          class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-          >About Us</a
-        >
-        <a class="hover:text-primary py-2 transition lg:px-3">
-          <Dropdown client:load services={services} />
-        </a>
-        <a
-          href=`${BASE_URL}/casestudies`
-          class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-          >Case Studies</a
-        >
-        <a
-          href=`${BASE_URL}/careers`
-          class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-          >Careers</a
-        >
-        <a
-          href=`${BASE_URL}/blogs`
-          class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-          >Blog</a
-        >
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a
+            href={`${BASE_URL}`}
+              >Home</a
+          >
+        </li>
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a
+            href={`${BASE_URL}/aboutus`}
+            aria-label="Learn more about our company on the About Us page"
+            >About Us</a
+          >
+        </li>
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a href="javascript:void(0)">
+            <Dropdown client:load services={services} />
+          </a>
+        </li>
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a
+            href={`${BASE_URL}/casestudies`}
+            aria-label="Learn more about our Case Studies"
+            >Case Studies</a
+          >
+        </li>
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a
+            href={`${BASE_URL}/careers`}
+            aria-label="Our Career Page"
+            >Careers</a
+          >
+        </li>
+        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+          <a
+            href={`${BASE_URL}/blogs`}
+            aria-label="Our Blog Page"
+            >Blog</a
+          >
+        </li>
       </ul>
       <div class="mt-3 flex items-center gap-4 lg:hidden">
         <!-- <Button variant="outline">
@@ -171,7 +199,7 @@ import Moon from "lucide-svelte/icons/moon";
       backdrop-filter 0.3s ease-in-out,
       box-shadow 0.3s ease-in-out;
   }
-  .impronav-sticky-header.scrolled {
+  .scrolled {
     background: rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(12px);
   }
