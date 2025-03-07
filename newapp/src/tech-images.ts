@@ -8,6 +8,22 @@ import terraform from "$lib/images/technologies/terraform.svg"
 import postgres from "$lib/images/technologies/psotgres.svg"
 import github from "$lib/images/technologies/github.svg"
 import python from "$lib/images/technologies/python.svg"
+import go from "$lib/images/technologies/go.svg"
+import docker from "$lib/images/technologies/docker.svg"
+import grafana from "$lib/images/technologies/grafana.svg"
+import gcp from "$lib/images/technologies/gcp.svg"
+import prometheus from "$lib/images/technologies/prometheus.svg" 
+import helm from "$lib/images/technologies/helm.svg"
+import mysql from "$lib/images/technologies/mysql.svg"
+import gitlab from "$lib/images/technologies/gitlab.svg"
+import keycloak from "$lib/images/technologies/keycloak.svg"
+import vault from "$lib/images/technologies/vault.svg"
+import kratos from "$lib/images/technologies/kratos.svg"
+import loki from "$lib/images/technologies/loki.svg"
+import robusta from "$lib/images/technologies/robusta.svg"
+import alertManager from "$lib/images/technologies/alert-manager.svg"
+import concourse from "$lib/images/technologies/concourse.svg"
+import kafka from "$lib/images/technologies/kafka.svg"
 
 import react from "$lib/images/technologies/react.svg"
 import vue from "$lib/images/technologies/vue.svg"
@@ -27,7 +43,6 @@ import forgejo from "$lib/images/technologies/forgejo.svg"
 import traefik from "$lib/images/technologies/Traefik.svg"
 import emqx from "$lib/images/technologies/emqx.svg"
 import apache from "$lib/images/technologies/Apache.svg"
-import concourse from "$lib/images/technologies/concourse-ci.svg"
 import authentik from "$lib/images/technologies/authentik.svg"
 import drone from "$lib/images/technologies/dron.svg"
 import fleetcd from "$lib/images/technologies/Fleetcd.svg"
@@ -37,46 +52,51 @@ import progresschef from "$lib/images/technologies/Progress-Chef.svg"
 
 export const level1 = [
     { name: "Vue", url: vue, alt: "Vue", link: "https://vuejs.org/" },
+    { name: "Golang", url: go, alt: "Golang", link: "https://go.dev/" },
+    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
     { name: "Bootstrap", url: bootstrap, alt: "Bootstrap", link: "https://getbootstrap.com/" },
-    { name: "Javascript", url: js, alt: "Javascript", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
-    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" }
 ]
 
 export const level2 = [
     { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
+    { name: "Grafana", url: grafana, alt: "Grafana", link: "https://grafana.com/" },
     { name: "Flux CD", url: fluxcd, alt: "Flux CD", link: "https://fluxcd.io/" },
     { name: "Postgres", url: postgres, alt: "Postgres", link: "https://www.postgresql.org/" },
-    { name: "Python", url: python, alt: "Python", link: "https://www.python.org/" },
+    { name: "Loki", url: loki, alt: "Loki", link: "https://grafana.com/oss/loki/" },
+    { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" },
     { name: "Redis", url: redis, alt: "Redis", link: "https://redis.io/" },
-    { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" }
+    { name: "Python", url: python, alt: "Python", link: "https://www.python.org/" },
 ]
 
 export const level3 = [
-    { name: "React", url: react, alt: "React JavaScript Library Logo", link: "https://react.dev/" },
-    { name: "Vue", url: vue, alt: "Vue.js Framework Logo", link: "https://vuejs.org/" },
-    { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
-    { name: "Angular", url: angular, alt: "Angular Web Framework Logo", link: "https://angularjs.org/" },
+    { name: "Docker", url: docker, alt: "Docker", link: "https://www.docker.com/" },
+    { name: "Github", url: github, alt: "Github", link: "https://github.com/" },
     { name: "Dexidp", url: dexidp, alt: "Dex IDP Identity Provider Logo", link: "https://dexidp.io/" },
-    { name: "ArgoCD", url: argo, alt: "ArgoCD Continuous Deployment Logo", link: "https://argoproj.github.io/cd/" },
     { name: "NodeJs", url: node, alt: "Node.js JavaScript Runtime Logo", link: "https://nodejs.org/en" },
-    { name: "Bootstrap", url: bootstrap, alt: "Bootstrap CSS Framework Logo", link: "https://getbootstrap.com/" },
+    { name: "MySQL", url: mysql, alt: "MySQL", link: "https://www.mysql.com/" },
+    { name: "GitLab", url: gitlab, alt: "GitLab", link: "https://about.gitlab.com/" },
+    { name: "Drone CI", url: drone, alt: "Drone CI Continuous Integration Logo", link: "https://www.drone.io/" },
+    { name: "ArgoCD", url: argo, alt: "ArgoCD Continuous Deployment Logo", link: "https://argoproj.github.io/cd/" },
+    { name: "Authentik", url: authentik, alt: "Authentik Identity Provider Logo", link: "https://github.com/goauthentik/authentik" },
     { name: "Laravel", url: laravel, alt: "Laravel PHP Framework Logo", link: "https://laravel.com/" },
-    { name: "Javascript", url: js, alt: "JavaScript Programming Language Logo", link: "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+    { name: "EMQX", url: emqx, alt: "EMQX MQTT Broker Logo", link: "https://www.emqx.io/" },
+    { name: "Bootstrap", url: bootstrap, alt: "Bootstrap CSS Framework Logo", link: "https://getbootstrap.com/" },
 ]
 
 export const level4 = [
+    { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
+    { name: "GCP", url: gcp, alt: "Google Cloud Platform", link: "https://cloud.google.com/z" },
     { name: "RabbitMQ", url: rabbitmq, alt: "RabbitMQ Message Broker Logo", link: "https://www.rabbitmq.com/" },
-    { name: "Pulsar", url: pulsar, alt: "Apache Pulsar Messaging System Logo", link: "https://pulsar.apache.org/" },
-    { name: "Uptime Kuma", url: uptimekuma, alt: "Uptime Kuma Monitoring Tool Logo", link: "https://uptime.kuma.pet/" },
     { name: "Forgejo", url: forgejo, alt: "Forgejo Self-Hosted Git Service Logo", link: "https://forgejo.org/" },
     { name: "Traefik", url: traefik, alt: "Traefik Reverse Proxy Logo", link: "https://traefik.io/traefik/" },
-    { name: "EMQX", url: emqx, alt: "EMQX MQTT Broker Logo", link: "https://www.emqx.io/" },
     { name: "Apache", url: apache, alt: "Apache HTTP Server Logo", link: "https://httpd.apache.org/" },
     { name: "Concourse CI", url: concourse, alt: "Concourse CI Pipeline Automation Logo", link: "https://concourse-ci.org/" },
-    { name: "Authentik", url: authentik, alt: "Authentik Identity Provider Logo", link: "https://github.com/goauthentik/authentik" },
-    { name: "Drone CI", url: drone, alt: "Drone CI Continuous Integration Logo", link: "https://www.drone.io/" },
     { name: "Fleet CD", url: fleetcd, alt: "Fleet CD GitOps Deployment Logo", link: "https://fleet.rancher.io/" },
+    { name: "Angular", url: angular, alt: "Angular Web Framework Logo", link: "https://angularjs.org/" },
+    { name: "Uptime Kuma", url: uptimekuma, alt: "Uptime Kuma Monitoring Tool Logo", link: "https://uptime.kuma.pet/" },
+    { name: "React", url: react, alt: "React JavaScript Library Logo", link: "https://react.dev/" },
     { name: "Flux CD", url: fluxcd, alt: "Flux CD Continuous Delivery Logo", link: "https://fluxcd.io/" },
     { name: "Puppet", url: puppet, alt: "Puppet Configuration Management Logo", link: "https://www.puppet.com/" },
     { name: "Progress Chef", url: progresschef, alt: "Progress Chef Automation Tool Logo", link: "https://www.chef.io/" },
+    { name: "Pulsar", url: pulsar, alt: "Apache Pulsar Messaging System Logo", link: "https://pulsar.apache.org/" },
 ]

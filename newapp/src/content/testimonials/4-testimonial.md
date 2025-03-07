@@ -1,7 +1,7 @@
 ---
-author: 'Martin'
-authorDesignation: 'Director, Golden Rule Music GmbH'
-description: "Improwised Techhnologies provided flawless integration of requested features and work, meeting the client's expectations. The team promptly resolved any technical issues, proved to be easy to work with, and maintained quick and focused communication with the client through various virtual channels."
-profileImage: '../../images/testimonials/goldenRuleMusic.webp'
+author: 'Chintan Banugaria'
+authorDesignation: 'Director, Emrys Technologies Private Limited'
+description: "The engagement was truly successful, resulting in a 50% increase in deployment efficiency, a 99.9% production environment uptime, a 40% decrease in error rates, and an 80% decrease in support calls. Improwised Techhnologies showed impressive DevOps practices and responsiveness to the client's needs"
+profileImage: '../../images/testimonials/emrys.webp'
 siteImage: ''
 ---
