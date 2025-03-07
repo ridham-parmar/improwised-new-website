@@ -12,12 +12,16 @@ export default defineConfig({
   site: 'https://www.improwised.com',
 
   // Subdirectory path
-  // base: '/improwised-new-website/newapp',
+  base: '/improwised-new-website/newapp',
 
   // Default output directory
   outDir: 'dist',
   vite: {
     plugins: [tailwindcss()],
   },
-  integrations: [svelte(), mdx()]
+  integrations: [svelte(), mdx()],
+  server: {
+    host: true,
+    port: 4321
+  }
 });
