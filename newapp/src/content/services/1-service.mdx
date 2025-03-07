@@ -2,8 +2,7 @@
 title: "Platform Engineering"
 slug: "platform-engineering"
 image: "$lib/images/services/data1.png"
-description: "Accelerate innovation with Platform Engineering as a Service—automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability.
-"
+description: "Accelerate innovation with Platform Engineering as a Service-automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability."
 order: 1
 ---
 
@@ -27,7 +26,7 @@ import solutions from "$lib/images/services/solutions.svg"
 export const title = frontmatter.title
 export const slug = frontmatter.slug
 export const image = "$lib/images/services/data1.png"
-export const description = "Accelerate innovation with Platform Engineering as a Service—automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability."
+export const description = "Accelerate innovation with Platform Engineering as a Service-automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability."
 
 {/* pt-30 pb-20 md:pt-80 md:pb-[240px] */}
 {/* pt-[30%] lg:pt-52 pb-10 */}
@@ -38,7 +37,7 @@ export const description = "Accelerate innovation with Platform Engineering as a
                 <h1 class="main-heading-small md:main-heading">{title}</h1>
                 <p class="my-4 small-text font-roboto md:text-para">{description}</p>
             </div>
-            <Button class="bg-black">Explore Solutions</Button>
+            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact-us`} class="bg-black">Explore Solutions</Button>
         </div>
         <div class="w-full flex justify-center">
           <Image class="hidden md:block" alt="building block" src={solutions}/>
@@ -49,7 +48,7 @@ export const description = "Accelerate innovation with Platform Engineering as a
         <div class="container flex flex-col md:flex-row justify-between gap-10 md:gap-16">
             <div>
                 <Badge class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase" variant="outline"><CircleUserRound width="16" height="16" class="mr-1 w-[16px]"/>Service</Badge>
-                <SectionTitle class="max-md:text-left w-5/6 md:w-4/6" text="Innovation and" primaryColorText="Growth Together"/>
+                <SectionTitle class="max-md:text-left w-5/6 md:w-4/6" text="Building Blocks of a" primaryColorText="Scalable Platform"/>
                 <div>
                     <p class="font-bold text-[18px] text-[#141414] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Automated workflow (CI/CD)</p>
                     <p class="pt-2 pb-6 small-text font-inter md:text-para">We create a tailored Internal Developer Platform that meets your
@@ -127,9 +126,9 @@ export const description = "Accelerate innovation with Platform Engineering as a
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
             <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
-            <SectionTitle text="Our Approach to " primaryColorText="Building Robust Platform" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
+            <SectionTitle text="Key Business Benefits of" primaryColorText="Platform Engineering" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
           </div>
-          <ServiceApproach />
+          <ServiceApproach collectionName="approaches" />
         </div>
     </section>
 
