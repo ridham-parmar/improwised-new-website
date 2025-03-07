@@ -1,8 +1,9 @@
 <script lang="ts">
   import ChevronRight from "lucide-svelte/icons/chevron-right";
   import * as DropdownMenu from "$lib/components/ui/dropdown-menu";
-  import { BASE_URL } from "$lib/consts";
+  // import { BASE_URL } from "$lib/consts";
   export let services: string | any[] = [];
+  export let baseUrl: string = "";
 </script>
 
 <DropdownMenu.Root preventScroll={false}>
@@ -15,7 +16,7 @@
       {#if services.length > 0}
         {#each services as service}
           <DropdownMenu.Item class="p-3 text-[#141414] hover:text-primary">
-            <a href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label="Learn more about ${service?.data?.title}">
+            <a href={`${baseUrl}/services/${service?.data.slug}`}  aria-label="Learn more about ${service?.data?.title}">
               {service?.data?.title}
             </a>
           </DropdownMenu.Item>

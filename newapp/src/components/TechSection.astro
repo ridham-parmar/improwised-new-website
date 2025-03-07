@@ -85,38 +85,38 @@ const orbits = [
                     <div class="relative max-sm:h-6">
                       {index == 0 && (iconIndex == 0) && (
                         <p id="open-source"
-                          class="w-max z-50 absolute md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max z-50 absolute md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
                             transform: "translate(-50%, -50%)",
                           }}
                         >
-                          Open Source
+                          Backbone
                         </p>
                       )}
                       {index == 4 && (iconIndex == 0 || iconIndex == count-1) && (
                         <p
-                          class="w-max absolute z-50 md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
                             transform: "translate(-50%, -50%)",
                           }}
                         >
-                          Level - 2
+                          <span>Situational <br> Tech</span>
                         </p>
                       )}
                        {index == 6 && (iconIndex == 0 || iconIndex == count-1) && (
                         <p
-                          class="w-max absolute z-50 md:tracking-tighter font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
                             transform: "translate(-50%, -50%)",
                           }}
                         >
-                          Level - 3
+                          <span>Future <br> Stack</span>
                         </p>
                       )}
 
@@ -135,7 +135,7 @@ const orbits = [
                             alt={images?.[iconIndex].alt ?? "icon"}
                             class={`transition group-hover:scale-110`}
                           />
-                          <p class="text-slate-700 md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
+                          <p class="text-slate-700 max-sm:pt-0.5 max-md:leading-[0.45rem] md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
                             {images?.[iconIndex].name}
                           </p>
                         </a>

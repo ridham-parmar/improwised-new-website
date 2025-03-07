@@ -24,6 +24,8 @@ import robusta from "$lib/images/technologies/robusta.svg"
 import alertManager from "$lib/images/technologies/alert-manager.svg"
 import concourse from "$lib/images/technologies/concourse.svg"
 import kafka from "$lib/images/technologies/kafka.svg"
+import digitalOcean from "$lib/images/technologies/digital-ocean.svg"
+import pulsar from "$lib/images/technologies/pulsar.svg" 
 
 import react from "$lib/images/technologies/react.svg"
 import vue from "$lib/images/technologies/vue.svg"
@@ -36,7 +38,7 @@ import bootstrap from "$lib/images/technologies/bootstrap.svg"
 import js from "$lib/images/technologies/js.svg"
 import laravel from "$lib/images/technologies/laravel.svg"
 
-import pulsar from "$lib/images/technologies/pulsar-apache.svg"
+// import pulsar from "$lib/images/technologies/pulsar-apache.svg"
 import rabbitmq from "$lib/images/technologies/rabbitmq.svg"
 import uptimekuma from "$lib/images/technologies/uptime-kuma.svg"
 import forgejo from "$lib/images/technologies/forgejo.svg"
@@ -51,30 +53,41 @@ import puppet from "$lib/images/technologies/puppet.svg"
 import progresschef from "$lib/images/technologies/Progress-Chef.svg"
 
 export const level1 = [
-    { name: "Vue", url: vue, alt: "Vue", link: "https://vuejs.org/" },
-    { name: "Golang", url: go, alt: "Golang", link: "https://go.dev/" },
+    { name: "Prometheus", url: prometheus, alt: "Prometheus", link: "https://prometheus.io/" },
+    { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
+    { name: "GCP", url: gcp, alt: "Google Cloud Platform", link: "https://cloud.google.com/z" },
+
+    
     { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
     { name: "Bootstrap", url: bootstrap, alt: "Bootstrap", link: "https://getbootstrap.com/" },
 ]
 
 export const level2 = [
-    { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
+    { name: "Github", url: github, alt: "Github", link: "https://github.com/" },
     { name: "Grafana", url: grafana, alt: "Grafana", link: "https://grafana.com/" },
-    { name: "Flux CD", url: fluxcd, alt: "Flux CD", link: "https://fluxcd.io/" },
-    { name: "Postgres", url: postgres, alt: "Postgres", link: "https://www.postgresql.org/" },
-    { name: "Loki", url: loki, alt: "Loki", link: "https://grafana.com/oss/loki/" },
-    { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" },
+    { name: "Docker", url: docker, alt: "Docker", link: "https://www.docker.com/" },
+    { name: "Helm", url: helm, alt: "Helm", link: "https://helm.sh/" },
+    { name: "Golang", url: go, alt: "Golang", link: "https://go.dev/" },
+    { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
+
+
+    
     { name: "Redis", url: redis, alt: "Redis", link: "https://redis.io/" },
-    { name: "Python", url: python, alt: "Python", link: "https://www.python.org/" },
 ]
 
 export const level3 = [
-    { name: "Docker", url: docker, alt: "Docker", link: "https://www.docker.com/" },
-    { name: "Github", url: github, alt: "Github", link: "https://github.com/" },
-    { name: "Dexidp", url: dexidp, alt: "Dex IDP Identity Provider Logo", link: "https://dexidp.io/" },
-    { name: "NodeJs", url: node, alt: "Node.js JavaScript Runtime Logo", link: "https://nodejs.org/en" },
+    { name: "Postgres", url: postgres, alt: "Postgres", link: "https://www.postgresql.org/" },
     { name: "MySQL", url: mysql, alt: "MySQL", link: "https://www.mysql.com/" },
+    { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" },
+    { name: "Flux CD", url: fluxcd, alt: "Flux CD", link: "https://fluxcd.io/" },
     { name: "GitLab", url: gitlab, alt: "GitLab", link: "https://about.gitlab.com/" },
+    { name: "Forgejo", url: forgejo, alt: "Forgejo Self-Hosted Git Service Logo", link: "https://forgejo.org/" },
+    { name: "Keycloak", url: keycloak, alt: "Keycloak", link: "https://www.keycloak.org/" },
+    { name: "Vue", url: vue, alt: "Vue", link: "https://vuejs.org/" },
+    { name: "Vault", url: vault, alt: "Vault", link: "https://www.hashicorp.com" },
+    { name: "Kratos", url: kratos, alt: "Kratos", link: "https://www.ory.sh/kratos/" },
+    
+    { name: "Dexidp", url: dexidp, alt: "Dex IDP Identity Provider Logo", link: "https://dexidp.io/" },
     { name: "Drone CI", url: drone, alt: "Drone CI Continuous Integration Logo", link: "https://www.drone.io/" },
     { name: "ArgoCD", url: argo, alt: "ArgoCD Continuous Deployment Logo", link: "https://argoproj.github.io/cd/" },
     { name: "Authentik", url: authentik, alt: "Authentik Identity Provider Logo", link: "https://github.com/goauthentik/authentik" },
@@ -84,19 +97,25 @@ export const level3 = [
 ]
 
 export const level4 = [
-    { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
-    { name: "GCP", url: gcp, alt: "Google Cloud Platform", link: "https://cloud.google.com/z" },
+    { name: "Loki", url: loki, alt: "Loki", link: "https://grafana.com/oss/loki/" },
+    { name: "Robusta", url: robusta, alt: "Robusta", link: "https://home.robusta.dev/" },
+    { name: "Alert Manager", url: alertManager, alt: "Alert Manager", link: "https://prometheus.io/docs/alerting/latest/alertmanager/" },
+    { name: "Azure", url: azure, alt: "Azure", link: "https://azure.microsoft.com/" },
+    { name: "Digital Ocean", url: digitalOcean, alt: "AzuDigital Oceanre", link: "https://www.digitalocean.com/" },
+    { name: "Uptime Kuma", url: uptimekuma, alt: "Uptime Kuma Monitoring Tool Logo", link: "https://uptime.kuma.pet/" },
+    { name: "Pulsar", url: pulsar, alt: "Apache Pulsar Messaging System Logo", link: "https://pulsar.apache.org/" },
+    { name: "Concourse CI", url: concourse, alt: "Concourse CI Pipeline Automation Logo", link: "https://concourse-ci.org/" },
+    { name: "NodeJs", url: node, alt: "Node.js JavaScript Runtime Logo", link: "https://nodejs.org/en" },
+    { name: "Python", url: python, alt: "Python", link: "https://www.python.org/" },
+    { name: "Kafka", url: kafka, alt: "Kafka", link: "https://kafka.apache.org/" },
+   
     { name: "RabbitMQ", url: rabbitmq, alt: "RabbitMQ Message Broker Logo", link: "https://www.rabbitmq.com/" },
-    { name: "Forgejo", url: forgejo, alt: "Forgejo Self-Hosted Git Service Logo", link: "https://forgejo.org/" },
     { name: "Traefik", url: traefik, alt: "Traefik Reverse Proxy Logo", link: "https://traefik.io/traefik/" },
     { name: "Apache", url: apache, alt: "Apache HTTP Server Logo", link: "https://httpd.apache.org/" },
-    { name: "Concourse CI", url: concourse, alt: "Concourse CI Pipeline Automation Logo", link: "https://concourse-ci.org/" },
     { name: "Fleet CD", url: fleetcd, alt: "Fleet CD GitOps Deployment Logo", link: "https://fleet.rancher.io/" },
     { name: "Angular", url: angular, alt: "Angular Web Framework Logo", link: "https://angularjs.org/" },
-    { name: "Uptime Kuma", url: uptimekuma, alt: "Uptime Kuma Monitoring Tool Logo", link: "https://uptime.kuma.pet/" },
     { name: "React", url: react, alt: "React JavaScript Library Logo", link: "https://react.dev/" },
     { name: "Flux CD", url: fluxcd, alt: "Flux CD Continuous Delivery Logo", link: "https://fluxcd.io/" },
     { name: "Puppet", url: puppet, alt: "Puppet Configuration Management Logo", link: "https://www.puppet.com/" },
     { name: "Progress Chef", url: progresschef, alt: "Progress Chef Automation Tool Logo", link: "https://www.chef.io/" },
-    { name: "Pulsar", url: pulsar, alt: "Apache Pulsar Messaging System Logo", link: "https://pulsar.apache.org/" },
 ]

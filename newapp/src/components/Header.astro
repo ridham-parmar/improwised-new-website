@@ -17,9 +17,9 @@ import Moon from "lucide-svelte/icons/moon";
 >
   <div class="relative">
     <div id="desktop-header"
-    class="relative container flex flex-col items-center justify-between lg:flex-row px-4 py-3"
+    class="relative container z-50 flex flex-col items-center justify-between lg:flex-row px-4 py-3"
   >
-    <div id="impro-logo" class=" z-50 flex w-full items-center justify-between lg:w-auto">
+    <div id="impro-logo" class="z-50 flex w-full items-center justify-between lg:w-auto">
       <a href={BASE_URL} class="flex items-center transition">
         <Image
           src={Logo}
@@ -61,7 +61,7 @@ import Moon from "lucide-svelte/icons/moon";
       </li>
       <li class="content-center px-1">
         <a href="javascript:void(0)" class="hover:text-primary py-2 mb-5 transition lg:px-3">
-          <Dropdown client:load services={services} />
+          <Dropdown client:load services={services} baseUrl={BASE_URL} />
         </a>
       </li>
       <li class="content-center px-1">
@@ -147,7 +147,7 @@ import Moon from "lucide-svelte/icons/moon";
         </li>
         <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
           <a href="javascript:void(0)">
-            <Dropdown client:load services={services} />
+            <Dropdown client:load services={services} baseUrl={BASE_URL} />
           </a>
         </li>
         <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
