@@ -67,6 +67,19 @@ const events = defineCollection({
 		),
 	}),
 });
+
+const aboutusPoints = defineCollection({
+	loader: glob({ base: './src/content/aboutusPoints', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.object({
+		aboutusPoints: z.array(
+		  z.object({
+			question: z.string(),
+			answer: z.string(),
+		  })
+		),
+	}),
+});
 const blogs = defineCollection({
 
 	loader: glob({ base: './src/content/blogs', pattern: '**/*.{md,mdx}' }),
@@ -218,4 +231,4 @@ const reviews = defineCollection({
 	}),
 });
 
-export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2 };
+export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2,aboutusPoints };

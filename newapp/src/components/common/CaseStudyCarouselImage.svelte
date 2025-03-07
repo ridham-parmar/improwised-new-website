@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
+    import { BASE_URL } from "$lib/consts";
   export let casestudies: any[] = [];
 </script>
 
@@ -21,7 +22,7 @@
                 <img
                   alt="feature"
 
-                    class="w-full h-[200px] object-cover rounded-t-[12px] sm:h-[250px] md:h-[300px]"
+                    class="w-full  rounded-t-[12px] sm:h-[250px] md:h-[300px]"
                   src={casestudy.data.image.src}
                 />
               </Card.Header>
@@ -34,7 +35,11 @@
                 <Card.Title
                   class="mb-4 mt-2 font-bold font-manrope text-[20px] leading-[26px] tracking-[0.02em] text-[#141414]"
                 >
-                  {casestudy.data.title}
+                <a
+                target="_blank"
+                href={`${BASE_URL}/casestudies/${casestudy.data.attachments}`}
+                aria-label="Learn more about ${casestudy.data.title}"
+                >  {casestudy.data.title}</a>
                 </Card.Title>
                 <p
                   class="text-[14px] leading-[22px]  md:text-[16px] md:leading-[26px] tracking-[0.02em] text-[#292929]"

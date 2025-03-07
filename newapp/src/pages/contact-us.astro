@@ -9,22 +9,59 @@ import ContactFAQ from "$lib/components/common/ContactFAQ.svelte";
 import CTASection from "$lib/components/CTASection.astro";
 import Form from "$lib/components/common/Form.svelte"
 import { CONTACT_US_URL } from "$lib/consts"
+import backImage from "$lib/images/blogs/back.svg";
+import bg2Image from "$lib/images/blogs/bg2.svg";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
   <main class="main-content">
-    <section class="section pt-32 pb-10 md:py-40">
+
+    <section
+    class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
+    style={`background-image: url(${backImage.src}), url(${bg2Image.src})`}
+  >
+    <!-- Main Heading -->
+    <div class="container">
+      <h1
+        class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
+      >
+      Let's talk about <span class="text-primary">your project</span>
+      </h1>
+
+
+      <!-- Subtext -->
+      <p class="mt-4 text-para max-w-2xl mx-auto">
+        Visit us or make contact via the form below to talk more about your project, ideas or any others technical queries.
+      </p>
+
+    </div>
+  </section>
+
+
+    <section class="section pt-28 pb-10 md:py-30">
         <div class="container flex flex-col gap-20">
+
             <div class="flex flex-col items-center md:flex-row lg:px-20 gap-10 md:gap-6 justify-between">
                 <div class="flex flex-col items-start gap-2 w-full md:w-1/2">
-                    <SectionTitle
-                    class="text-left w-full lg:w-2/3"
-                    text="To Start Your Project ?"
-                    primaryColorText="Ready"
-                    isPrimaryTextInitial={true}
-                    />
+
 
                     <div class="md:pt-10 flex flex-col gap-6">
+
+
+                        <div class="flex gap-5">
+                            <div class="bg-sky-100 p-6">
+                                <h5 ><span style="font-weight:400">
+                                    For inquiries related to job &amp; internship, please visit
+                                    <a href="/careers/" target="_blank" rel="noopener" class="font-weight-normal">
+                                      Careers</a>
+                                    page.
+                                  </span></h5>
+                                </div>
+
+                        </div>
+
+
+
                         <div class="flex gap-5">
                             <div class="w-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-4">
                                 <PhoneCall class="text-primary" width="24" height="24" />
@@ -59,7 +96,8 @@ import { CONTACT_US_URL } from "$lib/consts"
                             <div>
                                 <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Address</p>
                                 <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-[#292929]">304 - Pride Square, </br> Pushkardham Road, Nr. J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
-                            </div> 
+
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -82,7 +120,7 @@ import { CONTACT_US_URL } from "$lib/consts"
         </div>
     </section>
 
-    <section class="section2 py-10 md:py-40 darker-bg">
+    <!-- <section class="section2 py-10 md:py-40 darker-bg">
         <div class="container">
             <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
                 <div class="flex items-center md:items-start flex-col">
@@ -106,8 +144,15 @@ import { CONTACT_US_URL } from "$lib/consts"
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <CTASection />
   </main>
 </Layout>
+<style>
+    .bg-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>

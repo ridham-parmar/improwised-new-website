@@ -6,60 +6,105 @@
   <Accordion.Item value="item-1" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >What roles are currently open at Improwised ?</Accordion.Trigger
+      >What's the salary range for this role?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-      >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia dicta
-      totam officia ipsam harum eaque, saepe eos! Sit debitis atque provident
-      molestiae deserunt odio cumque.</Accordion.Content
+      >Salary range can fluctuate based on individual qualifications and the specific demands of the role.</Accordion.Content
     >
   </Accordion.Item>
   <Accordion.Item value="item-2" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >Do you offer remote or hybird work options ?</Accordion.Trigger
+      >What benefits does the company offer?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
     >
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, enim.
+    A robust leave policy, including paid time off and regular weekends, to support work-life balance and personal well-being.
+
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-3" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >How do I apply for the position ?</Accordion.Trigger
+      >Is Improwised as the other branch to work?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
     >
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. In odio
-      doloremque modi minima, tempore quis.
+    No, Improwised as only have one branch at Rajkot
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-4" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >What is the requirement process like ?</Accordion.Trigger
+      >Are remote opportunities available at Improwised?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. In odio
-      doloremque modi minima, tempore quis.
+    >Improwised has onsite opportunities currently we don't have remote opportunities
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-5" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >How long does the recruitment process take ?</Accordion.Trigger
+      >What are the working hours ?</Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
+    >Working hours are 10am to 7 pm
+
+    </Accordion.Content>
+  </Accordion.Item>
+
+
+  <Accordion.Item value="item-6" class="py-6 md:py-10">
+    <Accordion.Trigger
+      class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
+      >What actually Improwised Technologies are working on ?
+      </Accordion.Trigger
     >
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. In odio
-      doloremque modi minima, tempore quis.
+    <Accordion.Content
+      class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
+    >Since its inception in 2011, Improwised Technologies has specialized in developing scalable, data-intensive, and cloud-native applications. Over the years, the company has also established expertise in cloud infrastructure services, offering comprehensive solutions that include cloud consultancy, implementation, optimization, and support.
+
+
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="item-7" class="py-6 md:py-10">
+    <Accordion.Trigger
+      class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
+      >How much notice period does the company have?
+      </Accordion.Trigger
+    >
+    <Accordion.Content
+      class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
+    >Its usually 2 months and for senior positions its may change
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="item-8" class="py-6 md:py-10">
+    <Accordion.Trigger
+      class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
+      >Is there a commitment period for the software and devops position?
+      </Accordion.Trigger
+    >
+    <Accordion.Content
+      class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
+    >Yes  we have a commitment period for these positions and its changes according to position.
+
+    </Accordion.Content>
+  </Accordion.Item>
+  <Accordion.Item value="item-9" class="py-6 md:py-10">
+    <Accordion.Trigger
+      class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
+      >Where Improwised Technologies is located?
+      </Accordion.Trigger
+    >
+    <Accordion.Content
+      class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
+    >304 - Pride Square,  Pushkardham Road, N. J. K. Chowk, Rajkot-360005, Gujarat, India
+
     </Accordion.Content>
   </Accordion.Item>
 </Accordion.Root>
