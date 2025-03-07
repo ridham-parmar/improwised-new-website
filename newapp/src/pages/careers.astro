@@ -198,15 +198,15 @@ let gradientY = -200;
             variant="outline"><KeyRound class="mr-1 w-[16px]" />Benefits</Badge
           >
           <SectionTitle
-          primaryColorText="Our Support to"
-            text="Your growth and well - being"
+          primaryColorText="Our support to"
+            text="your growth and well - being"
             class="text-center md:w-[96%]"
           />
         </div>
         <div class="md:pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {
             orgBenefits.map(({ data: { benefits } }) =>
-              benefits.map((benefits) => (
+            benefits.slice(3).map((benefits) => (
                 <Card.Root
                   class="overflow-hidden border-4 border-[#fff] rounded-[20px] shadow-nav text-center"
                   onmousemove="updateGradient(event)"
@@ -308,8 +308,7 @@ let gradientY = -200;
               isPrimaryTextInitial={true}
             />
             <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Officiis, nam.
+              Get quick answers to common queries. Explore our FAQs for helpful insights and solutions.
             </p>
           </div>
 

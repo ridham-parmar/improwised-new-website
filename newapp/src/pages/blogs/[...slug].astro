@@ -10,7 +10,7 @@ import ShareDropdown from "$lib/components/common/ShareDropdown.svelte";
 import detailsBg from "$lib/images/blogs/detailsBg.svg";
 import * as Card from "$lib/components/ui/card";
 import { Image } from "astro:assets";
-import avtarImage from "$lib/images/blogs/avtar.png";
+import avtarImage from "$lib/images/blogs/impro.png";
 export async function getStaticPaths() {
     const blogs = await getCollection("blogs");
     return blogs.map((blog) => ({
@@ -83,7 +83,7 @@ const recommendedBlogs = sortedBlogs.slice(0, 3);
                 </div>
             </div>
         </section>
-        <section class="pb-20">
+        <!-- <section class="pb-20">
             <div class="relative">
                 <Card.Root
                     class="shadow-xs border-0 w-full max-w-4xl mx-auto -mt-24"
@@ -100,8 +100,8 @@ const recommendedBlogs = sortedBlogs.slice(0, 3);
                     </div>
                 </Card.Root>
             </div>
-        </section>
-        <section class="pt-10 pb-10 section">
+        </section> -->
+        <section class="pt-20 pb-10 section">
             <div class="container">
                 <Content />
             </div>

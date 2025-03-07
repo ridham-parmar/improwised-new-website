@@ -13,8 +13,8 @@ import Accordion from "$lib/components/common/Accordion.svelte";
 
 import eventImage from "$lib/images/events/event.png";
 import aboutus from "$lib/images/aboutusPage/main.webp";
-import aboutus2 from "$lib/images/aboutusPage/main2.png";
-import aboutus3 from "$lib/images/aboutusPage/main3.png";
+import aboutus2 from "$lib/images/aboutusPage/Photo1.jpg";
+import aboutus3 from "$lib/images/aboutusPage/Photo2.jpg";
 import person1 from "$lib/images/aboutusPage/person1.png";
 import person2 from "$lib/images/aboutusPage/person2.png";
 import bgicon1 from "$lib/images/aboutusPage/bgicon1.svg";
@@ -41,6 +41,9 @@ const eventData = eventsCollection.flatMap(events => events.data.events).slice(0
 const remainingEvents = eventsCollection.flatMap(events => events.data.events).slice(4);
 
 
+const aboutusPointsCollection = await getCollection('aboutusPoints');
+
+const faqs = aboutusPointsCollection.flatMap(aboutusPoints => aboutusPoints.data.aboutusPoints);
 
 
 // const eventData = await getCollection("events", ({ data }) => {
@@ -49,24 +52,24 @@ const remainingEvents = eventsCollection.flatMap(events => events.data.events).s
 
 let gradientX = 45.5;
 let gradientY = -200;
-const faqs = [
-	{
-		question: "Foster Strong Relationships",
-		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
-	},
-	{
-		question: "Hire and Grow the Best",
-		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
-	},
-	{
-		question: "Deliver, Have Fun, and Inspire",
-		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
-	},
-	{
-		question: "Team over Individuals",
-		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
-	},
-];
+// const faqs = [
+// 	{
+// 		question: "Foster Strong Relationships",
+// 		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
+// 	},
+// 	{
+// 		question: "Hire and Grow the Best",
+// 		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
+// 	},
+// 	{
+// 		question: "Deliver, Have Fun, and Inspire",
+// 		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
+// 	},
+// 	{
+// 		question: "Team over Individuals",
+// 		answer: "Building and maintaining robust relationships is at the heart of our approach. We foster a culture of trust, respect.",
+// 	},
+// ];
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>

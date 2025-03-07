@@ -42,7 +42,7 @@
               </blockquote>
             </Card.Header>
 
-            <Card.Footer class="block">
+            <!-- <Card.Footer class="block">
               <img src={line.src} alt="line" class="w-full mt-4 d-block" />
 
               <div class="mt-6 flex items-center justify-between gap-3 w-full">
@@ -53,7 +53,7 @@
                   <p class="text-para">Saved in operational costs</p>
                 </div>
               </div>
-            </Card.Footer>
+            </Card.Footer> -->
           </Card.Root>
         </div>
       </Carousel.Item>
