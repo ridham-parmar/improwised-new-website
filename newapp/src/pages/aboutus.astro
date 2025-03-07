@@ -34,6 +34,19 @@ const peopleImages = [person1, person2];
 const teamsData = await getCollection("teams", ({ data }) => {
 	return data;
 });
+const eventsCollection = await getCollection('events');
+
+const eventData = eventsCollection.flatMap(events => events.data.events).slice(0,4);
+
+const remainingEvents = eventsCollection.flatMap(events => events.data.events).slice(4);
+
+
+
+
+// const eventData = await getCollection("events", ({ data }) => {
+//   return data;
+// });
+
 let gradientX = 45.5;
 let gradientY = -200;
 const faqs = [
@@ -464,7 +477,7 @@ const faqs = [
 						<div
 							class="eventsection1 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
-							<EventSlider marqueeClass={marqueeClassReverse} />
+							<EventSlider marqueeClass={marqueeClassReverse} eventData={eventData} />
 						</div>
 					</div>
 					<div
@@ -473,7 +486,7 @@ const faqs = [
 						<div
 							class="eventsection2 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
-							<EventSlider marqueeClass={marqueeClass} />
+							<EventSlider marqueeClass={marqueeClass} eventData={remainingEvents}/>
 						</div>
 					</div>
 				</div>

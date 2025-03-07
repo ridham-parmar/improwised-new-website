@@ -12,7 +12,7 @@
 
   function updateGradient(event: MouseEvent) {
     const target = event.currentTarget as HTMLElement;
-    if (!target) return; 
+    if (!target) return;
 
     const rect = target.getBoundingClientRect();
     gradientX = event.clientX - rect.left;
@@ -20,9 +20,7 @@
 
     target.style.setProperty("--gradient-x", `${gradientX}px`);
     target.style.setProperty("--gradient-y", `${gradientY}px`);
-
   }
-  
 </script>
 
 <Carousel.Root
@@ -39,32 +37,49 @@
 >
   <Carousel.Content>
     {#each reviews as review, i (i)}
-      <Carousel.Item class="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex justify-center w-full">
+      <Carousel.Item
+        class="md:basis-1/2 lg:basis-1/3 xl:basis-1/4 flex justify-center w-full"
+      >
         <div class="flex justify-center p-1">
-            <Card.Root class="overflow-hidden border-4 border-[#fff] rounded-[20px] relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full">
-                <!-- svelte-ignore a11y_no_static_element_interactions -->
-                <div class="card-custom-inner" style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px`} onmousemove={updateGradient}>
-                    <Card.Content class="small-text md:text-para font-inter">
-                      <p>{review.review}</p>
-                    </Card.Content>
-                    <Card.Footer class="flex items-center justify-between gap-4 mt-4">
-                      <div class="flex justify-center items-center gap-2">
-                        <div>
-                            <img src={review.image.src} alt="reviews" />
-                        </div>
-                        <div>
-                          <p class="font-semibold text-base font-inter text-[#141414]">{review.name}</p>
-                          <p class="text-sm font-inter text-[#292929]">{review.position}</p>
-                        </div>
-                      </div>
-                      <div class="flex gap-1">
-                          {#each Array(5) as _, i (i)}
-                          <Star fill="#FFCC00" color="#FFCC00" class="h-4 w-4" />
-                          {/each}
-                      </div>
-                    </Card.Footer>
+          <Card.Root
+            class="overflow-hidden border-4 border-[#fff] rounded-[20px] relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
+          >
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <div
+              class="card-custom-inner"
+              style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px`}
+              onmousemove={updateGradient}
+            >
+              <Card.Content class="small-text md:text-para font-inter">
+                <p>{review.review}</p>
+              </Card.Content>
+              <Card.Footer class="flex items-center justify-between gap-4 mt-4">
+                <div class="flex justify-center items-center gap-2">
+                  <div>
+                    <img
+                      src={review.image.src}
+                      class="w-[64px] h-[64px] object-cover object-top border-1 object-cover border-[#D3D3D3] rounded-full reviews"
+                    />
+                  </div>
+                  <div>
+                    <p
+                      class="font-semibold text-base font-inter text-[#141414]"
+                    >
+                      {review.name}
+                    </p>
+                    <p class="text-sm font-inter text-[#292929]">
+                      {review.position}
+                    </p>
+                  </div>
                 </div>
-            </Card.Root>
+                <div class="flex gap-1">
+                  {#each Array(5) as _, i (i)}
+                    <Star fill="#FFCC00" color="#FFCC00" class="h-4 w-4" />
+                  {/each}
+                </div>
+              </Card.Footer>
+            </div>
+          </Card.Root>
         </div>
       </Carousel.Item>
     {/each}

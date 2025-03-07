@@ -121,9 +121,33 @@ const corefeatures = defineCollection({
 		description: z.string()
 	}),
 });
+const corefeaturesCloudInfrastructureManagement = defineCollection({
+	loader: glob({ base: './src/content/corefeatures-cloud-infrastructure-management', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		title: z.string(),
+		slug: z.string(),
+		image: image(),
+		description: z.string()
+	}),
+});
 
 const approaches = defineCollection({
 	loader: glob({ base: './src/content/approaches', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: ({ image }) => z.object({
+		approaches: z.array(
+		  z.object({
+			title: z.string(),
+			description: z.string(),
+			image: image()
+		  })
+		),
+	}),
+});
+
+const approaches2 = defineCollection({
+	loader: glob({ base: './src/content/approaches2', pattern: '**/*.{md,mdx}' }),
 	// Type-check frontmatter using a schema
 	schema: ({ image }) => z.object({
 		approaches: z.array(
@@ -194,4 +218,4 @@ const reviews = defineCollection({
 	}),
 });
 
-export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events };
+export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2 };

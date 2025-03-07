@@ -2,22 +2,20 @@
 import { getCollection } from "astro:content";
 import { Image } from "astro:assets";
 import * as Card from "$lib/components/ui/card";
-// const eventData = await getCollection('events');
 
 
-const eventData = await getCollection("events", ({ data }) => {
-  return data;
-});
+// const eventData = await getCollection("events", ({ data }) => {
+//   return data;
+// });
 
 
-const { marqueeClass} = Astro.props
+const { eventData,marqueeClass} = Astro.props
 
 ---
-{
-  eventData.map(({ data: { events } }) =>
-  events.map(
-      (events, index) =>
 
+{
+  eventData.map((events:any) => (
+    <>
 
     <Card.Root
     class={`eventCard1 relative bg-white flex md:max-w-2xl max-w-xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg md:motion-safe:${marqueeClass}`}
@@ -57,5 +55,7 @@ const { marqueeClass} = Astro.props
       </div>
     </div>
   </Card.Root>
-    ))}
 
+  </>
+        ))
+      }

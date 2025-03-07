@@ -1,22 +1,22 @@
 ---
 approaches:
-    - title: "Custom IDP Development"
-      description: " We create personalized Internal Developer Platforms designed to meet specific organizational needs, offering developers a comprehensive suite of tools and services that optimize workflows, boost productivity, software development processes."
+    - title: "Faster GTM (Go-To-Market)"
+      description: "Eliminates infrastructure bottlenecks, enabling teams to ship features faster and reduce time-to-market."
       image: "$lib/images/services/approach-1.svg"
 
-    - title: "Automated Provisioning"
-      description: "By automating the provisioning of resources and access, we streamline the onboarding process for new developers, reducing manual effort and accelerating the setup of necessary tools and environments for faster productivity."
+    - title: "Effortless Developer Flow"
+      description: "Reduces cognitive load with self-service capabilities, allowing developers to focus on building instead of managing infrastructure."
       image: "$lib/images/services/approach-2.svg"
-    
-    - title: "CI/CD Pipelines"
-      description: "We streamline your software delivery by automating the entire process, from building and testing to deployment. This ensures faster, more reliable releases, reduces manual intervention, and enhances overall development efficiency and quality."
+
+    - title: "Smart Scaling, Smarter Savings"
+      description: "Automates scaling and optimizes cloud resources, minimizing unnecessary expenses and improving utilization."
       image: "$lib/images/services/approach-1.svg"
 
-    - title: "Infrastructure as Code"
-      description: "Infrastructure is managed through code, enabling declarative configurations that simplify the deployment, management, and scaling of applications, ensuring consistency, faster provisioning, and greater flexibility in handling infrastructure updates."
+    - title: "Built-In Compliance, Zero Friction"
+      description: "Standardizes workflows, enforces best practices, and ensures compliance without slowing innovation."
       image: "$lib/images/services/approach-4.svg"
 
-    - title: "Monitoring and Alerting"
-      description: "We provide robust monitoring and alerting systems that offer real-time insights into application performance, helping teams quickly identify and address potential issues to maintain optimal application reliability and user experience."
+    - title: "Cloud Agility, On-Prem Stability "
+      description: "Provides an abstraction layer that allows organizations to adopt and scale across cloud and on-prem environments effortlessly."
       image: "$lib/images/services/approach-5.svg"
 ---
