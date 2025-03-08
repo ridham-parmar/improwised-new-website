@@ -49,7 +49,7 @@
 
       if (formData.get("g-recaptcha-response")) {
         const captchaResponse = formData.get("g-recaptcha-response") as string
-        formData.append("recaptcha_reponse", captchaResponse)
+        formData.append("recaptcha_response", captchaResponse)
         formData.delete("g-recaptcha-response");
       }
 
