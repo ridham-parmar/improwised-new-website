@@ -55,15 +55,23 @@
 
       // console.log("Form Data:", Object.fromEntries(formData.entries()));
 
+      var object = {};
+      formData.forEach(function(value, key){
+          object[key] = value;
+      });
+      var json = JSON.stringify(object);
+      console.log(json,"json");
+
       const options = {
-        method: "POST",
-        body: JSON.stringify(formData),
-      }
+              method: "POST",
+              body: json,
+            }
+
       // const response = await fetch("/api/contactus", options);
       // const data = await response.json();
       const response = await fetch(contactUsURL, options)
       const d = await response.json()
-      // console.log("data ------------------------------ ", d);
+      console.log("data ------------------------------ ", d);
 
       // Reset form on successful validation
       name = "";
