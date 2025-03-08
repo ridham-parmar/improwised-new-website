@@ -76,7 +76,7 @@
     const checkGrecaptcha = setInterval(() => {
       if (window.grecaptcha) {
         clearInterval(checkGrecaptcha);
-        window.grecaptcha.render("g-recaptcha", {
+        grecaptcha.render("g-recaptcha", {
           sitekey: siteKey,
           callback: recaptchaCallback,
         });
