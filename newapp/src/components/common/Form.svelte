@@ -28,10 +28,10 @@
 
   async function validateForm(event: SubmitEvent) {
     event.preventDefault();
-    
+
     // Reset errors
     errors.set({});
-    
+
     let newErrors: FormErrors = {};
 
     if (!name.trim()) newErrors.name = "Name is required.";
@@ -46,25 +46,25 @@
       // console.log("Form submitted successfully!");
 
       const formData = new FormData(event.currentTarget as HTMLFormElement);
-      
+
       if (formData.get("g-recaptcha-response")) {
         const captchaResponse = formData.get("g-recaptcha-response") as string
         formData.append("recaptcha-reponse", captchaResponse)
         formData.delete("g-recaptcha-response");
       }
-     
+
       // console.log("Form Data:", Object.fromEntries(formData.entries()));
 
       const options = {
         method: "POST",
-        body: formData,
+        body: JSON.stringify(formData),
       }
       // const response = await fetch("/api/contactus", options);
       // const data = await response.json();
       const response = await fetch(contactUsURL, options)
       const d = await response.json()
       // console.log("data ------------------------------ ", d);
-      
+
       // Reset form on successful validation
       name = "";
       email = "";
@@ -92,11 +92,11 @@
 <form on:submit|preventDefault={validateForm} class="w-full md:w-1/2 bg-[#F5F7F6] p-8 rounded-2xl shadow-lg space-y-6">
   <div>
     <label for="name" class="block font-semibold text-gray-900">Name</label>
-    <input 
-      type="text" 
-      id="name" 
+    <input
+      type="text"
+      id="name"
       name="name"
-      bind:value={name} 
+      bind:value={name}
       class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Your Name"
     />
@@ -105,11 +105,11 @@
 
   <div>
     <label for="email" class="block font-semibold text-gray-900">Email</label>
-    <input 
-      type="email" 
-      id="email" 
+    <input
+      type="email"
+      id="email"
       name="email"
-      bind:value={email} 
+      bind:value={email}
       class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Your Email"
     />
@@ -118,10 +118,10 @@
 
   <div>
     <label for="message" class="block font-semibold text-gray-900">Message</label>
-    <textarea 
-      id="message" 
+    <textarea
+      id="message"
       name="message"
-      bind:value={message} 
+      bind:value={message}
       class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
       placeholder="Add Your Message Here"
     ></textarea>
