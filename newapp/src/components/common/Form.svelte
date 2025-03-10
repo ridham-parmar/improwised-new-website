@@ -2,6 +2,8 @@
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
   import Button from "../ui/button/button.svelte";
+  import { CircleAlert, CircleCheck } from 'lucide-svelte';
+  import { innerWidth } from 'svelte/reactivity/window';
 
   let {siteKey, contactUsURL} = $props()
 
@@ -108,20 +110,38 @@
 
 <div class="flex flex-col gap-6 w-full md:w-1/2">
   {#if apiError}
-    <div class={`p-6 text-center rounded-2xl bg-[#9f7c7f] transition-all duration-300`}>
-      <p>{apiError}</p>
+    <div class={`p-3 md:p-5 flex gap-4 text-[#ff4500] rounded-md border-1 border-[#ff4500] transition-all duration-300`}>
+      <div class="pt-[0.3rem]">
+        <CircleAlert color="#ff4500" size={20} />
+      </div>
+      <div class="flex flex-col items-start">
+        <p class="text-bold font-manrope text-[16px] md:text-[18px] tracking-[0.02em]">Error</p>
+        <p class="text-[14px] md:text-[16px] leading-[24px] tracking-[0.02em] font-normal">{apiError}</p>
+      </div>
     </div>
   {/if}
 
   {#if apiResponse && apiResponse?.status == 201 }
-    <div class={`p-6 text-center rounded-2xl bg-[#cff5a4] transition-all duration-300`}>
-      <p>{parsedResponse?.success[0]}</p>
+    <div class={`p-3 md:p-5 flex gap-4 text-[#a7e075] rounded-md border-1 border-[#a7e075] transition-all duration-300`}>
+      <div class="pt-[0.3rem]">
+        <CircleCheck color="#a7e075" size={20} />
+      </div>
+      <div class="flex flex-col items-start">
+        <p class="text-bold font-manrope text-[16px] md:text-[18px] tracking-[0.02em]">Success</p>
+        <p class="text-[14px] md:text-[16px] leading-[24px] tracking-[0.02em] font-normal">{parsedResponse?.success[0]}</p>
+      </div>
     </div>
   {/if}
 
   {#if apiResponse && apiResponse?.status != 201 }
-    <div class={`p-6 text-center rounded-2xl bg-[#9f7c7f] transition-all duration-300`}>
-      <p>{parsedResponse?.error[0]}</p>
+    <div class={`p-3 md:p-5 flex gap-4 text-[#ff4500] rounded-md border-1 border-[#ff4500] transition-all duration-300`}>
+      <div class="pt-[0.3rem]">
+        <CircleAlert color="#ff4500" size={20} />
+      </div>
+      <div class="flex flex-col items-start">
+        <p class="text-bold font-manrope text-[16px] md:text-[18px] tracking-[0.02em]">Error</p>
+        <p class="text-[14px] md:text-[16px] leading-[24px] tracking-[0.02em] font-normal">{parsedResponse?.error[0]}</p>
+      </div>
     </div>
   {/if}
  
@@ -164,7 +184,7 @@
       {#if $errors.message}<p class="text-red-500 text-sm mt-1">{$errors.message}</p>{/if}
     </div>
 
-    <div id="g-recaptcha"></div>
+    <div id="g-recaptcha" data-size={`${innerWidth?.current && innerWidth?.current < 640 ? "compact" : "normal"}`}></div>
     {#if $errors.captcha}<p class="text-red-500 text-sm mt-1">{$errors.captcha}</p>{/if}
 
     <Button class="bg-black" type="submit">
