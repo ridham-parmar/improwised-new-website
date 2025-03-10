@@ -67,7 +67,7 @@
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >Since its inception in 2011, Improwised Technologies has specialized in developing scalable, data-intensive, and cloud-native applications. Over the years, the company has also established expertise in cloud infrastructure services, offering comprehensive solutions that include cloud consultancy, implementation, optimization, and support.
+    >Since its inception in 2011, Improwised Technologies has specialized in developing scalable, data-intensive, and cloud-native applications. Over the years, the company has also established expertise in cloud infrastructure services, offering comprehensive solutions that include cloud consultancy, implementation, cost optimization and support.
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-7" class="py-6 md:py-10">
