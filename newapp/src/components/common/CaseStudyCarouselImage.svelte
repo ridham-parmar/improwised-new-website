@@ -1,8 +1,8 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
-    import { BASE_URL } from "$lib/consts";
   export let casestudies: any[] = [];
+  export let baseUrl: string = "";
 </script>
 
 <Carousel.Root
@@ -37,7 +37,7 @@
                 >
                 <a
                 target="_blank"
-                href={`${BASE_URL}/casestudies/${casestudy.data.attachments}`}
+                href={`${baseUrl}/casestudies/${casestudy.data.attachments}`}
                 aria-label="Learn more about ${casestudy.data.title}"
                 >  {casestudy.data.title}</a>
                 </Card.Title>

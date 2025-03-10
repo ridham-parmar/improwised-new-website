@@ -3,6 +3,7 @@
   export let faqs: { question: string; answer: string }[] = [];
 
   export let blocks : {title: string; description: string}[] = [];  
+  
 </script>
 
 <Accordion.Root >

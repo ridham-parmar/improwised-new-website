@@ -8,7 +8,7 @@ import person3 from "$lib/images/people/Circle3.png";
 import { getCollection } from "astro:content";
 const clientsCollection = await getCollection('clients');
 const clients = clientsCollection.flatMap(client => client.data.clients);
-const peopleImages = [person1, person2, person3];
+const peopleImages = [person3, person2, person1];
 ---
 
 <section
