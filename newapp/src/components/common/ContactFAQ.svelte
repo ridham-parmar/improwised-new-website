@@ -33,7 +33,7 @@
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
     >
-    No, Improwised has only  one branch at Rajkot
+    No, Improwised has only  one branch at Rajkot.
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-4" class="py-6 md:py-10">
@@ -43,7 +43,7 @@
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >Improwised has onsite opportunities currently we don't have remote opportunities
+    >Improwised has onsite opportunities, currently we don't have remote opportunities.
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-5" class="py-6 md:py-10">
@@ -53,7 +53,7 @@
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >Working hours are 10am to 7 pm
+    >Working hours are 10 am to 7 pm.
 
     </Accordion.Content>
   </Accordion.Item>
@@ -62,14 +62,12 @@
   <Accordion.Item value="item-6" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >What actually Improwised Technologies are working on ?
+      >What actually Improwised Technologies are working on?
       </Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
     >Since its inception in 2011, Improwised Technologies has specialized in developing scalable, data-intensive, and cloud-native applications. Over the years, the company has also established expertise in cloud infrastructure services, offering comprehensive solutions that include cloud consultancy, implementation, optimization, and support.
-
-
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-7" class="py-6 md:py-10">
@@ -80,18 +78,18 @@
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >Its usually 2 months and for senior positions its may change
+    >It's usually 2 months and for senior positions it may change.
     </Accordion.Content>
   </Accordion.Item>
   <Accordion.Item value="item-8" class="py-6 md:py-10">
     <Accordion.Trigger
       class="text-left gap-4 hover:no-underline py-0 font-inter font-semibold text-base md:text-xl text-[#141414]"
-      >Is there a commitment period for the software and devops position?
+      >Is there a commitment period for the software and devops engineer positions?
       </Accordion.Trigger
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >Yes  we have a commitment period for these positions and its changes according to position.
+    >Yes, We have a commitment period for these positions and it's changes according to position.
 
     </Accordion.Content>
   </Accordion.Item>
@@ -103,7 +101,7 @@
     >
     <Accordion.Content
       class="pt-4 font-inter font-normal text-small md:text-lg leading-[26px] text-[#292929]"
-    >304 - Pride Square,  Pushkardham Road, N. J. K. Chowk, Rajkot-360005, Gujarat, India
+    >304 - Pride Square,  Pushkardham Road, Near J. K. Chowk, Rajkot-360005, Gujarat, India
 
     </Accordion.Content>
   </Accordion.Item>
