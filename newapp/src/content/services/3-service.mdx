@@ -37,6 +37,8 @@ import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
 import solutions from "$lib/images/services/solutions.svg"
+import solution1 from "$lib/images/services/solutions-1.svg"
+import solution2 from "$lib/images/services/mobileSolution.svg"
 import PESection from "$lib/components/PESection.astro"
 
 export const title = frontmatter.title
@@ -49,13 +51,14 @@ export const description = "Cloud migration, application modernization, and tech
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
                 <h1 class="main-heading-small md:main-heading">{title}</h1>
-                <p class="my-4 small-text font-roboto md:text-para">{description}</p>
+                <p class="mt-4 small-text font-roboto md:text-para">{description}</p>
             </div>
             <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact-us`} class="bg-black">Get In Touch</Button>
         </div>
-        {/* <div class="w-full flex justify-center">
-          <Image class="hidden md:block" alt="building block" src={solutions}/>
-        </div> */}
+        <div class="w-full flex justify-center">
+          <Image class="hidden md:block" alt="building block" src={solution1}/>
+          <Image width={300} class="block md:hidden" alt="building block" src={solution2}/>
+        </div>
     </section>
 
     <section class="section2 overflow-x-hidden py-10 md:py-40">

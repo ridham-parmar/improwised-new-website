@@ -1,16 +1,18 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { writable } from "svelte/store";
-  export let siteKey: string;
-  export let contactUsURL: string;
   import Button from "../ui/button/button.svelte";
 
-  let name = "";
-  let email = "";
-  let message = "";
-  let captchaValid = false;
+  let {siteKey, contactUsURL} = $props()
 
-  // Define the type for errors
+  let name = $state("");
+  let email = $state("");
+  let message = $state("");
+  let captchaValid = $state(false);
+  let apiResponse : any = $state(null);
+  let parsedResponse : any = $state(null);
+  let apiError : any = $state(null)
+
   interface FormErrors {
     name?: string;
     email?: string;
@@ -18,7 +20,6 @@
     captcha?: string;
   }
 
-  // Using a reactive store for error handling
   let errors = writable<FormErrors>({});
 
   function recaptchaCallback(response: string) {
@@ -43,8 +44,6 @@
     errors.set(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      // console.log("Form submitted successfully!");
-
       const formData = new FormData(event.currentTarget as HTMLFormElement);
 
       if (formData.get("g-recaptcha-response")) {
@@ -53,31 +52,41 @@
         formData.delete("g-recaptcha-response");
       }
 
-      // console.log("Form Data:", Object.fromEntries(formData.entries()));
+      let object: any = {};
 
-      var object = {};
       formData.forEach(function(value, key){
-          object[key] = value;
+        object[key] = value;
       });
-      var json = JSON.stringify(object);
-      console.log(json,"json");
+      
+      let json = JSON.stringify(object);
 
       const options = {
-              method: "POST",
-              body: json,
-            }
+        method: "POST",
+        body: json,
+      }
 
-      // const response = await fetch("/api/contactus", options);
-      // const data = await response.json();
-      const response = await fetch(contactUsURL, options)
-      const d = await response.json()
-      console.log("data ------------------------------ ", d);
-
-      // Reset form on successful validation
-      name = "";
-      email = "";
-      message = "";
+      try {
+        apiResponse = await fetch(contactUsURL, options)
+        parsedResponse = await apiResponse.json()
+      } catch (error:any) {
+        apiError = error.message
+      }
+      
+      if(apiResponse.status == 201) {
+        resetForm()
+      }
     }
+  }
+  const resetForm = () => {
+    name = "";
+    email = "";
+    message = "";
+    window.grecaptcha.reset()
+
+    setTimeout(() => {
+      apiError = null;
+      apiResponse = null
+    },3000)
   }
 
   onMount(() => {
@@ -97,49 +106,69 @@
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </svelte:head>
 
-<form on:submit|preventDefault={validateForm} class="w-full md:w-1/2 bg-[#F5F7F6] p-8 rounded-2xl shadow-lg space-y-6">
-  <div>
-    <label for="name" class="block font-semibold text-gray-900">Name</label>
-    <input
-      type="text"
-      id="name"
-      name="name"
-      bind:value={name}
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
-      placeholder="Your Name"
-    />
-    {#if $errors.name}<p class="text-red-500 text-sm mt-1">{$errors.name}</p>{/if}
-  </div>
+<div class="flex flex-col gap-6 w-full md:w-1/2">
+  {#if apiError}
+    <div class={`p-6 text-center rounded-2xl bg-[#9f7c7f] transition-all duration-300`}>
+      <p>{apiError}</p>
+    </div>
+  {/if}
 
-  <div>
-    <label for="email" class="block font-semibold text-gray-900">Email</label>
-    <input
-      type="email"
-      id="email"
-      name="email"
-      bind:value={email}
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
-      placeholder="Your Email"
-    />
-    {#if $errors.email}<p class="text-red-500 text-sm mt-1">{$errors.email}</p>{/if}
-  </div>
+  {#if apiResponse && apiResponse?.status == 201 }
+    <div class={`p-6 text-center rounded-2xl bg-[#cff5a4] transition-all duration-300`}>
+      <p>{parsedResponse?.success[0]}</p>
+    </div>
+  {/if}
 
-  <div>
-    <label for="message" class="block font-semibold text-gray-900">Message</label>
-    <textarea
-      id="message"
-      name="message"
-      bind:value={message}
-      class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
-      placeholder="Add Your Message Here"
-    ></textarea>
-    {#if $errors.message}<p class="text-red-500 text-sm mt-1">{$errors.message}</p>{/if}
-  </div>
+  {#if apiResponse && apiResponse?.status != 201 }
+    <div class={`p-6 text-center rounded-2xl bg-[#9f7c7f] transition-all duration-300`}>
+      <p>{parsedResponse?.error[0]}</p>
+    </div>
+  {/if}
+ 
+  <form onsubmit={validateForm} class="bg-[#F5F7F6] p-8 rounded-2xl shadow-lg space-y-6">
+    <div>
+      <label for="name" class="block font-semibold text-gray-900">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        bind:value={name}
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        placeholder="Your Name"
+      />
+      {#if $errors.name}<p class="text-red-500 text-sm mt-1">{$errors.name}</p>{/if}
+    </div>
 
-  <div id="g-recaptcha"></div>
-  {#if $errors.captcha}<p class="text-red-500 text-sm mt-1">{$errors.captcha}</p>{/if}
+    <div>
+      <label for="email" class="block font-semibold text-gray-900">Email</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        bind:value={email}
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        placeholder="Your Email"
+      />
+      {#if $errors.email}<p class="text-red-500 text-sm mt-1">{$errors.email}</p>{/if}
+    </div>
 
-  <Button class="bg-black" type="submit">
-    Contact Us
-  </Button>
-</form>
+    <div>
+      <label for="message" class="block font-semibold text-gray-900">Message</label>
+      <textarea
+        id="message"
+        name="message"
+        bind:value={message}
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        placeholder="Add Your Message Here"
+      ></textarea>
+      {#if $errors.message}<p class="text-red-500 text-sm mt-1">{$errors.message}</p>{/if}
+    </div>
+
+    <div id="g-recaptcha"></div>
+    {#if $errors.captcha}<p class="text-red-500 text-sm mt-1">{$errors.captcha}</p>{/if}
+
+    <Button class="bg-black" type="submit">
+      Contact Us
+    </Button>
+  </form>
+</div>

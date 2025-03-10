@@ -58,7 +58,6 @@ export const level1 = [
     { name: "GCP", url: gcp, alt: "Google Cloud Platform", link: "https://cloud.google.com/z" },
 
     
-    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
     { name: "Bootstrap", url: bootstrap, alt: "Bootstrap", link: "https://getbootstrap.com/" },
 ]
 
@@ -66,12 +65,13 @@ export const level2 = [
     { name: "Github", url: github, alt: "Github", link: "https://github.com/" },
     { name: "Grafana", url: grafana, alt: "Grafana", link: "https://grafana.com/" },
     { name: "Docker", url: docker, alt: "Docker", link: "https://www.docker.com/" },
-    { name: "Helm", url: helm, alt: "Helm", link: "https://helm.sh/" },
+    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
     { name: "Golang", url: go, alt: "Golang", link: "https://go.dev/" },
     { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
-
-
     
+    
+    
+    { name: "Helm", url: helm, alt: "Helm", link: "https://helm.sh/" },
     { name: "Redis", url: redis, alt: "Redis", link: "https://redis.io/" },
 ]
 
