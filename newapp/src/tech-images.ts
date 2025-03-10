@@ -57,7 +57,6 @@ export const level1 = [
     { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
     { name: "GCP", url: gcp, alt: "Google Cloud Platform", link: "https://cloud.google.com/z" },
 
-    
     { name: "Bootstrap", url: bootstrap, alt: "Bootstrap", link: "https://getbootstrap.com/" },
 ]
 
@@ -65,19 +64,16 @@ export const level2 = [
     { name: "Github", url: github, alt: "Github", link: "https://github.com/" },
     { name: "Grafana", url: grafana, alt: "Grafana", link: "https://grafana.com/" },
     { name: "Docker", url: docker, alt: "Docker", link: "https://www.docker.com/" },
-    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
+    { name: "Helm", url: helm, alt: "Helm", link: "https://helm.sh/" },
     { name: "Golang", url: go, alt: "Golang", link: "https://go.dev/" },
     { name: "Kubernetes", url: kubernetes, alt: "Kubernetes", link: "https://kubernetes.io/" },
     
-    
-    
-    { name: "Helm", url: helm, alt: "Helm", link: "https://helm.sh/" },
     { name: "Redis", url: redis, alt: "Redis", link: "https://redis.io/" },
 ]
 
 export const level3 = [
     { name: "Postgres", url: postgres, alt: "Postgres", link: "https://www.postgresql.org/" },
-    { name: "MySQL", url: mysql, alt: "MySQL", link: "https://www.mysql.com/" },
+    { name: "Laravel", url: laravel, alt: "Laravel", link: "https://laravel.com/" },
     { name: "Terraform", url: terraform, alt: "Terraform", link: "https://www.terraform.io/" },
     { name: "Flux CD", url: fluxcd, alt: "Flux CD", link: "https://fluxcd.io/" },
     { name: "GitLab", url: gitlab, alt: "GitLab", link: "https://about.gitlab.com/" },
@@ -87,6 +83,7 @@ export const level3 = [
     { name: "Vault", url: vault, alt: "Vault", link: "https://www.hashicorp.com" },
     { name: "Kratos", url: kratos, alt: "Kratos", link: "https://www.ory.sh/kratos/" },
     
+    { name: "MySQL", url: mysql, alt: "MySQL", link: "https://www.mysql.com/" },
     { name: "Dexidp", url: dexidp, alt: "Dex IDP Identity Provider Logo", link: "https://dexidp.io/" },
     { name: "Drone CI", url: drone, alt: "Drone CI Continuous Integration Logo", link: "https://www.drone.io/" },
     { name: "ArgoCD", url: argo, alt: "ArgoCD Continuous Deployment Logo", link: "https://argoproj.github.io/cd/" },
