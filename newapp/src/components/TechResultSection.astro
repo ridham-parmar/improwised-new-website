@@ -78,6 +78,7 @@ import FullTech from "$lib/images/tech/FullTech1.svg";
 
 <script is:inline>
     window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
         tsParticles.load({
             id: "tsparticlesCanvas",
             options: {
@@ -109,5 +110,6 @@ import FullTech from "$lib/images/tech/FullTech1.svg";
                 },
             },
         });
+    }, 5000);
     });
 </script>

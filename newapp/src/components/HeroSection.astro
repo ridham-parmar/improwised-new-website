@@ -104,6 +104,7 @@ const peopleImages = [person3, person2, person1];
 <script src="../scripts/particles.js"></script>
 <script is:inline>
   window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
     tsParticles.load({
       id: "tsparticlesCanvasHero",
       options: {
@@ -160,5 +161,6 @@ const peopleImages = [person3, person2, person1];
         },
       },
     });
+  }, 5000);
   });
 </script>
