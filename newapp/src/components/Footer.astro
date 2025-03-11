@@ -42,7 +42,7 @@ const currentYear = new Date().getFullYear();
           services.map((service) => (
             <>
           <li class="hover:text-[#fff]">
-            <a href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label={`Click here for ${service?.data?.title}`}>{service?.data?.title}</a>
+            <a href={`${BASE_URL}/services/${service?.data.slug}`}  aria-label={`Explore ${service?.data?.title}`}> {service?.data?.title || 'Service Details'}</a>
           </li>
 
           </>
