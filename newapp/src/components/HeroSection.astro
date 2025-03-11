@@ -5,7 +5,9 @@ import { BASE_URL } from "$lib/consts";
 import person1 from "$lib/images/people/Circle1.png";
 import person2 from "$lib/images/people/Circle2.png";
 import person3 from "$lib/images/people/Circle3.png";
+import Particle from "$lib/components/common/Particle.svelte"
 import { getCollection } from "astro:content";
+// import Particles from "$lib/scripts/particles";
 const clientsCollection = await getCollection('clients');
 const clients = clientsCollection.flatMap(client => client.data.clients);
 const peopleImages = [person3, person2, person1];
@@ -73,12 +75,8 @@ const peopleImages = [person3, person2, person1];
       }
     </div>
   </div>
-  <div
-    id="v-0-3"
-    class="hidden lg:block absolute inset-x-0 bottom-0 w-full pointer-events-none"
-  >
-    <div data-generated="true" id="tsparticlesCanvasHero"></div>
-  </div>
+  <Particle client:load />
+
 </section>
 
 <style>
@@ -102,65 +100,3 @@ const peopleImages = [person3, person2, person1];
 </style>
 
 <script src="../scripts/particles.js"></script>
-<script is:inline>
-  window.addEventListener("DOMContentLoaded", () => {
-    setTimeout(() => {
-    tsParticles.load({
-      id: "tsparticlesCanvasHero",
-      options: {
-        fullScreen: {
-          enable: false,
-        },
-        fpsLimit: 60,
-        particles: {
-          number: {
-            value: 50,
-          },
-          shape: { type: "circle" },
-          move: {
-            enable: true,
-            speed: 0.5,
-            outModes: {
-              default: "bounce",
-            },
-          },
-          color: { value: "#00afdb" }, // Particle color
-          size: {
-            value: 1,
-          },
-          links: {
-            enable: true, // Enable links
-            distance: 100, // Maximum distance for linking
-            color: "#00afdb", // Link color
-            opacity: 0.3, // Transparency of links
-            width: 1, // Line thickness
-          },
-        },
-        interactivity: {
-          events: {
-            onHover: {
-              enable: true, // Enable mouse interaction
-              mode: "grab", // Effect on hover
-            },
-            onClick: {
-              enable: true,
-              mode: "push", // Adds new particles on click
-            },
-          },
-          modes: {
-            grab: {
-              distance: 150, // Distance for grab effect
-              links: {
-                opacity: 0.3, // Opacity of grabbed links
-              },
-            },
-            push: {
-              quantity: 3, // Adds 3 particles on click
-            },
-          },
-        },
-      },
-    });
-  }, 5000);
-  });
-</script>

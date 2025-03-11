@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
+import Particle2 from "$lib/components/common/Particle2.svelte"
 import FullTechMobile from "$lib/images/tech/FullTechMobile.svg";
 import FullTech from "$lib/images/tech/FullTech1.svg";
 ---
@@ -67,49 +68,8 @@ import FullTech from "$lib/images/tech/FullTech1.svg";
             ></defs
         ></svg
     >
+    <Particle2 client:load />
 
-    <div
-        id="v-0-3"
-        class="absolute inset-x-0 top-0 h-5 lg:h-24 w-full pointer-events-none"
-    >
-        <div data-generated="true" id="tsparticlesCanvas"></div>
-    </div>
 </section>
 
-<script is:inline>
-    window.addEventListener("DOMContentLoaded", () => {
-      setTimeout(() => {
-        tsParticles.load({
-            id: "tsparticlesCanvas",
-            options: {
-                fullScreen: {
-                    enable: false,
-                },
-                shape: { type: "circle" },
-
-                fpsLimit: 60,
-                particles: {
-                    number: {
-                        value: 100,
-                    },
-                    //   links: {
-                    //     enable: true,
-                    //     distance: 50
-                    //   },
-                    move: {
-                        enable: true,
-                        speed: 0.5,
-                        outModes: {
-                            default: "bounce",
-                        },
-                    },
-                    color: { value: "#00afdb" }, // Red color for particles
-                    size: {
-                        value: 1,
-                    },
-                },
-            },
-        });
-    }, 5000);
-    });
-</script>
+<script src="../scripts/particles.js"></script>
