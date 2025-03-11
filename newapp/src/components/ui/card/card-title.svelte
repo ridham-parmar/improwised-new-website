@@ -8,7 +8,7 @@
 	};
 
 	let className: $$Props["class"] = undefined;
-	export let tag: $$Props["tag"] = "h3";
+	export let tag: $$Props["tag"] = "h2";
 	export { className as class };
 </script>
 
