@@ -2,9 +2,6 @@
 
 ## 🔮 Astro + Astro Svelte + Shadcn Svelte + Tailwind CSS
 
-## Lighthouse Performance
-
-![image](https://github.com/user-attachments/assets/e62d61da-a58e-4eaf-b451-fbe8ee1011ac)
 
 ## Development Prospective
 
@@ -13,50 +10,6 @@
 > 🔹[Astro Svelte](https://docs.astro.build/en/guides/integrations-guide/svelte/)
 > 🔹[Shadcn Svelte](https://www.shadcn-svelte.com/docs/installation/astro)
 > 🔹[Tailwind CSS](https://docs.astro.build/en/guides/integrations-guide/tailwind/)
-
-
-## 🚀 Steps to clone this website with above Tech Stack
-
-### Git Repo clone
-
-
-```bash
-git clone git@github.com:Improwised/improwised-new-website.git
-cd webapp
-```
-
-### Environment
-
-* copy `.env.example` to `.env`. (skip if already done)
-
-
-```bash
-$ cp .env.example .env
-```
-
-### Developing
-Installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-```
-
-### Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-### Preview
-
-You can preview the production build with `npm run preview`.
-
-
-----------------------------------------------------------------
-
-
 
 
 ## 🚀 Steps to Build a new website with above Tech Stack
@@ -68,7 +21,7 @@ You can preview the production build with `npm run preview`.
 ├── npm create astro@latest
     │
     └── Where should we create your new project?
-    │       └── ./webapp
+    │       └── ./myapp
     └── How would you like to start your new project?
     │       └── A basic, minimal starter
     └── Install dependencies? (recommended)
@@ -82,7 +35,7 @@ You can preview the production build with `npm run preview`.
 
 
 ```bash
-cd webapp
+cd myapp
 npx astro add svelte
 ```
 For more info check this link : https://docs.astro.build/en/guides/integrations-guide/svelte/
