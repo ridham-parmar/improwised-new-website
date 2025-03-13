@@ -1,4 +1,4 @@
-# improwised-new-website
+# Improwised-new-website
 
 ## 🔮 Astro + Astro Svelte + Shadcn Svelte + Tailwind CSS
 
@@ -53,5 +53,7 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
+## Old website Repo
 
+`improwised-website` - It is no longer in use now.
 
