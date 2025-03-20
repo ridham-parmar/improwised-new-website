@@ -6,7 +6,7 @@ import CustomCard from "./CustomCard.astro";
 ---
 
 <section
-    class="section bg-white overflow-hidden relative py-10 md:py-40 darker-bg"
+    class="section overflow-hidden relative py-10 md:py-40 dark:darker-bg"
 >
     <svg
         viewBox="0 0 1440 181"
@@ -77,3 +77,7 @@ import CustomCard from "./CustomCard.astro";
         target.style.setProperty("--gradient-y", `${gradientY}px`);
     }
 </script>
+
+<style>
+    @reference "tailwindcss";
+</style>

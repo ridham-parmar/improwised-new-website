@@ -39,7 +39,7 @@
 	{#if item.name === iconName}
         {@const Icon = item.icon}
         <div>
-            <Icon size={40}/>
+            <Icon size={30}/>
         </div>
     {/if}
 {/each}

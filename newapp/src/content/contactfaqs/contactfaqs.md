@@ -1,0 +1,21 @@
+---
+contactfaqs:
+    - question: "What's the salary range for this role?"
+      answer: "Salary range can fluctuate based on individual qualifications and the specific demands of the role."
+    - question: "What benefits does the company offer?"
+      answer: "A robust leave policy, including paid time off and regular weekends, to support work-life balance and personal well-being."
+    - question: "Does Improwised have the other branch to work?"
+      answer: "No, Improwised has only  one branch at Rajkot."
+    - question: "Are remote opportunities available at Improwised?"
+      answer: "Improwised has onsite opportunities, currently we don't have remote opportunities."
+    - question: "What are the working hours ?"
+      answer: "Working hours are 10 am to 7 pm."
+    - question: "What actually Improwised Technologies are working on?"
+      answer: "Since its inception in 2011, Improwised Technologies has specialized in developing scalable, data-intensive, and cloud-native applications. Over the years, the company has also established expertise in cloud infrastructure services, offering comprehensive solutions that include cloud consultancy, implementation, cost optimization and support."
+    - question: "How much notice period does the company have?"
+      answer: "It's usually 2 months and for senior positions it may change."
+    - question: "Is there a commitment period for the software and devops engineer positions?"
+      answer: "Yes, We have a commitment period for these positions and it's changes according to position."
+    - question: "Where Improwised Technologies is located?"
+      answer: "304 - Pride Square,  Pushkardham Road, Near J. K. Chowk, Rajkot-360005, Gujarat, India"
+---

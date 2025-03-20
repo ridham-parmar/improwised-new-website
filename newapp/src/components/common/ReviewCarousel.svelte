@@ -5,16 +5,15 @@
   import line from "$lib/images/line.svg";
   import bg from "$lib/images/testimonials/bg.svg";
   export let reviews: any[] = [];
-  import { Mouse, Star } from "lucide-svelte";
 
   let gradientX = 45.5;
   let gradientY = -200;
 
-  function updateGradient(event: MouseEvent) {
+  function updateGradient(event: any) {    
     const target = event.currentTarget as HTMLElement;
     if (!target) return;
 
-    const rect = target.getBoundingClientRect();
+    const rect = event?.currentTarget?.getBoundingClientRect();
     gradientX = event.clientX - rect.left;
     gradientY = event.clientY - rect.top;
 
@@ -38,38 +37,38 @@
       >
         <div class="flex justify-center p-1">
           <Card.Root
-          class="overflow-hidden border-4 border-[#fff] rounded-[20px] relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
-        >
-          <!-- svelte-ignore a11y_no_static_element_interactions -->
-          <div
-            class="card-custom-inner flex flex-col h-full"
-            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px`}
             onmousemove={updateGradient}
+            style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px`}
+            class="overflow-hidden border-1 bg-card-bg border-card-border rounded-[20px] relative flex w-full max-w-md  flex-col justify-between hover:shadow-lg h-full"
           >
-            <Card.Content class="small-text md:text-para font-inter flex-grow">
-              <p>{review.review}</p>
-            </Card.Content>
-            <Card.Footer class="flex items-center justify-between gap-4 mt-4">
-              <div class="flex justify-center items-center gap-2">
-                <div>
-                  <img
-                    src={review.image.src}
-                    class="w-[64px] h-[64px] object-cover object-top border-1 border-[#D3D3D3] rounded-full reviews"
-                  />
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <div
+              class="card-custom-inner flex flex-col h-full"
+            >
+              <Card.Content class="small-text md:text-para font-inter flex-grow text-fourth-color">
+                <p>{review.review}</p>
+              </Card.Content>
+              <Card.Footer class="flex items-center justify-between gap-4 mt-4">
+                <div class="flex justify-center items-center gap-2">
+                  <div>
+                    <img
+                      alt={review.image.src}
+                      src={review.image.src}
+                      class="w-[64px] h-[64px] object-cover object-top border-1 border-[#D3D3D3] rounded-full reviews"
+                    />
+                  </div>
+                  <div>
+                    <p class="font-semibold text-base font-inter text-fifth-color">
+                      {review.name}
+                    </p>
+                    <p class="text-sm font-inter text-fourth-color">
+                      {review.position}
+                    </p>
+                  </div>
                 </div>
-                <div>
-                  <p class="font-semibold text-base font-inter text-[#141414]">
-                    {review.name}
-                  </p>
-                  <p class="text-sm font-inter text-[#292929]">
-                    {review.position}
-                  </p>
-                </div>
-              </div>
-            </Card.Footer>
-          </div>
-        </Card.Root>
-
+              </Card.Footer>
+            </div>
+          </Card.Root>
         </div>
       </Carousel.Item>
     {/each}

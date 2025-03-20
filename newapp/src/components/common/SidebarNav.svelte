@@ -51,7 +51,7 @@
   });
 </script>
 
-<div class={`w-full transition-all duration-250 flex flex-col gap-3 ${(innerWidth.current as number < 1024 && showPageBar && insideMdx == "outside") ? "block" : innerWidth.current as number > 1024 && insideMdx == "inside" ? "block" : "hidden"}`}>
+<div class={`w-full max-lg:mt-3 transition-all duration-250 flex flex-col gap-3 ${(innerWidth.current as number < 1024 && showPageBar && insideMdx == "outside") ? "block" : innerWidth.current as number > 1024 && insideMdx == "inside" ? "block" : "hidden"}`}>
   <!-- Mobile menu button -->
   <div class="group lg:hidden z-40 grid grid-cols-[140px_1fr] items-center">
     <Button variant="outline" id="sidebar-button"
@@ -68,7 +68,7 @@
       <div><ChevronRight class="transition-all h-4 w-4 duration-200" /></div>
     {/if}     
     </Button>
-    <div class="text-xs font-manrope sm:small-text text-gray-900 line-clamp-1">
+    <div class="text-xs font-manrope sm:small-text text-first-color line-clamp-1">
       {activeSection}
     </div>
   </div>
@@ -81,7 +81,7 @@
       {#each sections as section}
         <a
           href={`#${encodeURIComponent(section)}`}
-          class={`block font-semibold font-manrope pl-3 text-[14px] hover:text-primary ${activeSection == section ? "border-l-2 text-primary" : "text-[#141414]"} md:text-[16px] md:leading-[24px] tracking-[0.02em`}
+          class={`block font-semibold font-manrope pl-3 text-[14px] hover:text-blue-hover ${activeSection == section ? "text-blue-hover border-l-2 border-white" : "text-first-color"} md:text-[16px] md:leading-[24px] tracking-[0.02em`}
         >
           {section}
         </a>

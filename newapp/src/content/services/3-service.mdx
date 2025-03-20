@@ -1,7 +1,7 @@
 ---
 title: 'Product Modernization'
 slug: 'product-modernization'
-image: '$lib/images/services/data1.svg'
+image: '$lib/images/services/product-modernization.svg'
 description: 'Cloud migration, application modernization, and technology upgrades. We transform legacy systems into scalable, secure, and modern solutions.'
 order: 3
 blocks: 
@@ -36,10 +36,12 @@ import CustomCard from "$lib/components/CustomCard.astro"
 import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
-import solutions from "$lib/images/services/solutions.svg"
 import solution1 from "$lib/images/services/solutions-1.svg"
-import solution2 from "$lib/images/services/mobileSolution.svg"
+import solution2 from "$lib/images/services/solutions-2.svg"
+import mobileSolution from "$lib/images/services/mobileSolutions.svg"
 import PESection from "$lib/components/PESection.astro"
+import pm from "$lib/images/services/pm.svg"
+import pm3 from "$lib/images/services/pm3.svg"
 
 export const title = frontmatter.title
 export const slug = frontmatter.slug
@@ -47,17 +49,18 @@ export const image = "$lib/images/services/data1.png"
 export const description = "Cloud migration, application modernization, and technology upgrades. We transform legacy systems into scalable, secure, and modern solutions."
 
 <section>
-    <section class="section1 pt-30 pb-20 md:pt-80 md:pb-[240px] bg-platform">
+    <section class="section1 flex flex-col gap-10 pt-30 pb-20 md:pt-60 md:pb-[240px] bg-platform">
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
-                <h1 class="main-heading-small md:main-heading">{title}</h1>
-                <p class="mt-4 small-text font-roboto md:text-para">{description}</p>
+                <h1 class="main-heading-small md:main-heading text-main-heading-color">{title}</h1>
+                <p class="mt-4 small-text font-roboto md:text-para text-third-color">{description}</p>
             </div>
-            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="bg-black">Get In Touch</Button>
+            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
-        <div class="w-full flex justify-center">
-          <Image class="hidden md:block" alt="building block" src={solution1}/>
-          <Image width={300} class="block md:hidden" alt="building block" src={solution2}/>
+        <div class="container flex justify-center">
+          <Image class="hidden md:block" alt="building block" width={1200} src={pm3}/>
+          {/* <Image class="hidden md:block" alt="building block" width={1200} src={pm1}/> */}
+          <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
@@ -65,7 +68,7 @@ export const description = "Cloud migration, application modernization, and tech
         <PESection block="product-modernization" />
     </section>
 
-    <section class="section3 relative lighter-bg">
+    <section class="section3 relative">
         <svg
             viewBox="0 0 1440 181"
             fill="none"

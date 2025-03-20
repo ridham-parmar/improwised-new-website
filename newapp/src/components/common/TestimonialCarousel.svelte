@@ -69,10 +69,10 @@
         <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
           <div class="flex justify-center p-1 h-full">
             <Card.Root
-              class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
+              class="relative border-card-border flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between hover:shadow-lg h-full bg-card-bg"
             >
               <Card.Header>
-                <blockquote class="small-text md:text-para [text-wrap:balance] mb-2">
+                <blockquote class="small-text md:text-para [text-wrap:balance] mb-2 text-fourth-color">
                   {testimonial.data.description}
                 </blockquote>
               </Card.Header>
@@ -90,10 +90,10 @@
                   class="mt-10 flex items-center justify-between gap-3 w-full"
                 >
                   <div class="flex-1">
-                    <p class="font-inter font-bold text-[14px] md:text-[16px] text-[#141414]">
+                    <p class="font-inter font-bold text-[14px] md:text-[16px] text-fifth-color">
                       {testimonial.data.author}
                     </p>
-                    <p class="text-sm font-inter font-regular text-[#292929]">
+                    <p class="text-sm font-inter font-regular text-fourth-color">
                       {testimonial.data.authorDesignation}
                     </p>
                   </div>

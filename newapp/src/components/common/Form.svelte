@@ -145,40 +145,40 @@
     </div>
   {/if}
  
-  <form onsubmit={validateForm} class="bg-[#F5F7F6] p-8 rounded-2xl shadow-lg space-y-6">
+  <form onsubmit={validateForm} class="bg-card-bg p-8 rounded-2xl shadow-lg space-y-6">
     <div>
-      <label for="name" class="block font-semibold text-gray-900">Name</label>
+      <label for="name" class="block font-semibold text-fourth-color">Name</label>
       <input
         type="text"
         id="name"
         name="name"
         bind:value={name}
-        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-fourth-color placeholder-gray-400"
         placeholder="Your Name"
       />
       {#if $errors.name}<p class="text-red-500 text-sm mt-1">{$errors.name}</p>{/if}
     </div>
 
     <div>
-      <label for="email" class="block font-semibold text-gray-900">Email</label>
+      <label for="email" class="block font-semibold text-fourth-color">Email</label>
       <input
         type="email"
         id="email"
         name="email"
         bind:value={email}
-        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-fourth-color placeholder-gray-400"
         placeholder="Your Email"
       />
       {#if $errors.email}<p class="text-red-500 text-sm mt-1">{$errors.email}</p>{/if}
     </div>
 
     <div>
-      <label for="message" class="block font-semibold text-gray-900">Message</label>
+      <label for="message" class="block font-semibold text-fourth-color">Message</label>
       <textarea
         id="message"
         name="message"
         bind:value={message}
-        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-gray-700 placeholder-gray-400"
+        class="w-full bg-transparent border-b border-gray-300 focus:outline-hidden py-2 text-fourth-color placeholder-gray-400"
         placeholder="Add Your Message Here"
       ></textarea>
       {#if $errors.message}<p class="text-red-500 text-sm mt-1">{$errors.message}</p>{/if}
@@ -187,7 +187,7 @@
     <div id="g-recaptcha" data-size={`${innerWidth?.current && innerWidth?.current < 640 ? "compact" : "normal"}`}></div>
     {#if $errors.captcha}<p class="text-red-500 text-sm mt-1">{$errors.captcha}</p>{/if}
 
-    <Button class="bg-black" type="submit">
+    <Button class="button-bg" type="submit">
       Contact Us
     </Button>
   </form>

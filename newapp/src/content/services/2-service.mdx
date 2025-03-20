@@ -1,7 +1,7 @@
 ---
 title: 'Cloud Infrastructure Services'
 slug: 'cloud-infrastructure-services'
-image: '$lib/images/services/data3.svg'
+image: '$lib/images/services/cloud-services.svg'
 description: 'Ready to see what your cloud can really do? We build smart, secure cloud setups that let you grow and innovate.'
 order: 2
 blocks: 
@@ -39,9 +39,9 @@ import CustomCard from "$lib/components/CustomCard.astro"
 import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
-import solutions from "$lib/images/services/solutions.svg"
 import solution1 from "$lib/images/services/solutions-1.svg"
-import solution2 from "$lib/images/services/mobileSolution.svg"
+import solution2 from "$lib/images/services/solutions-2.svg"
+import mobileSolution from "$lib/images/services/mobileSolutions.svg"
 import PESection from "$lib/components/PESection.astro"
 
 export const title = frontmatter.title
@@ -53,14 +53,14 @@ export const description = "Ready to see what your cloud can really do? We build
     <section class="section1 pt-30 pb-20 md:pt-80 md:pb-[240px] bg-platform">
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
-                <h1 class="main-heading-small md:main-heading">{title}</h1>
-                <p class="mt-4 small-text font-roboto md:text-para">{description}</p>
+                <h1 class="main-heading-small md:main-heading text-main-heading-color">{title}</h1>
+                <p class="mt-4 small-text font-roboto md:text-para text-third-color">{description}</p>
             </div>
-            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="bg-black">Get In Touch</Button>
+            <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
         <div class="w-full flex justify-center">
-          <Image class="hidden md:block" alt="building block" src={solution1}/>
-          <Image width={300} class="block md:hidden" alt="building block" src={solution2}/>
+          <Image class="hidden md:block" alt="building block" src={solution2}/>
+          <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
@@ -68,7 +68,7 @@ export const description = "Ready to see what your cloud can really do? We build
         <PESection block="cloud-infrastructure-services" />
     </section>
 
-    <section class="section3 relative lighter-bg">
+    <section class="section3 relative">
         <svg
             viewBox="0 0 1440 181"
             fill="none"

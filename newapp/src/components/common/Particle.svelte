@@ -3,12 +3,6 @@
   import { onMount } from "svelte";
 
   onMount(() => {
-    // console.log("calleed onMount from Particle component-------");
-
-    // window.addEventListener("DOMContentLoaded", () => {
-      // console.log("domloaded from particle comp");
-
-
       tsParticles.load({
         id: "tsparticlesCanvasHero",
         options: {
@@ -70,9 +64,6 @@
   });
 </script>
 
-<div
-id="v-0-3"
-class="hidden lg:block absolute inset-x-0 bottom-0 w-full pointer-events-none"
->
-<div data-generated="true" id="tsparticlesCanvasHero"></div>
+<div id="v-0-3" class="hidden lg:block absolute inset-x-0 bottom-0 w-full pointer-events-none">
+  <div data-generated="true" id="tsparticlesCanvasHero"></div>
 </div>

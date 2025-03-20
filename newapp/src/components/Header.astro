@@ -4,13 +4,14 @@ import { Image } from "astro:assets";
 import Logo from "$lib/images/logo.svg";
 import { Button } from "$lib/components/ui/button";
 import Dropdown from "$lib/components/common/Dropdown.svelte";
+import ToggleTheme from "$lib/components/common/ToggleTheme.svelte"
 import { getCollection } from "astro:content";
 
 const services = Object.values(await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
-import { Menu, X } from "lucide-svelte";
-import Moon from "lucide-svelte/icons/moon";
+
 import Sidebar from "./Sidebar.astro";
 const currentUrl = Astro.url.pathname.split("/")
+import { Menu, X, Moon, Sun } from "lucide-svelte";
 
 ---
 
@@ -19,101 +20,98 @@ const currentUrl = Astro.url.pathname.split("/")
   class="fixed top-0 left-0 right-0 border-b border-transparent transition-all z-50"
 >
   <div class="relative">
-    <div id="desktop-header" class="relative container z-50 flex flex-col items-center justify-between lg:flex-row px-4 py-3">
-      <div class="flex flex-col gap-4 max-lg:w-full">
-        <div id="impro-logo" class="z-50 flex w-full items-center justify-between lg:w-auto">
-          <a href={BASE_URL} class="flex items-center transition">
-            <Image
-              src={Logo}
-              class="w-[150px] lg:w-[200px]"
-              alt={SITE_TITLE}
-              loading="lazy"
-              decoding="async"
-            /></a
-          >
-  
-          <div class="block lg:hidden h-6 w-6">
-            <button id="impronav-menu" aria-label="Toggle Menu" class="hover:cursor-pointer">
-              <Menu class="h-6 w-6" id="menuIconMenu" />
-            </button>
-          </div>
-        </div>
-  
-        {
-          ((currentUrl.includes("blog") && currentUrl.indexOf("blog") < currentUrl.length-1) || (currentUrl.includes("privacy-policy")) || (currentUrl.includes("terms-of-use"))) && <Sidebar insideMdx="outside" />
-        }
-      </div>
+    <div id="desktop-header"
+    class="relative container z-50 flex flex-col items-center justify-between lg:flex-row px-4 py-3"
+  >
+    <div id="impro-logo" class="z-50 flex w-full items-center justify-between lg:w-auto">
+      <a href={BASE_URL} class="flex items-center transition">
+        <Image
+          src={Logo}
+          class="w-[150px] lg:w-[200px]"
+          alt={SITE_TITLE}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
 
-      <nav
-        class="impronav-items mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto lg:bg-transparent bg-white"
-      >
-      <ul class="flex flex-col lg:flex-row lg:gap-3">
-        <li class="content-center px-1">
-          <a
-            href={`${BASE_URL}`}
-            class="hover:text-primary active py-2 transition lg:px-3 text-base text-black leading-6"
-            >Home</a
-          >
-        </li>
-        <li class="content-center px-1">
-          <a
-            href={`${BASE_URL}/about-improwised`}
-            aria-label="Learn more about our company on the About Us page"
-            class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-            >About Us</a
-          >
-        </li>
-        <li class="content-center px-1">
-          <span class="hover:text-primary py-2 mb-5 transition lg:px-3">
-            <Dropdown client:load services={services} baseUrl={BASE_URL} />
-          </span>
-        </li>
-        <li class="content-center px-1">
-          <a
-            href={`${BASE_URL}/case-studies`}
-            aria-label="Learn more about our Case Studies"
-            class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-            >Case Studies</a
-          >
-        </li>
-        <li class="content-center px-1">
-          <a
-            href={`${BASE_URL}/careers`}
-            aria-label="Our Career Page"
-            class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-            >Careers</a
-          >
-        </li>
-        <li class="content-center px-1">
-          <a
-            href={`${BASE_URL}/blog`}
-            aria-label="Our Blog Page"
-            class="hover:text-primary py-2 transition lg:px-3 text-base text-black leading-6"
-            >Blog</a
-          >
-        </li>
-      </ul>
-
-        <div class="mt-3 flex items-center gap-4 lg:hidden">
-          <!-- <Button variant="outline">
-            <Moon class="h-6 w-6" />
-          </Button> -->
-          <Button href={`${BASE_URL}/contact`} class="bg-black">
-            Contact Us
-          </Button>
-        </div>
-      </nav>
-      <div>
-        <div class="hidden items-center gap-4 lg:flex">
-          <!-- <Button variant="outline">
-            <Moon class="h-6 w-6" />
-          </Button> -->
-          <Button href={`${BASE_URL}/contact`} class="bg-black">
-            Contact Us
-          </Button>
-        </div>
+      <div class="flex gap-4 lg:hidden items-center">
+        <ToggleTheme client:only/>
+        <button id="impronav-menu"  aria-label="Toggle Menu" class="hover:cursor-pointer h-6 w-6">
+          <Menu class="h-6 w-6" id="menuIconMenu" />
+        </button>
       </div>
     </div>
+
+    <!-- scrollspay -->
+    {
+      ((currentUrl.includes("blog") && currentUrl.indexOf("blog") < currentUrl.length-1) || (currentUrl.includes("privacy-policy")) || (currentUrl.includes("terms-of-use"))) && <Sidebar insideMdx="outside" />
+    }
+
+    <nav
+      class="impronav-items mt-2 hidden w-full lg:mt-0 lg:flex lg:w-auto lg:bg-transparent bg-white"
+    >
+    <ul class="flex flex-col lg:flex-row lg:gap-3">
+      <li class="content-center px-1">
+        <a
+          href={`${BASE_URL}`}
+          class="hover:text-blue-hover py-2 transition lg:px-3 small-text text-first-color"
+          >Home</a
+        >
+      </li>
+      <li class="content-center px-1">
+        <a
+          href={`${BASE_URL}/about-improwised`}
+          aria-label="Learn more about our company on the About Us page"
+          class="hover:text-blue-hover py-2 transition lg:px-3 small-text text-first-color"
+          >About Us</a
+        >
+      </li>
+      <li class="content-center px-1">
+        <span class="hover:text-blue-hover py-2 mb-5 transition lg:px-3">
+          <Dropdown client:load services={services} baseUrl={BASE_URL} />
+        </span>
+      </li>
+      <li class="content-center px-1">
+        <a
+          href={`${BASE_URL}/case-studies`}
+          aria-label="Learn more about our Case Studies"
+          class="hover:text-blue-hover py-2 transition lg:px-3 small-text text-first-color"
+          >Case Studies</a
+        >
+      </li>
+      <li class="content-center px-1">
+        <a
+          href={`${BASE_URL}/careers`}
+          aria-label="Our Career Page"
+          class="hover:text-blue-hover py-2 transition lg:px-3 small-text text-first-color"
+          >Careers</a
+        >
+      </li>
+      <li class="content-center px-1">
+        <a
+          href={`${BASE_URL}/blog`}
+          aria-label="Our Blog Page"
+          class="hover:text-blue-hover py-2 transition lg:px-3 small-text text-first-color"
+          >Blog</a
+        >
+      </li>
+    </ul>
+
+      <div class="mt-3 flex items-center gap-4 lg:hidden">
+        <Button href={`${BASE_URL}/contact`} class="bg-black">
+          Contact Us
+        </Button>
+      </div>
+    </nav>
+    <div>
+      <div class="hidden items-center gap-4 lg:flex">
+        <ToggleTheme client:only />
+        <Button href={`${BASE_URL}/contact`} class="button-bg">
+          Contact Us
+        </Button>
+      </div>
+    </div>
+  </div>
 
   <nav id="mobile-nav"
       class="bg-effect -z-40 pt-3 flex impronav-shadow lg:hidden impronav-toggle absolute top-0 px-4 pb-4 -translate-y-[392px] transition-all duration-500 flex-col w-full bg-white"
@@ -136,39 +134,39 @@ const currentUrl = Astro.url.pathname.split("/")
         </div>
       </div>
       <ul class="flex flex-col lg:gap-3">
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <a
             href={`${BASE_URL}`}
               >Home</a
           >
         </li>
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <a
             href={`${BASE_URL}/about-improwised`}
             aria-label="Learn more about our company on the About Us page"
             >About Us</a
           >
         </li>
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <span>
             <Dropdown client:load services={services} baseUrl={BASE_URL} />
           </span>
         </li>
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <a
             href={`${BASE_URL}/case-studies`}
             aria-label="Learn more about our Case Studies"
             >Case Studies</a
           >
         </li>
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <a
             href={`${BASE_URL}/careers`}
             aria-label="Our Career Page"
             >Careers</a
           >
         </li>
-        <li class="hover:text-primary py-2 transition lg:px-3 text-[#141414]">
+        <li class="hover:text-blue-hover py-2 transition lg:px-3 text-first-color">
           <a
             href={`${BASE_URL}/blog`}
             aria-label="Our Blog Page"
@@ -180,7 +178,7 @@ const currentUrl = Astro.url.pathname.split("/")
         <!-- <Button variant="outline">
           <Moon class="h-6 w-6" />
         </Button> -->
-        <Button href=`${BASE_URL}/contact` class="bg-black">
+        <Button href=`${BASE_URL}/contact` class="button-bg">
           Contact Us
         </Button>
       </div>
@@ -205,13 +203,16 @@ const currentUrl = Astro.url.pathname.split("/")
       box-shadow 0.3s ease-in-out;
   }
   .scrolled {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
+    /* background: rgba(255, 255, 255, 0.3); */
+    /* background: rgba(245,245,245, 0.1); */
+    background: var(--navbar-bg);
+    backdrop-filter: blur(16px);
   }
 
   .bg-effect {
-    background: rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(12px);
+    /* background:  rgba(245,245,245, 0.1); */
+    background: var(--navbar-bg);
+    backdrop-filter: blur(16px);
     box-shadow:
       0 4px 6px -1px rgb(0 0 0 / 0.1),
       0 2px 4px -2px rgb(0 0 0 / 0.1);

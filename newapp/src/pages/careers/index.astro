@@ -19,6 +19,7 @@ import Icon from "$lib/components/common/Icon.svelte";
 import { KeyRound } from "lucide-svelte";
 import ImageCarousel from "$lib/components/common/ImageCarousel.svelte";
 import ReviewCarousel from "$lib/components/common/ReviewCarousel.svelte"
+import Accordion from "$lib/components/common/Accordion.svelte";
 
 const orgBenefits = await getCollection("benefits", ({ data }) => {
   return data;
@@ -41,6 +42,10 @@ const reviews = await getCollection("reviews", ({data: {reviews}}) => {
 const seoContents = await getCollection('seocontent');
 const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "careers")
 
+const contactfaqs = await getCollection('contactfaqs');
+const faqs = contactfaqs.flatMap(contactFaqs => contactFaqs.data.contactfaqs);
+
+
 let gradientX = 45.5;
 let gradientY = -200;
 ---
@@ -59,12 +64,12 @@ let gradientY = -200;
               primaryColorText="IT Innovation Team"
             />
             <p
-              class="text-center lg:text-left small-text font-roboto md:text-para"
+              class="text-center lg:text-left small-text font-roboto md:text-para text-third-color"
             >
               Be part of a dynamic team shaping the future of IT solutions.
             </p>
           </div>
-          <Button aria-label="Contact Us"  href={`${BASE_URL}/contact`} class="bg-black"> Join Our Team </Button>
+          <Button aria-label="Contact Us"  href={`${BASE_URL}/contact`} class="button-bg"> Join Our Team </Button>
         </div>
 
         <!-- <div class="my-auto">
@@ -116,7 +121,7 @@ let gradientY = -200;
               (benefits, index) =>
                 index < 3 && (
                   <Card.Root
-                    class="overflow-hidden border-4 border-[#fff] rounded-[20px] shadow-nav text-center"
+                    class="overflow-hidden border-4 bg-card-bg border-career-card rounded-[20px] shadow-nav text-center"
                     onmousemove="updateGradient(event)"
                     style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
                   >
@@ -128,11 +133,11 @@ let gradientY = -200;
                       <Card.Header class="p-0">
                         <Icon iconName={benefits.iconName} />
                       </Card.Header>
-                      <Card.Content class="p-0 text-left flex flex-col text-[#141414] tracking-tight">
-                        <Card.Title class="pt-5 text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
+                      <Card.Content class="p-0 text-left flex flex-col tracking-tight">
+                        <Card.Title class="pt-5 text-fifth-color text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
                           {benefits.title}
                         </Card.Title>
-                        <p class="pt-5 small-text md:text-para font-inter">
+                        <p class="pt-5 small-text md:text-para font-inter text-fourth-color">
                           {benefits.description}
                         </p>
                       </Card.Content>
@@ -145,7 +150,7 @@ let gradientY = -200;
       </div>
     </section>
 
-    <section class="section3 py-10 md:py-40 bg-color">
+    <section class="section3 py-10 md:py-40">
       <div class="container">
         <div
           class="flex mx-auto max-w-2xl flex-col items-center justify-center"
@@ -165,24 +170,24 @@ let gradientY = -200;
         <div class="md:pt-10 flex flex-col gap-6">
           {
             careers.map(({ data }) => (
-              <div class="bg-[#fff] px-3 py-6 md:p-10 flex flex-col gap-4 rounded-[20px]">
+              <div class="bg-card-bg px-3 py-6 md:p-10 flex flex-col gap-4 rounded-[20px]">
                 <div class="flex flex-col md:items-center md:justify-between gap-6 md:flex-row md:gap-10">
-                  <p class="text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-[#141414]">
+                  <p class="text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-fifth-color">
                     {data.title}
                   </p>
                   <div class="flex gap-4">
                     {data.tags.map((tag) => (
-                      <p class="px-4 py-2 small-text md:font-medium md:font-inter md:text-[18px] md:leading-[26px] text-[#292929] bg-[#f5f5f5] rounded-[6px]">
+                      <p class="px-2 md:px-4 py-2 text-[12px] md:text-small font-medium bg-[#f5f5f5] dark:bg-[#030712] rounded-[6px] text-fifth-color">
                         {tag}
                       </p>
                     ))}
                   </div>
                 </div>
                 <div class="flex flex-col md:flex-row gap-4 justify-between items-start md:items-end">
-                  <p class="md:w-4/5 small-text md:text-para font-inter">
+                  <p class="md:w-4/5 small-text md:text-para font-inter text-fourth-color">
                     {data.overview}
                   </p>
-                  <Button href=`${BASE_URL}/careers/jobs/${data.slug}` class="bg-black"> Apply Now </Button>
+                  <Button href=`${BASE_URL}/careers/jobs/${data.slug}` class="button-bg"> Apply Now </Button>
                 </div>
               </div>
             ))
@@ -211,7 +216,7 @@ let gradientY = -200;
             orgBenefits.map(({ data: { benefits } }) =>
             benefits.slice(3).map((benefits) => (
                 <Card.Root
-                  class="overflow-hidden border-4 border-[#fff] rounded-[20px] shadow-nav text-center"
+                  class="overflow-hidden border-4 bg-card-bg border-career-card rounded-[20px] shadow-nav text-center"
                   onmousemove="updateGradient(event)"
                   style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
                 >
@@ -224,10 +229,10 @@ let gradientY = -200;
                       <Icon iconName={benefits.iconName} />
                     </Card.Header>
                     <Card.Content class="p-0 text-left flex flex-col text-[#141414] tracking-tight">
-                      <Card.Title class="pt-5 text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
+                      <Card.Title class="pt-5 text-fifth-color text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
                         {benefits.title}
                       </Card.Title>
-                      <p class="pt-5 small-text md:text-para font-inter">
+                      <p class="pt-5 small-text md:text-para font-inter text-fourth-color">
                         {benefits.description}
                       </p>
                     </Card.Content>
@@ -240,7 +245,7 @@ let gradientY = -200;
       </div>
     </section>
 
-    <section class="section5 py-10 md:py-40 darker-bg">
+    <section class="section5 py-10 md:py-40">
       <div class="container">
         <div
           class="flex mx-auto max-w-2xl flex-col items-center justify-center"
@@ -267,7 +272,7 @@ let gradientY = -200;
       </div>
     </section>
 
-    <section class="section6 py-10 md:py-40 darker-bg">
+    <section class="section6 py-10 md:py-40">
       <div class="container">
         <div
           class="flex mx-auto max-w-2xl flex-col items-center justify-center"
@@ -291,7 +296,7 @@ let gradientY = -200;
       </div>
     </section>
 
-    <section class="py-10 md:py-40 darker-bg">
+    <section class="py-10 md:py-40">
       <div class="container">
         <div class="flex flex-col md:flex-row gap-10 lg:gap-20">
           <div class="flex items-center md:items-start flex-col">
@@ -316,7 +321,8 @@ let gradientY = -200;
           </div>
 
           <div class="md:w-1/2">
-            <ContactFAQ client:load />
+            <!-- <ContactFAQ client:load /> -->
+            <Accordion client:load {faqs} />
           </div>
         </div>
       </div>
@@ -340,14 +346,19 @@ let gradientY = -200;
 </script>
 
 <style>
-  .bg-career {
-    background-image: url("../../images/careers/dot.svg"),
-      url("../../images/careers/gradient-2.svg");
+  @reference "tailwindcss";
+  /* .bg-career {
+    background-image: url("../images/careers/dot.svg"),
+      url("../images/careers/gradient-2.svg");
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     position: relative;
-  }
+
+    @variant dark {
+      background-image: none;
+    }
+  } */
 
   .bg-color {
     background: rgb(245, 245, 245);
@@ -356,5 +367,9 @@ let gradientY = -200;
       rgba(245, 245, 245, 0.6) 0%,
       rgba(245, 245, 245, 0.1) 100%
     );
+
+    @variant dark {
+      background: none;
+    }
   }
 </style>

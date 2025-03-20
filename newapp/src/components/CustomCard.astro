@@ -28,7 +28,7 @@ const currentUrl = Astro.url.pathname;
     collectionDetails.map((details) => (
       <>
         <Card.Root
-          class="card-custom shadow-nav text-center"
+          class="card-custom shadow-nav text-center overflow-hidden"
           onmousemove="updateGradient(event)"
           style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
         >
@@ -44,7 +44,7 @@ const currentUrl = Astro.url.pathname;
                 src={details.data.image}
               />
             </Card.Header>
-            <Card.Content class="flex flex-col gap-2 md:gap-6 text-[#141414] tracking-tight">
+            <Card.Content class="flex flex-col gap-2 md:gap-6 text-fifth-color tracking-tight">
               <Card.Title class="font-manrope font-bold text-[24px] leading-[28px] md:text-[28px] md:leading-[32px]">
                 {
                   currentUrl.split("/").includes('services') ? 
@@ -54,7 +54,7 @@ const currentUrl = Astro.url.pathname;
                   </a>  
                 }
               </Card.Title>
-              <p class="small-text md:text-para font-inter">
+              <p class="small-text md:text-para font-inter text-fourth-color">
                 {details.data.description}
               </p>
             </Card.Content>
@@ -62,7 +62,7 @@ const currentUrl = Astro.url.pathname;
               <Card.Footer class="block">
                 <Button
                   href={BASE_URL + "/services/" + details.data.slug}
-                  class="bg-black md:mt-6 md:mb-2 md:text-[16px] font-manrope"
+                  class="button-bg md:mt-6 md:mb-2 md:text-[16px] font-manrope"
                   aria-label="Learn more about our services on the service page"
                 >
                   {" "}

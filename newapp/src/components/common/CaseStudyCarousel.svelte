@@ -18,7 +18,7 @@
       <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
         <div class="flex justify-center p-1 h-full">
           <Card.Root
-            class="relative flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg h-full"
+            class="relative bg-card-bg border-card-border flex w-full max-w-md shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between hover:shadow-lg h-full"
           >
             <Card.Header class="mb-4">
               <span
@@ -31,13 +31,13 @@
                 href={`${baseUrl}/case-studies/${casestudy.data.attachments}`}
                 aria-label="Learn more about ${casestudy.data.title}"
                 ><h2
-                  class="mb-2 font-bold font-manrope text-[28px] leading-[34px] tracking-[0.02em] text-[#141414]"
+                  class="mb-2 font-bold font-manrope text-[28px] leading-[34px] tracking-[0.02em] text-first-color"
                 >
                   {casestudy.data.title}
                 </h2></a
               >
 
-              <blockquote class="text-para">
+              <blockquote class="text-para text-fourth-color">
                 {casestudy.data.description}
               </blockquote>
             </Card.Header>
