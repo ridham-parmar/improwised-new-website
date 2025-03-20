@@ -22,21 +22,22 @@ plugins={[
 
       <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
         <div class="flex items-center gap-2">
-          <a href={baseUrl + "/blog/" + featuredBlog.data.slug}> <img
-            alt="feature"
-            class="bg-white p-1 shadow-nav"
-            width={90}
-            height={70}
-            src={featuredBlog.data.image.src}
-          >
+          <a href={baseUrl + "/blog/" + featuredBlog.data.slug} class="bg-white rounded-md self-stretch flex items-center min-w-[70px]"> 
+            <img
+              alt="feature"
+              class="p-1 shadow-nav"
+              width={70}
+              height={70}
+              src={featuredBlog.data.image.src}
+            >
           </a>
           <p
-            class="text-left  text-[#292929] text-[14px] leading-[18px] tracking-tight"
+            class="text-left text-fourth-color text-[12px] md:text-[14px] md:leading-[18px] tracking-tight"
           >
             {featuredBlog.data.tags[0]}
             <br />
             <span
-              class="text-left mt-2 font-manrope text-[#141414] text-[16px] leading-[22px] tracking-tight"
+              class="text-left mt-2 font-manrope text-[14px] text-fifth-color md:text-[16px] md:leading-[22px] tracking-tight"
             >
             <a href={baseUrl + "/blog/" + featuredBlog.data.slug}>
               {featuredBlog.data.title.length > 50

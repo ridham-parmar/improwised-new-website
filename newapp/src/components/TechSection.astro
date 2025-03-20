@@ -31,7 +31,7 @@ const orbits = [
 ];
 ---
 
-<div class="section bg-white bg-tech-image relative py-10 md:pt-40 pb-24">
+<div class="section bg-tech-image relative py-10 md:pt-40 pb-24">
   <div class="container">
     <!-- Section Title -->
     <div
@@ -60,10 +60,10 @@ const orbits = [
       orbits.map(({ radius, count, images }, index) => {
         return (
           <div
-            class={`absolute bg-white rounded-t-full
+            class={`absolute rounded-t-full
             ${index == 7 ? "-z-50" : index == 6 ? "-z-40" : index == 5 ? "-z-30" : index == 4 ? "-z-20" : ""}
             ${index < 3 ? `z-${30 - index * 10}` : `-z-${index * 10 - 20}`}
-            ${index % 2 !== 0 && index !== 1 && index !== 7 ? "border-gradient inner-border-color shadow-[0px_-14px_23px_rgba(26,182,223,0.10)]" : index === 7 ? "border-gradient outer-border-color shadow-[0px_-14px_23px_rgba(167,224,117,0.10)]" : ""}
+            ${index % 2 !== 0 && index !== 1 && index !== 7 ? "border-gradient inner-border-color shadow-[0px_-14px_23px_rgba(26,182,223,0.10)]" : index === 7 ? "border-gradient outer-border-color shadow-[0px_-34px_23px_rgba(167,224,117,0.10)]" : ""}
           `}
             data-radius-sm={radius}
             data-count={count}
@@ -79,13 +79,13 @@ const orbits = [
                       top: `calc(50% + ${y}px)`,
                       transform: "translate(-50%, -50%)",
                     }}
-                    class={`group bg-white outline-hidden absolute flex justify-center items-center cursor-pointer
+                    class={`group outline-hidden absolute flex justify-center items-center cursor-pointer
               `}
                   >
                     <div class="relative max-sm:h-6">
                       {index == 0 && (iconIndex == 0) && (
                         <p id="open-source"
-                          class="w-max z-50 absolute md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max z-50 absolute md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-first-color pointer-events-none"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
@@ -97,7 +97,7 @@ const orbits = [
                       )}
                       {index == 4 && (iconIndex == 0 || iconIndex == count-1) && (
                         <p
-                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-first-color pointer-events-none"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
@@ -109,7 +109,7 @@ const orbits = [
                       )}
                        {index == 6 && (iconIndex == 0 || iconIndex == count-1) && (
                         <p
-                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-[#424242]"
+                          class="w-max absolute z-50 md:tracking-tighter max-md:leading-[0.45rem] font-medium font-inter text-center text-[0.4rem] sm:text-[0.5rem] md:text-[1rem] text-first-color pointer-events-none"
                           style={{
                             left: `calc(50% + ${x}px)`,
                             top: `calc(190% + ${y}px)`,
@@ -123,7 +123,7 @@ const orbits = [
                       <div>
                         <a
                           href={images?.[iconIndex]?.link}
-                          class={`z-30 bg-white flex-col items-center justify-center flex
+                          class={`z-30 flex-col items-center justify-center flex
                         w-4 xs:w-[1.9rem] sm:w-[2.7rem] md:w-[3.7rem]
                         transition group-hover:scale-105
               `}
@@ -135,7 +135,7 @@ const orbits = [
                             alt={images?.[iconIndex].alt ?? "icon"}
                             class={`transition group-hover:scale-110`}
                           />
-                          <p class="text-slate-700 max-sm:pt-0.5 max-md:leading-[0.45rem] md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
+                          <p class="text-first-color font-inter max-sm:pt-0.5 max-md:leading-[0.45rem] md:tracking-tighter font-semibold text-center text-[0.4rem] sm:text-[0.5rem] md:text-[0.7rem]">
                             {images?.[iconIndex].name}
                           </p>
                         </a>

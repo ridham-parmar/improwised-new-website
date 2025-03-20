@@ -7,15 +7,15 @@
 </script>
 
 <DropdownMenu.Root preventScroll={false}>
-  <DropdownMenu.Trigger class="flex items-center space-x-1 hover:cursor-pointer">
-    <span>Service</span>
+  <DropdownMenu.Trigger class="flex items-center space-x-1  hover:cursor-pointer">
+    <span class="small-text text-first-color hover:text-blue-hover">Service</span>
     <ChevronRight class="w-4 h-4" />
   </DropdownMenu.Trigger>
-  <DropdownMenu.Content align="start" class="rounded-[6px] backdrop-blur-[12px] bg-[#ffffff4d] border-0 p-[15px]">
+  <DropdownMenu.Content align="start" class="rounded-[6px] backdrop-blur-[16px] bg-navbar-bg border-0 p-[15px]">
     <DropdownMenu.Group>
       {#if services.length > 0}
         {#each services as service}
-          <DropdownMenu.Item class="p-3 text-[#141414] hover:text-primary">
+          <DropdownMenu.Item class="p-3 small-text text-first-color hover:text-blue-hover">
             <a href={`${baseUrl}/services/${service?.data.slug}`}  aria-label="Explore ${service?.data?.title}">
               {service?.data?.title || 'Service Details'}
             </a>

@@ -16,13 +16,13 @@
     {#each casestudies as casestudy, i (i)}
       <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
         <div class="flex justify-center h-full">
-          <Card.Root>
+          <Card.Root class="bg-card-bg border-card-border">
             <div class="">
-              <Card.Header class="p-0 ">
+              <Card.Header class="p-0 bg-white rounded-t-[12px] overflow-hidden">
                 <img
                   alt="feature"
 
-                    class="w-full  rounded-t-[12px] sm:h-[250px] md:h-[300px]"
+                    class="w-full sm:h-[250px] md:h-[300px]"
                   src={casestudy.data.image.src}
                 />
               </Card.Header>
@@ -33,7 +33,7 @@
                   {casestudy.data.category}</span
                 >
                 <Card.Title
-                  class="mb-4 mt-2 font-bold font-manrope text-[20px] leading-[26px] tracking-[0.02em] text-[#141414]"
+                  class="mb-4 mt-2 font-bold font-manrope text-[20px] leading-[26px] tracking-[0.02em] text-fifth-color"
                 >
                 <a
                 target="_blank"
@@ -42,7 +42,7 @@
                 >  {casestudy.data.title}</a>
                 </Card.Title>
                 <p
-                  class="text-[14px] leading-[22px]  md:text-[16px] md:leading-[26px] tracking-[0.02em] text-[#292929]"
+                  class="text-[14px] leading-[22px]  md:text-[16px] md:leading-[26px] tracking-[0.02em] text-fourth-color"
                 >
                   {casestudy.data.description}
                 </p>
@@ -65,11 +65,9 @@
     {/each}
   </Carousel.Content>
   {#if casestudies.length > 3}
-    <div
-      class="md:absolute md:top-[-95px] right-0 flex max-md:mt-2 gap-3 justify-center"
-    >
-      <Carousel.Previous class="bg-black text-white" />
-      <Carousel.Next class="bg-black text-white" />
+    <div class="md:absolute md:top-[-84px] right-0 flex gap-3 justify-center max-md:mt-6">
+      <Carousel.Previous/>
+      <Carousel.Next />
     </div>
   {/if}
 </Carousel.Root>

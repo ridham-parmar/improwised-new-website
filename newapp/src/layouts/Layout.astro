@@ -26,3 +26,13 @@ const { title, description } = Astro.props;
 		<script src="../scripts/google-tag.js"></script>
 	</body>
 </html>
+
+<script is:inline>
+	const theme = localStorage.getItem("theme")
+	const htmlElement = document.getElementsByTagName('html') ;
+	if(theme == "dark") {
+        htmlElement && htmlElement[0].classList.add('dark', 'bg-black')
+    } else {
+        htmlElement && htmlElement[0].classList.remove('dark', 'bg-black')
+    }	
+</script>

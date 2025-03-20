@@ -1,5 +1,6 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
+import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
 import { getCollection } from "astro:content";
@@ -13,18 +14,17 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 <Layout title={title} description={description}>
     <div class="main-content">
         <section id="section1"
-            class="text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
-            style={`background-image: url(${backImage.src}), url(${bg2Image.src})`}
+            class="section1 text-center py-16 px-6 bg-blogs-outer relative pt-[30%] md:pb-20 lg:pt-[12%]"
         >
             <!-- Main Heading -->
             <div class="container">
-                <h1
-                    class="font-manrope mt-4 mb-6 max-md:text-center text-[56px] max-md:text-[30px] leading-[62px] max-md:leading-[42px] font-bold lg:tracking-tight"
-                >
-                    Terms Of <span class="text-primary">Service</span>
-                </h1>
+                <SectionTitle
+                    class="text-center main-heading-small md:main-heading"
+                    text="Terms Of"
+                    primaryColorText="Service"
+                />
                 <!-- Subtext -->
-                <p class="mt-4 text-para max-w-2xl mx-auto">
+                <p class="mt-4 text-para max-w-2xl mx-auto text-third-color">
                     Welcome to improwised.com. These Terms and Conditions ("Terms") govern your use of our website and services.
                 </p>
             </div>

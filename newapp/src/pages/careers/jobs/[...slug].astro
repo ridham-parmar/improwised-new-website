@@ -48,7 +48,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
           <div class="flex flex-col gap-6 items-center lg:items-start">
             <div class="flex flex-col items-center lg:items-start">
               <SectionTitle
-                class="text-center lg:text-left main-heading-small md:main-heading"
+                class="text-center lg:text-left main-heading-small md:main-heading text-main-heading-color"
                 text={career.data.title}
               />
               <div class="flex items-center gap-3">
@@ -56,8 +56,8 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                   {
                     (career.data.tags).map((tag) => (
                       <div class="flex items-center gap-3">
-                        <p class="small-text md:text-para">{tag}</p>
-                        <div class="rounded-full h-[6px] w-[6px] bg-[#292929]"></div>
+                        <p class="small-text md:text-para text-third-color">{tag}</p>
+                        <div class="rounded-full h-[6px] w-[6px] bg-[#292929] dark:bg-white"></div>
                       </div>
                     ))
                   }
@@ -70,7 +70,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 text-[#292929]"
+                class="flex items-center gap-2 text-[#292929] dark:text-white"
                 href="https://www.linkedin.com/company/improwised-technologies/"
               >
                 <span class="sr-only">Go to Improwised's LinkedIn</span>
@@ -79,7 +79,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 text-[#292929]"
+                class="flex items-center gap-2 text-[#292929] dark:text-white"
                 href="https://www.facebook.com/improwised"
               >
                 <span class="sr-only">Go to Improwised's Facebook</span>
@@ -88,7 +88,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                class="flex items-center gap-2 text-[#292929]"
+                class="flex items-center gap-2 text-[#292929] dark:text-white"
                 href="https://x.com/improwised"
               >
                 <span class="sr-only"
@@ -153,21 +153,21 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
         <div class="container flex flex-col md:flex-row gap-6">
           <div class="flex flex-col gap-10 md:w-[70%]">
             <!-- overview -->
-            <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
-              <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Overview</p>
-              <p class="small-text md:text-para pt-4 md:pt-6 lg:w-4/5">{career.data.overview}</p>
+            <div class="p-6 md:p-8 border-1 bg-card-bg border-card-border rounded-[16px]">
+              <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-fifth-color">Overview</p>
+              <p class="small-text text-fourth-color md:text-para pt-4 md:pt-6 lg:w-4/5">{career.data.overview}</p>
             </div>
 
             <!-- objectives -->
             <div>
-              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
-                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Objective</p>
+              <div class="p-6 md:p-8 border-1 bg-card-bg border-card-border rounded-[16px]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-fifth-color">Objective</p>
 
                 <div class="flex flex-col gap-4 pt-4 md:pt-6">
                   {career.data.objectives.map((objective) => (
                     <div class="flex gap-6 items-start justify-start">
-                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
-                      <p class="small-text md:text-para">{objective}</p>
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] dark:bg-white mt-2.5"></div>
+                      <p class="small-text md:text-para text-fourth-color">{objective}</p>
                     </div>
                   ))}
                 </div>
@@ -176,14 +176,14 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
             <!-- responsibility -->
             <div>
-              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
-                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Responsibility</p>
+              <div class="p-6 md:p-8 border-1 bg-card-bg border-card-border rounded-[16px]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-fifth-color">Responsibility</p>
 
                 <div class="flex flex-col gap-4 pt-4 md:pt-6">
                   {career.data.responsibilities.map((responsibility) => (
                     <div class="flex gap-6 items-start justify-start">
-                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
-                      <p class="small-text md:text-para">{responsibility}</p>
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] dark:bg-white mt-2.5"></div>
+                      <p class="small-text md:text-para text-fourth-color">{responsibility}</p>
                     </div>
                   ))}
                 </div>
@@ -192,14 +192,14 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
             <!-- quallification -->
             <div>
-              <div class="p-6 md:p-8 border-1 border-[#E5E5E5] rounded-[16px] bg-[#fff]">
-                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Skill & Qualification</p>
+              <div class="p-6 md:p-8 border-1 bg-card-bg border-card-border rounded-[16px]">
+                <p class="font-semibold text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope text-fifth-color">Skill & Qualification</p>
 
                 <div class="flex flex-col gap-4 pt-4 md:pt-6">
                   {career.data.qualifications.map((quallification) => (
                     <div class="flex gap-6 items-start justify-start">
-                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] mt-2.5"></div>
-                      <p class="small-text md:text-para">{quallification}</p>
+                      <div class="rounded-full h-[6px] p-[3px] bg-[#292929] dark:bg-white mt-2.5"></div>
+                      <p class="small-text md:text-para text-fourth-color">{quallification}</p>
                     </div>
                   ))}
                 </div>
@@ -208,7 +208,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
           </div>
 
           <!-- apply for job -->
-          <div class="p-8 border-1 border-[#E5E5E5] rounded-[16px] h-max bg-[#fff] flex flex-col gap-4 md:gap-5">
+          <div class="p-8 border-1 rounded-[16px] bg-card-bg border-card-border h-max flex flex-col gap-4 md:gap-5">
             <div class="flex flex-col gap-4">
               <div class="flex gap-4">
                 <MapPinned class="text-primary" trokeWidth={0.5} width="26" height="26" />
@@ -218,7 +218,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
             </div>
             <div class="flex flex-col gap-6">
               <a class="flex gap-5 hover:cursor-pointer" href={"mailto:careers@improwised.com?subject=Dropped Resume to get job"}>
-                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-3">
                       <Mail class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
@@ -227,7 +227,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                   </div>
               </a>
               <div class="flex gap-5">
-                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-3">
                       <AlarmClock class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
@@ -236,7 +236,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                   </div>
               </div>
               <div class="flex gap-5">
-                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-3">
                       <User class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
@@ -245,7 +245,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                   </div>
               </div>
               <div class="flex items-start gap-5">
-                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] rounded-full flex items-center justify-center p-3">
+                  <div class="w-12 h-12 md:w-14 md:h-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-3">
                       <Calendar class="text-primary" trokeWidth={0.5} width="24" height="24" />
                   </div>
                   <div>
@@ -256,7 +256,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
             </div>
             <div class="flex flex-col justify-between gap-10 items-stretch">
               <Image src={line} alt="line" class="w-full d-block" />
-              <Button class="bg-black" href={career.data.applyLink}>
+              <Button class="button-bg" href={career.data.applyLink}>
                 Apply For Job
               </Button>
             </div>
@@ -270,14 +270,14 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 <style>
   @reference "tailwindcss";
 
-  .bg-career {
-    background-image: url("../../../images/careers/dot.svg"),
-      url("../../../images/careers/gradient-2.svg");
+  /* .bg-career {
+    background-image: url("../../images/careers/dot.svg"),
+      url("../../images/careers/gradient-2.svg");
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;
     position: relative;
-  }
+  } */
 
   .bg-color {
     background: rgb(245, 245, 245);

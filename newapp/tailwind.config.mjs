@@ -26,12 +26,26 @@ const config = {
 				colorprimarytext: {
 					DEFAULT: "hsl(var(--color-primary-text) / <alpha-value>)",
 				},
+				blueHover: "var(--hover-blue)",
+				firstColor: "var(--text-first-color)",
+				secondColor: "var(--text-second-color)",
+				thirdColor: "var(--text-third-color)",
+				fourthColor: "var(--text-fourth-color)",
+				fifthColor: "var(--text-fifth-color)",
+				mainHeadingColor: "var(--main-heading-color)",
+				subHeadingColor: "var(--sub-heading-color)",
+				carouselBtn: "var(--next-previous-btn)",
+				carouselBtnText: "var(--carousel-btn-text)",
+				cardBg: "var(--card-bg)",
+				cardBorder: "var(--card-border)",
+				careerCard: "var(--career-card)",
+				navbarBg: "var(--navbar-bg)",
 				primary: {
 					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
 					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
 				},
 				primary2: {
-					DEFAULT: "hsl(var(--primary2) / <alpha-value>)",
+					DEFAULT: "var(--primary2)",
 					foreground: "hsl(var(--primary2-foreground) / <alpha-value>)"
 				},
 				secondary: {

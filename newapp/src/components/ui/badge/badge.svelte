@@ -9,7 +9,7 @@
 
 	const computedClass = cn
         ? cn(
-              "border border-[#494848] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase",
+              "border border-[#494848] dark:border-[#D6D6D6] dark:text-[#D6D6D6] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase",
               className,
           )
         : `border border-[#494848] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase  ${className}`.trim();

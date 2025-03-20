@@ -8,7 +8,7 @@ import { Badge } from "$lib/components/ui/badge";
 import CTASection from "$lib/components/CTASection.astro";
 import * as Card from "$lib/components/ui/card";
 
-import { CircleUserRound, Linkedin, Milestone, CloudSun } from "lucide-svelte/icons";
+import { CircleUserRound, Linkedin, Milestone, CloudSun, Unplug, Cloud, DatabaseZap, CloudRain, FileText, FolderCode } from "lucide-svelte/icons";
 import Accordion from "$lib/components/common/Accordion.svelte";
 
 import eventImage from "$lib/images/events/event.png";
@@ -17,12 +17,6 @@ import aboutus2 from "$lib/images/aboutusPage/Photo1.jpg";
 import aboutus3 from "$lib/images/aboutusPage/Photo2.jpg";
 import person1 from "$lib/images/aboutusPage/person1.png";
 import person2 from "$lib/images/aboutusPage/person2.png";
-import bgicon1 from "$lib/images/aboutusPage/bgicon1.svg";
-import bgicon2 from "$lib/images/aboutusPage/bgicon2.svg";
-import bgicon3 from "$lib/images/aboutusPage/bgicon3.svg";
-import bgicon4 from "$lib/images/aboutusPage/bgicon4.svg";
-import bgicon5 from "$lib/images/aboutusPage/bgicon5.svg";
-import bgicon6 from "$lib/images/aboutusPage/bgicon6.svg";
 import EventSlider from "$lib/components/EventSlider.astro";
 
 // Define the class dynamically
@@ -65,90 +59,60 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		>
 			<!-- Main Heading -->
 			<h1
-				class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
+				class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
 			>
 
 			Innovating with Passion <br/><span
-					class="text-primary">Engineering with Excellence</span
+					class="text-sub-heading-color">Engineering with Excellence</span
 				>
 			</h1>
 
 			<!-- Subtext -->
-			<p class="mt-4 text-para max-w-2xl mx-auto">
+			<p class="mt-4 text-para max-w-2xl mx-auto text-third-color">
 				At Improwised Technologies, we build cutting-edge solutions driven by a team that thrives on innovation. Our culture fosters collaboration, creativity, and a commitment to delivering excellence.
 
 			</p>
 			<div
 				class="absolute top-[-25.5%] right-[25.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon1}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<Unplug size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 			<div
 				class="absolute top-[5.5%] right-[4.5%] lg:right-[8.5%] xl:right-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon2}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<Cloud size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 			<div
 				class="absolute top-[40.5%] right-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon3}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<CloudRain size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 			<div
 				class="absolute top-[-25.5%] left-[25.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon4}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<FolderCode size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 			<div
 				class="absolute top-[5.5%] left-[4.5%] lg:left-[8.5%] xl:left-[15.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon5}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<FileText size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 			<div
 				class="absolute top-[40.5%] left-[30.5%] h-full flex items-center justify-center move-animation max-md:hidden"
 			>
-				<Image
-					src={bgicon6}
-					alt="backgroundIcon"
-					loading="lazy"
-					decoding="async"
-					class=""
-					height={52}
-				/>
+				<div class="p-2 bg-white dark:bg-[#030712] shadow-md rounded-md">
+					<DatabaseZap size={20} strokeWidth={1.5} color="#009DC9"/>
+				</div>
 			</div>
 		</section>
 		<section class="relative overflow-x-hidden py-10 md:py-40">
@@ -207,7 +171,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 									}
 								</div>
 								<Card.Title
-									class="font-bold text-[#141414] font-manrope text-[16px] leading-[22px] md:text-[24px] md:leading-[30px] md:tracking-[0.02em]"
+									class="font-bold text-first-color font-manrope text-[16px] leading-[22px] md:text-[24px] md:leading-[30px] md:tracking-[0.02em]"
 								>
 									Rakshit and Shailesh<br />founding the
 									company
@@ -243,13 +207,13 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 									class="order-1 flex flex-col justify-center"
 								>
 									<h1
-										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-first-color aos-init aos-animate"
 									>
 										From humble beginnings to industry leaders
 									</h1>
 
 									<p
-										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
+										class="md:my-5 max-w-2xl mx-auto small-text md:text-para text-third-color"
 									>
 										Rakshit and Shailesh founded Improwised Technologies with a vision to build innovative, scalable, and future-ready solutions.
 										<br />
@@ -296,13 +260,13 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 							<div class="grid md:grid-cols-2 md:gap-48 gap-8">
 								<div class="flex flex-col justify-center">
 									<h1
-										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-first-color aos-init aos-animate"
 									>
 										Delivering excellence, driving innovation
 
 									</h1>
 									<p
-										class="md:my-5 max-w-2xl mx-auto small-text md:text-para"
+										class="md:my-5 max-w-2xl mx-auto small-text md:text-para text-third-color"
 									>
 									Over the years, we have empowered businesses with <strong>scalable, secure, and high-performance solutions</strong>, helping them stay ahead in a rapidly evolving digital landscape.
 									</p>
@@ -324,13 +288,13 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 									class="md:order-1 flex flex-col justify-center"
 								>
 									<h1
-										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-first-color aos-init aos-animate"
 									>
 									Milestones that matter
 
 									</h1>
 									<p
-										class="md:my-5 max-w-2xl mx-auto text-para"
+										class="md:my-5 max-w-2xl mx-auto text-para text-third-color"
 									>
 									From launching Platform Engineering services to optimizing cloud infrastructure for startups and enterprises, every milestone has been a step toward making technology more scalable, efficient, and developer-friendly.
 									</p>
@@ -350,13 +314,13 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 							<div class="grid md:grid-cols-2 items-center md:gap-48 gap-10">
 								<div class="flex flex-col justify-center">
 									<h1
-										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-[#141414] aos-init aos-animate"
+										class="mb-4 md:mb-6 font-manrope text-[22px] leading-[30px] md:text-[46px] -tracking-2 md:leading-[52px] font-bold text-first-color aos-init aos-animate"
 									>
 									The road ahead: Innovation without limits
 
 									</h1>
 									<p
-										class="md:my-5 max-w-2xl mx-auto text-para"
+										class="md:my-5 max-w-2xl mx-auto text-para text-third-color"
 									>
 									With a strong foundation and a future-focused mindset, we continue to push boundaries, helping businesses scale, innovate, and thrive in a cloud-driven world.
 									</p>
@@ -405,7 +369,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 			</div>
 		</section>
 
-		<section class="section bg-white overflow-hidden relative pt-20 pb-20">
+		<section class="section overflow-hidden relative pt-20 pb-20">
 			<svg
 				viewBox="0 0 1440 181"
 				fill="none"
@@ -482,7 +446,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 				</div>
 			</div>
 		</section>
-		<section class="py-10 md:py-40 section darker-bg">
+		<section class="py-10 md:py-40 section">
 			<div class="md:px-20 px-5">
 				<div
 					class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
@@ -501,7 +465,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 							teamsData.map(({ data: { teams } }) =>
 								teams.map((team, index) => (
 									<>
-										<Card.Root class="overflow-hidden shadow-nav transition-all duration-500 ">
+										<Card.Root class="grid bg-card-bg border-2 border-card-border overflow-hidden shadow-nav">
 
 												<div class="">
 													<Card.Header class="p-0">
@@ -516,7 +480,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 
 
-											<Card.Content class="md:p-4">
+											<Card.Content class="md:p-4 bg-card-bg">
 												<div class={`flex items-center ${team.designation ? 'justify-between' : 'justify-center'}`}>
 													<Card.Title class="md:text-[16px] text-[14px] ">
 														{team.name}
@@ -558,20 +522,24 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 </Layout>
 <style>
 	@reference "tailwindcss";
-	.bg-image {
+	/* .bg-image {
 		background-image: url("../images/aboutusPage/bg-aboutus.svg"),
 			url("../images/aboutusPage/pattern-aboutus.svg");
 		background-size: cover, cover;
 		background-position: center, center;
 		background-repeat: no-repeat, no-repeat;
-	}
-	.bg-image2 {
+
+		@variant dark {
+      		background-image:url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+    	}
+	} */
+	/* .bg-image2 {
 		background-image: url("../images/aboutusPage/gardient.svg"),
 			url("../images/aboutusPage/dots.svg");
 		background-size: cover, cover;
 		background-position: center, center;
 		background-repeat: no-repeat, no-repeat;
-	}
+	} */
 	.profile-img {
 		@apply md:w-16 md:h-16 w-8 h-8 rounded-full -ml-3 transition-all duration-300 ring-2 ring-white;
 	}
@@ -616,7 +584,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		);
 		progressRect.setAttribute("width", "8"); // Match original width
 		progressRect.setAttribute("rx", "4");
-		progressRect.setAttribute("fill", "#6eb24a"); // Green color
+		progressRect.setAttribute("fill", "#22C55E"); // Green color
 		progressRect.setAttribute("height", "0"); // Start with no fill
 		progressRect.setAttribute("x", "0"); // Align with line
 		progressRect.setAttribute("y", "0"); // Start at the top
@@ -631,7 +599,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		progressCircle.setAttribute("fill", "#fff"); // Match the progress line color
 		progressCircle.setAttribute("cx", "4"); // Center horizontally with the line
 		progressCircle.setAttribute("cy", "0"); // Start at the top
-		progressCircle.setAttribute("stroke", "#6eb24a"); // White border
+		progressCircle.setAttribute("stroke", "#22C55E"); // White border
 		progressCircle.setAttribute("stroke-width", "4"); // Border thickness
 
 		timelineLine.appendChild(progressCircle);

@@ -23,16 +23,14 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
     >
       <!-- Main Heading -->
       <h1
-        class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading"
+        class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
       >
-
-
         Explore How We Turn<br />
-        <span class="text-primary">Vision into Reality</span>
+        <span class="text-sub-heading-color">Vision into Reality</span>
       </h1>
 
       <!-- Subtext -->
-      <p class="mt-4 text-para max-w-2xl mx-auto">
+      <p class="mt-4 text-para max-w-2xl mx-auto text-third-color">
         We demonstrate business impact in our case studies through strategic development, faster releases and automation, leading to reduced costs.
       </p>
 
@@ -47,11 +45,11 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
         );
 
         return (
-          <section class="section py-20" key={category}>
+          <section class="section py-10 lg:py-14">
             <div class="container">
               <div class="flex items-center justify-between mb-8">
                 <div>
-                  <SectionTitle text={category} />
+                  <SectionTitle text={category} class="mb-0"/>
                 </div>
               </div>
               <div class="relative overflow-x-clip">

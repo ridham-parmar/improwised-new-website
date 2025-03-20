@@ -24,7 +24,7 @@
 	{variant}
 	{size}
 	class={cn(
-		"h-[52px] w-[52px] rounded-xl border border-[#E5E5E5] hover:bg-[#141414] hover:text-[#fff] hover:border-slate-600",
+		"h-[52px] w-[52px] rounded-xl border border-[#E5E5E5] hover:bg-carousel-btn hover:text-carousel-btn-text hover:border-slate-600",
 		className
 	)}
 	disabled={!$canScrollNext}

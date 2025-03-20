@@ -7,6 +7,7 @@ import { Button } from "$lib/components/ui/button";
 import { BASE_URL } from "$lib/consts";
 import platformEngImage from "$lib/images/services/plarformEng.svg";
 import platformEngImage2 from "$lib/images/services/platformImage-2.svg";
+import platformEngImage3 from "$lib/images/services/PlatformEngineering-3.svg";
 import { CircleUserRound, CloudUpload } from "lucide-svelte";
 import hrLine from "$lib/images/hrline.svg";
 ---
@@ -26,12 +27,12 @@ import hrLine from "$lib/images/hrline.svg";
             primaryColorText="Platform Engineering"
           />
           <p
-            class="mt-2 md:mt-6 max-w-2xl small-text md:text-para font-inter"
+            class="mt-2 md:mt-6 max-w-2xl small-text md:text-para font-inter text-fourth-color"
             data-aos="fade-up"
           >
           Accelerate innovation with Platform Engineering as a Service-automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability.
           </p>
-          <Button href=`${BASE_URL}/services/platform-engineering` aria-label="Learn more about our services on the service page"  class="bg-black mt-4 md:my-12 md:text-[16px] font-manrope">Learn More</Button
+          <Button href=`${BASE_URL}/services/platform-engineering` aria-label="Learn more about our services on the service page"  class="button-bg mt-4 md:my-12 md:text-[16px] font-manrope">Learn More</Button
           >
 
           <div class="hidden md:block">
@@ -40,8 +41,8 @@ import hrLine from "$lib/images/hrline.svg";
               <span  class="bg-primary2 flex items-center pointer-events-none p-4 rounded-lg text-white">
                 <CloudUpload class="h-6 w-6" />
               </span>
-              <p class="small-text md:text-para">
-                Companies cut costs by 30% and boost performance with platform engineering—real results, proven impact.
+              <p class="small-text md:text-para text-third-color">
+                Companies cut costs by 30% and boost performance with <strong>platform engineering</strong>—real results, proven impact.
               </p>
             </div>
           </div>
@@ -51,7 +52,7 @@ import hrLine from "$lib/images/hrline.svg";
           class="max-md:py-6 flex md:justify-end md:min-w-[50%] max-md:max-h-[520px]"
         >
           <Image
-            src={platformEngImage2}
+            src={platformEngImage3}
             alt="Platform Engineering"
             data-aos="fade-left"
             class="rounded-medium"
