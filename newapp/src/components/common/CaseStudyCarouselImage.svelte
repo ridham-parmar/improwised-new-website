@@ -37,7 +37,7 @@
                 >
                 <a
                 target="_blank"
-                href={`${baseUrl}/casestudies/${casestudy.data.attachments}`}
+                href={`${baseUrl}/case-studies/${casestudy.data.attachments}`}
                 aria-label="Learn more about ${casestudy.data.title}"
                 >  {casestudy.data.title}</a>
                 </Card.Title>

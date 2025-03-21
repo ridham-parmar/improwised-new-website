@@ -60,7 +60,7 @@ let gradientY = -200;
               Be part of a dynamic team shaping the future of IT solutions.
             </p>
           </div>
-          <Button aria-label="Contact Us"  href={`${BASE_URL}/contact-us`} class="bg-black"> Join Our Team </Button>
+          <Button aria-label="Contact Us"  href={`${BASE_URL}/contact`} class="bg-black"> Join Our Team </Button>
         </div>
 
         <!-- <div class="my-auto">
@@ -178,7 +178,7 @@ let gradientY = -200;
                   <p class="md:w-4/5 small-text md:text-para font-inter">
                     {data.overview}
                   </p>
-                  <Button href=`${BASE_URL}/jobs/${data.slug}` class="bg-black"> Apply Now </Button>
+                  <Button href=`${BASE_URL}/careers/jobs/${data.slug}` class="bg-black"> Apply Now </Button>
                 </div>
               </div>
             ))
@@ -337,8 +337,8 @@ let gradientY = -200;
 
 <style>
   .bg-career {
-    background-image: url("../images/careers/dot.svg"),
-      url("../images/careers/gradient-2.svg");
+    background-image: url("../../images/careers/dot.svg"),
+      url("../../images/careers/gradient-2.svg");
     background-size: cover, cover;
     background-position: center, center;
     background-repeat: no-repeat, no-repeat;

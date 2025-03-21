@@ -28,7 +28,7 @@
               >
               <a
                 target="_blank"
-                href={`${baseUrl}/casestudies/${casestudy.data.attachments}`}
+                href={`${baseUrl}/case-studies/${casestudy.data.attachments}`}
                 aria-label="Learn more about ${casestudy.data.title}"
                 ><h2
                   class="mb-2 font-bold font-manrope text-[28px] leading-[34px] tracking-[0.02em] text-[#141414]"
