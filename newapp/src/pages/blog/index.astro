@@ -92,7 +92,7 @@ function formatDate(dateString: string | number | Date) {
             <h2
               class="mb-4 font-manrope font-bold text-[24px] leading-[28px] md:text-[28px] text-[#141414]  md:leading-[32px]"
             >
-              <a href={BASE_URL + "/blogs/" + latestBlog.data.slug}>
+              <a href={BASE_URL + "/blog/" + latestBlog.data.slug}>
                 {latestBlog.data.title}
               </a>
             </h2>
@@ -127,7 +127,7 @@ function formatDate(dateString: string | number | Date) {
 
               <!-- Contact Us Button -->
               <Button
-                href={BASE_URL + "/blogs/" + latestBlog.data.slug}
+                href={BASE_URL + "/blog/" + latestBlog.data.slug}
                 class="bg-black"
               >
                 Read More
@@ -170,7 +170,7 @@ function formatDate(dateString: string | number | Date) {
                         {formatDate(blog.data.publishDate)}
                       </p>
                       <Card.Title class="text-[18px] md:text-[20px]  color-[#1414] font-manrope font-bold leading-[24px] tracking-tight">
-                        <a href={BASE_URL + "/blogs/" + blog.data.slug}>
+                        <a href={BASE_URL + "/blog/" + blog.data.slug}>
                           {blog.data.title}
                         </a>
                       </Card.Title>
