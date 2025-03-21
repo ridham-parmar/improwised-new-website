@@ -1,9 +1,9 @@
 <script lang="ts">
   import * as Carousel from "$lib/components/ui/carousel/index.js";
-    import { BASE_URL } from "$lib/consts";
-    import Autoplay from "embla-carousel-autoplay";
+  import Autoplay from "embla-carousel-autoplay";
   export let blogs: any[] = [];
   console.log(blogs.length);
+  export let baseUrl: string = "";
 </script>
 
 <Carousel.Root
@@ -23,7 +23,7 @@ plugins={[
 
       <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
         <div class="flex items-center gap-2">
-          <a href={BASE_URL + "/blog/" + featuredBlog.data.slug}> <img
+          <a href={baseUrl + "/blog/" + featuredBlog.data.slug}> <img
             alt="feature"
             class="bg-white p-1 shadow-nav"
             width={90}
@@ -39,7 +39,7 @@ plugins={[
             <span
               class="text-left mt-2 font-manrope text-[#141414] text-[16px] leading-[22px] tracking-tight"
             >
-            <a href={BASE_URL + "/blog/" + featuredBlog.data.slug}>
+            <a href={baseUrl + "/blog/" + featuredBlog.data.slug}>
               {featuredBlog.data.title.length > 50
                 ? featuredBlog.data.title.slice(0, 50) + "..."
                 : featuredBlog.data.title}
