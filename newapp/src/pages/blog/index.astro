@@ -54,7 +54,7 @@ function formatDate(dateString: string | number | Date) {
         </p>
         <div class="relative overflow-x-clip">
           <div class="flex justify-center">
-            <BlogsCarousel client:load blogs={blogs} />
+            <BlogsCarousel client:load blogs={blogs} baseUrl={BASE_URL}/>
           </div>
         </div>
       </div>
