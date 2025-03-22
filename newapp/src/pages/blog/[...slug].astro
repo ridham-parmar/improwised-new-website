@@ -1,7 +1,7 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
+import { BASE_URL } from "$lib/consts";
 import { Badge } from "$lib/components/ui/badge";
 import { render } from "astro:content";
 import CTASection from "$lib/components/CTASection.astro";
@@ -36,9 +36,13 @@ const sortedBlogs = filteredBlogs.sort(
 
 // Get the latest 3 blogs
 const recommendedBlogs = sortedBlogs.slice(0, 3);
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "blog")
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
     <main class="main-content">
         <section
             class="section1 text-left py-40 px-6 bg-image relative pt-[30%] md:pb-40 lg:pt-[12%]"

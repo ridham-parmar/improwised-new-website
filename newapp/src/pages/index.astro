@@ -1,7 +1,7 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from "$lib/layouts/Layout.astro";
 import HeroSection from "$lib/components/HeroSection.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
 import PlatformEngServiceSection from "$lib/components/PlatformEngServiceSection.astro";
 import ServiceSection from "$lib/components/ServiceSection.astro";
 import AboutusSection from "$lib/components/AboutusSection.astro";
@@ -10,8 +10,13 @@ import TestimonialsSection from "$lib/components/TestimonialsSection.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import TechResultSection from "$lib/components/TechResultSection.astro";
 import TechSection from "$lib/components/TechSection.astro";
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "homepage")
+
 ---
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
 	<main class="main-content">
 		<HeroSection />
 		<PlatformEngServiceSection />

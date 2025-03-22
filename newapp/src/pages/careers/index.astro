@@ -1,6 +1,6 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
+import { BASE_URL } from "$lib/consts";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { CalendarFold } from "lucide-svelte";
@@ -37,11 +37,15 @@ const reviews = await getCollection("reviews", ({data: {reviews}}) => {
   return reviews
 })
 
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "careers")
+
 let gradientX = 45.5;
 let gradientY = -200;
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
   <main class="main-content">
     <section class="section1 bg-career py-10 md:py-40 pt-[30%] lg:pt-52">
       <div

@@ -1,11 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "privacy-policy")
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
     <div class="main-content">
         <section class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
             style={`background-image: url(${backImage.src}), url(${bg2Image.src})`}>
