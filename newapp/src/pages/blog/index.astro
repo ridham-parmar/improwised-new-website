@@ -1,6 +1,6 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
+import { BASE_URL } from "$lib/consts";
 import CTASection from "$lib/components/CTASection.astro";
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
@@ -31,10 +31,12 @@ function formatDate(dateString: string | number | Date) {
     return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
 }
 
-
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "blog")
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
   <main class="main-content">
     <section
       class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"

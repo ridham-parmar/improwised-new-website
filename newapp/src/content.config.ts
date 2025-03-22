@@ -288,4 +288,16 @@ const reviews = defineCollection({
 	}),
 });
 
-export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2, approaches3, approaches4, corefeaturesProductModernization, corefeaturesTechnologyConsulting, aboutusPoints };
+const seocontent = defineCollection({
+	loader: glob({ base: './src/content/seocontent', pattern: '**/*.{md,mdx}' }),
+	// Type-check frontmatter using a schema
+	schema: () => z.array(
+		z.object({
+			slug: z.string(),
+			title: z.string(),
+			description: z.string(),
+		})
+	),
+});
+
+export const collections = { reviews, lifeimages, careers, benefits, approaches, corefeatures, clients, testimonials, casestudies, industries, services, teams,blogs, events,corefeaturesCloudInfrastructureManagement,approaches2, approaches3, approaches4, corefeaturesProductModernization, corefeaturesTechnologyConsulting, aboutusPoints, seocontent };

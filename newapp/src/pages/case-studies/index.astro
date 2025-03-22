@@ -1,6 +1,6 @@
 ---
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, BASE_URL } from "$lib/consts";
+import { BASE_URL } from "$lib/consts";
 import CTASection from "$lib/components/CTASection.astro";
 
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
@@ -9,9 +9,13 @@ import backImage from "$lib/images/casestudies/back.svg";
 const casestudies = await getCollection("casestudies");
 import CaseStudyCarouselImage from "$lib/components/common/CaseStudyCarouselImage.svelte";
 const categories = [...new Set(casestudies.map((cs) => cs.data.category))];
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "case-studies")
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
   <main class="main-content">
     <section
       class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-40 lg:pt-[12%]"

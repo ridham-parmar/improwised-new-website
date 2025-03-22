@@ -1,7 +1,6 @@
 ---
 import { type CollectionEntry, getCollection } from "astro:content";
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/consts";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -15,9 +14,15 @@ type Props = CollectionEntry<"services">;
 
 const service = Astro.props;
 const { Content } = await render(service);
+const d = await render(service)
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == service.data.slug)
+
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
   <main class="main-content z-10">
     <Content />
   </main>

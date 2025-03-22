@@ -1,6 +1,7 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from "$lib/layouts/Layout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION, SITE_KEY } from "$lib/consts";
+import { SITE_KEY } from "$lib/consts";
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
 import { PhoneCall, Mail, AlarmClock, MapPinned } from "lucide-svelte";
 import { Badge } from "$lib/components/ui/badge";
@@ -11,9 +12,13 @@ import Form from "$lib/components/common/Form.svelte"
 import { CONTACT_US_URL } from "$lib/consts"
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
+
+// Meta title and description
+const seoContents = await getCollection('seocontent');
+const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "contact")
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={title} description={description}>
   <main class="main-content">
 
     <section
