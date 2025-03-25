@@ -4,12 +4,16 @@ import "$lib/styles/global.css";
 import BaseHead from "$lib/components/BaseHead.astro";
 import Header from "$lib/components/Header.astro";
 import Footer from "$lib/components/Footer.astro";
+import { LD_JSON_DATA } from "../consts";
 const { title, description } = Astro.props;
 ---
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} />
+		
+		<!-- LD JSON Data -->
+		<script is:inline type="application/ld+json" set:html={JSON.stringify(LD_JSON_DATA)}></script>
 	</head>
 	<body>
 		<Header />
@@ -18,5 +22,7 @@ const { title, description } = Astro.props;
 		</main>
 		<Footer />
 		<script src="../scripts/custom.js"></script>
+		<script src="https://www.googletagmanager.com/gtag/js?id=G-33PP6GNTHT"></script>
+		<script src="../scripts/google-tag.js"></script>
 	</body>
 </html>
