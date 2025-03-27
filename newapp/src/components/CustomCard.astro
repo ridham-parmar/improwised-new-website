@@ -19,6 +19,8 @@ const collectionDetails = (await getCollection(
 
 let gradientX = 45.5;
 let gradientY = -200;
+
+const currentUrl = Astro.url.pathname;
 ---
 
 <div class="md:mt-10 grid gap-10 md:grid-cols-2 lg:grid-cols-3">
@@ -44,9 +46,13 @@ let gradientY = -200;
             </Card.Header>
             <Card.Content class="flex flex-col gap-2 md:gap-6 text-[#141414] tracking-tight">
               <Card.Title class="font-manrope font-bold text-[24px] leading-[28px] md:text-[28px] md:leading-[32px]">
-                <a href={BASE_URL + "/services/" + details.data.slug} aria-label="Learn more about our services on the service page">
-                  {details.data.title}
-                </a>
+                {
+                  currentUrl.split("/").includes('services') ? 
+                  <p>{details.data.title}</p> :
+                  <a href={BASE_URL + "/services/" + details.data.slug} aria-label="Learn more about our services on the service page">
+                    {details.data.title}
+                  </a>  
+                }
               </Card.Title>
               <p class="small-text md:text-para font-inter">
                 {details.data.description}
