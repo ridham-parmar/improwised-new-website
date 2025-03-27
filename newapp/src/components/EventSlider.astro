@@ -18,7 +18,7 @@ const { eventData,marqueeClass} = Astro.props
     <>
 
     <Card.Root
-    class={`eventCard1 relative bg-white flex md:max-w-2xl max-w-xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-between transition-all hover:shadow-lg md:motion-safe:${marqueeClass}`}
+    class={`eventCard1 relative bg-white flex md:max-w-2xl max-w-xl shrink-0 snap-start snap-always scroll-m-5 flex-col justify-end transition-all hover:shadow-lg md:motion-safe:${marqueeClass}`}
       >
     <div
       class="flex md:gap-6 gap-4 md:p-6 p-4 rounded-lg shadow-md"
@@ -48,9 +48,6 @@ const { eventData,marqueeClass} = Astro.props
           >
             {events.title}
           </h2>
-          <p class="md:text-sm text-xs text-gray-600">
-            {events.date.toDateString()}
-          </p>
         </div>
       </div>
     </div>

@@ -36,9 +36,9 @@ const teamsData = await getCollection("teams", ({ data }) => {
 });
 const eventsCollection = await getCollection('events');
 
-const eventData = eventsCollection.flatMap(events => events.data.events).slice(0,4);
+const eventData = eventsCollection.flatMap(events => events.data.events).slice(0,6);
 
-const remainingEvents = eventsCollection.flatMap(events => events.data.events).slice(4);
+const remainingEvents = eventsCollection.flatMap(events => events.data.events).slice(6);
 
 
 const aboutusPointsCollection = await getCollection('aboutusPoints');
