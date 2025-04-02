@@ -2,7 +2,6 @@
   import * as Carousel from "$lib/components/ui/carousel/index.js";
   import Autoplay from "embla-carousel-autoplay";
   export let blogs: any[] = [];
-  console.log(blogs.length);
   export let baseUrl: string = "";
 </script>
 

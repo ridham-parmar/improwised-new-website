@@ -21,6 +21,7 @@ export async function getStaticPaths() {
 type Props = CollectionEntry<"blogs">;
 
 const blog = Astro.props;
+
 const { Content } = await render(blog);
 
 // Recommended blogs
@@ -44,8 +45,8 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 <Layout title={title} description={description}>
     <main class="main-content">
-        <section
-            class="section1 text-left py-40 px-6 bg-image relative pt-[30%] md:pb-40 lg:pt-[12%]"
+        <section id="section1"
+            class="text-left py-40 px-6 bg-image relative pt-[30%] md:pb-40 lg:pt-[12%]"
             style={`background-image: url(${detailsBg.src})`}
         >
             <!-- Main Heading -->

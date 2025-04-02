@@ -3,6 +3,7 @@ import Layout from "$lib/layouts/Layout.astro";
 import backImage from "$lib/images/blogs/back.svg";
 import bg2Image from "$lib/images/blogs/bg2.svg";
 import { getCollection } from "astro:content";
+import Sidebar from "$lib/components/Sidebar.astro";
 
 // Meta title and description
 const seoContents = await getCollection('seocontent');
@@ -11,8 +12,8 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 <Layout title={title} description={description}>
     <div class="main-content">
-        <section
-            class="section1 text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
+        <section id="section1"
+            class="text-center py-16 px-6 bg-image relative pt-[30%] md:pb-20 lg:pt-[12%]"
             style={`background-image: url(${backImage.src}), url(${bg2Image.src})`}
         >
             <!-- Main Heading -->
@@ -29,94 +30,20 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
             </div>
         </section>
         <section class="py-20 md:py-20 section">
-            <div class="container mx-auto flex gap-5 max-md:gap-2">
+            <div class="container grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6">
                 <!-- Sidebar Navigation -->
-                <aside class="w-1/3 h-fit sticky top-48 max-md:top-32">
-                    <ul class="space-y-5 max-md:space-y-3">
-                        <li class="nav-item active">
-                            <a
-                                href="#info"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Introduction</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#usage"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Use of the Website</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#sharing"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Services</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#retention"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Intellectual Property</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#security"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Data Privacy</a
-                            >
-                        </li>
-
-                        <li class="nav-item">
-                            <a
-                                href="#user-rights-and-data-protection"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Disclaimers and Limitation of Liability</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#other-important-information"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Indemnification</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#governing-law-and-dispute-resolution"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Governing Law and Dispute Resolution</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#changes-to-these-terms"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Changes to These Terms</a
-                            >
-                        </li>
-                        <li class="nav-item">
-                            <a
-                                href="#contact-us"
-                                class="scroll-link font-manrope color-[#424242] text-[22px] max-md:text-[16px] font-bold leading-[28px] tracking-tight"
-                                >Contact Us</a
-                            >
-                        </li>
-                    </ul>
-                </aside>
-
+                <Sidebar insideMdx="inside" />
+                
                 <main
                     id="main"
-                    class="w-3/4 border-l-4 pr-4 pl-20 max-md:pl-10 border-[#D6D6D6] overflow-y-auto scroll-smooth"
+                    class="border-[#D6D6D6]"
                 >
                     <section
-                        id="info"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Introduction"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Introduction
                         </h2>
@@ -130,16 +57,16 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                     </section>
 
                     <section
-                        id="usage"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Use of the Website"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Use of the Website
                         </h2>
 
-                        <ul class="text-gray-600 mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>Eligibility:</strong> By using our website, you represent and warrant that you are at least 18 years old and have the legal capacity to enter into these Terms.</li>
                             <li><strong>Access:</strong> We grant you a limited, non-exclusive, non-transferable, and revocable license to access and use our website for informational purposes only.</li>
                             <li><strong>Prohibited Activities:</strong> You agree not to:
@@ -154,16 +81,16 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                     </section>
 
                     <section
-                        id="sharing"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Services"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Services
                         </h2>
 
-                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>Service Description:</strong> We provide service solutions, which are described in detail on our website.</li>
                             <li><strong>No Sales:</strong> We do not sell products directly from our website. All service agreements and transactions are conducted offline or through direct communication.</li>
                             <li><strong>Service Terms:</strong> Specific terms for each service will be outlined in separate agreements or contracts provided at the time of engagement.</li>
@@ -173,15 +100,15 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                     </section>
 
                     <section
-                        id="retention"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Intellectual Property"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Intellectual Property
                         </h2>
-                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>Ownership:</strong> All content on the website, including text, graphics, logos, and images, is our property or the property of our licensors and is protected by intellectual property laws.</li>
                             <li><strong>Limited License:</strong> You may view, download, and print content from the website for your personal, non-commercial use only. Any other use requires our prior written consent.</li>
                           </ul>
@@ -189,36 +116,37 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                     </section>
 
                     <section
-                        id="security"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Data Privacy"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Data Privacy
                         </h2>
-                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>Collection and Use:</strong> We collect and use personal information in accordance with our Privacy Policy. By using our website, you consent to such collection and use.</li>
                             <li><strong>Third-Party Services:</strong> We may use third-party services to enhance our website. These services may have their own terms and privacy policies.</li>
                           </ul>
                     </section>
                     <section
-                        id="user-rights-and-data-protection"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Disclaimers and Limitation of Liability"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Disclaimers and Limitation of Liability
                         </h2>
-                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>No Warranties:</strong> Our website and services are provided "as is" without any warranties, express or implied. We do not warrant that the website will be uninterrupted, error-free, or secure.</li>
                             <li><strong>Limitation of Liability:</strong> To the maximum extent permitted by law, we are not liable for any indirect, incidental, special, consequential, or punitive damages arising out of your use of the website or services.</li>
                           </ul>
                     </section>
-                    <section id="other-important-information" class="mb-8 pb-8">
+
+                    <section id="other-important-information" class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28">
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >Indemnification
                         </h2>
                         <p
@@ -228,23 +156,23 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                         </p>
                     </section>
                     <section
-                        id="governing-law-and-dispute-resolution"
-                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                        id="Governing Law and Dispute Resolution"
+                        class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                     >
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >
                         Governing Law and Dispute Resolution
                         </h2>
-                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                        <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
                             <li><strong>Governing Law:</strong> These Terms are governed by and construed in accordance with the laws of India.</li>
                             <li><strong>Dispute Resolution:</strong> Any disputes arising out of or in connection with these Terms shall be resolved through arbitration in Rajkot, India, in accordance with the rules of the Indian Arbitration and Conciliation Act, 1996.</li>
                           </ul>
 
                     </section>
-                    <section id="changes-to-these-terms" class="mb-8 pb-8">
+                    <section id="Changes to These Terms" class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28">
                         <h2
-                            class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                            class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                         >Changes to These Terms
                         </h2>
                         <p
@@ -255,18 +183,18 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                     </section>
 
                     <section
-                    id="contact-us"
-                    class="mb-8 border-b-2 pb-8 border-[#D6D6D6]"
+                    id="Contact Us"
+                    class="mb-8 border-b-2 pb-8 border-[#D6D6D6] scroll-mt-[8rem] lg:scroll-mt-28"
                 >
                     <h2
-                        class="font-manrope text-[22px] max-md:text-[20px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
+                        class="font-manrope text-[22px] max-md:text-[20px] leading-[28px] tracking-tight color-[#141414]"
                     >
                     Contact Us
                     </h2>
                     <p class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
                         If you have any questions or concerns about these Terms, please contact us at:
                     </p>
-                    <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc">
+                    <ul class="text-[16px] leading-[30px] tracking-tight color-[#292929] mt-2 list-disc ml-5">
 
                         <li><strong>Email:</strong> <a href="mailto:admin@improwised.com" class="text-blue-500 hover:underline">admin@improwised.com</a></li>
                         <li><strong>Address:</strong> 304 - Pride Square, Pushkardham Main Road, Nr. J. K. Chowk, Rajkot - 360005, Gujarat, India.</li>

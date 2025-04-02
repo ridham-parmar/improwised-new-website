@@ -13,6 +13,8 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.improwised.com',
 
+  trailingSlash: "never",
+  
   redirects: {
     "/sitemap.xml" : "/sitemap-index.xml"
   },
