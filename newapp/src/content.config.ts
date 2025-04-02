@@ -99,6 +99,7 @@ const blogs = defineCollection({
 		tags: z.array(z.string()),
 		author: z.string(),
 		publishDate: z.coerce.date(),
+		linkTags: z.array(z.string()).optional(),
 	}),
 });
 

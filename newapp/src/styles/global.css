@@ -496,10 +496,22 @@ layer(base);
     animation-play-state: paused;
   }
 }
+
+
 .blog-details ul {
   list-style: disc;
   margin: 0;
   padding: 0;
   padding-left: 30px;
   margin-bottom: 10px;
+}
+
+/* Hide scrollbar */
+.blog-scrollbar-hide::-webkit-scrollbar {
+  display: none; /* For Chrome, Safari, and Edge */
+}
+
+.blog-scrollbar-hide {
+  -ms-overflow-style: none; /* For IE and Edge */
+  scrollbar-width: none; /* For Firefox */
 }
