@@ -1,7 +1,8 @@
 ---
 title: 'Product Modernization'
 slug: 'product-modernization'
-image: '$lib/images/services/product-modernization.svg'
+lightImage: '$lib/images/services/hp-product-modernization-w.gif'
+darkImage: '$lib/images/services/hp-product-modernization-d.gif'
 description: 'Cloud migration, application modernization, and technology upgrades. We transform legacy systems into scalable, secure, and modern solutions.'
 order: 3
 blocks: 
@@ -17,7 +18,7 @@ blocks:
       description: "Leverage CI/CD pipelines, automated testing, and monitoring for faster, error-free releases"
 
 text: "Future-Proof Your Software,"
-primaryText: "Stay Ahead of Change"
+primaryText: "Stay Ahead Of Change"
 blockImage: "$lib/images/services/pe-1.svg"
 ---
 
@@ -40,8 +41,6 @@ import solution1 from "$lib/images/services/solutions-1.svg"
 import solution2 from "$lib/images/services/solutions-2.svg"
 import mobileSolution from "$lib/images/services/mobileSolutions.svg"
 import PESection from "$lib/components/PESection.astro"
-import pm from "$lib/images/services/pm.svg"
-import pm3 from "$lib/images/services/pm3.svg"
 
 export const title = frontmatter.title
 export const slug = frontmatter.slug
@@ -57,19 +56,18 @@ export const description = "Cloud migration, application modernization, and tech
             </div>
             <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
-        <div class="container flex justify-center">
-          <Image class="hidden md:block" alt="building block" width={1200} src={pm3}/>
-          {/* <Image class="hidden md:block" alt="building block" width={1200} src={pm1}/> */}
+        <div class="container flex justify-center mt-6 md:mt-3">
+          <Image class="hidden md:block" alt="building block" src={solution2}/>
           <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
-    <section class="section2 overflow-x-hidden py-10 md:py-40">
+    <section class="section2 overflow-x-hidden py-10 md:py-40 section-bg">
         <PESection block="product-modernization" />
     </section>
 
-    <section class="section3 relative">
-        <svg
+    <section class="section3 relative section-bg">
+        {/* <svg
             viewBox="0 0 1440 181"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,20 +108,26 @@ export const description = "Cloud migration, application modernization, and tech
                         stop-opacity="0"></stop></linearGradient
                 ></defs
             ></svg
-        >
+        > */}
         <div class="container py-10 md:py-40">
           <div class="flex mx-auto max-w-2xl flex-col items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />Services</Badge>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+          </Badge>
             <SectionTitle primaryColorText="Modernization Approach" text="Our" class="text-center md:w-4/5"/>
           </div>
           <CustomCard collectionName="corefeaturesProductModernization"/>
         </div>
     </section>
 
-    <section class="section4 py-10 md:py-40 overflow-x-hidden">
+    <section class="section4 py-10 md:py-40 overflow-x-hidden section-bg">
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">How we do it</span>
+          </Badge>
             <SectionTitle text="Key Business Benefits of" primaryColorText="Product Modernization"  class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
           </div>
           <ServiceApproach collectionName="approaches3" />

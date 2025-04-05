@@ -122,6 +122,9 @@ layer(base);
     --tertiary-white: rgba(245, 245, 245, 1); /* #f5f5f5 */
     --quaternary-white: rgba(229, 229, 229, 1); /* #e5e5e5 */
 
+    --primary-blue: rgba(15, 23, 43, 0.4);   /* #0f172b66 */
+    --secondary-blue: rgba(29, 41, 61, 1); /* #1d293d66 */
+
     --accent: 220 14.3% 95.9%;
     --accent-foreground: 220.9 39.3% 11%;
 
@@ -169,10 +172,12 @@ layer(base);
     --carousel-btn-text: var(--primary-white);
     --career-card: var(--primary-white);
     --navbar-bg: rgba(245,245,245, 0.1);
+    --badge-border: rgba(73, 72, 72, 1); /* #494848 */
   }
 
   .dark {
     --background: 224 71.4% 4.1%;
+    /* --background: 0 0% 0%; */ /*for black view*/
     --foreground: 210 20% 98%;
 
     --muted: 215 27.9% 16.9%;
@@ -215,13 +220,17 @@ layer(base);
     --sub-heading-color: rgba(54, 217, 250, 1); /* #36D9FA */
 
     /* --card-bg: rgba(31, 31, 31, 1); 1f1f1f */
-    --card-bg: var(--secondary-black);
-    --card-border: var(--quaternary-black);
+    /* --card-bg: var(--secondary-black);  */ /*previous value*/
+    --card-bg: var(--primary-blue);
+    /* --card-border: var(--quaternary-black);  */ /*previous value*/
+    --card-border: var(--secondary-blue);
     --badge-bg: var(--tertiary-black);
     --next-previous-btn: var(--primary-white);
     --carousel-btn-text: var(--primary-black);
-    --career-card: var(--quaternary-black);
-    --navbar-bg: rgba(55, 49, 49, 0.35);
+    --career-card: var(--secondary-blue);
+    /* --navbar-bg: rgba(55, 49, 49, 0.35); */ /* previous value */
+    --navbar-bg: var(--primary-blue);
+    --badge-border: rgba(33, 51, 82, 1); /* #213352 */
   }
 }
 
@@ -253,20 +262,21 @@ layer(base);
     position: relative;
 
     @variant dark {
-      background-image: url("../images/homepage/dark-herodot.svg"),
-      url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+      background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg");
+      /* background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg"); */
     }
   }
 
   .bg-image {
-		background-image: url("../images/aboutusPage/bg-aboutus.svg"),
-			url("../images/aboutusPage/pattern-aboutus.svg");
-		background-size: cover, cover;
-		background-position: center, center;
-		background-repeat: no-repeat, no-repeat;
+		background-image: url("../images/aboutusPage/bg1.svg"), url("../images/aboutusPage/bg-aboutus.svg"), url("../images/aboutusPage/bg2.svg"), url("../images/aboutusPage/pattern-aboutus.svg");
+		/* background-image: url("../images/aboutusPage/bg-aboutus.svg"), url("../images/aboutusPage/pattern-aboutus.svg"); */ /*previous value*/
+		background-size: cover, cover, cover, cover;
+		background-position: center, center, center, center;
+		background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 
 		@variant dark {
-      	background-image:url("../images/aboutusPage/pattern-aboutus.svg"), url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+      	background-image:url("../images/aboutusPage/pattern-aboutus.svg"), url("../images/homepage/dark-bg-gradient.svg");
+      	/* background-image:url("../images/aboutusPage/pattern-aboutus.svg"), url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg"); */ /*previous value*/
     	}
 	}
 
@@ -296,16 +306,15 @@ layer(base);
   }
 
   .bg-blogs-outer {
-    background-image: url("../images/blogs/blog-bg-light-gradient.svg"), url("../images/homepage/light-herodot.svg"),
-    url("../images/homepage/light-bg-gradient.svg");
+    background-image: url("../images/blogs/blog-bg-light-gradient.svg"), url("../images/homepage/light-herodot.svg"), url("../images/homepage/light-bg-gradient.svg");
     /* background-size: cover, contain; */
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
     @variant dark {
-      background-image: url("../images/homepage/dark-herodot.svg"),
-      url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+      background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg");
+      /* background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg"); */ /* previous value */
     }
   }
 
@@ -317,7 +326,8 @@ layer(base);
     background-repeat: no-repeat;
 
     @variant dark {
-      background-image: url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+      background-image: url("../images/homepage/dark-bg-gradient.svg");
+      /* background-image: url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg"); */
     }
   }
 
@@ -397,8 +407,10 @@ layer(base);
 
     @variant dark {
       background-image: none;
-      border: 2px solid var(--primary3);
-      background-color: var(--card-bg);
+      border: 2px solid rgb(29, 41, 61);
+      /* border: 2px solid var(--primary3); */
+      /* background-color: var(--card-bg); */
+      background-color: rgba(15, 23, 43, 0.4);
     }
   }
 
@@ -416,13 +428,13 @@ layer(base);
     -o-border-image: radial-gradient(
         circle at var(--gradient-x, 15px) var(--gradient-y, 30px),
         var(--primary2),
-        rgba(255, 255, 255, 0.5)
+        rgba(15, 23, 43, 0.4)
       )
       1;
     border-image: radial-gradient(
         circle at var(--gradient-x, 15px) var(--gradient-y, 30px),
         var(--primary2),
-        rgba(255, 255, 255, 0.5)
+        rgba(15, 23, 43, 0.4)
       )
       1;
     border: 2px solid transparent;
@@ -438,7 +450,7 @@ layer(base);
       radial-gradient(
         circle at var(--gradient-x, 15px) var(--gradient-y, 30px),
         var(--primary2),
-        rgba(255, 255, 255, 0.5)
+        rgba(15, 23, 43, 0.4)
       );
     background-origin: border-box;
     background-clip: padding-box, border-box;
@@ -554,7 +566,7 @@ layer(base);
   }
 
   .bg-tech-image {
-    background-image: url('../images/tech-section-dot.svg');
+    /* background-image: url('../images/tech-section-dot.svg'); */ /*commenting for now*/
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -575,8 +587,8 @@ layer(base);
     position: relative;
 
     @variant dark {
-      background-image: url("../images/homepage/dark-herodot.svg"),
-      url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
+      background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg");
+      /* background-image: url("../images/homepage/dark-herodot.svg"), url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg"); */ /*previous value*/
     }
   }
 
@@ -686,4 +698,23 @@ layer(base);
 .blog-scrollbar-hide {
   -ms-overflow-style: none; /* For IE and Edge */
   scrollbar-width: none; /* For Firefox */
+}
+
+.section-bg {
+  /* border-top: 1px solid oklch(0.28 0.041 260.031); darkk */
+  /* border-top: 1px solid rgb(226, 232, 240) ; */
+  /* background-image: linear-gradient(to bottom, rgba(64, 72, 153, 0.4) 0%, rgba(42, 48, 102, 1) 100%); */
+  border-top: 1px solid rgb(226, 232, 240) ;
+  background-image: linear-gradient(to bottom, rgb(248, 250, 252) 0%, rgba(255, 255, 255, 1) 100%);
+
+  @variant dark { 
+    /* background-image: linear-gradient(to bottom, rgba(15, 23, 43, 0.4), rgb(2, 6, 24)); */ /*original nuxt design*/
+    background-image: linear-gradient(to bottom, rgba(15, 23, 43, 0.4) 0%, rgba(3, 7, 18, 0.5) 50%, rgba(3, 7, 18, 1) 100%);
+    border-top: 1px solid rgb(29, 41, 61); /*oklch(0.93 0.013 255.508)*/
+  }
+  /* @variant dark { */
+    /* border-top: 1px solid rgb(29, 41, 61); oklch(0.93 0.013 255.508) */
+  /* } */
+
+  /* background-image:var(--tw-gradient-via-stops, to bottom in oklab, color-mix(in oklab, oklch(0.208 0.042 265.755) 40%,transparent) 0, oklch(.129 .042 264.695) 100%) ; */
 }

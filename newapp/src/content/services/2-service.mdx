@@ -1,7 +1,8 @@
 ---
 title: 'Cloud Infrastructure Services'
 slug: 'cloud-infrastructure-services'
-image: '$lib/images/services/cloud-services.svg'
+lightImage: '$lib/images/services/hp-cloud-infra-services-w.gif'
+darkImage: '$lib/images/services/hp-cloud-infra-services-d.gif'
 description: 'Ready to see what your cloud can really do? We build smart, secure cloud setups that let you grow and innovate.'
 order: 2
 blocks: 
@@ -18,7 +19,7 @@ blocks:
     - title: "Disaster Recovery & Business Continuity"
       description: "Backup strategies, failover mechanisms, and resilience planning to minimize downtime"
 
-text: "Building Blocks of Scalable"
+text: "Building Blocks Of Scalable"
 primaryText: "Cloud Infrastructure"
 blockImage: "$lib/images/services/pe-1.svg"
 ---
@@ -58,18 +59,18 @@ export const description = "Ready to see what your cloud can really do? We build
             </div>
             <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center mt-6 md:mt-3">
           <Image class="hidden md:block" alt="building block" src={solution2}/>
           <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
-    <section class="section2 overflow-x-hidden py-10 md:py-40">
+    <section class="section2 overflow-x-hidden py-10 md:py-40 section-bg">
         <PESection block="cloud-infrastructure-services" />
     </section>
 
-    <section class="section3 relative">
-        <svg
+    <section class="section3 relative section-bg">
+        {/* <svg
             viewBox="0 0 1440 181"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -110,20 +111,26 @@ export const description = "Ready to see what your cloud can really do? We build
                         stop-opacity="0"></stop></linearGradient
                 ></defs
             ></svg
-        >
+        > */}
         <div class="container py-10 md:py-40">
           <div class="flex mx-auto max-w-2xl flex-col items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />Services</Badge>
-            <SectionTitle primaryColorText="Cloud-Native Solutions for" text="Scalable Growth" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+          </Badge>
+            <SectionTitle primaryColorText="Cloud-Native Solutions For" text="Scalable Growth" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
           </div>
           <CustomCard collectionName="corefeaturesCloudInfrastructureManagement"/>
         </div>
     </section>
 
-    <section class="section4 py-10 md:py-40 overflow-x-hidden">
+    <section class="section4 py-10 md:py-40 overflow-x-hidden section-bg">
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
+            <Badge variant="outline" class="py-1">
+              <CircleUserRound class="mr-1" size={18} />
+              <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+            </Badge>
             <SectionTitle text="Key Business Benefits of" primaryColorText="Cloud Infrastructure Management" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
           </div>
           <ServiceApproach collectionName="approaches2" />

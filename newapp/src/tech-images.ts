@@ -55,7 +55,7 @@ import progresschef from "$lib/images/technologies/Progress-Chef.svg"
 export const level1 = [
     { name: "Prometheus", url: prometheus, alt: "Prometheus monitoring tool logo", link: "https://prometheus.io/" },
     { name: "AWS", url: aws, alt: "Amazon Web Services Logo", link: "https://aws.amazon.com/getting-started/?nc2=h_ls" },
-    { name: "GCP", url: gcp, alt: "Google Cloud Platform Logo", link: "https://cloud.google.com/z" },
+    { name: "GCP", url: gcp, alt: "Google Cloud Platform Logo", link: "https://cloud.google.com" },
     { name: "Bootstrap", url: bootstrap, alt: "Bootstrap CSS framework logo", link: "https://getbootstrap.com/" },
 ]
 

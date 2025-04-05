@@ -6,9 +6,9 @@ import CustomCard from "./CustomCard.astro";
 ---
 
 <section
-    class="section overflow-hidden relative py-10 md:py-40 dark:darker-bg"
+    class="section overflow-hidden relative py-10 md:py-40 section-bg"
 >
-    <svg
+    <!-- <svg
         viewBox="0 0 1440 181"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +49,7 @@ import CustomCard from "./CustomCard.astro";
                     stop-opacity="0"></stop></linearGradient
             ></defs
         ></svg
-    >
+    > -->
     <div class="container">
         <div
             class="md:mb-12 text-center flex mx-auto max-w-2xl flex-col items-center justify-center"
@@ -58,7 +58,7 @@ import CustomCard from "./CustomCard.astro";
                 <CircleUserRound class="mr-1" size={18} />
                 <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
             </Badge>
-            <SectionTitle text="Technologies" primaryColorText="we work with" />
+            <SectionTitle text="Our" primaryColorText="Services" />
         </div>
         <CustomCard collectionName="services" />
     </div>

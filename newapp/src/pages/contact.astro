@@ -21,9 +21,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 <Layout title={title} description={description}>
   <main class="main-content">
 
-    <section
-    class="section1 text-center light-bg-image py-16 px-6 relative pt-[30%] md:pb-20 lg:pt-[12%]"
-  >
+    <section class="section1 text-center light-bg-image py-16 px-6 relative pt-30 pb-20 md:pt-80 md:pb-[240px]">
     <!-- Main Heading -->
     <div class="container">
       <h1
@@ -42,61 +40,59 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
   </section>
 
 
-    <section class="section md:pt-28 py-10 md:py-30">
+    <section class="section md:pt-28 py-10 md:py-30 section-bg">
         <div class="container flex flex-col gap-20">
-
             <div class="flex flex-col items-center md:flex-row lg:px-20 gap-10 md:gap-6 justify-between">
-                <div class="flex flex-col items-start gap-2 w-full md:w-1/2">
-                    <div class="md:pt-10 flex flex-col gap-6">
-                        <div class="flex gap-5">
-                            <div class="bg-sky-100 max-md:text-center p-6 rounded-2xl text-[#292929]">
-                                <h5 ><span>
-                                    For inquiries related to job &amp; internship, please visit
-                                    <a href="/careers/" target="_blank" rel="noopener" class="font-weight-normal">
-                                      Careers</a>
-                                    page.
-                                  </span></h5>
-                                </div>
+                <div class="flex flex-col gap-6">
+                    <div class="flex gap-5">
+                        <div class="bg-sky-100 max-md:text-center p-6 rounded-2xl text-[#292929]">
+                            <h5 ><span>
+                                For inquiries related to job &amp; internship, please visit
+                                <a href="/careers/" target="_blank" rel="noopener" class="font-weight-normal">
+                                    Careers</a>
+                                page.
+                                </span></h5>
+                            </div>
 
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
+                            <PhoneCall class="text-primary" width="24" height="24" />
                         </div>
-                        <div class="flex gap-5">
-                            <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
-                                <PhoneCall class="text-primary" width="24" height="24" />
-                            </div>
-                            <div>
-                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Call</p>
-                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">0281 256 3488</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-5">
-                            <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
-                                <Mail class="text-primary" width="24" height="24" />
-                            </div>
-                            <div>
-                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Mail</p>
-                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">sales@improwised.com</p>
-                            </div>
-                        </div>
-                        <div class="flex gap-5">
-                            <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
-                                <AlarmClock class="text-primary" width="24" height="24" />
-                            </div>
-                            <div>
-                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Timing</p>
-                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">10 AM to 7 PM</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-5">
-                            <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
-                                <MapPinned class="text-primary" width="24" height="24" />
-                            </div>
-                            <div>
-                                <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Address</p>
-                                <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">304 - Pride Square, </br> Pushkardham Road, Near J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
-                            </div> 
+                        <div>
+                            <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Call</p>
+                            <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">0281 256 3488</p>
                         </div>
                     </div>
+                    <div class="flex gap-5">
+                        <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
+                            <Mail class="text-primary" width="24" height="24" />
+                        </div>
+                        <div>
+                            <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Mail</p>
+                            <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">sales@improwised.com</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-5">
+                        <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
+                            <AlarmClock class="text-primary" width="24" height="24" />
+                        </div>
+                        <div>
+                            <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Timing</p>
+                            <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">10 AM to 7 PM</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-5">
+                        <div class="w-14 bg-[#f7f7f7] dark:bg-[#f7f7f712] rounded-full flex items-center justify-center p-4">
+                            <MapPinned class="text-primary" width="24" height="24" />
+                        </div>
+                        <div>
+                            <p class="font-manrope font-semibold text-base leading-6 md:leading-[26px] text-[#737373]">Address</p>
+                            <p class="font-manrope font-normal text-base leading-6 md:leading-[26px] text-fourth-color">304 - Pride Square, </br> Pushkardham Road, Near J. K. Chowk, </br> Rajkot-360005, Gujarat, India</p>
+                        </div> 
+                    </div>
                 </div>
+
                 <!-- form -->
                 <Form client:load siteKey={SITE_KEY} contactUsURL={CONTACT_US_URL}/>
             </div>

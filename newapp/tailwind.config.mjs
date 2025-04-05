@@ -40,6 +40,7 @@ const config = {
 				cardBorder: "var(--card-border)",
 				careerCard: "var(--career-card)",
 				navbarBg: "var(--navbar-bg)",
+				badgeBorder: "var(--badge-border)",
 				primary: {
 					DEFAULT: "hsl(var(--primary) / <alpha-value>)",
 					foreground: "hsl(var(--primary-foreground) / <alpha-value>)"
