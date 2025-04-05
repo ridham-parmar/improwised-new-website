@@ -41,22 +41,16 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 <Layout title={title} description={description}>
   <main class="main-content">
     <section
-      class="section1 text-center bg-blogs-outer py-16 px-6 relative pt-[30%] md:pb-20 lg:pt-[12%]"
+      class="section1 text-center bg-blogs-outer px-6 relative pt-30 pb-20 md:pt-56 md:pb-48"
     >
       <!-- Main Heading -->
-      <div class="container bg-blogs-inner">
-        <!-- <h1
-          class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
-        >
-          Improwised <span class="text-sub-heading-color">Blog</span>
-        </h1> -->
-
+      <div class="container flex flex-col gap-52">
         <div class="flex flex-col items-center">
-          <SectionTitle
-            class="text-center main-heading-small md:main-heading"
-            text="Improwised"
-            primaryColorText="Blog"
-          />
+          <h1
+            class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
+          >
+          Improwised <span class="text-sub-heading-color">Blog</span>
+          </h1>
 
         <!-- Subtext -->
           <p
@@ -74,21 +68,21 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
       </div>
     </section>
 
-    <section class="py-10 md:py-10 section">
+    <section class="py-10 md:py-30 section-bg">
       <div class="container">
-        <Badge class="mb-10" variant="outline">
-          <CircleUserRound width="16" height="16" class="mr-1 w-[16px]" /> Latest
-          Featured
+        <Badge variant="outline" class="py-1 mb-8">
+          <CircleUserRound class="mr-1" size={18} />
+          <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Latest Featured</span>
         </Badge>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-card-bg shadow-nav rounded-xl overflow-hidden"
+          class="group grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-card-bg border-1 border-card-border shadow-nav rounded-xl overflow-hidden"
         >
           <!-- Left: Blog Image -->
-          <div class="relative w-full h-full flex items-center justify-center bg-[#f0f0f0] dark:bg-[#3a3b3f69]">
+          <div class="relative overflow-hidden w-full h-full flex items-center justify-center bg-[#f0f0f0] dark:bg-[#3a3b3f69]">
             <Image
               alt="feature"
-              class=""
+              class="transition-all duration-200 group-hover:scale-105"
               decoding="async"
               loading="lazy"
               src={latestBlog.data.image}
@@ -151,25 +145,22 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
       </div>
     </section>
 
-    <section class="py-10 md:py-40 section">
+    <section class="py-10 md:pb-40 section">
       <div class="container">
-        <Badge class="mb-10" variant="outline"
-          ><CircleUserRound
-            width="16"
-            height="16"
-            class="mr-1 w-[16px]"
-          />Featured Blogs</Badge
-        >
+        <Badge variant="outline" class="py-1 mb-8">
+          <CircleUserRound class="mr-1" size={18} />
+          <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Featured Blogs</span>
+        </Badge>
         <div
           class="grid grid-cols-3 max-md:grid-cols-1 max-lg:grid-cols-2 gap-8"
         >
           {
-            blogs.map((blog, index) => (
-              <Card.Root class="shadow-nav flex flex-col justify-between bg-card-bg border-0 transition-transform duration-500">
-                <Card.Header class="p-0 text-center rounded-t-[12px] bg-[#f0f0f0] dark:bg-[#3a3b3f69]">
+            blogs.map((blog) => (
+              <Card.Root class="group shadow-nav flex flex-col justify-between bg-card-bg border-1 border-card-border transition-transform duration-500 overflow-hidden">
+                <Card.Header class="p-0 overflow-hidden text-center rounded-t-[12px] bg-[#f0f0f0] dark:bg-[#3a3b3f69]">
                     <Image
                       alt="feature"
-                      class="w-full object-contain sm:h-[250px] md:h-[300px]"
+                      class="w-full object-contain sm:h-[250px] md:h-[300px] transition-all duration-200 group-hover:scale-105"
                       decoding="async"
                       loading="lazy"
                       src={blog.data.image}

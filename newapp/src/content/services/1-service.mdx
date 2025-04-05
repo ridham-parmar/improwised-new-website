@@ -1,26 +1,35 @@
 ---
 title: "Platform Engineering"
 slug: "platform-engineering"
-image: "$lib/images/services/product-modernization.svg"
+lightImage: '$lib/images/services/hp-cloud-infra-services-w.gif'
+# darkImage: '$lib/images/services/hp-cloud-infra-services-d.gif'
+darkImage: '$lib/images/services/cloud-infrastructure-services-d.gif'
 description: "Accelerate innovation with Platform Engineering as a Service-automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability."
 order: 1
 blocks: 
     - title: "Code & Infra Management"
-      description: "Version control & Infrastructure as Code (IaC)"
+      slug: "code-and-infra-management"
+      description: "Code and Infrastructure Management refers to the practices and tools used to manage source code, configuration, and infrastructure as code (IaC). It ensures version control using systems like Git, facilitates collaboration among developers, and enables reproducible environments through IaC tools such as Terraform or Ansible. It allows tracking changes, rolling back issues, automating environment provisioning, and maintaining consistency across development, staging, and production setups. Proper management reduces manual errors, enhances traceability, and supports scalability."
     - title: "Continuous Integration (CI)"
-      description: "Automate build, test & integration"
+      slug: "continuous-integration"
+      description: "Continuous Integration is a development practice where code changes are automatically tested and integrated into a shared repository multiple times a day. Using CI tools like Jenkins, GitHub Actions, or GitLab CI, developers automate build processes, run unit and integration tests, and catch bugs early. This results in faster development cycles, immediate feedback on code quality, and reduced integration issues. CI ensures that the codebase remains stable, high-quality, and always ready for deployment."
     - title: "Continuous Deployment (CD)"
-      description: "Seamless deployments & OTA updates"
+      slug: "continuous-deployment"
+      description: "Continuous Deployment automates the release of validated code to production after successful CI pipelines. It eliminates manual intervention by pushing every change that passes tests directly into live environments using tools like ArgoCD, Spinnaker, or AWS CodeDeploy. CD ensures rapid, consistent, and reliable delivery of features and bug fixes, reduces time to market, supports frequent releases, and aligns with DevOps goals of agility and automation. It also includes rollback mechanisms for safety."
     - title: "Uptime Assurance"
-      description: "High availability & failover resilience"
+      slug: "uptime-assurance"
+      description: "Uptime Assurance involves maintaining the availability and reliability of systems and applications. It encompasses redundant architectures, automated failovers, load balancing, and regular health checks to prevent downtime. Using tools like Kubernetes, high availability setups, and cloud-native services, teams ensure systems are resilient to failure. SLAs, incident response plans, and proactive maintenance further support this, aiming for maximum availability (e.g., 'five nines' or 99.999%) to maintain user trust and business continuity."
     - title: "Security & Access Control "
-      description: "Role-based access & compliance."
+      slug: "security-and-access-control"
+      description: "Security & Access Control protect systems, data, and applications from unauthorized access, breaches, and misuse. It includes identity and access management (IAM), role-based access control (RBAC), encryption (at rest and in transit), secrets management, and audit logging. Tools like HashiCorp Vault, AWS IAM, and Azure AD help enforce policies. This ensures that only authorized users and services can access specific resources, aligns with compliance standards, and mitigates security risks throughout the software lifecycle."
     - title: "Monitoring & Observability"
-      description: "Real-time insights & proactive alerts"
+      slug: "monitoring-and-observability"
+      description: "Monitoring & Observability provide insights into system health, performance, and behavior in real-time. Monitoring tracks metrics, logs, and alerts for predefined conditions using tools like Prometheus, Grafana, and Datadog. Observability goes deeper by enabling understanding of why something is happening, through distributed tracing, log correlation, and context-rich telemetry. Together, they enable proactive issue detection, root cause analysis, performance tuning, and ensure the system meets SLAs and user expectations."
     - title: "Upgrades & Day-2 Operations"
-      description: "Automated updates & lifecycle management."
+      slug: "upgrades-and-day-2-operations"
+      description: "Upgrades & Day-2 Operations refer to tasks that occur after initial deployment, including system updates, patch management, scaling, backup, disaster recovery, and performance optimization. It ensures the system remains secure, stable, and efficient over time. Automated pipelines and tools like Helm, Kubernetes Operators, and configuration management systems streamline these processes. Proper Day-2 operations prevent drift, manage technical debt, and support long-term maintainability, compliance, and adaptability of the system."
 
-text: "Building Blocks of a"
+text: "Building Blocks Of A"
 primaryText: "Scalable Platform"
 blockImage: "$lib/images/services/pe-1.svg"
 ---
@@ -52,8 +61,9 @@ export const description = "Accelerate innovation with Platform Engineering as a
 
 
 {/* pt-30 pb-20 md:pt-56 md:pb-48 */}
+{/* pt-30 pb-20 md:pt-56 md:pb-48 */}
 <section>
-    <section class="section1 pt-30 pb-20 md:pt-80 md:pb-[240px] bg-platform">
+    <section class="section1 pt-30 pb-20 md:pt-56 md:pb-48 bg-platform">
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
                 <h1 class="main-heading-small md:main-heading text-main-heading-color">{title}</h1>
@@ -61,18 +71,18 @@ export const description = "Accelerate innovation with Platform Engineering as a
             </div>
             <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center mt-6 md:mt-3">
           <Image class="hidden md:block" alt="building block" src={solution2}/>
           <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
-    <section class="section2 overflow-x-hidden py-10 md:py-40">
+    <section class="section2 overflow-x-hidden py-10 md:py-40 section-bg">
         <PESection block="platform-engineering" />
     </section>
 
-    <section class="section3 relative">
-        <svg
+    <section class="section3 relative section-bg">
+        {/* <svg
             viewBox="0 0 1440 181"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -113,21 +123,27 @@ export const description = "Accelerate innovation with Platform Engineering as a
                         stop-opacity="0"></stop></linearGradient
                 ></defs
             ></svg
-        >
+        > */}
         <div class="container py-10 md:py-40">
           <div class="flex mx-auto max-w-2xl flex-col items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />Services</Badge>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+          </Badge>
             <SectionTitle primaryColorText="Core Features" text="Of Our Platform Engineering" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
           </div>
           <CustomCard collectionName="corefeatures"/>
         </div>
     </section>
 
-    <section class="section4 py-10 md:py-40 overflow-x-hidden">
+    <section class="section4 py-10 md:py-40 overflow-x-hidden section-bg">
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
-            <SectionTitle text="Key Business Benefits of" primaryColorText="Platform Engineering" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">How We Do It</span>
+          </Badge>
+            <SectionTitle text="Key Business Benefits Of" primaryColorText="Platform Engineering" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
           </div>
           <ServiceApproach collectionName="approaches" />
         </div>

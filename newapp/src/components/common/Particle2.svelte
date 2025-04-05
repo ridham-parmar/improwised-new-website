@@ -14,7 +14,7 @@
                 fpsLimit: 60,
                 particles: {
                     number: {
-                        value: 100,
+                        value: 40,
                     },
                     //   links: {
                     //     enable: true,

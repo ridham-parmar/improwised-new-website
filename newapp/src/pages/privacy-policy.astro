@@ -13,21 +13,22 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 <Layout title={title} description={description}>
     <div class="main-content">
-        <section id="section1" class="section1 text-center py-16 bg-blogs-outer px-6 relative pt-[30%] md:pb-20 lg:pt-[12%]">
+        <section id="section1" class="section1 text-center py-16 bg-blogs-outer px-6 relative pt-30 pb-20 md:pt-80 md:pb-[240px]">
             <!-- Main Heading -->
             <div class="container">
-                <SectionTitle
-                    class="text-center main-heading-small md:main-heading"
-                    text="Privacy"
-                    primaryColorText="Policy"
-                />
+                <h1
+                    class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
+                >
+                Privacy<span class="text-sub-heading-color"> Policy</span>
+                </h1>
                 <!-- Subtext -->
                 <p class="mt-4 text-para max-w-2xl mx-auto text-third-color">
                     Understand your rights, responsibilities, and usage policies for our services.
                 </p>
             </div>
         </section>
-        <section class="py-20 md:py-20 section">
+
+        <section class="py-20 md:py-20 section-bg">
 
             <div class="container grid grid-cols-1 lg:grid-cols-[400px_1fr] gap-6">
                 <!-- Sidebar Navigation -->

@@ -20,7 +20,7 @@
         localStorage.setItem("theme", "dark")
         darkModeBtn?.classList.add('hidden')
         lightModeBtn?.classList.remove('hidden')
-        htmlElement && htmlElement[0].classList.add('dark', 'bg-black')
+        htmlElement && htmlElement[0].classList.add('dark', 'bg-background')
     }
     
     const turnLightMode = () => {
@@ -28,7 +28,7 @@
         localStorage.setItem("theme", "light")
         lightModeBtn?.classList.add('hidden')
         darkModeBtn?.classList.remove('hidden')
-        htmlElement && htmlElement[0].classList.remove('dark', 'bg-black')
+        htmlElement && htmlElement[0].classList.remove('dark', 'bg-background')
     }
 
     function setTheme() {        

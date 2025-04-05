@@ -15,7 +15,7 @@ plugins={[
     delay:4000
   }),
 ]}
-  class="w-full flex flex-col justify-center gap-6 mt-48"
+  class="w-full flex flex-col justify-center gap-6 "
 >
   <Carousel.Content>
     {#each blogs as featuredBlog, i (i)}

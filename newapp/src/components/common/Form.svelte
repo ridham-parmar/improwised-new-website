@@ -145,7 +145,7 @@
     </div>
   {/if}
  
-  <form onsubmit={validateForm} class="bg-card-bg p-8 rounded-2xl shadow-lg space-y-6">
+  <form onsubmit={validateForm} class="bg-card-bg border-1 border-card-border p-8 rounded-2xl shadow-lg space-y-6">
     <div>
       <label for="name" class="block font-semibold text-fourth-color">Name</label>
       <input

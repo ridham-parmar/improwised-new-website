@@ -1,7 +1,8 @@
 ---
 title: 'Technology Consulting'
 slug: 'technology-consulting'
-image: '$lib/images/services/technology-consulting.svg'
+lightImage: '$lib/images/services/hp-tech-consulting-w.gif'
+darkImage: '$lib/images/services/hp-tech-consulting-d.gif'
 description: "We're your technology partner. We optimize costs, enhance performance, and guide you through complex changes with clear roadmaps and lasting solutions."
 order: 4
 blocks: 
@@ -14,7 +15,7 @@ blocks:
     - title: "Future-Ready"
       description: "Stay ahead with emerging tech and scalable solutions."
 
-text: "Transform Your Business with"
+text: "Transform Your Business With"
 primaryText: "Expert Technology Consulting"
 blockImage: "$lib/images/services/pe-1.svg"
 ---
@@ -52,18 +53,18 @@ export const description = "We're your technology partner. We optimize costs, en
             </div>
             <Button aria-label="Explore Solutions" href={`${BASE_URL}/contact`} class="button-bg">Get In Touch</Button>
         </div>
-        <div class="w-full flex justify-center">
+        <div class="w-full flex justify-center mt-6 md:mt-3">
           <Image class="hidden md:block" alt="building block" src={solution2}/>
           <Image width={300} class="block md:hidden" alt="building block" src={mobileSolution}/>
         </div>
     </section>
 
-    <section class="section2 overflow-x-hidden py-10 md:py-40">
+    <section class="section2 overflow-x-hidden py-10 md:py-40 section-bg">
         <PESection block="technology-consulting" />
     </section>
 
-    <section class="section3 relative">
-        <svg
+    <section class="section3 relative section-bg">
+        {/* <svg
             viewBox="0 0 1440 181"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -104,21 +105,27 @@ export const description = "We're your technology partner. We optimize costs, en
                         stop-opacity="0"></stop></linearGradient
                 ></defs
             ></svg
-        >
+        > */}
         <div class="container py-10 md:py-40">
           <div class="flex mx-auto max-w-2xl flex-col items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />Services</Badge>
-            <SectionTitle primaryColorText="" text="Your Technology Partner for Sustainable Growth" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Services</span>
+          </Badge>
+          <SectionTitle primaryColorText="Sustainable Growth" text="Your Technology Partner For " class="text-center md:w-4/5"/>
           </div>
           <CustomCard collectionName="corefeaturesTechnologyConsulting"/>
         </div>
     </section>
 
-    <section class="section4 py-10 md:py-40 overflow-x-hidden">
+    <section class="section4 py-10 md:py-40 overflow-x-hidden section-bg">
         <div class="container">
           <div class="flex mx-auto max-w-2xl flex-col items-start md:items-center justify-center">
-            <Badge class="border border-[#737373] rounded-full mb-4 text-[#737373] ring-gray-300 uppercase" variant="outline"><CircleUserRound class="mr-1 w-[16px]" />How We Do It</Badge>
-            <SectionTitle text="Key Business Benefits of" primaryColorText="Technology Consulting" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
+            <Badge variant="outline" class="py-1">
+              <CircleUserRound class="mr-1" size={18} />
+              <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">How We Do It</span>
+            </Badge>
+            <SectionTitle text="Key Business Benefits Of" primaryColorText="Technology Consulting" class="md:whitespace-pre-wrap max-md:text-left md:text-center md:w-5/6"/>
           </div>
           <ServiceApproach collectionName="approaches4"/>
         </div>

@@ -6,7 +6,7 @@ import Accordion from "$lib/components/common/Accordion.svelte";
 import { Badge } from "$lib/components/ui/badge";
 import { Image } from "astro:assets";
 import { CircleUserRound } from "lucide-svelte";
-import buildingBlock from "$lib/images/services/building-block.svg";
+import { BASE_URL } from "$lib/consts";
 
 const { block } = Astro.props;
 
@@ -19,23 +19,12 @@ const services = await getCollection("services", ({data}) => {
 <div class="container flex flex-col md:flex-row justify-between gap-10 md:gap-16">
     {services.map(({data}) => (
         <div>
-            <Badge class="border border-[#737373] rounded-full text-[#737373] mb-4 ring-gray-300 uppercase" variant="outline"><CircleUserRound width="16" height="16" class="mr-1 w-[16px]"/>Service</Badge>
+            <Badge variant="outline" class="py-1">
+            <CircleUserRound class="mr-1" size={18} />
+            <span class="text-xs font-bold md:text-sm tracking-wider font-manrope">Service</span>
+          </Badge>
             <SectionTitle class="max-md:text-left w-5/6 md:w-4/5" text={data.text} primaryColorText={data.primaryText} />
-            {/* <div>
-                <p class="font-bold text-[18px] text-[#141414] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Automated workflow (CI/CD)</p>
-                <p class="pt-2 pb-6 small-text font-inter md:text-para">We create a tailored Internal Developer Platform that meets your
-                specific needs and provides a comprehensive set</p>
-            </div>
-            <div>
-                <p class="py-4 md:py-6 text-[#141414] border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Containerizatrion</p>
-            </div>
-            <div>
-                <p class="py-4 md:py-6 text-[#141414] border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Kubernetes Integration</p>
-            </div>
-            <div>
-                <p class="py-4 md:py-6 text-[#141414] border-t text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">Monitoring and Alerting</p>
-            </div> */}
-            <Accordion client:load blocks={data.blocks} />
+            <Accordion client:load blocks={data.blocks} baseUrl={BASE_URL} servicePage={data.slug} />
         </div>
         <div class="md:min-w-[50%] max-h-max flex justify-center items-center">
             <Image alt="building block" src={data.blockImage} data-aos="fade-left"/>

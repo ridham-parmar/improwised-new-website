@@ -17,12 +17,11 @@
       <Carousel.Item class="md:basis-1/2 lg:basis-1/3">
         <div class="flex justify-center h-full">
           <Card.Root class="bg-card-bg border-card-border">
-            <div class="">
+            <div class="h-full flex flex-col justify-between">
               <Card.Header class="p-0 bg-white rounded-t-[12px] overflow-hidden">
                 <img
                   alt="feature"
-
-                    class="w-full sm:h-[250px] md:h-[300px]"
+                  class=" h-[250px] md:h-[300px]"
                   src={casestudy.data.image.src}
                 />
               </Card.Header>

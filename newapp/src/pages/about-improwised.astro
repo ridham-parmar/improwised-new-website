@@ -59,7 +59,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		>
 			<!-- Main Heading -->
 			<h1
-				class="font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
+				class="capitalize font-manrope mt-4 mb-6 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
 			>
 
 			Innovating with Passion <br/><span
@@ -115,7 +115,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 				</div>
 			</div>
 		</section>
-		<section class="relative overflow-x-hidden py-10 md:py-40">
+		<section class="relative overflow-x-hidden py-10 md:py-40 section-bg">
 			<div class="container relative z-10">
 				<div
 					class="flex flex-col md:flex-row justify-between gap-10 md:gap-16"
@@ -127,7 +127,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 						</Badge>
 						<SectionTitle
 							class="max-md:text-left max-md:mb-4"
-							text="Innovation and "
+							text="Innovation And "
 							primaryColorText="Growth Together"
 						/>
 
@@ -369,8 +369,8 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 			</div>
 		</section>
 
-		<section class="section overflow-hidden relative pt-20 pb-20">
-			<svg
+		<section class="section overflow-hidden relative py-10 md:py-40 section-bg">
+			<!-- <svg
 				viewBox="0 0 1440 181"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
@@ -411,10 +411,10 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 							stop-opacity="0"></stop></linearGradient
 					></defs
 				></svg
-			>
+			> -->
 			<div class="">
 				<div
-					class="mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
+					class="md:mb-12 text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
 				>
 					<Badge variant="outline" class="py-1">
 						<CircleUserRound class="mr-1" size={18} />
@@ -429,7 +429,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 				<div class="relative overflow-x-clip">
 					<div class="group relative gap-8 overflow-hidden md:flex">
 						<div
-							class="eventsection1 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
+							class="eventsection1 blog-scrollbar-hide flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
 							<EventSlider marqueeClass={marqueeClassReverse} eventData={eventData} />
 						</div>
@@ -438,7 +438,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 						class="group relative gap-8 overflow-hidden pb-5 md:flex"
 					>
 						<div
-							class="eventsection2 flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
+							class="eventsection2 blog-scrollbar-hide flex w-auto min-w-full shrink-0 snap-x snap-mandatory flex-nowrap items-stretch gap-10 overflow-x-auto px-5 py-5"
 						>
 							<EventSlider marqueeClass={marqueeClass} eventData={remainingEvents}/>
 						</div>
@@ -446,7 +446,8 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 				</div>
 			</div>
 		</section>
-		<section class="py-10 md:py-40 section">
+
+		<section class="py-10 md:py-40 section-bg">
 			<div class="md:px-20 px-5">
 				<div
 					class="text-center mx-auto flex max-w-3xl flex-col items-center justify-center"
@@ -459,11 +460,11 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 				</div>
 				<div class="relative z-10 md:mt-10">
 					<div
-						class="flex flex-wrap justify-evenly gap-5"
+						class="flex flex-wrap justify-evenly gap-5 gap-y-10"
 					>
 						{
 							teamsData.map(({ data: { teams } }) =>
-								teams.map((team, index) => (
+								teams.map((team) => (
 									<>
 										<Card.Root class="grid bg-card-bg border-2 border-card-border overflow-hidden shadow-nav">
 
@@ -522,24 +523,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 </Layout>
 <style>
 	@reference "tailwindcss";
-	/* .bg-image {
-		background-image: url("../images/aboutusPage/bg-aboutus.svg"),
-			url("../images/aboutusPage/pattern-aboutus.svg");
-		background-size: cover, cover;
-		background-position: center, center;
-		background-repeat: no-repeat, no-repeat;
-
-		@variant dark {
-      		background-image:url("../images/homepage/dark-bg-gradient.svg"), url("../images/homepage/dark-bg-bottom-gradient.svg");
-    	}
-	} */
-	/* .bg-image2 {
-		background-image: url("../images/aboutusPage/gardient.svg"),
-			url("../images/aboutusPage/dots.svg");
-		background-size: cover, cover;
-		background-position: center, center;
-		background-repeat: no-repeat, no-repeat;
-	} */
+	
 	.profile-img {
 		@apply md:w-16 md:h-16 w-8 h-8 rounded-full -ml-3 transition-all duration-300 ring-2 ring-white;
 	}

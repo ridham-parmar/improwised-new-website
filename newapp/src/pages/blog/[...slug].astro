@@ -106,7 +106,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                 </Card.Root>
             </div>
         </section> -->
-        <section class="pt-20 pb-10 section">
+        <section class="pt-20 pb-10 section-bg">
             <div class="container">
                 <Content />
             </div>
@@ -126,11 +126,11 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
                 >
                     {
                         recommendedBlogs.map((blog, index) => (
-                            <Card.Root class="shadow-nav border-0 flex flex-col justify-between bg-card-bg transition-transform duration-500">
+                            <Card.Root class="group overflow-hidden shadow-nav flex flex-col justify-between bg-card-bg border-1 border-card-border transition-transform duration-500">
                                 <Card.Header class="md:p-0 text-center bg-[#f0f0f0] dark:bg-[#3a3b3f69]">
                                     <Image
                                         alt="feature"
-                                        class="w-full object-contain sm:h-[250px] md:h-[300px]"
+                                        class="w-full object-contain sm:h-[250px] md:h-[300px] transition-all duration-200  group-hover:scale-105"
                                         decoding="async"
                                         loading="lazy"
                                         src={blog.data.image}

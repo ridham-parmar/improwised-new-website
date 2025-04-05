@@ -46,15 +46,17 @@ const services = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		slug: z.string(),
-		image: image(),
+		lightImage: image(),
+		darkImage: image(),
 		description: z.string(),
 		order: z.number(), // Add order field
 		text: z.string(),
 		primaryText: z.string(),
 		blocks: z.array(z.object({
 			title: z.string(),
+			slug: z.string().optional(),
 			description: z.string()
-		})),
+		})).optional(),
 		blockImage: image()
 	}),
 });
@@ -114,6 +116,7 @@ const blogs = defineCollection({
 		author: z.string(),
 		publishDate: z.coerce.date(),
 		linkTags: z.array(z.string()).optional(),
+		blockCategory: z.string().optional(),
 	}),
 });
 
@@ -152,7 +155,8 @@ const corefeatures = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		slug: z.string(),
-		image: image(),
+		lightImage: image(),
+		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -162,7 +166,8 @@ const corefeaturesCloudInfrastructureManagement = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		slug: z.string(),
-		image: image(),
+		lightImage: image(),
+		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -173,7 +178,8 @@ const corefeaturesProductModernization = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		slug: z.string(),
-		image: image(),
+		lightImage: image(),
+		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -184,7 +190,8 @@ const corefeaturesTechnologyConsulting = defineCollection({
 	schema: ({ image }) => z.object({
 		title: z.string(),
 		slug: z.string(),
-		image: image(),
+		lightImage: image(),
+		darkImage: image(),
 		description: z.string()
 	}),
 });
