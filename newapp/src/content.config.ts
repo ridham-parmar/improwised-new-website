@@ -129,7 +129,7 @@ const casestudies = defineCollection({
 		title: z.string(),
 		attachments: z.string(),
 		image: image(),
-		saveCost:z.string(),
+		saveCost:z.string().optional(),
 		description: z.string(),
 		tags: z.array(z.string()),
 	}),
