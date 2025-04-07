@@ -1,6 +1,7 @@
 <script lang="ts">
   import * as Card from "$lib/components/ui/card/index.js";
   import * as Carousel from "$lib/components/ui/carousel/index.js";
+  import { innerWidth  } from "svelte/reactivity/window";
   export let casestudies: any[] = [];
   export let baseUrl: string = "";
 </script>
@@ -63,10 +64,10 @@
       </Carousel.Item>
     {/each}
   </Carousel.Content>
-  {#if casestudies.length > 3}
-    <div class="md:absolute md:top-[-84px] right-0 flex gap-3 justify-center max-md:mt-6">
+  <!-- {#if casestudies.length > 3} -->
+    <div class={`md:absolute md:top-[-84px] right-0 gap-3 justify-center max-md:mt-6 ${innerWidth.current as number > 768 && casestudies.length > 3 ? "flex" : innerWidth.current as number < 768 && casestudies.length >=2 ? "flex" : "hidden"}`}>
       <Carousel.Previous/>
       <Carousel.Next />
     </div>
-  {/if}
+  <!-- {/if} -->
 </Carousel.Root>
