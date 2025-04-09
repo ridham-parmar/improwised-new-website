@@ -68,3 +68,12 @@ export const flyAndScale = (
 		easing: cubicOut
 	};
 };
+
+export const formatDate = (dateString: string | number | Date) => {
+    if (!dateString) return "No date available";
+
+    const date = new Date(dateString);
+
+    return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+}
+
