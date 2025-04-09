@@ -24,14 +24,7 @@ import { Image } from "astro:assets";
 import * as Card from "$lib/components/ui/card";
 import avtarImage from "$lib/images/blogs/impro.png";
 import { CircleUserRound } from "lucide-svelte/icons";
-
-function formatDate(dateString: string | number | Date) {
-    if (!dateString) return "No date available";
-
-    const date = new Date(dateString);
-
-    return date.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-}
+import { formatDate } from "$lib/utils"
 
 // Meta title and description
 const seoContents = await getCollection('seocontent');
