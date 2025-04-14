@@ -31,7 +31,7 @@ blocks:
 
 text: "Building Blocks Of A"
 primaryText: "Scalable Platform"
-blockImage: "$lib/images/services/pe-1.svg"
+blockImage: "$lib/images/services/accordion_pe.svg"
 ---
 
 import SectionTitle from "$lib/components/common/SectionTitle.svelte";
@@ -59,11 +59,8 @@ export const slug = frontmatter.slug
 export const image = "$lib/images/services/data1.png"
 export const description = "Accelerate innovation with Platform Engineering as a Service-automating workflows, standardizing infrastructure, and enabling seamless cloud-native scalability."
 
-
-{/* pt-30 pb-20 md:pt-56 md:pb-48 */}
-{/* pt-30 pb-20 md:pt-56 md:pb-48 */}
 <section>
-    <section class="section1 pt-30 pb-20 md:pt-56 md:pb-48 bg-platform">
+    <section class="section1 flex flex-col gap-10 pt-30 pb-20 md:pt-60 md:pb-[240px] bg-platform">
         <div class="container flex flex-col justify-center items-center">
             <div class="relative text-center mb-10 max-w-2xl mx-auto aos-init aos-animate">
                 <h1 class="main-heading-small md:main-heading text-main-heading-color">{title}</h1>
