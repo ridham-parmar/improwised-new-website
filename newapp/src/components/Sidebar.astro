@@ -5,9 +5,12 @@ import { getCollection } from 'astro:content';
 const { insideMdx } = Astro.props;
 let tags: string[] = [];
 
-if (Astro.url.pathname.split('/').includes("blog")) {
-    const [{data: {linkTags}}] = await getCollection('blogs', (blog) => blog.id == Astro.url.pathname.split('/').at(-1))
+const url: string[] = Astro.url.pathname.split('/')
+
+if (url.includes("blog") && url.at(-2) !== "blog") {
+    const [{data: {linkTags}}] = await getCollection('blogs', (blog) => blog.id == url.at(-2))
     tags = linkTags as string[];
+    
 } else if(Astro.url.pathname.split('/').includes("privacy-policy")) {
     tags = [
         "Introduction",

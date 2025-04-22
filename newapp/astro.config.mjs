@@ -12,9 +12,7 @@ import sitemap from '@astrojs/sitemap';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.improwised.com',
-
-  trailingSlash: "never",
-  
+    
   redirects: {
     "/sitemap.xml" : "/sitemap-index.xml"
   },
