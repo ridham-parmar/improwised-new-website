@@ -42,11 +42,11 @@ const sortedBlogs = filteredBlogs.sort(
 const recommendedBlogs = sortedBlogs.slice(0, 3);
 
 // Meta title and description
-const seoContents = await getCollection('seocontent');
-const [{title, description}] = (seoContents[0].data).filter((content) => content.slug == "blog")
+const blogs = await getCollection('blogs');
+const [{data:{seoTitle, seoDescription}}] = blogs.filter((blog) => blog.data.slug === Astro.url.pathname.split('/').at(-2))
 ---
 
-<Layout title={title} description={description}>
+<Layout title={seoTitle} description={seoDescription}>
     <main class="main-content">
         <section id="section1"
             class="section1 text-left py-40 px-6 bg-blog-details relative pt-[30%] md:pb-40 lg:pt-[12%]"
