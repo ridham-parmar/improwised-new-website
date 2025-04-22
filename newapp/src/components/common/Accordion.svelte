@@ -35,7 +35,7 @@
               {#if servicePage === 'platform-engineering'}
                 {block.description.substring(0,100)}...
                 <a class="underline text-first-color hover:text-blue-hover" {...(servicePage === 'platform-engineering' && {
-                  href: `${baseUrl}/services/${servicePage}/${block.slug}`
+                  href: `${baseUrl}/services/${servicePage}/${block.slug}/`
                 })}>read more</a>
               {:else}
                 {block.description}

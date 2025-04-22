@@ -93,7 +93,7 @@ const filteredBlogs = blogs.filter((b) => b.data.blockCategory == block.slug);
                     {formatDate(blog.data.publishDate)}
                   </p>
                   <Card.Title class="text-[20px] text-fifth-color font-manrope font-bold leading-[24px] tracking-tight">
-                    <a href={BASE_URL + "/blog/" + blog.data.slug}>
+                    <a href={BASE_URL + "/blog/" + blog.data.slug + "/"}>
                       {blog.data.title}
                     </a>
                   </Card.Title>
