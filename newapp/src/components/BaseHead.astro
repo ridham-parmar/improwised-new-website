@@ -12,7 +12,7 @@ const { title, description, image = `${BASE_URL}/opengraph.png` } = Astro.props;
 <meta name="generator" content={Astro.generator} />
 
 <!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
+<link rel="canonical" href={canonicalURL.href} />
 
 <!-- Sitemap URL -->
 <link rel="sitemap" href=`${BASE_URL}/sitemap-index.xml` />

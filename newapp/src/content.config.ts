@@ -112,6 +112,8 @@ const blogs = defineCollection({
 		slug: z.string(),
 		image: image(),
 		description: z.string(),
+		seoTitle: z.string(),
+		seoDescription: z.string(),
 		tags: z.array(z.string()),
 		author: z.string(),
 		publishDate: z.coerce.date(),
