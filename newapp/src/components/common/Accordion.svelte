@@ -22,7 +22,7 @@
         }
       }}>
         <div class="flex justify-between pt-4 pb-2 md:py-4 text-left text-first-color font-bold text-[16px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
-          <div>{block.title}</div>
+          <h4>{block.title}</h4>
           <div>
             <ChevronDown class={`h-6 w-6 transition-transform duration-300 text-first-col md:group-hover:rotate-180 ${visibleContent == block.title ? "max-md:rotate-180" : ""}`} />
           </div>
