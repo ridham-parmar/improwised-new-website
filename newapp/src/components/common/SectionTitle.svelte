@@ -14,7 +14,7 @@
         : `mb-6  max-md:text-center font-manrope text-[32px] md:text-[46px] leading-[36px] -tracking-2 md:leading-[52px] font-bold text-main-heading-color ${className}`.trim();
 </script>
 
-<h1 class={computedClass} data-aos={dataAos}>
+<h2 class={computedClass} data-aos={dataAos}>
     {#if isPrimaryTextInitial && primaryColorText}
         <span class="text-sub-heading-color">{primaryColorText}</span>
     {/if}
@@ -22,4 +22,4 @@
     {#if !isPrimaryTextInitial && primaryColorText}
         <span class="text-sub-heading-color">{primaryColorText}</span>
     {/if}
-</h1>
+</h2>
