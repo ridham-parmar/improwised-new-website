@@ -5,105 +5,136 @@ import { BASE_URL } from "$lib/consts";
 import person1 from "$lib/images/people/Circle1.png";
 import person2 from "$lib/images/people/Circle2.png";
 import person3 from "$lib/images/people/Circle3.png";
-import Particle from "$lib/components/common/Particle.svelte"
+import Particle from "$lib/components/common/Particle.svelte";
 import { getCollection } from "astro:content";
+import lightBgImage from "$lib/images/homepage/light-bg-gradient.svg";
+import heroDotImage from "$lib/images/homepage/light-herodot.svg";
+import darkBgImage from "$lib/images/homepage/dark-bg-gradient.svg";
+import heroDarkDotImage from "$lib/images/homepage/dark-herodot.svg";
+
 // import Particles from "$lib/scripts/particles";
-const clientsCollection = await getCollection('clients');
-const clients = clientsCollection.flatMap(client => client.data.clients);
+const clientsCollection = await getCollection("clients");
+const clients = clientsCollection.flatMap((client) => client.data.clients);
 const peopleImages = [person3, person2, person1];
 ---
 
 <section
-  class="flex flex-col items-center justify-center text-center pt-30 pb-20 md:pt-56 md:pb-48 px-6 light-bg-image relative"
+  class="flex flex-col items-center justify-center text-center pt-30 pb-20 md:pt-56 md:pb-48 px-6 relative"
 >
-  <!-- Trusted Badge -->
-  <div
-    class="text-second-color inline-flex items-center bg-card-bg shadow-md px-5 py-2 rounded-full text-sm sm:small-text"
-  >
-    Trusted by <span class="font-bold mx-1">200+</span> professionals
-    <span class="flex ml-4 group">
-      {
-        peopleImages.map((src, index) => (
-          <Image src={src} alt={`Person ${index + 1}`} class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-1 md:border-2 border-white -ml-3 transition-all duration-300 ring-1 md:ring-2 ring-white hover:scale-125 hover:z-10 hover:ring-sky-200 dark:hover:ring-sky-200" />
-        ))
-      }
-    </span>
+  <div>
+    <Image
+      loading="lazy"
+      alt="light-bg-image"
+      decoding="async"
+      src={lightBgImage}
+      class="block dark:hidden absolute -z-1 top-0 bottom-0 left-0 right-0 h-full w-full object-cover"
+    />
+
+    <Image
+      loading="lazy"
+      decoding="async"
+      alt="hero-dot-image"
+      class="block dark:hidden absolute -z-1 top-0 bottom-0 left-0 right-0 h-full w-full object-cover"
+      src={heroDotImage}
+    />
+
+    <Image
+      loading="lazy"
+      decoding="async"
+      alt="dark-bg-image"
+      class="hidden dark:block absolute  top-0 bottom-0 left-0 right-0 h-full w-full object-cover"
+      src={darkBgImage}
+    />
+
+    <Image
+      loading="lazy"
+      decoding="async"
+      alt="dark-dot-image"
+      class="hidden dark:block absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover"
+      src={heroDarkDotImage}
+    />
   </div>
 
-  <!-- Main Heading -->
-  <h1 class="capitalize mt-6 mb-4 max-md:text-center main-heading-small md:main-heading text-main-heading-color">
-    Engineering the Platforms<br />
-    <span class="text-sub-heading-color">That Build the Future</span>
-  </h1>
-
-  <!-- Subtext -->
-  <p class="md:mt-4 text-para text-third-color max-w-2xl mx-auto">
-    We design self-service, high-performing platforms that accelerate development, optimize operations, and drive seamless scalability.
-  </p>
-
-  <!-- CTA Buttons -->
-  <div class="mt-6 md:mt-10 flex justify-center space-x-4">
-    <Button href=`${BASE_URL}/contact/` class="button-bg md:text-[16px] font-manrope" aria-label="Contact us">Get in Touch</Button>
-    <Button href=`${BASE_URL}/services/platform-engineering/` class="md:text-[16px] font-manrope" aria-label="Learn more about our services on the service page" variant="outline">
-      Explore Solutions
-    </Button>
-  </div>
-
-  <!-- Trusted Companies -->
-  <div class="mt-16 md:mt-20">
-    <p
-      class="text-[16px] leading-[20px] md:text-[18px] md:leading-[26px] font-semibold tracking-[2%] font-inter text-first-color"
+  <div class="z-20 flex flex-col items-center justidy-center text-center">
+    <!-- Trusted Badge -->
+    <div
+      class="text-second-color inline-flex items-center bg-card-bg shadow-md px-5 py-2 rounded-full text-sm sm:small-text"
     >
-    Trusted by Leading Companies Worldwide
+      Trusted by <span class="font-bold mx-1">200+</span> professionals
+      <span class="flex ml-4 group">
+        {
+          peopleImages.map((src, index) => (
+            <Image
+              loading="lazy"
+              src={src}
+              alt={`Person ${index + 1}`}
+              class="w-6 h-6 sm:w-8 sm:h-8 rounded-full border-1 md:border-2 border-white -ml-3 transition-all duration-300 ring-1 md:ring-2 ring-white hover:scale-125 hover:z-10 hover:ring-sky-200 dark:hover:ring-sky-200"
+            />
+          ))
+        }
+      </span>
+    </div>
+
+    <!-- Main Heading -->
+    <h1
+      class="capitalize mt-6 mb-4 max-md:text-center main-heading-small md:main-heading text-main-heading-color"
+    >
+      Engineering the Platforms<br />
+      <span class="text-sub-heading-color">That Build the Future</span>
+    </h1>
+
+    <!-- Subtext -->
+    <p class="md:mt-4 text-para text-third-color max-w-2xl mx-auto">
+      We design self-service, high-performing platforms that accelerate
+      development, optimize operations, and drive seamless scalability.
     </p>
-    <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6 md:gap-8">
-      {
-        clients.map((client) => (
-          <>
-            <div>
-              <Image
-                src={client.image}
-                alt={client.title}
-                loading="lazy"
-                decoding="async"
-                class="mx-auto w-full h-auto"
-              />
-            </div>
-          </>
-        ))
-      }
+
+    <!-- CTA Buttons -->
+    <div class="mt-6 md:mt-10 flex justify-center space-x-4">
+      <Button
+        href=`${BASE_URL}/contact/`
+        class="button-bg md:text-[16px] font-manrope"
+        aria-label="Contact us">Get in Touch</Button
+      >
+      <Button
+        href=`${BASE_URL}/services/platform-engineering/`
+        class="md:text-[16px] font-manrope"
+        aria-label="Learn more about our services on the service page"
+        variant="outline"
+      >
+        Explore Solutions
+      </Button>
+    </div>
+
+    <!-- Trusted Companies -->
+    <div class="mt-16 md:mt-20">
+      <p
+        class="text-[16px] leading-[20px] md:text-[18px] md:leading-[26px] font-semibold tracking-[2%] font-inter text-first-color"
+      >
+        Trusted by Leading Companies Worldwide
+      </p>
+      <div class="mt-4 mb-4 flex justify-center flex-wrap gap-6 md:gap-8">
+        {
+          clients.map((client) => (
+            <>
+              <div>
+                <Image
+                  src={client.image}
+                  alt={client.title}
+                  loading="lazy"
+                  decoding="async"
+                  class="mx-auto"
+                />
+              </div>
+            </>
+          ))
+        }
+      </div>
     </div>
   </div>
   <Particle client:load />
-
 </section>
 
 <style>
   @reference "tailwindcss";
-
-  /* .light-bg-image {
-    background-image: url("../images/homepage/light-herodot.svg"),
-      url("../images/homepage/light-bg-gradient.svg");
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    position: relative;
-  } */
-
-  /* .dark-bg-image {
-    background-image: url("../images/homepage/dark-herodot.svg"),
-      url("../images/homepage/dark-bg-gradient.svg");
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
-    position: relative;
-  } */
-
-  /* .profile-img {
-    @apply w-8 h-8 rounded-full border-2 border-white -ml-3 transition-all duration-300 ring-2 ring-white;
-  }
-
-  .profile-img:hover {
-    @apply scale-125 z-10 ring-sky-200;
-  } */
 </style>
