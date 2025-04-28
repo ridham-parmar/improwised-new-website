@@ -36,7 +36,7 @@ import { ArrowBigRightDash, CloudCog } from "lucide-svelte";
 import { CircleUserRound, CalendarDays } from "lucide-svelte";
 import buildingBlock from "$lib/images/services/building-block.svg";
 import { getCollection } from "astro:content";
-import CustomCard from "$lib/components/CustomCard.astro"
+import ServiceCard from "$lib/components/ServiceCard.astro"
 import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
@@ -120,7 +120,7 @@ export const description = "Ready to see what your cloud can really do? We build
           </Badge>
             <SectionTitle primaryColorText="Cloud-Native Solutions For" text="Scalable Growth" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
           </div>
-          <CustomCard collectionName="corefeaturesCloudInfrastructureManagement"/>
+          <ServiceCard collectionName="corefeaturesCloudInfrastructureManagement"/>
         </div>
     </section>
 

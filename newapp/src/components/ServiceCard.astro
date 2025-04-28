@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
+import * as Card from "$lib/components/ui/card";
+import { Image } from "astro:assets";
+import { Button } from "$lib/components/ui/button";
+import { BASE_URL } from "$lib/consts";
+
+type ValidCollections = "corefeatures";
+
+const { collectionName } = Astro.props;
+const collectionDetails = (await getCollection(
+  collectionName as ValidCollections,
+  (details: CollectionEntry<ValidCollections>) => {
+    return details.data.slug !== "platform-engineering";
+  }
+)) as CollectionEntry<ValidCollections>[];
+
+let gradientX = 45.5;
+let gradientY = -200;
+---
+
+<div class="md:mt-14 grid gap-10 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+  {
+    collectionDetails.map(({data}) => (
+      <Card.Root
+        class="relative border-1 bg-card-bg border-career-card rounded-[20px] shadow-nav text-center"
+        onmousemove="updateGradient(event)"
+        style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+      >
+        <div
+          class="card-custom-inner p-8"
+          style={`--gradient-x: ${gradientX}px; --gradient-y: ${gradientY}px;`}
+          onmousemove="updateGradient(event)"
+        >
+          <Card.Header class="p-3 rounded-lg border-1 bg-card-bg absolute -top-9 backdrop-blur-sm ">
+            <Image alt="service-card-features" width={50} src={data.lightImage} />
+          </Card.Header>
+          <Card.Content class="p-0 text-left flex flex-col tracking-tight">
+            <Card.Title class="pt-10 text-fifth-color text-[18px] leading-[22px] md:text-[22px] md:leading-[28px] tracking-[0.02em] font-manrope">
+              {data.title}
+            </Card.Title>
+            <p class="pt-5 small-text md:text-para font-inter text-fourth-color">
+              {data.description}
+            </p>
+          </Card.Content>
+        </div>
+      </Card.Root>
+    ))
+  }
+</div>
+
+<script is:inline>
+  // Function to update gradient position
+  function updateGradient(event) {
+    const rect = event.currentTarget.getBoundingClientRect();
+    gradientX = event.clientX - rect.left;
+    gradientY = event.clientY - rect.top;
+
+    // Update the style dynamically
+    const target = event.currentTarget;
+    target.style.setProperty("--gradient-x", `${gradientX}px`);
+    target.style.setProperty("--gradient-y", `${gradientY}px`);
+  }
+</script>

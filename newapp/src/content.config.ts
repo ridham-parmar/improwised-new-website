@@ -158,7 +158,6 @@ const corefeatures = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		lightImage: image(),
-		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -169,7 +168,6 @@ const corefeaturesCloudInfrastructureManagement = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		lightImage: image(),
-		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -181,7 +179,6 @@ const corefeaturesProductModernization = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		lightImage: image(),
-		darkImage: image(),
 		description: z.string()
 	}),
 });
@@ -193,7 +190,6 @@ const corefeaturesTechnologyConsulting = defineCollection({
 		title: z.string(),
 		slug: z.string(),
 		lightImage: image(),
-		darkImage: image(),
 		description: z.string()
 	}),
 });
