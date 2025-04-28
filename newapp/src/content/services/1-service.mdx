@@ -45,7 +45,7 @@ import * as Card from "$lib/components/ui/card";
 import { CircleUserRound, CalendarDays } from "lucide-svelte";
 import buildingBlock from "$lib/images/services/building-block.svg";
 import { getCollection } from "astro:content";
-import CustomCard from "$lib/components/CustomCard.astro"
+import ServiceCard from "$lib/components/ServiceCard.astro"
 import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
@@ -129,7 +129,7 @@ export const description = "Accelerate innovation with Platform Engineering as a
           </Badge>
             <SectionTitle primaryColorText="Core Features" text="Of Our Platform Engineering" class="text-center md:w-4/5" isPrimaryTextInitial={true}/>
           </div>
-          <CustomCard collectionName="corefeatures"/>
+          <ServiceCard collectionName="corefeatures"/>
         </div>
     </section>
 

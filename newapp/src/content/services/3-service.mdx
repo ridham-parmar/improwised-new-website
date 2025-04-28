@@ -33,7 +33,7 @@ import * as Card from "$lib/components/ui/card";
 import { CircleUserRound, CalendarDays } from "lucide-svelte";
 import buildingBlock from "$lib/images/services/building-block.svg";
 import { getCollection } from "astro:content";
-import CustomCard from "$lib/components/CustomCard.astro"
+import ServiceCard from "$lib/components/ServiceCard.astro"
 import ServiceApproach from "$lib/components/ServiceApproach.astro";
 import CaseStudiesSection from "$lib/components/CaseStudiesSection.astro";
 import CTASection from "$lib/components/CTASection.astro";
@@ -117,7 +117,7 @@ export const description = "Cloud migration, application modernization, and tech
           </Badge>
             <SectionTitle primaryColorText="Modernization Approach" text="Our" class="text-center md:w-4/5"/>
           </div>
-          <CustomCard collectionName="corefeaturesProductModernization"/>
+          <ServiceCard collectionName="corefeaturesProductModernization"/>
         </div>
     </section>
 
