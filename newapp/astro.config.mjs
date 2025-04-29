@@ -18,7 +18,7 @@ export default defineConfig({
   },
 
   // Subdirectory path
-  base: '/github-pages',
+  base: '/newapp',
 
   // Default output directory
   outDir: 'dist',
