@@ -11,14 +11,14 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.improwised.com',
+  site: 'https://ridham.github.io',
     
   redirects: {
     "/sitemap.xml" : "/sitemap-index.xml"
   },
 
   // Subdirectory path
-  // base: '/improwised-new-website/newapp',
+  base: '/github-pages',
 
   // Default output directory
   outDir: 'dist',

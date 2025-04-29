@@ -6,7 +6,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.1.0",
@@ -15,6 +16,7 @@
     "aos": "^3.0.0-beta.6",
     "astro": "^5.4.0",
     "embla-carousel-autoplay": "^8.5.2",
+    "gh-pages": "^6.3.0",
     "lucide-svelte": "^0.474.0",
     "svelte": "^5.19.8",
     "typescript": "^5.7.3"
