@@ -11,14 +11,14 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://ridham.github.io',
+  site: 'https://ridham-parmar.github.io',
     
   redirects: {
     "/sitemap.xml" : "/sitemap-index.xml"
   },
 
   // Subdirectory path
-  base: '/improwised-new-website/newapp',
+  base: '/improwised-new-website',
 
   // Default output directory
   outDir: 'dist',
