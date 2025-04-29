@@ -18,7 +18,7 @@ export default defineConfig({
   },
 
   // Subdirectory path
-  base: '/newapp',
+  base: '/improwised-new-website/newapp',
 
   // Default output directory
   outDir: 'dist',
