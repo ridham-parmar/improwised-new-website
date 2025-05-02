@@ -718,3 +718,12 @@ layer(base);
 
   /* background-image:var(--tw-gradient-via-stops, to bottom in oklab, color-mix(in oklab, oklch(0.208 0.042 265.755) 40%,transparent) 0, oklch(.129 .042 264.695) 100%) ; */
 }
+
+/* CTA background image */
+.bgCtaimage {
+  background-image: url("../images/homepage/light-herodot.svg"), url("../images/cta.svg");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
+  height: 100%;
+}
