@@ -31,10 +31,10 @@
   @apply text-[16px] leading-[24px] tracking-[0.02em] font-normal;
 }
 @utility main-heading {
-  @apply font-manrope text-[56px] leading-[62px] font-medium tracking-tight;
+  @apply font-manrope text-[56px] leading-[62px] font-bold tracking-tight;
 }
 @utility main-heading-small {
-  @apply font-manrope text-[40px] leading-[44px] font-medium tracking-tight;
+  @apply font-manrope text-[40px] leading-[44px] font-bold tracking-tight;
 }
 @utility all-unset {
   all: unset;
