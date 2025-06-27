@@ -57,7 +57,8 @@ const services = defineCollection({
 			slug: z.string().optional(),
 			description: z.string()
 		})).optional(),
-		blockImage: image()
+		blockImage: image(),
+		seoAriaLabel: z.string()
 	}),
 });
 
