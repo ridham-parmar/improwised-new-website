@@ -537,9 +537,11 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
 	}
 </style>
-<script is:inline>
+<script>
+	    let gradientX = 45.5;
+		let gradientY = -200;
 	// Function to update gradient position
-	function updateGradient(event) {
+	function updateGradient(event: any) {
 		const rect = event.currentTarget.getBoundingClientRect();
 		gradientX = event.clientX - rect.left;
 		gradientY = event.clientY - rect.top;
@@ -553,9 +555,9 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 	document.addEventListener("DOMContentLoaded", function () {
 		const timelineLine = document.getElementById("line"); // The timeline line
-		const totalHeight = timelineLine.getBoundingClientRect().height; // Get total height of the line
+		const totalHeight = timelineLine ? timelineLine.getBoundingClientRect().height : 0; // Get total height of the line
 		const timelineTop =
-			timelineLine.getBoundingClientRect().top + window.scrollY; // Get absolute position
+			timelineLine ? timelineLine.getBoundingClientRect().top + window.scrollY : 0; // Get absolute position if timelineLine exists
 
 		let lastScrollY = window.scrollY; // Store last scroll position
 		let minProgress = 10; // Ensure a small start when scrolling up
@@ -572,7 +574,9 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		progressRect.setAttribute("height", "0"); // Start with no fill
 		progressRect.setAttribute("x", "0"); // Align with line
 		progressRect.setAttribute("y", "0"); // Start at the top
-		timelineLine.appendChild(progressRect);
+		if (timelineLine) {
+			timelineLine.appendChild(progressRect);
+		}
 
 		// Create a moving circle at the end of the green progress line
 		const progressCircle = document.createElementNS(
@@ -586,7 +590,9 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		progressCircle.setAttribute("stroke", "#22C55E"); // White border
 		progressCircle.setAttribute("stroke-width", "4"); // Border thickness
 
-		timelineLine.appendChild(progressCircle);
+		if (timelineLine) {
+			timelineLine.appendChild(progressCircle);
+		}
 
 		// Create a text element for the year
 		const yearText = document.createElementNS(
@@ -602,7 +608,9 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 		yearText.setAttribute("dominant-baseline", "middle"); // Align text properly
 		yearText.textContent = "2011"; // Initial year
 
-		timelineLine.appendChild(yearText);
+		if (timelineLine) {
+			timelineLine.appendChild(yearText);
+		}
 
 		// Update the progress bar, circle, and year on scroll
 		function updateProgress() {
@@ -619,9 +627,9 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 
 			const progressHeight = Math.min(scrolled, totalHeight); // Keep within bounds
 
-			progressRect.setAttribute("height", progressHeight); // Fill gradually
-			progressCircle.setAttribute("cy", progressHeight); // Move the circle with progress
-			yearText.setAttribute("y", progressHeight + 5); // Move text with circle
+			progressRect.setAttribute("height", progressHeight.toString()); // Fill gradually
+			progressCircle.setAttribute("cy", progressHeight.toString()); // Move the circle with progress
+			yearText.setAttribute("y", (progressHeight + 5).toString()); // Move text with circle
 
 			// Dynamically increase the year based on progress
 			const startYear = 2011;
@@ -630,7 +638,7 @@ const [{title, description}] = (seoContents[0].data).filter((content) => content
 			const yearStep = totalHeight / yearRange; // Make year increment smoother
 			const currentYear =
 				startYear + Math.floor(progressHeight / yearStep);
-			yearText.textContent = currentYear;
+			yearText.textContent = currentYear.toString();
 
 			lastScrollY = currentScrollY; // Update last scroll position
 		}
